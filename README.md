@@ -2,10 +2,10 @@
     <img src="src/images/icon.png" width="60" />
 </p>
 <h1 align="center">
-  Backroom's Gatsby js starter 
+    Silverado
 </h1>
 
-Backroom's minimal Gatsby js starter with Styled componenents, TailwindCSS, ESlint, and Prettier.
+Gatsby js starter with Styled componenents, TailwindCSS, ESlint, and Prettier.
 
 ## 🚀 Quick start
 
