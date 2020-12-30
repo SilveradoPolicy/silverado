@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 
 import styled from 'styled-components';
@@ -12,7 +11,6 @@ const StyledHeading = styled.h1`
 
 export default function IndexPage() {
     return (
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
         <Layout>
             <StyledHeading>testing paragraph</StyledHeading>
         </Layout>
