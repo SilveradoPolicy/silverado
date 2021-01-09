@@ -24,6 +24,9 @@ module.exports = {
                 'ts-citation': ['0.579rem', '0.724rem'],
             },
         },
+        container: {
+            center: true,
+        },
         fontFamily: {
             'wt-thin': 'SukhumvitThin',
             'wt-reg': 'SukhumvitReg',
