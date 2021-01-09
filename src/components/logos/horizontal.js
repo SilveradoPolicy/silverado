@@ -3,8 +3,6 @@ import React from 'react';
 export default function LogoHorizontal() {
     return (
         <svg
-            width="420"
-            height="93"
             viewBox="0 0 420 93"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
