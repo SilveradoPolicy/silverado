@@ -4,6 +4,8 @@ import { createGlobalStyle } from 'styled-components';
 
 import * as fonts from '../fonts';
 
+import Header from '../components/header';
+
 const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: 'Aliens & Cows';
@@ -46,6 +48,7 @@ export default function Layout({ children }) {
     return (
         <>
             <GlobalStyles />
+            <Header />
             <main>{children}</main>
         </>
     );
