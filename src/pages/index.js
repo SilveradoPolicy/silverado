@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import IndexHero from '../components/indexHero';
 import IndexSubHero from '../components/indexSubHero';
+import FullWidthImage from '../components/fullWidthImage';
 
 const content = {
     heroLink: {
@@ -17,6 +18,10 @@ const content = {
         heading: `The world is at an inflection point and America needs a long-term vision and plan to ensure enduring prosperity and global competitiveness`,
         body: `The race is on to see who will be first develop and maintain new new and emerging technologies, who will gain the strategic advantage in new types of warfare in both cyber and outer space, who will be able to best protect its national national interests while retaining strong relationships with allies, who will set the blueprint for international standards and norms, who will be able to unlock further economic growth and prosperity through international trade and investment, and who will be positioned to lead a broad to lead a broad coalition within international institutions.`,
     },
+    fullWidthImage: {
+        heading: 'how accelerators work',
+        body: 'Silverado Policy Accelerator launched for this very purpose - to apply a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented.',
+    },
 }
 
 export default function IndexPage({ data }) {
@@ -26,6 +31,7 @@ export default function IndexPage({ data }) {
         <Layout>
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
+            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} />
         </Layout>
     );
 }
