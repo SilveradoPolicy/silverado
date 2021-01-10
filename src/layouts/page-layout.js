@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import * as fonts from '../fonts';
 
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -50,6 +51,7 @@ export default function Layout({ children }) {
             <GlobalStyles />
             <Header />
             <main>{children}</main>
+            <Footer />
         </>
     );
 }
