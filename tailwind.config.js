@@ -23,6 +23,9 @@ module.exports = {
                 'ts-caption': ['0.694rem', '0.868rem'],
                 'ts-citation': ['0.579rem', '0.724rem'],
             },
+            height: {
+                '3/4-screen': '75vh',
+            },
         },
         container: {
             center: true,
