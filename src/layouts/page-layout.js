@@ -40,6 +40,16 @@ const GlobalStyles = createGlobalStyle`
         src: local('Sukhumvit'), url('${fonts.SukhumvitBold}') format('truetype');
     }
 
+    html {
+        --brand-1: #306184;
+        --brand-2: #739663;
+        --brand-3: #56959E;
+        --brand-4: #C4E7E7;
+        --brand-5: #A3C1BF;
+        --brand-6: #FCAF1B;
+        --white: #ffffff;
+        --black: #000000;
+    }
     body {
         font-size: 1rem;
         font-family: 'SukhumvitReg'
