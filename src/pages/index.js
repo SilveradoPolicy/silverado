@@ -9,6 +9,7 @@ import IndexHero from '../components/indexHero';
 import IndexSubHero from '../components/indexSubHero';
 import FullWidthImage from '../components/fullWidthImage';
 import CopyWithCTA from '../components/copyWithCTA';
+import Pillars from '../components/pillars';
 
 const content = {
     heroLink: {
@@ -44,6 +45,7 @@ export default function IndexPage({ data }) {
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
             <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} />
             <CopyWithCTA content={content.copy1} />
+            <Pillars />
             <CopyWithCTA content={content.copy2} hasBgGradient />
         </Layout>
     );
