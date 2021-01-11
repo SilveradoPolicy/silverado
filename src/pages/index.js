@@ -8,6 +8,7 @@ import Layout from '../layouts/page-layout';
 import IndexHero from '../components/indexHero';
 import IndexSubHero from '../components/indexSubHero';
 import FullWidthImage from '../components/fullWidthImage';
+import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
     heroLink: {
@@ -22,6 +23,16 @@ const content = {
         heading: 'how accelerators work',
         body: 'Silverado Policy Accelerator launched for this very purpose - to apply a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented.',
     },
+    copy1: {
+        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+    },
+    copy2: {
+        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        cta: {
+            link: '/',
+            text: 'learn more',
+        },
+    },
 }
 
 export default function IndexPage({ data }) {
@@ -32,6 +43,8 @@ export default function IndexPage({ data }) {
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
             <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} />
+            <CopyWithCTA content={content.copy1} />
+            <CopyWithCTA content={content.copy2} hasBgGradient />
         </Layout>
     );
 }
