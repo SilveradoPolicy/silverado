@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../layouts/page-layout';
 
 import AltHero from '../components/altHero';
+import Pillars from '../components/pillars';
 
 const content = {
     hero: {
@@ -14,6 +15,7 @@ export default function InitiativesPage() {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
+            <Pillars hasTopGradient />
         </Layout>
     );
 }
