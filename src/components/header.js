@@ -29,8 +29,9 @@ const StyledUL = styled.ul`
     ${tw`flex items-center`}
 `;
 
+// link hover state utility classes applied as className on gatsby Link component
 const StyledLI = styled.li`
-    ${tw`ml-8 capitalize font-wt-bold text-lg transition-colors duration-700 ease-in-out`}
+    ${tw`ml-8 capitalize font-wt-bold text-lg transition-colors duration-700 ease-in-out relative`}
 
     color: ${(props) =>
         !props.isIndexPage
@@ -88,7 +89,9 @@ export default function Header({ isIndexPage }) {
                 isScrolled={isScrolled}
                 key={item.text}
             >
-                <Link to={item.link}>{item.text}</Link>
+                <Link className="link hover:link-hover" to={item.link}>
+                    {item.text}
+                </Link>
             </StyledLI>
         );
     });

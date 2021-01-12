@@ -33,8 +33,10 @@ const StyledUL = styled.ul`
     ${tw`grid grid-cols-2 gap-x-10`}
 `;
 
+// link hover styles added as className, need to revisit
+// link hover state utility classes applied using className in jsx
 const StyledLink = styled(Link)`
-    ${tw`capitalize`}
+    ${tw`capitalize relative`}
 `;
 
 const StyledForm = styled.form`
@@ -102,7 +104,9 @@ export default function Footer() {
     const links = content.internalLinks.map((item) => {
         return (
             <li key={item.text}>
-                <StyledLink to={item.link}>{item.text}</StyledLink>
+                <StyledLink className="link hover:link-hover" to={item.link}>
+                    {item.text}
+                </StyledLink>
             </li>
         );
     });
