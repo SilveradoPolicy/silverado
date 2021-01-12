@@ -43,5 +43,6 @@ module.exports = {
             __key: 'images',
         },
         'gatsby-transformer-sharp',
+        'gatsby-plugin-postcss',
     ],
 };
