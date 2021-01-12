@@ -40,7 +40,7 @@ export default function IndexPage({ data }) {
     const { heroImage } = data;
 
     return (
-        <Layout>
+        <Layout isIndexPage>
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
             <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} />

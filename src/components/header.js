@@ -1,4 +1,6 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
@@ -28,9 +30,14 @@ const StyledUL = styled.ul`
 `;
 
 const StyledLI = styled.li`
-    ${tw`ml-8 capitalize font-wt-bold text-lg transition`}
+    ${tw`ml-8 capitalize font-wt-bold text-lg transition-colors duration-700 ease-in-out`}
 
-    color: ${(props) => (props.isScrolled ? `var(--brand-1)` : `var(--white)`)}
+    color: ${(props) =>
+        !props.isIndexPage
+            ? `var(--brand-1)`
+            : props.isIndexPage && !props.isScrolled
+            ? `var(--white)`
+            : `var(--brand-1)`}
 `;
 
 const nav = [
@@ -55,7 +62,7 @@ const nav = [
 // todo: mobile layout, confirm design w/ Josh
 // todo: nav hover states, confirm desgin w/ Josh
 
-export default function Header() {
+export default function Header({ isIndexPage }) {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = () => {
@@ -76,7 +83,11 @@ export default function Header() {
 
     const navItems = nav.map((item) => {
         return (
-            <StyledLI key={item.text} isScrolled={isScrolled}>
+            <StyledLI
+                isIndexPage={isIndexPage}
+                isScrolled={isScrolled}
+                key={item.text}
+            >
                 <Link to={item.link}>{item.text}</Link>
             </StyledLI>
         );
@@ -94,3 +105,11 @@ export default function Header() {
         </StyledHeader>
     );
 }
+
+Header.defaultProps = {
+    isIndexPage: false,
+};
+
+Header.propTypes = {
+    isIndexPage: PropTypes.bool,
+};
