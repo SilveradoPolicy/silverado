@@ -10,15 +10,15 @@ const StyledFooter = styled.footer`
 `;
 
 const FooterInner = styled.div`
-    ${tw`container flex justify-between`}
+    ${tw`container flex justify-between flex-col md:flex-row px-5 md:px-0`}
 `;
 
 const FooterNav = styled.div`
-    ${tw`flex`}
+    ${tw`flex flex-col md:flex-row items-center md:items-start`}
 `;
 
 const ContactDiv = styled.div`
-    ${tw`flex flex-col mr-20`}
+    ${tw`flex flex-col mb-10 md:mr-20`}
 `;
 
 const StyledLogoLink = styled(Link)`
@@ -30,15 +30,17 @@ const StyledA = styled.a`
 `;
 
 const StyledUL = styled.ul`
-    ${tw`grid grid-cols-2 gap-x-10`}
+    ${tw`grid grid-cols-2 gap-x-10 mb-10 md:mb-0`}
 `;
 
+// link hover styles added as className, need to revisit
+// link hover state utility classes applied using className in jsx
 const StyledLink = styled(Link)`
-    ${tw`capitalize`}
+    ${tw`capitalize relative`}
 `;
 
 const StyledForm = styled.form`
-    ${tw`flex flex-col`}
+    ${tw`flex flex-col items-center md:items-end`}
 `;
 
 const FormHeading = styled.p`
@@ -54,7 +56,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-    ${tw`border border-2 border-white rounded-full self-end capitalize px-5 py-1 text-center text-lg hover:bg-brand-6 hover:border-brand-6 transition-colors`}
+    ${tw`border border-2 border-white rounded-full self-center md:self-end capitalize px-5 py-1 text-center text-lg hover:bg-brand-6 hover:border-brand-6 transition-colors`}
 `;
 
 // todo: confirm mobile layout
@@ -102,7 +104,9 @@ export default function Footer() {
     const links = content.internalLinks.map((item) => {
         return (
             <li key={item.text}>
-                <StyledLink to={item.link}>{item.text}</StyledLink>
+                <StyledLink className="link hover:link-hover" to={item.link}>
+                    {item.text}
+                </StyledLink>
             </li>
         );
     });
