@@ -6,6 +6,7 @@ import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
 import Logo from './logos/horizontal';
+import Hamburger from './icons/hamburger';
 
 const StyledHeader = styled.header`
     ${tw`fixed transition w-full z-10`}
@@ -18,7 +19,7 @@ const CtaBar = styled.div`
 `;
 
 const StyledNav = styled.nav`
-    ${tw`container flex justify-between py-3`}
+    ${tw`container flex justify-between py-3 relative px-4 md:px-0`}
 `;
 
 const StyledLogoLink = styled(Link)`
@@ -26,7 +27,22 @@ const StyledLogoLink = styled(Link)`
 `;
 
 const StyledUL = styled.ul`
-    ${tw`flex items-center`}
+    ${tw`hidden md:flex flex-row items-center`}
+`;
+
+const MobileNavButton = styled.button`
+    ${tw`absolute md:hidden h-12 w-12 right-0 top-1/2 transform -translate-y-1/2 -translate-x-4`}
+`;
+
+const MobileNav = styled.ul`
+    ${tw`absolute right-0 md:hidden flex flex-col items-end transform-gpu transition top-full bg-white p-10 text-brand-1`}
+
+    transform: ${(props) =>
+        props.isNavOpen ? `translateX(0)` : `translateX(100%)`}
+`;
+
+const MobileNavLI = styled.li`
+    ${tw`ml-8 capitalize font-wt-bold text-lg transition-colors duration-700 ease-in-out relative text-current`}
 `;
 
 // link hover state utility classes applied as className on gatsby Link component
@@ -65,6 +81,7 @@ const nav = [
 
 export default function Header({ isIndexPage }) {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleScroll = () => {
         if (window.scrollY > 10) {
@@ -72,6 +89,10 @@ export default function Header({ isIndexPage }) {
         } else {
             setIsScrolled(false);
         }
+    };
+
+    const handleNavToggle = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     useEffect(() => {
@@ -96,6 +117,15 @@ export default function Header({ isIndexPage }) {
         );
     });
 
+    const mobileNavItems = nav.map((item) => {
+        return (
+            <MobileNavLI key={item.text}>
+                <Link className="link hover:link-hover" to={item.link}>
+                    {item.text}
+                </Link>
+            </MobileNavLI>
+        );
+    });
     return (
         <StyledHeader isScrolled={isScrolled}>
             <CtaBar />
@@ -103,6 +133,12 @@ export default function Header({ isIndexPage }) {
                 <StyledLogoLink to="/">
                     <Logo />
                 </StyledLogoLink>
+                <MobileNavButton onClick={handleNavToggle}>
+                    <Hamburger />
+                </MobileNavButton>
+                <MobileNav isNavOpen={isMobileMenuOpen}>
+                    {mobileNavItems}
+                </MobileNav>
                 <StyledUL>{navItems}</StyledUL>
             </StyledNav>
         </StyledHeader>
