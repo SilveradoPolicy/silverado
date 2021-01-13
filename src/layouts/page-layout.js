@@ -55,17 +55,22 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'SukhumvitReg'
     }
 `;
-export default function Layout({ children }) {
+export default function Layout({ children, isIndexPage }) {
     return (
         <>
             <GlobalStyles />
-            <Header />
+            <Header isIndexPage={isIndexPage} />
             <main>{children}</main>
             <Footer />
         </>
     );
 }
 
+Layout.defaultProps = {
+    isIndexPage: false,
+};
+
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
+    isIndexPage: PropTypes.bool,
 };
