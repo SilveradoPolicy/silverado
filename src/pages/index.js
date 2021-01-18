@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import IndexHero from '../components/indexHero';
 import IndexSubHero from '../components/indexSubHero';
-import FullWidthImage from '../components/fullWidthImage';
+import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 import Pillars from '../components/pillars';
 
@@ -43,7 +43,7 @@ export default function IndexPage({ data }) {
         <Layout isIndexPage>
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
-            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
+            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
             <CopyWithCTA content={content.copy1}  hasTopTransition={false} />
             <Pillars hasTopTransition />
             <CopyWithCTA content={content.copy2} hasBgGradient hasTopTransition />

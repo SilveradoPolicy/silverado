@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import Pillars from '../components/pillars';
-import FullWidthImage from '../components/fullWidthImage';
+import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
@@ -35,7 +35,7 @@ export default function InitiativesPage({ data }) {
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <Pillars hasTopGradient />
-            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={fullWidthImage} hasCurvedTransition />
+            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={fullWidthImage} hasCurvedTransition />
             <CopyWithCTA content={content.copy} hasBgGradient />
         </Layout>
     );
