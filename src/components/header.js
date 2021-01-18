@@ -33,7 +33,7 @@ const nav = [
     },
     {
         text: 'ideas',
-        link: '/',
+        link: '/ideas',
     },
     {
         text: 'about',
