@@ -79,6 +79,7 @@ export default function MobileNav({
                     return (
                         <MobileNavLI key={item.text}>
                             <Link
+                                activeClassName="link-active"
                                 className="link hover:link-hover"
                                 to={item.link}
                             >
