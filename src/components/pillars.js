@@ -6,9 +6,10 @@ import tw from 'twin.macro';
 import EcoSecIcon from './icons/ecoSec';
 import InternationalTradeAndSecurityIcon from './icons/internationalTradeAndSecurity';
 import CybersecurityIcon from './icons/cybersecurity';
+import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`py-20`}
+    ${tw`relative py-32`}
     background: ${(props) =>
         props.gradient
             ? `linear-gradient(180deg, #EDF8F8 0%, rgba(237, 248, 248, 0) 100%);`
@@ -31,9 +32,10 @@ const Body = styled.p`
     ${tw`text-brand-1 text-lg`}
 `;
 
-export default function Pillars({ hasTopGradient }) {
+export default function Pillars({ hasTopGradient, hasTopTransition }) {
     return (
         <StyledSection gradient={hasTopGradient}>
+            {hasTopTransition && <ParallelTransition />}
             <Grid>
                 <Card>
                     <EcoSecIcon />
@@ -66,8 +68,10 @@ export default function Pillars({ hasTopGradient }) {
 
 Pillars.defaultProps = {
     hasTopGradient: false,
+    hasTopTransition: false,
 };
 
 Pillars.propTypes = {
     hasTopGradient: PropTypes.bool,
+    hasTopTransition: PropTypes.bool,
 };
