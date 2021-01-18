@@ -35,7 +35,7 @@ export default function InitiativesPage({ data }) {
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <Pillars hasTopGradient />
-            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={fullWidthImage} />
+            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={fullWidthImage} hasCurvedTransition />
             <CopyWithCTA content={content.copy} hasBgGradient />
         </Layout>
     );

@@ -43,10 +43,10 @@ export default function IndexPage({ data }) {
         <Layout isIndexPage>
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
-            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} />
-            <CopyWithCTA content={content.copy1} />
-            <Pillars />
-            <CopyWithCTA content={content.copy2} hasBgGradient />
+            <FullWidthImage heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
+            <CopyWithCTA content={content.copy1}  hasTopTransition={false} />
+            <Pillars hasTopTransition />
+            <CopyWithCTA content={content.copy2} hasBgGradient hasTopTransition />
         </Layout>
     );
 }

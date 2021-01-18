@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import CtaLink from './ctaLink';
+import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`py-20`}
+    ${tw`py-32 relative`}
     background: ${(props) =>
         props.bgGradient
             ? `linear-gradient(180deg, rgba(115, 150, 99, 0) 0%, rgba(115, 150, 99, 0.37) 100%);`
@@ -24,13 +25,18 @@ const StyledBody = styled.p`
     ${tw`max-w-prose mb-6 mx-auto text-center text-lg`}
 `;
 
-export default function CopyWithCTA({ content, hasBgGradient }) {
+export default function CopyWithCTA({
+    content,
+    hasBgGradient,
+    hasTopTransition,
+}) {
     const { text } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
     const { cta } = content;
 
     return (
         <StyledSection bgGradient={hasBgGradient}>
+            {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
                 <StyledBody>{text}</StyledBody>
                 {hasCta && <CtaLink cta={cta} />}
@@ -41,6 +47,7 @@ export default function CopyWithCTA({ content, hasBgGradient }) {
 
 CopyWithCTA.defaultProps = {
     hasBgGradient: false,
+    hasTopTransition: false,
 };
 
 // todo: update proptypes after sanity integration, should cover more that just object
@@ -48,4 +55,5 @@ CopyWithCTA.defaultProps = {
 CopyWithCTA.propTypes = {
     content: PropTypes.object.isRequired,
     hasBgGradient: PropTypes.bool,
+    hasTopTransition: PropTypes.bool,
 };
