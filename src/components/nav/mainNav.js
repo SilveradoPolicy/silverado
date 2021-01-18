@@ -31,7 +31,11 @@ export default function MainNav({ isIndexPage, isScrolled, navItems }) {
                         isScrolled={isScrolled}
                         key={item.text}
                     >
-                        <Link className="link hover:link-hover" to={item.link}>
+                        <Link
+                            activeClassName="link-active"
+                            className="link hover:link-hover"
+                            to={item.link}
+                        >
                             {item.text}
                         </Link>
                     </StyledLI>
