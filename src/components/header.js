@@ -37,7 +37,7 @@ const nav = [
     },
     {
         text: 'about',
-        link: '/',
+        link: '/about',
     },
     {
         text: `what's happening`,
