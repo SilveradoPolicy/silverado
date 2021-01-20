@@ -8,6 +8,7 @@ import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import FullWidthImage from '../components/fullWidthImage';
 import AdvisoryBoard from '../components/advisoryBoard';
+import StrategicCouncil from '../components/strategicCouncil';
 
 const content = {
     hero: {
@@ -24,6 +25,7 @@ export default function AboutPage({ data }) {
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <FullWidthImage image={heroImage}/>
             <AdvisoryBoard team={advisoryBoard}/>
+            <StrategicCouncil honoraryMembers={advisoryBoard} />
         </Layout>
     );
 }
