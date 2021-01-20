@@ -9,11 +9,19 @@ import AltHero from '../components/altHero';
 import FullWidthImage from '../components/fullWidthImage';
 import AdvisoryBoard from '../components/advisoryBoard';
 import StrategicCouncil from '../components/strategicCouncil';
+import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
     hero: {
         body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.`,
         heading: 'About Headline',
+    },
+    ctasection: {
+        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        cta: {
+            link: '/',
+            text: 'learn more',
+        },
     },
 };
 
@@ -26,6 +34,7 @@ export default function AboutPage({ data }) {
             <FullWidthImage image={heroImage}/>
             <AdvisoryBoard team={advisoryBoard}/>
             <StrategicCouncil honoraryMembers={advisoryBoard} />
+            <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
         </Layout>
     );
 }
