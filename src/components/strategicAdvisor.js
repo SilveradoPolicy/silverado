@@ -16,7 +16,6 @@ export default function StrategicAdvisor() {
         <div>
             <StyledName>first last name</StyledName>
             <StyledTitle>title</StyledTitle>
-            <StyledTitle>pillar</StyledTitle>
         </div>
     );
 }
