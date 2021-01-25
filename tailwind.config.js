@@ -10,6 +10,7 @@ module.exports = {
                 'brand-4': '#C4E7E7',
                 'brand-5': '#A3C1BF',
                 'brand-6': '#FCAF1B',
+                'brand-7': '#FFFFFF'
             },
             fontSize: {
                 'ts-h1': ['2.986rem', '3rem'],
