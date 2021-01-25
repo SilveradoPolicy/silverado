@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 `;
 
 const Wrapper = styled.div`
-    ${tw`container transform transform-gpu -translate-y-1/4`}
+    ${tw`container px-4 md:px-0 transform transform-gpu -translate-y-1/4`}
 `;
 
 export default function FullWidthImage({ image }) {

@@ -17,7 +17,7 @@ const StyledSection = styled.section`
 `;
 
 const Grid = styled.div`
-    ${tw`container gap-10 grid grid-cols-1 md:grid-cols-3`}
+    ${tw`container px-4 md:px-0 gap-10 grid grid-cols-1 md:grid-cols-3`}
 `;
 
 const Card = styled.div`

@@ -13,7 +13,7 @@ const StyledSection = styled.section`
 `;
 
 const GridWrapper = styled.div`
-    ${tw`container grid grid-cols-1 lg:grid-cols-2 gap-10`}
+    ${tw`container px-4 md:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10`}
 `;
 
 const StyledHeading = styled.h2`
