@@ -18,30 +18,30 @@ const content = {
             'TBD',
         listItems: [
             {
-                text: '-Diagnostic: Does it identify a discrete policy challenge or failure?',
+                text: 'Diagnostic: Does it identify a discrete policy challenge or failure?',
             },
             {
-                text: '-Solution-oriented: Does it offer a focused solution to that problem?',
-            },
-            {
-                text:
-                    '-Inventive: Does it present a creative or unconventional approach to a policy challenge?',
-            },
-            {
-                text: '-Actionable: Does it include a clear path towards implementation?',
-            },
-            {
-                text: '-Bipartisan: Can it draw support from across the political spectrum?',
+                text: 'Solution-oriented: Does it offer a focused solution to that problem?',
             },
             {
                 text:
-                    '-Empirical: Can its influence be observed and measured?',
+                    'Inventive: Does it present a creative or unconventional approach to a policy challenge?',
             },
             {
-                text: '-Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+                text: 'Actionable: Does it include a clear path towards implementation?',
             },
             {
-                text: '-Scalable: Can its scope be broadened to address related policy challenges?',
+                text: 'Bipartisan: Can it draw support from across the political spectrum?',
+            },
+            {
+                text:
+                    'Empirical: Can its influence be observed and measured?',
+            },
+            {
+                text: 'Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+            },
+            {
+                text: 'Scalable: Can its scope be broadened to address related policy challenges?',
             },
         ],
     },
