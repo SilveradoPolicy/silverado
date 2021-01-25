@@ -9,39 +9,39 @@ import ListComponent from '../components/listComponent';
 
 const content = {
     hero: {
-        body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.`,
-        heading: 'Ideas Headline',
+        body: `No one has a monopoly on solutions to the complex global challenges. At Silverado, we aim to be both a cultivator of bold news policy solutions and a conduit that connects existing policy ideas with the resources and expertise they need to become concrete solutions. In the coming months, we will convene a series of public roundtable discussions where policy experts, stakeholders, and government officials will analyze pressing geopolitical challenges and work to reach consensus on actionable solutions. In [month], we will launch our inaugural ideas competition to solicit policy proposals for our first round of targeted acceleration.`,
+        heading: 'From Ideas to Implementation',
     },
     listContent: {
-        heading: 'how accelerators work',
+        heading: 'What are the characteristics of a Silverado Idea?',
         body:
-            'Silverado Policy Accelerator launched for this very purpose - to apply a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented.',
+            'TBD',
         listItems: [
             {
-                text: '1 A short item',
+                text: '-Diagnostic: Does it identify a discrete policy challenge or failure?',
             },
             {
-                text: '2 A longer list item',
-            },
-            {
-                text:
-                    '3 Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
-            },
-            {
-                text: '4 A longer list item',
-            },
-            {
-                text: '5 A short item',
+                text: '-Solution-oriented: Does it offer a focused solution to that problem?',
             },
             {
                 text:
-                    '6 Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+                    '-Inventive: Does it present a creative or unconventional approach to a policy challenge?',
             },
             {
-                text: '7 A longer list item ',
+                text: '-Actionable: Does it include a clear path towards implementation?',
             },
             {
-                text: '8 A longer list item ',
+                text: '-Bipartisan: Can it draw support from across the political spectrum?',
+            },
+            {
+                text:
+                    '-Empirical: Can its influence be observed and measured?',
+            },
+            {
+                text: '-Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+            },
+            {
+                text: '-Scalable: Can its scope be broadened to address related policy challenges?',
             },
         ],
     },

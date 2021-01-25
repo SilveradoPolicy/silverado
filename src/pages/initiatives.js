@@ -20,7 +20,7 @@ const content = {
         body: 'Our accelerator model seeds good ideas into action-oriented policy initiatives. Like the terrior, sunshine, and rain that create world-class wines along Napa Valley\'s Silverado Trail, Silverado\'s accelerator model includes three modalities to cultivate a leading vision for the United States. ',
     },
     copy: {
-        text: 'Realizing a comprehensive American strategy to address twenty-first century geopolitical challenges will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21c race to the top.  iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        text: 'Realizing a comprehensive American strategy to address twenty-first century geopolitical challenges will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21c race to the top.',
         cta: {
             link: '/',
             text: 'learn more',

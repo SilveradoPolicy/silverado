@@ -13,8 +13,8 @@ import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
     hero: {
-        body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.`,
-        heading: 'About Headline',
+        body: `Facilitating a future defined by enduring American prosperity and global competitivess through investment in the acceleration of bipartisan economic, strategic, and technological policy solutions.`,
+        heading: 'Mission',
     },
     ctasection: {
         text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
