@@ -41,7 +41,7 @@ const nav = [
     },
     {
         text: `what's happening`,
-        link: '/',
+        link: '/events',
     },
 ];
 export default function Header({ isIndexPage }) {
