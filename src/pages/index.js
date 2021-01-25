@@ -10,6 +10,7 @@ import IndexSubHero from '../components/indexSubHero';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 import Pillars from '../components/pillars';
+import EventList from '../components/eventList';
 
 const content = {
     heroLink: {
@@ -41,6 +42,7 @@ export default function IndexPage({ data }) {
 
     return (
         <Layout isIndexPage>
+            <EventList />
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
             <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
