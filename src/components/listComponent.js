@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 `;
 
 const GridWrapper = styled.div`
-    ${tw`container`}
+    ${tw`container px-5 md:px-0`}
 `;
 
 const StyledHeading = styled.h2`
