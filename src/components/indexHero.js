@@ -29,7 +29,7 @@ export default function IndexHero({ cta, heroImage }) {
     return (
         <StyledBgImage fluid={fluid} Tag="section">
             <HeroInnerContainer>
-                <Heading>Igniting a 21c Race to the Top</Heading>
+                <Heading>Accelerating a 21c race to the top</Heading>
                 <Body>
                     A future defined by enduring American prosperity and global
                     competitiveness through venture in the acceleration of

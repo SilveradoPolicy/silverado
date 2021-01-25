@@ -12,15 +12,15 @@ import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
     hero: {
-        body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.`,
-        heading: 'Great Power Competition Headline',
+        body: `We have reached an inflection point. Thirty years after the end of the Cold War, the United States and its allies have entered into a new era of geopolitical competition with ascendant powers. This new era of competition has challenged foundational ideas and institutions of the post-World War II global order: multilaterialism, market liberalism, and even democracy itself. At the dawn of this new era, the United States has the economic, technological, and strategic power to compete and lead on the global stage. Now, we needs a long-term strategic vision to address the three pivotal challenges of the twenty-first century. `,
+        heading: 'A New Era of Great Power Competition',
     },
     fullWidthImage: {
-        heading: 'how accelerators work',
-        body: 'Silverado Policy Accelerator launched for this very purpose - to apply a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented.',
+        heading: 'Sowing a new strategic vision',
+        body: 'Our accelerator model seeds good ideas into action-oriented policy initiatives. Like the terrior, sunshine, and rain that create world-class wines along Napa Valley\'s Silverado Trail, Silverado\'s accelerator model includes three modalities to cultivate a leading vision for the United States. ',
     },
     copy: {
-        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        text: 'Realizing a comprehensive American strategy to address twenty-first century geopolitical challenges will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21c race to the top.',
         cta: {
             link: '/',
             text: 'learn more',
