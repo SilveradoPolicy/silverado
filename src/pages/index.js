@@ -17,7 +17,7 @@ const content = {
         text: 'learn more',
     },
     subHero: {
-        heading: `Facilitating a future defined by enduring American prosperity and global competitivess through investment in the acceleration of bipartisan economic, strategic, and technological policy solutions.  (Forging a new path toward domestic prosperity and global competitiveness by accelerating policy solutions to key economic, strategic and technological challenges.)`,
+        heading: `Forging a new path toward domestic prosperity and global competitiveness by accelerating policy solutions to key economic, strategic and technological challenges.`,
         body: `The race is on. The world is competing for the newest technologies, the smartest economies, and the broadest sphere of influence. At this pivotal moment of geopolitical competition, nations that assert bold long-term strategies will shape the global order for decades to come. America can't afford to sit on the sidelines. It's time for the U.S. to chart a course toward economic prosperity at home and competitivess on the world stage.`,
     },
     fullWidthImage: {
