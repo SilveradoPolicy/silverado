@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 // todo: add bg color as prop defined in sanity?
 
 const StyledLink = styled(Link)`
-    ${tw`bg-brand-1 border border-2 border-brand-1 capitalize cursor-pointer mt-8 inline-block px-5 py-1 rounded-full text-center text-2xl text-brand-7 hover:bg-brand-6 hover:border-brand-6 transition-colors`}
+    ${tw`bg-brand-1 border border-2 border-brand-1 capitalize cursor-pointer mt-8 inline-block px-5 py-1 rounded-full text-center text-2xl text-white hover:bg-brand-6 hover:border-brand-6 transition-colors`}
 `;
 
 export default function CtaLink({ cta }) {
