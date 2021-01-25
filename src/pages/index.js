@@ -38,14 +38,14 @@ const content = {
 }
 
 export default function IndexPage({ data }) {
-    const { heroImage, accImage } = data;
+    const { heroImage } = data;
 
     return (
         <Layout isIndexPage>
             <EventList />
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
-            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={accImage} hasParalledTransition />
+            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
             <CopyWithCTA content={content.copy1}  hasTopTransition={false} />
             <Pillars hasTopTransition />
             <CopyWithCTA content={content.copy2} hasBgGradient hasTopTransition />
@@ -62,19 +62,11 @@ export const query = graphql`
                 }
             }
         }
-        accImage: file(relativePath: {regex: "/homepageAcc/"}) {
-            childImageSharp {
-                fluid(maxWidth: 2000) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
     }
 `;
 
 IndexPage.propTypes = {
     data: PropTypes.shape({
         heroImage: PropTypes.object.isRequired,
-        accImage: PropTypes.object.isRequired,
     }).isRequired
 }
