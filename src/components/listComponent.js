@@ -16,7 +16,7 @@ const GridWrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-bold mb-6 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`capitalize font-wt-bold mb-6 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`

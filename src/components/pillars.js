@@ -25,7 +25,7 @@ const Card = styled.div`
 `;
 
 const Heading = styled.h3`
-    ${tw`font-bold max-w-prose mt-5 text-brand-1 text-ts-h4`}
+    ${tw`font-wt-bold max-w-prose mt-5 text-brand-1 text-ts-h4`}
 `;
 
 const Body = styled.p`
