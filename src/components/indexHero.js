@@ -11,7 +11,7 @@ const StyledBgImage = styled(BackgroundImage)`
 `;
 
 const HeroInnerContainer = styled.div`
-    ${tw`container px-4 md:px-0`}
+    ${tw`container px-5 md:px-0`}
 `;
 
 const Heading = styled.h1`
