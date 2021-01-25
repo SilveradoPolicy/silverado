@@ -17,7 +17,7 @@ const GridWrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-bold max-w-prose text-ts-h4 text-brand-1`}
+    ${tw`font-wt-bold max-w-prose text-ts-h4 text-brand-1`}
 `;
 
 const StyledBody = styled.p`
