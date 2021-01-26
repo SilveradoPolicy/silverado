@@ -43,7 +43,7 @@ export default function InitiativesPage({ data }) {
 
 export const query = graphql`
     query InitiativePageQuery {
-        fullWidthImage: file(relativePath: {regex: "/heroImage/"}) {
+        fullWidthImage: file(relativePath: {regex: "/homepageAcc/"}) {
             childImageSharp {
                 fluid(maxWidth: 2000) {
                     ...GatsbyImageSharpFluid
