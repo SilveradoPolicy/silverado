@@ -8,7 +8,7 @@ const StyledSection = styled.section`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-wt-bold mb-14 text-brand-1 text-center text-ts-h1`}
+    ${tw`font-wt-bold mb-14 mt-24 text-brand-1 text-center text-ts-h1`}
 `;
 
 const Body = styled.p`

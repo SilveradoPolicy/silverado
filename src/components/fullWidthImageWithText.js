@@ -8,11 +8,11 @@ import CurvedTransition from './icons/curvedTransition';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`container px-5 md:px-0 my-24 pt-36 relative`}
+    ${tw`container px-5 md:px-0 my-24 pt-8 relative`}
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-6 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`capitalize font-wt-bold mb-6 pt-10 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
@@ -24,7 +24,7 @@ export default function FullWidthImageWithText({
     heading,
     image,
     hasCurvedTransition,
-    hasParallelTransition,
+    hasTopTransition,
 }) {
     const {
         childImageSharp: { fluid },
@@ -32,7 +32,7 @@ export default function FullWidthImageWithText({
 
     return (
         <StyledSection>
-            {hasParallelTransition && <ParallelTransition />}
+            {hasTopTransition && <ParallelTransition />}
             {hasCurvedTransition && <CurvedTransition />}
             <StyledHeading>{heading}</StyledHeading>
             <StyledBody>{body}</StyledBody>
@@ -43,7 +43,7 @@ export default function FullWidthImageWithText({
 
 FullWidthImageWithText.defaultProps = {
     hasCurvedTransition: false,
-    hasParallelTransition: false,
+    hasTopTransition: false,
 };
 
 FullWidthImageWithText.propTypes = {
@@ -51,5 +51,5 @@ FullWidthImageWithText.propTypes = {
     heading: PropTypes.string.isRequired,
     image: PropTypes.object.isRequired,
     hasCurvedTransition: PropTypes.bool,
-    hasParallelTransition: PropTypes.bool,
+    hasTopTransition: PropTypes.bool,
 };
