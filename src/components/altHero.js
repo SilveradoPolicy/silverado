@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledSection = styled.section`
-    ${tw`h-screen md:h-3/4-screen flex flex-col justify-center text-white`}
+    ${tw`min-h-screen md:min-h-0 md:h-3/4-screen flex flex-col justify-center pb-8 text-white`}
 `;
 
 const Heading = styled.h1`
-    ${tw`font-wt-bold mb-14 mt-24 text-brand-1 text-center text-ts-h1`}
+    ${tw`font-wt-bold mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h1`}
 `;
 
 const Body = styled.p`
