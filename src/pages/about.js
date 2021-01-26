@@ -10,6 +10,7 @@ import FullWidthImage from '../components/fullWidthImage';
 import AdvisoryBoard from '../components/advisoryBoard';
 import StrategicCouncil from '../components/strategicCouncil';
 import CopyWithCTA from '../components/copyWithCTA';
+import Timeline from '../components/timeline';
 
 const content = {
     hero: {
@@ -32,6 +33,7 @@ export default function AboutPage({ data }) {
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <FullWidthImage image={heroImage}/>
+            <Timeline />
             <AdvisoryBoard team={advisoryBoard}/>
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
