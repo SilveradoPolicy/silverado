@@ -11,11 +11,11 @@ const StyledBgImage = styled(BackgroundImage)`
 `;
 
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0`}
+    ${tw`container px-5 md:px-0 text-brand-1`}
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6`}
+    ${tw`text-ts-h1 font-wt-bold mb-6 mt-24`}
 `;
 
 const Body = styled.p`
