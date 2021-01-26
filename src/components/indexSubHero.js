@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import ParallelTransition from './icons/parallelTransition';
-
 const StyledSection = styled.section`
-    ${tw`pb-28 pt-10`}
+    ${tw`pb-16 pt-10`}
     background: linear-gradient(
         180deg,
         #edf8f8 0%,
@@ -26,10 +24,9 @@ const StyledBody = styled.p`
     ${tw`max-w-prose text-lg`}
 `;
 
-export default function IndexSubHero({ body, heading, hasTopTransition }) {
+export default function IndexSubHero({ body, heading }) {
     return (
         <StyledSection>
-            {hasTopTransition && <ParallelTransition />}
             <GridWrapper>
                 <StyledHeading>{heading}</StyledHeading>
                 <StyledBody>{body}</StyledBody>
@@ -38,12 +35,7 @@ export default function IndexSubHero({ body, heading, hasTopTransition }) {
     );
 }
 
-IndexSubHero.defaultProps = {
-    hasTopTransition: false,
-};
-
 IndexSubHero.propTypes = {
     body: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
-    hasTopTransition: PropTypes.bool,
 };
