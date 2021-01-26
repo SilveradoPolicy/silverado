@@ -24,7 +24,6 @@ export default function FullWidthImageWithText({
     heading,
     image,
     hasCurvedTransition,
-    hasParallelTransition,
     hasTopTransition,
 }) {
     const {
@@ -33,7 +32,6 @@ export default function FullWidthImageWithText({
 
     return (
         <StyledSection>
-            {hasParallelTransition && <ParallelTransition />}
             {hasTopTransition && <ParallelTransition />}
             {hasCurvedTransition && <CurvedTransition />}
             <StyledHeading>{heading}</StyledHeading>
@@ -45,7 +43,6 @@ export default function FullWidthImageWithText({
 
 FullWidthImageWithText.defaultProps = {
     hasCurvedTransition: false,
-    hasParallelTransition: false,
     hasTopTransition: false,
 };
 
@@ -54,6 +51,5 @@ FullWidthImageWithText.propTypes = {
     heading: PropTypes.string.isRequired,
     image: PropTypes.object.isRequired,
     hasCurvedTransition: PropTypes.bool,
-    hasParallelTransition: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
 };
