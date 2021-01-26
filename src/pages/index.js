@@ -45,7 +45,7 @@ export default function IndexPage({ data }) {
             <EventList />
             <IndexHero heroImage={heroImage} cta={content.heroLink} />
             <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
-            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={accImage} hasParalledTransition hasTopTransition />
+            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={accImage} hasTopTransition />
             <CopyWithCTA content={content.copy1}  hasTopTransition={false} />
             <Pillars hasTopTransition />
             <CopyWithCTA content={content.copy2} hasBgGradient hasTopTransition />
