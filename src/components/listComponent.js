@@ -28,7 +28,7 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`font-wt-bold relative text-brand-1 text-ts-body pl-5`}
+    ${tw`font-wt-reg relative text-black text-ts-body pl-5`}
 
     &:before {
         background-color: var(--brand-1);
