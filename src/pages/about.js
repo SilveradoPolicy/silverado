@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
-// import FullWidthImage from '../components/fullWidthImage';
 import AdvisoryBoard from '../components/advisoryBoard';
 import StrategicCouncil from '../components/strategicCouncil';
 import CopyWithCTA from '../components/copyWithCTA';
@@ -16,16 +15,14 @@ const content = {
         body: `Facilitating a future defined by enduring American prosperity and global competitivess through investment in the acceleration of bipartisan economic, strategic, and technological policy solutions.`,
         heading: 'Mission Imperative',
     },
-    heroTwo: {
-        body: `Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California's workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.`,
+    subheading: {
         heading: 'Why "Silverado"?',
+        text: 'Silverado\'s name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California\'s Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California\'s workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley\'s wine country, offering a scenic view of world-class vineyards and the valley\'s magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.',
+    
     },
     ctasection: {
         text: 'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
-        // cta: {
-        //     link: '/',
-        //     text: 'learn more',
-        // },
+    
     },
 };
 
@@ -35,8 +32,7 @@ export default function AboutPage({ data }) {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <AltHero body={content.heroTwo.body} heading={content.heroTwo.heading} />
-            {/* <FullWidthImage image={heroImage}/> */}
+            <CopyWithCTA content={content.subheading} hasHeader/>
             <AdvisoryBoard team={advisoryBoard}/>
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
