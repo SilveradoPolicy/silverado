@@ -15,7 +15,7 @@ const HeroInnerContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6 mt-24`}
+    ${tw`text-ts-h1 text-brand-1 font-wt-bold mb-6 mt-24`}
 `;
 
 const Body = styled.p`
