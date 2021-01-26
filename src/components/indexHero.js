@@ -7,11 +7,11 @@ import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
 
 const StyledBgImage = styled(BackgroundImage)`
-    ${tw`h-3/4-screen flex flex-col justify-center text-white`}
+    ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
 `;
 
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0 text-brand-1`}
+    ${tw`container px-5 md:px-0`}
 `;
 
 const Heading = styled.h1`
