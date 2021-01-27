@@ -28,16 +28,17 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`font-wt-reg relative text-black text-ts-body pl-5`}
+    ${tw`font-wt-reg relative text-black text-ts-h6 pl-5`}
 
     &:before {
-        background-color: var(--brand-1);
+        background-color: #000000;
         content: '';
-        height: 0.5rem;
-        left: 0;
+        height: 0.25rem;
+        left: 0.5rem;
         position: absolute;
+        top: 0.5rem;
         transform: translateY(100%);
-        width: 0.5rem;
+        width: 0.25rem;
     }
 `;
 
