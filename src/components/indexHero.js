@@ -11,7 +11,7 @@ const StyledBgImage = styled(BackgroundImage)`
 `;
 
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0`}
+    ${tw`container px-5 md:px-0 text-brand-1`}
 `;
 
 const Heading = styled.h1`
@@ -22,12 +22,16 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ cta, heroImage }) {
-    const {
-        childImageSharp: { fluid },
-    } = heroImage;
+export default function IndexHero({ cta, heroImage, mobileHero }) {
+    const sources = [
+        mobileHero.childImageSharp.fluid,
+        {
+            ...heroImage.childImageSharp.fluid,
+            media: `(min-width: 768px)`,
+        },
+    ];
     return (
-        <StyledBgImage fluid={fluid} Tag="section">
+        <StyledBgImage fluid={sources} Tag="section">
             <HeroInnerContainer>
                 <Heading>Accelerating a 21c race to the top</Heading>
                 <Body>
@@ -51,6 +55,8 @@ IndexHero.defaultProps = {
 
 IndexHero.propTypes = {
     heroImage: PropTypes.object.isRequired,
+    mobileHero: PropTypes.object.isRequired,
+    sources: PropTypes.array.isRequired,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
