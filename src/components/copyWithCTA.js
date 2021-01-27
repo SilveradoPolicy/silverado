@@ -26,14 +26,14 @@ const StyledBody = styled.p`
 `;
 
 const StyledHeading = styled.h2`
-${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
+    ${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
 `
 
 export default function CopyWithCTA({
     content,
     hasBgGradient,
     hasTopTransition,
-    hasHeader,
+    hasHeading,
 }) {
     const { text, heading } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
@@ -43,7 +43,7 @@ export default function CopyWithCTA({
         <StyledSection bgGradient={hasBgGradient}>
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
-                {hasHeader && <StyledHeading>{heading}</StyledHeading>}
+                {hasHeading && <StyledHeading>{heading}</StyledHeading>}
                 <StyledBody>{text}</StyledBody>
                 {hasCta && <CtaLink cta={cta} />}
             </FlexWrapper>
@@ -54,7 +54,7 @@ export default function CopyWithCTA({
 CopyWithCTA.defaultProps = {
     hasBgGradient: false,
     hasTopTransition: false,
-    hasHeader: false,
+    hasHeading: false,
 };
 
 // todo: update proptypes after sanity integration, should cover more that just object
@@ -63,5 +63,5 @@ CopyWithCTA.propTypes = {
     content: PropTypes.object.isRequired,
     hasBgGradient: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
-    hasHeader: PropTypes.bool,
+    hasHeading: PropTypes.bool,
 };

@@ -32,7 +32,7 @@ export default function AboutPage({ data }) {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <CopyWithCTA content={content.subheading} hasHeader/>
+            <CopyWithCTA content={content.subheading} hasHeading />
             <AdvisoryBoard team={advisoryBoard}/>
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
