@@ -14,8 +14,6 @@ const content = {
     },
     listContent: {
         heading: 'What are the characteristics of a Silverado Idea?',
-        body:
-            'TBD',
         listItems: [
             {
                 text: 'Diagnostic: Does it identify a discrete policy challenge or failure?',
@@ -53,7 +51,6 @@ export default function IdeasPage() {
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <ListComponent
                 hasTopGradient
-                body={content.listContent.body}
                 heading={content.listContent.heading}
                 listItems={content.listContent.listItems}
             />
