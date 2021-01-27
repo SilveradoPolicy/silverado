@@ -21,10 +21,6 @@ const content = {
     },
     copy: {
         text: 'Realizing a comprehensive American strategy to address twenty-first century geopolitical challenges will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21c race to the top.',
-        cta: {
-            link: '/',
-            text: 'learn more',
-        },
     },
 };
 
