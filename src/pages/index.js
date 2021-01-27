@@ -42,8 +42,6 @@ const content = {
 
 export default function IndexPage({ data }) {
     const { heroImage, mobileHero, accImage } = data;
-
-    console.log(data);
     return (
         <Layout isIndexPage>
             <EventList />
@@ -91,7 +89,7 @@ export const query = graphql`
         }
         mobileHero: file(relativePath: { regex: "/mobileHero/" }) {
             childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 768) {
                     ...GatsbyImageSharpFluid
                 }
             }
