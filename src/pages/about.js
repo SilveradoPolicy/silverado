@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
-import FullWidthImage from '../components/fullWidthImage';
 import AdvisoryBoard from '../components/advisoryBoard';
 import StrategicCouncil from '../components/strategicCouncil';
 import CopyWithCTA from '../components/copyWithCTA';
@@ -14,24 +13,26 @@ import CopyWithCTA from '../components/copyWithCTA';
 const content = {
     hero: {
         body: `Facilitating a future defined by enduring American prosperity and global competitivess through investment in the acceleration of bipartisan economic, strategic, and technological policy solutions.`,
-        heading: 'Mission',
+        heading: 'Mission Imperative',
+    },
+    subheading: {
+        heading: 'Why "Silverado"?',
+        text: 'Silverado\'s name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California\'s Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California\'s workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley\'s wine country, offering a scenic view of world-class vineyards and the valley\'s magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.',
+    
     },
     ctasection: {
-        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-        cta: {
-            link: '/',
-            text: 'learn more',
-        },
+        text: 'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
+    
     },
 };
 
 export default function AboutPage({ data }) {
-    const { heroImage, dimitri, maureen, sarah, jessica } = data;
-    const advisoryBoard = [dimitri, maureen, sarah, jessica];
+    const { dimitri, maureen, sarah, jessica, robert } = data;
+    const advisoryBoard = [dimitri, maureen, sarah, jessica, robert];
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <FullWidthImage image={heroImage}/>
+            <CopyWithCTA content={content.subheading} hasHeading />
             <AdvisoryBoard team={advisoryBoard}/>
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
@@ -73,6 +74,14 @@ export const query = graphql`
             id
         }
         jessica: file(relativePath: {regex: "/jessica/"}) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            id
+        }
+        robert: file(relativePath: {regex: "/dimitri/"}) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
