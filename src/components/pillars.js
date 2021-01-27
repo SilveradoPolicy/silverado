@@ -41,7 +41,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                     <EcoSecIcon />
                     <Heading>EcoSec</Heading>
                     <Body>
-                    Foregrounding the nexus of economic and ecological risk and opportunity to meet the 21c [environment, climate, econ, jobs] 
+                    Foregrounding the nexus of economic and ecological risk and opportunity to meet the 21c climate imperative
                     </Body>
                 </Card>
                 <Card>

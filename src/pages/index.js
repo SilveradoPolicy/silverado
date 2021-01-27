@@ -18,18 +18,18 @@ const content = {
         text: 'learn more',
     },
     subHero: {
-        heading: `Forging a new path toward domestic prosperity and global competitiveness by accelerating policy solutions to key economic, strategic and technological challenges.`,
-        body: `The race is on. The world is competing for the newest technologies, the smartest economies, and the broadest sphere of influence. At this pivotal moment of geopolitical competition, nations that assert bold long-term strategies will shape the global order for decades to come. America can't afford to sit on the sidelines. It's time for the U.S. to chart a course toward economic prosperity at home and competitivess on the world stage.`,
+        heading: `Forging a path toward American prosperity and global competitivess through investment in bipartisan economic, strategic, and technological policy solutions.`,
+        body: `The race is on. As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitivess on the world stage.`,
     },
     fullWidthImage: {
         heading: 'What is the Silverado Policy Accelerator?',
         body: 'Silverado is a new addition to Washington\'s policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.',
     },
     copy1: {
-        text: 'The contest for twenty-first century global leadership is playing out in new arenas: in cyberspace, at the negotiating table, and through complex global supply chains. Silverado works at the intersection of three interrelated policy areas that will determine America\'s place in the world.',
+        text: 'The contest for twenty-first century global leadership is creating new challenges in cyberspace, at the negotiating table, and across complex global supply chains. Silverado works at the intersection of the three policy areas that will critically shape America\'s place in the world.',
     },
     copy2: {
-        text: 'Silverado\'s three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technology, strategic compeition?',
+        text: 'Silverado\'s three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technology, strategic competition? ',
         cta: {
             link: '/',
             text: 'learn more',

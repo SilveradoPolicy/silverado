@@ -27,8 +27,8 @@ const content = {
 };
 
 export default function AboutPage({ data }) {
-    const { dimitri, maureen, sarah, jessica, robert } = data;
-    const advisoryBoard = [dimitri, maureen, sarah, jessica, robert];
+    const { dimitri, maureen, sarah, jessica, ian } = data;
+    const advisoryBoard = [dimitri, maureen, sarah, jessica, ian];
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
@@ -81,7 +81,7 @@ export const query = graphql`
             }
             id
         }
-        robert: file(relativePath: {regex: "/dimitri/"}) {
+        ian: file(relativePath: {regex: "/dimitri/"}) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -99,5 +99,6 @@ AboutPage.propTypes = {
         maureen: PropTypes.object.isRequired,
         sarah: PropTypes.object.isRequired,
         jessica: PropTypes.object.isRequired,
+        ian: PropTypes.object.isRequired,
     }).isRequired
 }
