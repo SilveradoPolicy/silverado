@@ -9,7 +9,7 @@ import ListComponent from '../components/listComponent';
 
 const content = {
     hero: {
-        body: `No one has a monopoly on solutions to the complex global challenges. At Silverado, we aim to be both a cultivator of bold news policy solutions and a conduit that connects existing policy ideas with the resources and expertise they need to become concrete solutions. In the coming months, we will convene a series of public roundtable discussions where policy experts, stakeholders, and government officials will analyze pressing geopolitical challenges and work to reach consensus on actionable solutions. In [month], we will launch our inaugural ideas competition to solicit policy proposals for our first round of targeted acceleration.`,
+        body: `No one has a monopoly on solutions to complex global challenges. At Silverado, we believe that fundamental disagreement over questions of American policy is not only an inevitable byproduct of our democratic process; it is in fact an absolutely indispensable part of that process. Through a series of roundtable discussions leading up to our inaugural Ideas Competition, we're bringing together policy experts and stakeholders from different disciplines, industries, and political vantage-points to challenge entrenched ideas about American leadership and build consensus around new paths toward American prosperity and global competitiveness in the 21c.`,
         heading: 'From Ideas to Implementation',
     },
     listContent: {
