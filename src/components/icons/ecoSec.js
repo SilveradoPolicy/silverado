@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EcoSecIcon(props) {
+export default function EcoSecIcon() {
     return (
         <svg
           id="prefix__Layer_1"
@@ -10,7 +10,7 @@ export default function EcoSecIcon(props) {
           xmlSpace="preserve"
           width="87"
           height="87"
-          {...props}
+         
         >
           <style>
             {

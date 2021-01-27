@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function CybersecurityIcon(props) {
+export default function CybersecurityIcon() {
     return (
-        <svg viewBox="0 0 117.7 126.7" width="87" height="87" {...props}>
+        <svg viewBox="0 0 117.7 126.7" width="87" height="87">
           <style>
             {".prefix__st0{clip-path:url(#prefix__SVGID_2_);fill:#fcaf1b}"}
           </style>

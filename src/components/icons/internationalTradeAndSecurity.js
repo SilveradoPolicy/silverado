@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function InternationalTradeAndSecurityIcon(props) {
+export default function InternationalTradeAndSecurityIcon() {
     return (
-        <svg viewBox="0 0 117.7 126.7" width="87" height="87" {...props}>
+        <svg viewBox="0 0 117.7 126.7" width="87" height="87">
           <style>{".prefix__st4{fill:#56959e}"}</style>
           <g id="prefix__Layer_1">
             <g id="prefix__Trade">
