@@ -14,6 +14,7 @@ const content = {
     },
     listContent: {
         heading: 'What are the characteristics of a Silverado Idea?',
+        body: 'Have a creative policy idea that you\'re dying to share? Don\'t wait until the Ideas Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we\'ll share it here.',
         listItems: [
             {
                 text: 'Diagnostic: Does it identify a discrete policy challenge or failure?',
@@ -52,6 +53,7 @@ export default function IdeasPage() {
             <ListComponent
                 hasTopGradient
                 heading={content.listContent.heading}
+                body={content.listContent.body}
                 listItems={content.listContent.listItems}
             />
             <Pillars />
