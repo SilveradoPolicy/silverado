@@ -31,7 +31,7 @@ const StyledListItem = styled.li`
     ${tw`font-wt-reg relative text-black text-ts-h6 pl-5`}
 
     &:before {
-        background-color: #000000;
+        background-color: var(--black);
         content: '';
         height: 0.25rem;
         left: 0.5rem;
