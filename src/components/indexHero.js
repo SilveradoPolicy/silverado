@@ -5,6 +5,7 @@ import tw from 'twin.macro';
 
 import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
+import heroAnimation from '../components/heroAnimation';
 
 const StyledBgImage = styled(BackgroundImage)`
     ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
@@ -57,6 +58,7 @@ IndexHero.propTypes = {
     heroImage: PropTypes.object.isRequired,
     mobileHero: PropTypes.object.isRequired,
     sources: PropTypes.array.isRequired,
+    heroAnimation: PropTypes.object.isRequired,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
