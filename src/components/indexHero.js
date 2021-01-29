@@ -12,7 +12,7 @@ import HeroAnimation from '../components/heroAnimation';
 // `;
 
 const StyledSection = styled.section`
-    ${tw`h-screen lg:h-3/4-screen relative flex flex-col justify-center relative`}
+    ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center relative`}
 `;
 
 const AnimationWrapper = styled.div`
