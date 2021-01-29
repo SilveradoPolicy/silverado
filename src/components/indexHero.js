@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 `;
 
 const AnimationWrapper = styled.div`
-    ${tw``}
+    ${tw`h-96 w-full`}
 `;
 const HeroInnerContainer = styled.div`
     ${tw`container px-5 md:px-0 text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
