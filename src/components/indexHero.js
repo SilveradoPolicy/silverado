@@ -7,16 +7,12 @@ import tw from 'twin.macro';
 import CtaLink from './ctaLink';
 import HeroAnimation from '../components/heroAnimation';
 
-// const StyledBgImage = styled(BackgroundImage)`
-//     ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
-// `;
-
 const StyledSection = styled.section`
     ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center relative`}
 `;
 
 const AnimationWrapper = styled.div`
-    ${tw`absolute`}
+    ${tw`absolute max-w-full h-screen`}
 `;
 const HeroInnerContainer = styled.div`
     ${tw`container z-0 px-5 md:px-0 text-brand-1`}
