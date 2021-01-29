@@ -1,7 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
+// import styled from 'styled-components';
+// import tw from 'twin.macro';
 
 import heroAnimation from '../animations/Hero.json';
+
+// const AnimationStyle = styled.div`
+
+// `
 
 export default function HeroAnimation() {
     const heroAnimContainer = useRef(null);
@@ -17,9 +23,5 @@ export default function HeroAnimation() {
         return () => anim.destroy();
     }, []);
 
-    return (
-        <div className="animation">
-            <div className="animation-container" ref={heroAnimContainer} />
-        </div>
-    );
+    return <div className="animation-container" ref={heroAnimContainer} />;
 }
