@@ -8,14 +8,14 @@ import CtaLink from './ctaLink';
 import HeroAnimation from '../components/heroAnimation';
 
 const StyledSection = styled.section`
-    ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center relative`}
+    ${tw`flex flex-col justify-center relative`}
 `;
 
 const AnimationWrapper = styled.div`
-    ${tw`absolute max-w-full h-screen`}
+    ${tw``}
 `;
 const HeroInnerContainer = styled.div`
-    ${tw`container z-0 px-5 md:px-0 text-brand-1`}
+    ${tw`container px-5 md:px-0 text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
 `;
 
 const Heading = styled.h1`
