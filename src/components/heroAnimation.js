@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
+
 import heroAnimation from '../animations/Hero.json';
 
 export default function HeroAnimation() {

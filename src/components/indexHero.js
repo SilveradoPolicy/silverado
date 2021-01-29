@@ -3,16 +3,23 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import BackgroundImage from 'gatsby-background-image';
+// import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
-import heroAnimation from '../components/heroAnimation';
+import HeroAnimation from '../components/heroAnimation';
 
-const StyledBgImage = styled(BackgroundImage)`
-    ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
+// const StyledBgImage = styled(BackgroundImage)`
+//     ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
+// `;
+
+const StyledSection = styled.section`
+    ${tw`h-screen lg:h-3/4-screen relative flex flex-col justify-center relative`}
 `;
 
+const AnimationWrapper = styled.div`
+    ${tw`absolute`}
+`;
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0 text-brand-1`}
+    ${tw`container z-0 px-5 md:px-0 text-brand-1`}
 `;
 
 const Heading = styled.h1`
@@ -23,27 +30,32 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ cta, heroImage, mobileHero }) {
-    const sources = [
-        mobileHero.childImageSharp.fluid,
-        {
-            ...heroImage.childImageSharp.fluid,
-            media: `(min-width: 768px)`,
-        },
-    ];
+export default function IndexHero({ cta }) {
+    // const sources = [
+    //     mobileHero.childImageSharp.fluid,
+    //     {
+    //         ...heroImage.childImageSharp.fluid,
+    //         media: `(min-width: 768px)`,
+    //     },
+    // ];
     return (
-        <StyledBgImage fluid={sources} Tag="section">
-            <HeroInnerContainer>
-                <Heading>Accelerating a 21c race to the top</Heading>
-                <Body>
-                    A future defined by enduring American prosperity and global
-                    competitiveness through venture in the acceleration of
-                    bipartisan economic, strategic, and technological policy
-                    solutions.
-                </Body>
-                <CtaLink cta={cta} />
-            </HeroInnerContainer>
-        </StyledBgImage>
+        <>
+            <StyledSection>
+                <AnimationWrapper>
+                    <HeroAnimation />
+                </AnimationWrapper>
+                <HeroInnerContainer>
+                    <Heading>Accelerating a 21c race to the top</Heading>
+                    <Body>
+                        A future defined by enduring American prosperity and
+                        global competitiveness through venture in the
+                        acceleration of bipartisan economic, strategic, and
+                        technological policy solutions.
+                    </Body>
+                    <CtaLink cta={cta} />
+                </HeroInnerContainer>
+            </StyledSection>
+        </>
     );
 }
 
