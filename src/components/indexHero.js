@@ -56,7 +56,6 @@ IndexHero.defaultProps = {
 IndexHero.propTypes = {
     heroImage: PropTypes.object.isRequired,
     mobileHero: PropTypes.object.isRequired,
-    sources: PropTypes.array.isRequired,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),

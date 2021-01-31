@@ -27,7 +27,7 @@ const StyledBody = styled.p`
 
 const StyledHeading = styled.h2`
     ${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
-`
+`;
 
 export default function CopyWithCTA({
     content,

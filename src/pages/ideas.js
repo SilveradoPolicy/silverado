@@ -1,6 +1,4 @@
 import React from 'react';
-// import { graphql } from 'gatsby';
-// import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
@@ -14,33 +12,39 @@ const content = {
     },
     listContent: {
         heading: 'What are the characteristics of a Silverado Idea?',
-        body: 'Have a creative policy idea that you\'re dying to share? Don\'t wait until the Ideas Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we\'ll share it here.',
+        body:
+            "Have a creative policy idea that you're dying to share? Don't wait until the Ideas Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we'll share it here.",
         listItems: [
             {
-                text: 'Diagnostic: Does it identify a discrete policy challenge or failure?',
+                text:
+                    'Diagnostic: Does it identify a discrete policy challenge or failure?',
             },
             {
-                text: 'Solution-oriented: Does it offer a focused solution to that problem?',
+                text:
+                    'Solution-oriented: Does it offer a focused solution to that problem?',
             },
             {
                 text:
                     'Inventive: Does it present a creative or unconventional approach to a policy challenge?',
             },
             {
-                text: 'Actionable: Does it include a clear path towards implementation?',
-            },
-            {
-                text: 'Bipartisan: Can it draw support from across the political spectrum?',
+                text:
+                    'Actionable: Does it include a clear path towards implementation?',
             },
             {
                 text:
-                    'Empirical: Can its influence be observed and measured?',
+                    'Bipartisan: Can it draw support from across the political spectrum?',
             },
             {
-                text: 'Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+                text: 'Empirical: Can its influence be observed and measured?',
             },
             {
-                text: 'Scalable: Can its scope be broadened to address related policy challenges?',
+                text:
+                    'Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+            },
+            {
+                text:
+                    'Scalable: Can its scope be broadened to address related policy challenges?',
             },
         ],
     },
