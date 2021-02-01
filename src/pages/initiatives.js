@@ -17,10 +17,12 @@ const content = {
     },
     fullWidthImage: {
         heading: 'Sowing a new strategic vision',
-        body: 'Like the soil, sunshine, and rain that create world-class wines along Napa Valley\'s Silverado Trail, the three stages of our accelerator model allow good ideas to grow into action-oriented policy initiatives.',
+        body:
+            "Like the soil, sunshine, and rain that create world-class wines along Napa Valley's Silverado Trail, the three stages of our accelerator model allow good ideas to grow into action-oriented policy initiatives.",
     },
     copy: {
-        text: 'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
+        text:
+            'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
     },
 };
 
@@ -31,15 +33,20 @@ export default function InitiativesPage({ data }) {
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <Pillars hasTopGradient />
-            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={fullWidthImage} hasCurvedTransition />
-            <CopyWithCTA content={content.copy} hasBgGradient />
+            <FullWidthImageWithText
+                heading={content.fullWidthImage.heading}
+                body={content.fullWidthImage.body}
+                image={fullWidthImage}
+                hasCurvedTransition
+            />
+            <CopyWithCTA content={content.copy} hasBottomGradient />
         </Layout>
     );
 }
 
 export const query = graphql`
     query InitiativePageQuery {
-        fullWidthImage: file(relativePath: {regex: "/homepageAcc/"}) {
+        fullWidthImage: file(relativePath: { regex: "/homepageAcc/" }) {
             childImageSharp {
                 fluid(maxWidth: 2000) {
                     ...GatsbyImageSharpFluid
@@ -52,5 +59,5 @@ export const query = graphql`
 InitiativesPage.propTypes = {
     data: PropTypes.shape({
         fullWidthImage: PropTypes.object.isRequired,
-    }).isRequired
-}
+    }).isRequired,
+};
