@@ -27,11 +27,12 @@ const content = {
             "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
     },
     copy1: {
-
-        text: 'The contest for twenty-first century global leadership is creating new challenges in cyberspace, at the negotiating table, and across complex global supply chains. Silverado works at the intersection of the three policy areas that will critically shape America\'s place in the world.',
+        text:
+            "The contest for twenty-first century global leadership is creating new challenges in cyberspace, at the negotiating table, and across complex global supply chains. Silverado works at the intersection of the three policy areas that will critically shape America's place in the world.",
     },
     copy2: {
-        text: 'Silverado\'s three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technology, strategic competition? ',
+        text:
+            "Silverado's three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technology, strategic competition? ",
         cta: {
             link: '/',
             text: 'learn more',
@@ -63,7 +64,7 @@ export default function IndexPage({ data }) {
             <Pillars hasTopTransition />
             <CopyWithCTA
                 content={content.copy2}
-                hasBgGradient
+                hasBottomGradient
                 hasTopTransition
             />
         </Layout>
