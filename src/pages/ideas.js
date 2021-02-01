@@ -16,35 +16,40 @@ const content = {
             "Have a creative policy idea that you're dying to share? Don't wait until the Ideas Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we'll share it here.",
         listItems: [
             {
+                heading: 'Diagnostic',
                 text:
-                    'Diagnostic: Does it identify a discrete policy challenge or failure?',
+                    'Does it identify a discrete policy challenge or failure?',
             },
             {
-                text:
-                    'Solution-oriented: Does it offer a focused solution to that problem?',
+                heading: 'Solution-oriented',
+                text: 'Does it offer a focused solution to that problem?',
             },
             {
+                heading: 'Inventive',
                 text:
-                    'Inventive: Does it present a creative or unconventional approach to a policy challenge?',
+                    'Does it present a creative or unconventional approach to a policy challenge?',
             },
             {
-                text:
-                    'Actionable: Does it include a clear path towards implementation?',
+                heading: 'Actionable',
+                text: 'Does it include a clear path towards implementation?',
             },
             {
-                text:
-                    'Bipartisan: Can it draw support from across the political spectrum?',
+                heading: 'Bipartisan',
+                text: 'Can it draw support from across the political spectrum?',
             },
             {
-                text: 'Empirical: Can its influence be observed and measured?',
+                heading: 'Empirical',
+                text: 'Can its influence be observed and measured?',
             },
             {
+                heading: 'Integrative',
                 text:
-                    'Integrative: Does it intersect with more than one of Silverado’s three focus areas?',
+                    'Does it intersect with more than one of Silverado’s three focus areas?',
             },
             {
+                heading: 'Scalable',
                 text:
-                    'Scalable: Can its scope be broadened to address related policy challenges?',
+                    'Can its scope be broadened to address related policy challenges?',
             },
         ],
     },
