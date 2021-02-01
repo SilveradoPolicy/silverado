@@ -29,7 +29,7 @@ const Heading = styled.h3`
 `;
 
 const Body = styled.p`
-    ${tw`text-brand-1 text-lg`}
+    ${tw`text-black text-lg`}
 `;
 
 export default function Pillars({ hasTopGradient, hasTopTransition }) {
