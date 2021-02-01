@@ -11,7 +11,7 @@ import incubate from '../animations/Incubate.json';
 import InitiativesText from './initiativesText';
 
 const InitiativesWrapper = styled.div`
-    ${tw`container grid grid-cols-5 grid-rows-5 justify-center`}
+    ${tw`grid grid-cols-5 grid-rows-5 justify-center`}
 
     .icons {
         grid-column-start: 1;
@@ -27,7 +27,6 @@ const InitiativesWrapper = styled.div`
         grid-column: 2 / span 1;
         grid-row-start: 2;
         grid-row-end: 3;
-        margi
     }
     #incu {
         grid-column-start: 2;
@@ -52,7 +51,7 @@ const InitiativesWrapper = styled.div`
 
 export default function InitiativesAnimation() {
     const accelerateContainer = useRef(null);
-    // const cultivateContainer = useRef(null);
+    const cultivateContainer = useRef(null);
     const iconsContainer = useRef(null);
     const incubateContainer = useRef(null);
 
@@ -70,7 +69,7 @@ export default function InitiativesAnimation() {
             },
             {
                 visibility: [0.2, 0.45],
-                type: 'seek',
+                type: 'loop',
                 frames: [0, 45],
             },
             {
@@ -99,18 +98,21 @@ export default function InitiativesAnimation() {
     };
     return (
         <InitiativesWrapper className="initiative-container">
-            <Lottie
-                className="icons"
-                animationData={icons}
-                ref={iconsContainer}
-                style={style}
-            ></Lottie>
-            <Lottie
-                className="cultivate"
-                animationData={cultivate}
-                interactivity={interactivity}
-                style={style}
-            ></Lottie>
+            <span className="icons">
+                <Lottie
+                    animationData={icons}
+                    ref={iconsContainer}
+                    style={style}
+                    interactivity={interactivity}
+                ></Lottie>
+            </span>
+            <span className="cultivate">
+                <Lottie
+                    animationData={cultivate}
+                    interactivity={interactivity}
+                    style={style}
+                ></Lottie>
+            </span>
             <InitiativesText
                 id={content.cultivate.id}
                 heading={content.cultivate.heading}
@@ -121,19 +123,22 @@ export default function InitiativesAnimation() {
                 heading={content.incubate.heading}
                 body={content.incubate.body}
             />
-            <Lottie
-                className="incubate"
-                animationData={incubate}
-                ref={incubateContainer}
-                style={style}
-            ></Lottie>
-            <Lottie
-                animationData={accelerate}
-                ref={accelerateContainer}
-                interactivity={interactivity}
-                style={style}
-                className="accelerate"
-            ></Lottie>
+            <span className="incubate">
+                <Lottie
+                    animationData={incubate}
+                    ref={incubateContainer}
+                    style={style}
+                    interactivity={interactivity}
+                ></Lottie>
+            </span>
+            <span className="accelerate">
+                <Lottie
+                    animationData={accelerate}
+                    ref={accelerateContainer}
+                    interactivity={interactivity}
+                    style={style}
+                ></Lottie>
+            </span>
             <InitiativesText
                 id={content.accelerate.id}
                 heading={content.accelerate.heading}

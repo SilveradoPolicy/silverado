@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -34,6 +34,7 @@ export default function IndexHero({ cta }) {
     //         media: `(min-width: 768px)`,
     //     },
     // ];
+
     return (
         <>
             <StyledSection>
