@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledSection = styled.section`
-    ${tw`min-h-screen flex flex-col justify-center pb-8 text-white`}
+    ${tw`min-h-3/4-screen flex flex-col justify-center pb-8 text-white`}
 `;
 
 const Heading = styled.h1`
