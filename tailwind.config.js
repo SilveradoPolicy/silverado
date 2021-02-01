@@ -26,6 +26,9 @@ module.exports = {
             height: {
                 '3/4-screen': '75vh',
             },
+            minHeight: {
+                '3/4-screen': '75vh',
+            },
         },
         container: {
             center: true,
