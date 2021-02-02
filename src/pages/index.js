@@ -66,7 +66,7 @@ export default function IndexPage({ data }) {
             <Pillars hasTopTransition />
             <CopyWithCTA
                 content={content.copy2}
-                hasBgGradient
+                hasBottomGradient
                 hasTopTransition
             />
         </Layout>

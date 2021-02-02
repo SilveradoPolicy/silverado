@@ -17,7 +17,7 @@ const StyledSection = styled.section`
 `;
 
 const Grid = styled.div`
-    ${tw`container px-5 md:px-0 gap-10 grid grid-cols-1 md:grid-cols-3`}
+    ${tw`container px-5 lg:px-0 gap-10 grid grid-cols-1 md:grid-cols-3`}
 `;
 
 const Card = styled.div`
@@ -29,7 +29,7 @@ const Heading = styled.h3`
 `;
 
 const Body = styled.p`
-    ${tw`text-brand-1 text-lg`}
+    ${tw`text-black text-lg`}
 `;
 
 export default function Pillars({ hasTopGradient, hasTopTransition }) {
@@ -41,21 +41,25 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                     <EcoSecIcon />
                     <Heading>EcoSec</Heading>
                     <Body>
-                    Foregrounding the nexus of economic and ecological risk and opportunity to meet the 21c climate imperative
+                        Foregrounding the nexus of economic and ecological risk
+                        and opportunity to meet the 21c climate imperative
                     </Body>
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
                     <Heading>Trade and Industrial Security</Heading>
                     <Body>
-                    Supporting American workers, securing America&#39;s supply chains, and advancing equitable trade practices
+                        Supporting American workers, securing America&#39;s
+                        supply chains, and advancing equitable trade practices
                     </Body>
                 </Card>
                 <Card>
                     <CybersecurityIcon />
                     <Heading>Cybersecurity</Heading>
                     <Body>
-                    Modernizing America&#39;s cyber infrastructure, defending against new forms of cyber warfare, and protecting American intellectual property 
+                        Modernizing America&#39;s cyber infrastructure,
+                        defending against new forms of cyber warfare, and
+                        protecting American intellectual property
                     </Body>
                 </Card>
             </Grid>

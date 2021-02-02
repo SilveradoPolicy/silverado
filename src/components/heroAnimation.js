@@ -33,7 +33,6 @@ export default function HeroAnimation() {
             loop: true,
             autoplay: true,
         });
-        console.log(anim.animationData);
 
         return () => anim.destroy();
     }, [activeAnimationFile]);

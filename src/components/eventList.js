@@ -16,7 +16,7 @@ const ToggleButton = styled.button`
 `;
 
 const InnerContainer = styled.div`
-    ${tw`container px-5 md:px-0 flex justify-end relative -ml-4 xl:ml-0`}
+    ${tw`container px-5 lg:px-0 flex justify-end relative mx-auto`}
 `;
 
 const StyledDiv = styled.div`

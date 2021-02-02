@@ -12,15 +12,17 @@ const StyledSection = styled.section`
 `;
 
 const GridWrapper = styled.div`
-    ${tw`container px-5 md:px-0`}
+    ${tw`container px-5 lg:px-0`}
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-6 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`capitalize font-wt-bold mb-4 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-6 mx-auto`}
+    ${tw`mb-10 mx-auto text-center text-ts-h6`}
+
+    max-width: 85ch;
 `;
 
 const StyledList = styled.ul`
@@ -28,18 +30,13 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`font-wt-reg relative text-black text-ts-h6 pl-5`}
+    ${tw`font-wt-reg relative text-black text-ts-h6`}
 
-    &:before {
-        background-color: var(--black);
-        content: '';
-        height: 0.25rem;
-        left: 0.5rem;
-        position: absolute;
-        top: 0.5rem;
-        transform: translateY(100%);
-        width: 0.25rem;
-    }
+    line-height: 38.4px;
+`;
+
+const StyledListBold = styled(StyledListItem)`
+    ${tw`font-wt-bold inline`}
 `;
 
 export default function ListComponent({
@@ -55,7 +52,14 @@ export default function ListComponent({
                 <StyledBody>{body}</StyledBody>
                 <StyledList>
                     {listItems.map((item) => {
-                        return <StyledListItem>{item.text}</StyledListItem>;
+                        return (
+                            <StyledListItem>
+                                <StyledListBold>
+                                    {`${item.heading}: `}
+                                </StyledListBold>
+                                {item.text}
+                            </StyledListItem>
+                        );
                     })}
                 </StyledList>
             </GridWrapper>

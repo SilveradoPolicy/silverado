@@ -51,7 +51,7 @@ const InitiativesWrapper = styled.div`
 
 export default function InitiativesAnimation() {
     const accelerateContainer = useRef(null);
-    const cultivateContainer = useRef(null);
+    // const cultivateContainer = useRef(null); // is this not being used?
     const iconsContainer = useRef(null);
     const incubateContainer = useRef(null);
 
