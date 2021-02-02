@@ -30,9 +30,10 @@ module.exports = {
                 '3/4-screen': '75vh',
             },
         },
-        container: {
+        container: (theme) => ({
             center: true,
-        },
+            padding: theme('spacing.5'),
+        }),
         fontFamily: {
             'wt-thin': 'SukhumvitThin',
             'wt-reg': 'SukhumvitReg',
