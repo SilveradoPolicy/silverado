@@ -8,7 +8,7 @@ import CtaLink from './ctaLink';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`py-16 relative`}
+    ${tw`pb-16 pt-32 relative`}
     background: ${(props) =>
         props.bottomGradient
             ? `linear-gradient(180deg, rgba(115, 150, 99, 0) 0%, rgba(115, 150, 99, 0.37) 100%);`
