@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -51,7 +51,7 @@ const InitiativesWrapper = styled.div`
 
 export default function InitiativesAnimation() {
     const accelerateContainer = useRef(null);
-    const cultivateContainer = useRef(null);
+    // const cultivateContainer = useRef(null); // is this not being used?
     const iconsContainer = useRef(null);
     const incubateContainer = useRef(null);
 
@@ -104,14 +104,14 @@ export default function InitiativesAnimation() {
                     ref={iconsContainer}
                     style={style}
                     interactivity={interactivity}
-                ></Lottie>
+                />
             </span>
             <span className="cultivate">
                 <Lottie
                     animationData={cultivate}
                     interactivity={interactivity}
                     style={style}
-                ></Lottie>
+                />
             </span>
             <InitiativesText
                 id={content.cultivate.id}
@@ -129,7 +129,7 @@ export default function InitiativesAnimation() {
                     ref={incubateContainer}
                     style={style}
                     interactivity={interactivity}
-                ></Lottie>
+                />
             </span>
             <span className="accelerate">
                 <Lottie
@@ -137,7 +137,7 @@ export default function InitiativesAnimation() {
                     ref={accelerateContainer}
                     interactivity={interactivity}
                     style={style}
-                ></Lottie>
+                />
             </span>
             <InitiativesText
                 id={content.accelerate.id}

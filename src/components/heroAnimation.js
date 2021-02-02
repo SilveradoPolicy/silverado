@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import lottie from 'lottie-web';
-import Lottie from 'lottie-react';
+// import Lottie from 'lottie-react'; // remove this if we're not using it
 
 import heroAnimation from '../animations/Hero.json';
 import mobileHero from '../animations/Hero-Mobile.json';
@@ -15,7 +15,7 @@ export default function HeroAnimation() {
     const handleResize = () => {
         if (window.innerWidth < 768) {
             setActiveAnimationFile(mobileHero);
-        } else if (window.innerWidth >= 769 || window.innerWidth < 1280) {
+        } else if (window.innerWidth >= 769 && window.innerWidth < 1280) {
             setActiveAnimationFile(heroOne);
         } else {
             setActiveAnimationFile(heroAnimation);
@@ -34,7 +34,6 @@ export default function HeroAnimation() {
             loop: true,
             autoplay: true,
         });
-        console.log(anim.animationData);
 
         return () => anim.destroy();
     }, [activeAnimationFile]);
