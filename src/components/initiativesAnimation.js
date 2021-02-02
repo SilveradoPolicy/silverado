@@ -93,20 +93,20 @@ export default function InitiativesAnimation() {
     };
     return (
         <InitiativesWrapper className="initiative-container">
-            <span className="icons">
+            <div className="icons">
                 <Lottie
                     animationData={icons}
                     style={style}
                     interactivity={interactivity}
                 />
-            </span>
-            <span className="cultivate">
+            </div>
+            <div className="cultivate">
                 <Lottie
                     animationData={cultivate}
                     interactivity={interactivity}
                     style={style}
                 />
-            </span>
+            </div>
             <InitiativesText
                 id={content.cultivate.id}
                 heading={content.cultivate.heading}
@@ -117,20 +117,20 @@ export default function InitiativesAnimation() {
                 heading={content.incubate.heading}
                 body={content.incubate.body}
             />
-            <span className="incubate">
+            <div className="incubate">
                 <Lottie
                     animationData={incubate}
                     style={style}
                     interactivity={interactivity}
                 />
-            </span>
-            <span className="accelerate">
+            </div>
+            <div className="accelerate">
                 <Lottie
                     animationData={accelerate}
                     interactivity={interactivity}
                     style={style}
                 />
-            </span>
+            </div>
             <InitiativesText
                 id={content.accelerate.id}
                 heading={content.accelerate.heading}
