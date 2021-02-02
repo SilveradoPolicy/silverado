@@ -42,7 +42,7 @@ export default function InitiativesPage({ data }) {
                 hasCurvedTransition
             />
             <InitiativesAnimation />
-            <CopyWithCTA content={content.copy} hasBgGradient />
+            <CopyWithCTA content={content.copy} hasBottomGradient />
         </Layout>
     );
 }

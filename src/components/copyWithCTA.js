@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -7,15 +8,17 @@ import CtaLink from './ctaLink';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`py-16 relative`}
+    ${tw`pb-16 pt-32 relative`}
     background: ${(props) =>
-        props.bgGradient
+        props.bottomGradient
             ? `linear-gradient(180deg, rgba(115, 150, 99, 0) 0%, rgba(115, 150, 99, 0.37) 100%);`
+            : props.topGradient
+            ? 'linear-gradient(180deg, #EDF8F8 0%, rgba(237, 248, 248, 0) 100%);'
             : ''};
 `;
 
 const FlexWrapper = styled.div`
-    ${tw`container px-5 md:px-0 flex flex-col items-center`}
+    ${tw`container px-5 lg:px-0 flex flex-col items-center`}
 `;
 
 // todo: align naming convention
@@ -27,11 +30,12 @@ const StyledBody = styled.p`
 
 const StyledHeading = styled.h2`
     ${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
-`
+`;
 
 export default function CopyWithCTA({
     content,
-    hasBgGradient,
+    hasBottomGradient,
+    hasTopGradient,
     hasTopTransition,
     hasHeading,
 }) {
@@ -40,7 +44,10 @@ export default function CopyWithCTA({
     const { cta } = content;
 
     return (
-        <StyledSection bgGradient={hasBgGradient}>
+        <StyledSection
+            bottomGradient={hasBottomGradient}
+            topGradient={hasTopGradient}
+        >
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
                 {hasHeading && <StyledHeading>{heading}</StyledHeading>}
@@ -52,7 +59,8 @@ export default function CopyWithCTA({
 }
 
 CopyWithCTA.defaultProps = {
-    hasBgGradient: false,
+    hasBottomGradient: false,
+    hasTopGradient: false,
     hasTopTransition: false,
     hasHeading: false,
 };
@@ -61,7 +69,8 @@ CopyWithCTA.defaultProps = {
 
 CopyWithCTA.propTypes = {
     content: PropTypes.object.isRequired,
-    hasBgGradient: PropTypes.bool,
+    hasBottomGradient: PropTypes.bool,
+    hasTopGradient: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
     hasHeading: PropTypes.bool,
 };

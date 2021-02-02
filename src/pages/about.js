@@ -17,12 +17,12 @@ const content = {
     },
     subheading: {
         heading: 'Why "Silverado"?',
-        text: 'Silverado\'s name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California\'s Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California\'s workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley\'s wine country, offering a scenic view of world-class vineyards and the valley\'s magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.',
-    
+        text:
+            "Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California's workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.",
     },
     ctasection: {
-        text: 'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
-    
+        text:
+            'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
     },
 };
 
@@ -32,24 +32,32 @@ export default function AboutPage({ data }) {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <CopyWithCTA content={content.subheading} hasHeading />
-            <AdvisoryBoard team={advisoryBoard}/>
+            <CopyWithCTA
+                content={content.subheading}
+                hasHeading
+                hasTopGradient
+            />
+            <AdvisoryBoard team={advisoryBoard} />
             <StrategicCouncil honoraryMembers={advisoryBoard} />
-            <CopyWithCTA content={content.ctasection} hasBgGradient hasTopTransition/>
+            <CopyWithCTA
+                content={content.ctasection}
+                hasBottomGradient
+                hasTopTransition
+            />
         </Layout>
     );
 }
 
 export const query = graphql`
     query AboutQuery {
-        heroImage: file(relativePath: {regex: "/heroImage/"}) {
+        heroImage: file(relativePath: { regex: "/heroImage/" }) {
             childImageSharp {
                 fluid(maxWidth: 2000) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        dimitri: file(relativePath: {regex: "/dimitri/"}) {
+        dimitri: file(relativePath: { regex: "/dimitri/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -57,7 +65,7 @@ export const query = graphql`
             }
             id
         }
-        maureen: file(relativePath: {regex: "/maureen/"}) {
+        maureen: file(relativePath: { regex: "/maureen/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -65,7 +73,7 @@ export const query = graphql`
             }
             id
         }
-        sarah: file(relativePath: {regex: "/sarah/"}) {
+        sarah: file(relativePath: { regex: "/sarah/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -73,7 +81,7 @@ export const query = graphql`
             }
             id
         }
-        jessica: file(relativePath: {regex: "/jessica/"}) {
+        jessica: file(relativePath: { regex: "/jessica/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -81,7 +89,7 @@ export const query = graphql`
             }
             id
         }
-        ian: file(relativePath: {regex: "/dimitri/"}) {
+        ian: file(relativePath: { regex: "/dimitri/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -100,5 +108,5 @@ AboutPage.propTypes = {
         sarah: PropTypes.object.isRequired,
         jessica: PropTypes.object.isRequired,
         ian: PropTypes.object.isRequired,
-    }).isRequired
-}
+    }).isRequired,
+};

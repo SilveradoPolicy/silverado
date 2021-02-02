@@ -1,0 +1,4 @@
+[[headers]]
+    for = '/*'
+    [headers.value]
+        X-Robots-Tag = 'noindex, nofollow'

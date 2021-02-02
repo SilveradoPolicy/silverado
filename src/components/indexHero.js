@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
 // import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
-import HeroAnimation from '../components/heroAnimation';
+import HeroAnimation from './heroAnimation';
 
 const StyledSection = styled.section`
     ${tw`flex flex-col justify-center relative`}
@@ -64,10 +64,6 @@ IndexHero.defaultProps = {
 };
 
 IndexHero.propTypes = {
-    heroImage: PropTypes.object.isRequired,
-    mobileHero: PropTypes.object.isRequired,
-    sources: PropTypes.array.isRequired,
-    heroAnimation: PropTypes.object.isRequired,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
