@@ -18,7 +18,7 @@ const StyledSection = styled.section`
 `;
 
 const FlexWrapper = styled.div`
-    ${tw`container px-5 lg:px-0 flex flex-col items-center`}
+    ${tw`container flex flex-col items-center`}
 `;
 
 // todo: align naming convention

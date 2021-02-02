@@ -7,7 +7,7 @@ import CurvedTransition from './icons/curvedTransition';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`container px-5 lg:px-0 my-24 pt-8 relative`}
+    ${tw`container my-24 pt-8 relative`}
 `;
 
 const StyledHeading = styled.h2`

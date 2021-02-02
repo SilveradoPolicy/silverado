@@ -43,6 +43,7 @@ export default function InitiativesPage({ data }) {
             />
             <InitiativesAnimation />
             <CopyWithCTA content={content.copy} hasBottomGradient />
+
         </Layout>
     );
 }
