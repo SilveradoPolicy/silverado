@@ -7,7 +7,7 @@ import HonoraryMembersSection from './honoraryMembers';
 import StrategicAdvisorsSection from './strategicAdvisorsSection';
 
 const StyledSection = styled.section`
-    ${tw`container px-5 md:px-0 mb-40`}
+    ${tw`container px-5 lg:px-0 mb-40`}
 `;
 
 const StyledHeading = styled.h2`
