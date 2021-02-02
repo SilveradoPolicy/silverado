@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import lottie from 'lottie-web';
-import Lottie from 'lottie-react';
 
 import heroAnimation from '../animations/Hero.json';
 import mobileHero from '../animations/Hero-Mobile.json';
