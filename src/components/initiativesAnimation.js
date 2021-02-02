@@ -50,11 +50,6 @@ const InitiativesWrapper = styled.div`
 `;
 
 export default function InitiativesAnimation() {
-    const accelerateContainer = useRef(null);
-    // const cultivateContainer = useRef(null); // is this not being used?
-    const iconsContainer = useRef(null);
-    const incubateContainer = useRef(null);
-
     const style = {
         height: 300,
     };
@@ -101,7 +96,6 @@ export default function InitiativesAnimation() {
             <span className="icons">
                 <Lottie
                     animationData={icons}
-                    ref={iconsContainer}
                     style={style}
                     interactivity={interactivity}
                 />
@@ -109,7 +103,6 @@ export default function InitiativesAnimation() {
             <span className="cultivate">
                 <Lottie
                     animationData={cultivate}
-                    ref={cultivateContainer}
                     interactivity={interactivity}
                     style={style}
                 />
@@ -127,7 +120,6 @@ export default function InitiativesAnimation() {
             <span className="incubate">
                 <Lottie
                     animationData={incubate}
-                    ref={incubateContainer}
                     style={style}
                     interactivity={interactivity}
                 />
@@ -135,7 +127,6 @@ export default function InitiativesAnimation() {
             <span className="accelerate">
                 <Lottie
                     animationData={accelerate}
-                    ref={accelerateContainer}
                     interactivity={interactivity}
                     style={style}
                 />

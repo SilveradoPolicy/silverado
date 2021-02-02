@@ -21,11 +21,13 @@ export default function HeroAnimation() {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-    });
+    // useEffect(() => {
+    //     window.addEventListener('resize', handleResize);
+    // });
 
     useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
         const anim = lottie.loadAnimation({
             container: heroAnimContainer.current, // current instance of our container!
             animationData: activeAnimationFile, // animation file!

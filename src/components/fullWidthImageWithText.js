@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-// import Img from 'gatsby-image';
 import CurvedTransition from './icons/curvedTransition';
 import ParallelTransition from './icons/parallelTransition';
 
@@ -25,17 +24,12 @@ export default function FullWidthImageWithText({
     hasCurvedTransition,
     hasTopTransition,
 }) {
-    // const {
-    //     childImageSharp: { fluid },
-    // } = image;
-
     return (
         <StyledSection>
             {hasTopTransition && <ParallelTransition />}
             {hasCurvedTransition && <CurvedTransition />}
             <StyledHeading>{heading}</StyledHeading>
             <StyledBody>{body}</StyledBody>
-            {/* <Img fluid={fluid} /> */}
         </StyledSection>
     );
 }
@@ -48,7 +42,6 @@ FullWidthImageWithText.defaultProps = {
 FullWidthImageWithText.propTypes = {
     body: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
-    // image: PropTypes.object.isRequired,
     hasCurvedTransition: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
 };
