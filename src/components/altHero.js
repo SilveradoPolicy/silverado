@@ -12,7 +12,7 @@ const Heading = styled.h1`
 `;
 
 const Body = styled.p`
-    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 
 export default function AltHero({ body, heading }) {
