@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import BoardMember from './boardMember';
 
 const StyledSection = styled.section`
-    ${tw`container px-5 lg:px-0`}
+    ${tw`container px-5 xl:px-0`}
 `;
 
 const StyledList = styled.div`
