@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
 `;
 
 const FooterInner = styled.div`
-    ${tw`container px-5 lg:px-0 flex justify-between flex-col md:flex-row px-5 md:px-0`}
+    ${tw`container px-5 xl:px-0 flex justify-between flex-col md:flex-row px-5 md:px-0`}
 `;
 
 const FooterNav = styled.div`
