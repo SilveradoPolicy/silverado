@@ -24,7 +24,7 @@ export default function InitiativesText({ id, heading, body }) {
     );
 }
 
-InitiativesText.PropTypes = {
+InitiativesText.propTypes = {
     id: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,

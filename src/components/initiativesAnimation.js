@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -74,7 +74,7 @@ export default function InitiativesAnimation() {
             },
             {
                 visibility: [0.45, 1.0],
-                type: 'loop',
+                type: 'play',
                 frames: [0, 150],
             },
         ],
@@ -104,14 +104,15 @@ export default function InitiativesAnimation() {
                     ref={iconsContainer}
                     style={style}
                     interactivity={interactivity}
-                ></Lottie>
+                />
             </span>
             <span className="cultivate">
                 <Lottie
                     animationData={cultivate}
+                    ref={cultivateContainer}
                     interactivity={interactivity}
                     style={style}
-                ></Lottie>
+                />
             </span>
             <InitiativesText
                 id={content.cultivate.id}
@@ -129,7 +130,7 @@ export default function InitiativesAnimation() {
                     ref={incubateContainer}
                     style={style}
                     interactivity={interactivity}
-                ></Lottie>
+                />
             </span>
             <span className="accelerate">
                 <Lottie
@@ -137,7 +138,7 @@ export default function InitiativesAnimation() {
                     ref={accelerateContainer}
                     interactivity={interactivity}
                     style={style}
-                ></Lottie>
+                />
             </span>
             <InitiativesText
                 id={content.accelerate.id}

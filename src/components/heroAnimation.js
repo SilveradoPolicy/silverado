@@ -14,7 +14,7 @@ export default function HeroAnimation() {
     const handleResize = () => {
         if (window.innerWidth < 768) {
             setActiveAnimationFile(mobileHero);
-        } else if (window.innerWidth >= 769 || window.innerWidth < 1280) {
+        } else if (window.innerWidth >= 769 && window.innerWidth < 1280) {
             setActiveAnimationFile(heroOne);
         } else {
             setActiveAnimationFile(heroAnimation);
