@@ -39,7 +39,11 @@ export default function InitiativesPage({ data }) {
                 image={fullWidthImage}
                 hasCurvedTransition
             />
-            <CopyWithCTA content={content.copy} hasBottomGradient />
+            <CopyWithCTA
+                content={content.copy}
+                hasBottomGradient
+                hasTopTransition
+            />
         </Layout>
     );
 }
