@@ -1,7 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Lottie from 'lottie-react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import '@lottiefiles/lottie-player';
+import { create } from '@lottiefiles/lottie-interactivity';
 
 import accelerate from '../animations/Accelerate.json';
 import cultivate from '../animations/Cultivate.json';
@@ -50,6 +53,7 @@ const InitiativesWrapper = styled.div`
 `;
 
 export default function InitiativesAnimation() {
+    const animDiv = useRef();
     const style = {
         height: 300,
     };
@@ -64,7 +68,7 @@ export default function InitiativesAnimation() {
             },
             {
                 visibility: [0.3, 0.45],
-                type: 'seek',
+                type: 'stop',
                 frames: [0, 45],
             },
             {
@@ -91,8 +95,29 @@ export default function InitiativesAnimation() {
             body: `Building and executing campaigns to guide our initiatives through the necessary chanels of implementation, be they statuatory, regulatory, or at the agency level. `,
         },
     };
+
+    useEffect(() => {
+        create({
+            mode: 'scroll',
+            player: '#lottie',
+            actions: [
+                {
+                    visibility: [0.45, 1],
+                    type: 'seek',
+                    frames: [0, 100],
+                },
+            ],
+        });
+    });
     return (
         <InitiativesWrapper className="initiative-container">
+            <lottie-player
+                ref={animDiv} // 2. set the reference for the player
+                id="lottie"
+                mode="normal"
+                src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
+                style={{ width: '320px' }}
+            />
             <div className="icons">
                 <Lottie
                     animationData={icons}
@@ -105,6 +130,7 @@ export default function InitiativesAnimation() {
                     animationData={cultivate}
                     interactivity={interactivity}
                     style={style}
+                    loop={false}
                 />
             </div>
             <InitiativesText
@@ -122,6 +148,7 @@ export default function InitiativesAnimation() {
                     animationData={incubate}
                     style={style}
                     interactivity={interactivity}
+                    loop={false}
                 />
             </div>
             <div className="accelerate">
@@ -129,6 +156,7 @@ export default function InitiativesAnimation() {
                     animationData={accelerate}
                     interactivity={interactivity}
                     style={style}
+                    loop={false}
                 />
             </div>
             <InitiativesText
