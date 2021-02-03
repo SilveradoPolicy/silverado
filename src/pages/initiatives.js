@@ -10,7 +10,7 @@ import Pillars from '../components/pillars';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 
-import InitiativesAnimation from '../components/initiativesAnimation';
+import InitiativesSection from '../components/initiativesSection';
 
 const content = {
     hero: {
@@ -41,9 +41,8 @@ export default function InitiativesPage({ data }) {
                 image={fullWidthImage}
                 hasCurvedTransition
             />
-            <InitiativesAnimation />
+            <InitiativesSection />
             <CopyWithCTA content={content.copy} hasBottomGradient />
-
         </Layout>
     );
 }
