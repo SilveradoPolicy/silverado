@@ -1,6 +1,11 @@
 import { useLottie, useLottieInteractivity } from 'lottie-react';
 
-export default function ScrolledAnimation({ data, frames, style }) {
+export default function ScrolledAnimation({
+    data,
+    frames,
+    style,
+    visibilityOptions,
+}) {
     const options = {
         animationData: data,
     };
@@ -10,7 +15,7 @@ export default function ScrolledAnimation({ data, frames, style }) {
         mode: 'scroll',
         actions: [
             {
-                visibility: [0.25, 0.75],
+                visibility: visibilityOptions || [0.25, 0.75],
                 type: 'seek',
                 frames: [0, frames],
             },

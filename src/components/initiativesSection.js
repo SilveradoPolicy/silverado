@@ -9,17 +9,23 @@ import incubate from '../animations/Incubate.json';
 
 import InitiativesText from './initiativesText';
 
-import ScrolledAnimation from './initiativesAnimation';
+import ScrolledAnimation from './scrolledAnimation';
 
 const InitiativesWrapper = styled.div`
     ${tw`grid grid-cols-5 grid-rows-5 justify-center`}
 
-    .icons {
-        grid-column-start: 1;
-        grid-column-end: 6;
-        align-self: flex-end;
+    #accelerate {
+        grid-column-start: 3;
+        grid-column-end: 5;
     }
-    #cult {
+
+    .accelerate {
+        grid-column-start: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    #cultivate {
         grid-column-start: 3;
         grid-column-end: 5;
         align-self: flex-start;
@@ -29,7 +35,14 @@ const InitiativesWrapper = styled.div`
         grid-row-start: 2;
         grid-row-end: 3;
     }
-    #incu {
+
+    .icons {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        align-self: flex-end;
+    }
+
+    #incubate {
         grid-column-start: 2;
         grid-column-end: 4;
         grid-row-start: 3;
@@ -39,40 +52,31 @@ const InitiativesWrapper = styled.div`
         grid-column-start: 4;
         grid-column-end: 5;
     }
-    #acc {
-        grid-column-start: 3;
-        grid-column-end: 5;
-    }
-    .accelerate {
-        grid-column-start: 2;
-        grid-row-start: 4;
-        grid-row-end: 5;
-    }
 `;
 
+const content = {
+    accelerate: {
+        id: `accelerate`,
+        heading: `Accelerate`,
+        body: `Building and executing campaigns to guide our initiatives through the necessary chanels of implementation, be they statuatory, regulatory, or at the agency level. `,
+    },
+    cultivate: {
+        id: `cultivate`,
+        heading: `Cultivate`,
+        body: `Convening diverse groups of policy experts and stakeholders to generate productive disagreement over policy challenges and germinate fresh solutions to those challenges.`,
+    },
+    incubate: {
+        id: `incubate`,
+        heading: `Incubate`,
+        body: `Leveraging the policy expertise of our Strategic Council, technical team, and campaign partners to transform novel policy ideas into actionable policy initiatives. `,
+    },
+};
+
+const style = {
+    height: 300,
+};
+
 export default function InitiativesAnimation() {
-    const style = {
-        height: 300,
-    };
-
-    const content = {
-        cultivate: {
-            id: `cult`,
-            heading: `Cultivate`,
-            body: `Convening diverse groups of policy experts and stakeholders to generate productive disagreement over policy challenges and germinate fresh solutions to those challenges.`,
-        },
-        incubate: {
-            id: `incu`,
-            heading: `Incubate`,
-            body: `Leveraging the policy expertise of our Strategic Council, technical team, and campaign partners to transform novel policy ideas into actionable policy initiatives. `,
-        },
-        accelerate: {
-            id: `acc`,
-            heading: `Accelerate`,
-            body: `Building and executing campaigns to guide our initiatives through the necessary chanels of implementation, be they statuatory, regulatory, or at the agency level. `,
-        },
-    };
-
     return (
         <InitiativesWrapper className="initiative-container">
             <div className="icons">
