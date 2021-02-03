@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
+import HeroAnimation from './heroAnimation';
 
-const StyledBgImage = styled(BackgroundImage)`
-    ${tw`h-screen lg:h-3/4-screen flex flex-col justify-center text-white`}
+const StyledSection = styled.section`
+    ${tw`flex flex-col justify-center relative`}
 `;
 
+const AnimationWrapper = styled.div`
+    ${tw`w-full`}
+`;
 const HeroInnerContainer = styled.div`
-    ${tw`container text-brand-1`}
+    ${tw`container text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
 `;
 
 const Heading = styled.h1`
@@ -22,16 +25,12 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ cta, heroImage, mobileHero }) {
-    const sources = [
-        mobileHero.childImageSharp.fluid,
-        {
-            ...heroImage.childImageSharp.fluid,
-            media: `(min-width: 768px)`,
-        },
-    ];
+export default function IndexHero({ cta }) {
     return (
-        <StyledBgImage fluid={sources} Tag="section">
+        <StyledSection>
+            <AnimationWrapper>
+                <HeroAnimation />
+            </AnimationWrapper>
             <HeroInnerContainer>
                 <Heading>Accelerating a 21st-century race to the top</Heading>
                 <Body>
@@ -42,7 +41,7 @@ export default function IndexHero({ cta, heroImage, mobileHero }) {
                 </Body>
                 <CtaLink cta={cta} />
             </HeroInnerContainer>
-        </StyledBgImage>
+        </StyledSection>
     );
 }
 
@@ -54,8 +53,6 @@ IndexHero.defaultProps = {
 };
 
 IndexHero.propTypes = {
-    heroImage: PropTypes.object.isRequired,
-    mobileHero: PropTypes.object.isRequired,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),

@@ -12,6 +12,8 @@ import CopyWithCTA from '../components/copyWithCTA';
 import Pillars from '../components/pillars';
 import EventList from '../components/eventList';
 
+import HomepageAnimation from '../components/homepageAnimation';
+
 const content = {
     heroLink: {
         link: '/',
@@ -41,7 +43,7 @@ const content = {
 };
 
 export default function IndexPage({ data }) {
-    const { heroImage, mobileHero, accImage } = data;
+    const { heroImage, mobileHero } = data;
     return (
         <Layout isIndexPage>
             <EventList />
@@ -57,9 +59,9 @@ export default function IndexPage({ data }) {
             <FullWidthImageWithText
                 heading={content.fullWidthImage.heading}
                 body={content.fullWidthImage.body}
-                image={accImage}
                 hasTopTransition
             />
+            <HomepageAnimation />
             <CopyWithCTA content={content.copy1} hasTopTransition={false} />
             <Pillars hasTopTransition />
             <CopyWithCTA
@@ -101,7 +103,6 @@ IndexPage.propTypes = {
     data: PropTypes.shape({
         heroImage: PropTypes.object.isRequired,
         mobileHero: PropTypes.object.isRequired,
-        accImage: PropTypes.object.isRequired,
         sources: PropTypes.array.isRequired,
     }).isRequired,
 };

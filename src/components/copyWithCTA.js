@@ -53,8 +53,8 @@ export default function CopyWithCTA({
                 {hasHeading && <StyledHeading>{heading}</StyledHeading>}
                 <StyledBody>
                     {text}
-                    <br></br>
-                    <br></br>
+                    <br />
+                    <br />
                     {textTwo}
                 </StyledBody>
                 {hasCta && <CtaLink cta={cta} />}
