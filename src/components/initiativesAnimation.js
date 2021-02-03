@@ -96,7 +96,7 @@ export default function InitiativesAnimation() {
         },
     };
 
-    useEffect(() => {
+    const handleAddCreate = () => {
         create({
             mode: 'scroll',
             player: '#lottie',
@@ -108,6 +108,14 @@ export default function InitiativesAnimation() {
                 },
             ],
         });
+    };
+
+    useEffect(() => {
+        window.addEventListener('load', handleAddCreate);
+
+        return () => {
+            window.removeEventListener('load', handleAddCreate);
+        };
     });
     return (
         <InitiativesWrapper className="initiative-container">
