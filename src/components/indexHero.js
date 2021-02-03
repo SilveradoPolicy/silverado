@@ -33,7 +33,7 @@ export default function IndexHero({ cta, heroImage, mobileHero }) {
     return (
         <StyledBgImage fluid={sources} Tag="section">
             <HeroInnerContainer>
-                <Heading>Accelerating a 21c race to the top</Heading>
+                <Heading>Accelerating a 21st-century race to the top</Heading>
                 <Body>
                     A future defined by enduring American prosperity and global
                     competitiveness through venture in the acceleration of

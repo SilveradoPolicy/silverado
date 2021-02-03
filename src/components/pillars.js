@@ -39,27 +39,29 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
             <Grid>
                 <Card>
                     <EcoSecIcon />
-                    <Heading>EcoSec</Heading>
+                    <Heading>Eco&sup2;Sec</Heading>
                     <Body>
                         Foregrounding the nexus of economic and ecological risk
-                        and opportunity to meet the 21c climate imperative
+                        and opportunity to meet the 21st-century climate
+                        imperative
                     </Body>
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
                     <Heading>Trade and Industrial Security</Heading>
                     <Body>
-                        Supporting American workers, securing America&#39;s
-                        supply chains, and advancing equitable trade practices
+                        Developing a trade and industrual strategy that supports
+                        American workers, secures America&#39;s supply chains,
+                        and advances equitable trade practices
                     </Body>
                 </Card>
                 <Card>
                     <CybersecurityIcon />
                     <Heading>Cybersecurity</Heading>
                     <Body>
-                        Modernizing America&#39;s cyber infrastructure,
-                        defending against new forms of cyber warfare, and
-                        protecting American intellectual property
+                        Modernizing America&#39;s cyber strategy to enhance
+                        deterrence, defend against cyber attacks, and protect
+                        intellectual property and national security
                     </Body>
                 </Card>
             </Grid>
