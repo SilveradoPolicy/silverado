@@ -15,7 +15,7 @@ const StyledBody = styled.p`
     ${tw`text-lg`}
 `;
 
-export default function InitiativesText({ id, heading, body }) {
+export default function InitiativesText({ body, heading, id }) {
     return (
         <StyledSection id={id}>
             <StyledHeading>{heading}</StyledHeading>

@@ -21,10 +21,6 @@ export default function HeroAnimation() {
         }
     };
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleResize);
-    // });
-
     useEffect(() => {
         window.addEventListener('resize', handleResize);
 
@@ -36,7 +32,10 @@ export default function HeroAnimation() {
             autoplay: true,
         });
 
-        return () => anim.destroy();
+        return () => {
+            anim.destroy();
+            window.removeEventListener('resize');
+        };
     }, [activeAnimationFile]);
 
     return <div className="animation-container" ref={heroAnimContainer} />;

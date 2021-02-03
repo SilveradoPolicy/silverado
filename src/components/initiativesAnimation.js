@@ -1,10 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Lottie from 'lottie-react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-
-import '@lottiefiles/lottie-player';
-import { create } from '@lottiefiles/lottie-interactivity';
 
 import accelerate from '../animations/Accelerate.json';
 import cultivate from '../animations/Cultivate.json';
@@ -14,14 +11,14 @@ import incubate from '../animations/Incubate.json';
 import InitiativesText from './initiativesText';
 
 const InitiativesWrapper = styled.div`
-    ${tw`grid grid-cols-5 grid-rows-5 justify-center`}
+    ${tw`grid grid-cols-5 grid-rows-4 justify-center`}
 
     .icons {
         grid-column-start: 1;
         grid-column-end: 6;
         align-self: flex-end;
     }
-    #cult {
+    #cultivate-text {
         grid-column-start: 3;
         grid-column-end: 5;
         align-self: flex-start;
@@ -31,7 +28,7 @@ const InitiativesWrapper = styled.div`
         grid-row-start: 2;
         grid-row-end: 3;
     }
-    #incu {
+    #incubate-text {
         grid-column-start: 2;
         grid-column-end: 4;
         grid-row-start: 3;
@@ -41,7 +38,7 @@ const InitiativesWrapper = styled.div`
         grid-column-start: 4;
         grid-column-end: 5;
     }
-    #acc {
+    #accelerate-text {
         grid-column-start: 3;
         grid-column-end: 5;
     }
@@ -53,7 +50,6 @@ const InitiativesWrapper = styled.div`
 `;
 
 export default function InitiativesAnimation() {
-    const animDiv = useRef();
     const style = {
         height: 300,
     };
@@ -80,44 +76,24 @@ export default function InitiativesAnimation() {
     };
     const content = {
         cultivate: {
-            id: `cult`,
+            id: `cultivate-text`,
             heading: `Cultivate`,
             body: `Convening diverse groups of policy experts and stakeholders to generate productive disagreement over policy challenges and germinate fresh solutions to those challenges.`,
         },
         incubate: {
-            id: `incu`,
+            id: `incubate-text`,
             heading: `Incubate`,
             body: `Leveraging the policy expertise of our Strategic Council, technical team, and campaign partners to transform novel policy ideas into actionable policy initiatives. `,
         },
         accelerate: {
-            id: `acc`,
+            id: `accelerate-text`,
             heading: `Accelerate`,
             body: `Building and executing campaigns to guide our initiatives through the necessary chanels of implementation, be they statuatory, regulatory, or at the agency level. `,
         },
     };
 
-    useEffect(() => {
-        create({
-            mode: 'scroll',
-            player: '#lottie',
-            actions: [
-                {
-                    visibility: [0.45, 1],
-                    type: 'seek',
-                    frames: [0, 100],
-                },
-            ],
-        });
-    });
     return (
         <InitiativesWrapper className="initiative-container">
-            <lottie-player
-                ref={animDiv} // 2. set the reference for the player
-                id="lottie"
-                mode="normal"
-                src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
-                style={{ width: '320px' }}
-            />
             <div className="icons">
                 <Lottie
                     animationData={icons}
