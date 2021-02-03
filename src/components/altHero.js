@@ -23,7 +23,7 @@ export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
         <StyledSection>
             <Heading>{heading}</Heading>
             <Body>{body}</Body>
-            <br></br>
+            <br />
             <BodyTwo>
                 {bodyTwo} <strong>{bodyTwoBold}</strong>
             </BodyTwo>
