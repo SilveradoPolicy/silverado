@@ -34,7 +34,7 @@ export default function HeroAnimation() {
 
         return () => {
             anim.destroy();
-            window.removeEventListener('resize');
+            window.removeEventListener('resize', handleResize);
         };
     }, [activeAnimationFile]);
 
