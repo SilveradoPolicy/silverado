@@ -34,6 +34,7 @@ export default function AboutPage({ data }) {
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <CopyWithCTA content={content.subheading} hasHeading />
+
             <AdvisoryBoard team={advisoryBoard} />
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA

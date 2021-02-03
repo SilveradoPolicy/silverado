@@ -4,15 +4,15 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledSection = styled.section`
-    ${tw`min-h-screen flex flex-col justify-center pb-8 text-white`}
+    ${tw`min-h-3/4-screen flex flex-col justify-center pb-8 text-white`}
 `;
 
 const Heading = styled.h1`
-    ${tw`font-wt-bold mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h1`}
+    ${tw`font-wt-bold mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
 `;
 
 const Body = styled.p`
-    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 const BodyTwo = styled.p`
     ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
