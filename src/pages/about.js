@@ -18,7 +18,8 @@ const content = {
     subheading: {
         heading: 'Why "Silverado"?',
         text:
-            "Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward propserity for California's workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. Today, the trail winds through the heart Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains. Like the its namesake, Silverado is forging a new path toward American propsperity in the 21st century—and serving up plenty of wine along the way.",
+            "Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward prosperity for California's workers, connecting the cinnabar mines in the north to the docks of San Pablo to the south. ",
+        textTwo: `Today, the trail winds through the heart of Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains. Like its namesake, Silverado is forging a new path toward American prosperity in the 21st century—and serving up plenty of wine along the way.`,
     },
     ctasection: {
         text:
@@ -32,16 +33,13 @@ export default function AboutPage({ data }) {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <CopyWithCTA
-                content={content.subheading}
-                hasHeading
-                hasTopGradient
-            />
+            <CopyWithCTA content={content.subheading} hasHeading />
+
             <AdvisoryBoard team={advisoryBoard} />
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA
                 content={content.ctasection}
-                hasBottomGradient
+                hasBgGradient
                 hasTopTransition
             />
         </Layout>
