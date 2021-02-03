@@ -15,7 +15,7 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-6 mx-auto`}
+    ${tw`max-w-prose mb-6 text-lg mx-auto`}
 `;
 
 export default function FullWidthImageWithText({

@@ -14,7 +14,7 @@ const AnimationWrapper = styled.div`
     ${tw`w-full`}
 `;
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0 text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
+    ${tw`container text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
 `;
 
 const Heading = styled.h1`
@@ -27,23 +27,21 @@ const Body = styled.p`
 
 export default function IndexHero({ cta }) {
     return (
-        <>
-            <StyledSection>
-                <AnimationWrapper>
-                    <HeroAnimation />
-                </AnimationWrapper>
-                <HeroInnerContainer>
-                    <Heading>Accelerating a 21c race to the top</Heading>
-                    <Body>
-                        A future defined by enduring American prosperity and
-                        global competitiveness through venture in the
-                        acceleration of bipartisan economic, strategic, and
-                        technological policy solutions.
-                    </Body>
-                    <CtaLink cta={cta} />
-                </HeroInnerContainer>
-            </StyledSection>
-        </>
+        <StyledSection>
+            <AnimationWrapper>
+                <HeroAnimation />
+            </AnimationWrapper>
+            <HeroInnerContainer>
+                <Heading>Accelerating a 21st-century race to the top</Heading>
+                <Body>
+                    A future defined by enduring American prosperity and global
+                    competitiveness through venture in the acceleration of
+                    bipartisan economic, strategic, and technological policy
+                    solutions.
+                </Body>
+                <CtaLink cta={cta} />
+            </HeroInnerContainer>
+        </StyledSection>
     );
 }
 

@@ -14,17 +14,26 @@ const Heading = styled.h1`
 const Body = styled.p`
     ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
+const BodyTwo = styled.p`
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
+`;
 
-export default function AltHero({ body, heading }) {
+export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
     return (
         <StyledSection>
             <Heading>{heading}</Heading>
             <Body>{body}</Body>
+            <br />
+            <BodyTwo>
+                {bodyTwo} <strong>{bodyTwoBold}</strong>
+            </BodyTwo>
         </StyledSection>
     );
 }
 
 AltHero.propTypes = {
     body: PropTypes.string.isRequired,
+    bodyTwo: PropTypes.string.isRequired,
+    bodyTwoBold: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
 };

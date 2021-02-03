@@ -39,7 +39,7 @@ export default function CopyWithCTA({
     hasTopTransition,
     hasHeading,
 }) {
-    const { text, heading } = content;
+    const { text, textTwo, heading } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
     const { cta } = content;
 
@@ -51,7 +51,12 @@ export default function CopyWithCTA({
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
                 {hasHeading && <StyledHeading>{heading}</StyledHeading>}
-                <StyledBody>{text}</StyledBody>
+                <StyledBody>
+                    {text}
+                    <br />
+                    <br />
+                    {textTwo}
+                </StyledBody>
                 {hasCta && <CtaLink cta={cta} />}
             </FlexWrapper>
         </StyledSection>

@@ -76,7 +76,7 @@ const style = {
     height: 300,
 };
 
-export default function InitiativesAnimation() {
+export default function InitiativesSection() {
     return (
         <InitiativesWrapper className="initiative-container">
             <div className="icons">
