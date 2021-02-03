@@ -40,7 +40,7 @@ const nav = [
         link: '/about',
     },
     {
-        text: `what's happening`,
+        text: `events`,
         link: '/events',
     },
 ];
