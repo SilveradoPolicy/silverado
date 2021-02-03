@@ -52,7 +52,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-    ${tw`bg-brand-1 border border-white mb-5 p-1 text-lg text-right`}
+    ${tw`bg-white border border-white mb-5 p-1 text-lg text-right`}
 `;
 
 const StyledButton = styled.button`
