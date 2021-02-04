@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import EventList from './eventList';
+
 const StyledSection = styled.section`
     ${tw`pb-16 pt-10`}
     background: linear-gradient(
@@ -43,6 +45,7 @@ const StyledBody = styled.p`
 export default function IndexSubHero({ body, heading, subHeading }) {
     return (
         <StyledSection>
+            <EventList />
             <GridWrapper>
                 <Heading>{heading}</Heading>
                 <SubHeading>{subHeading}</SubHeading>

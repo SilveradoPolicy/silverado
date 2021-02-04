@@ -10,7 +10,6 @@ import IndexSubHero from '../components/indexSubHero';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 import Pillars from '../components/pillars';
-import EventList from '../components/eventList';
 
 import HomepageAnimation from '../components/homepageAnimation';
 
@@ -44,7 +43,6 @@ const content = {
 export default function IndexPage() {
     return (
         <Layout isIndexPage>
-            <EventList />
             <IndexHero />
             <IndexSubHero
                 body={content.subHero.body}
