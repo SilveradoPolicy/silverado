@@ -15,7 +15,7 @@ const Body = styled.p`
     ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 const BodyTwo = styled.p`
-    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 
 export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
