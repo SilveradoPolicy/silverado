@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
+
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 import Logo from './logos/logoType';
 
@@ -52,7 +54,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-    ${tw`bg-white border border-white mb-5 p-1 text-lg text-right`}
+    ${tw`bg-white border border-white text-brand-1 mb-5 p-1 text-lg text-right`}
 `;
 
 const StyledButton = styled.button`
@@ -101,6 +103,7 @@ const content = {
 };
 
 export default function Footer() {
+    const [email, setEmail] = useState('');
     const links = content.internalLinks.map((item) => {
         return (
             <li key={item.text}>
@@ -110,6 +113,18 @@ export default function Footer() {
             </li>
         );
     });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const result = await addToMailchimp(email);
+        alert(result.result);
+        setEmail(' ');
+    };
+
+    const handleChange = (e) => {
+        setEmail(e.target.value);
+    };
+
     return (
         <StyledFooter>
             <FooterInner>
@@ -124,13 +139,15 @@ export default function Footer() {
                     </ContactDiv>
                     <StyledUL>{links}</StyledUL>
                 </FooterNav>
-                <StyledForm>
+                <StyledForm onSubmit={handleSubmit}>
                     <FormHeading>{content.form.heading}</FormHeading>
                     <StyledLabel htmlFor="email sr-only">Email</StyledLabel>
                     <StyledInput
                         name="email"
                         placeholder="email"
                         type="email"
+                        value={email}
+                        onChange={handleChange}
                     />
                     <StyledButton type="submit">
                         {content.form.buttonText}
