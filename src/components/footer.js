@@ -104,6 +104,8 @@ const content = {
 
 export default function Footer() {
     const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
     const links = content.internalLinks.map((item) => {
         return (
             <li key={item.text}>
@@ -119,6 +121,7 @@ export default function Footer() {
         const result = await addToMailchimp(email);
         alert(result.result);
         setEmail(' ');
+        setIsSubscribed(true);
     };
 
     const handleChange = (e) => {
@@ -148,6 +151,7 @@ export default function Footer() {
                         type="email"
                         value={email}
                         onChange={handleChange}
+                        className={isSubscribed ? 'hidden' : 'visible'}
                     />
                     <StyledButton type="submit">
                         {content.form.buttonText}
