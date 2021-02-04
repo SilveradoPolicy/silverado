@@ -25,35 +25,31 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ cta }) {
+export default function IndexHero({ body, cta, heading }) {
     return (
         <StyledSection>
             <AnimationWrapper>
                 <HeroAnimation />
             </AnimationWrapper>
             <HeroInnerContainer>
-                <Heading>Accelerating a 21st-century race to the top</Heading>
-                <Body>
-                    A future defined by enduring American prosperity and global
-                    competitiveness through venture in the acceleration of
-                    bipartisan economic, strategic, and technological policy
-                    solutions.
-                </Body>
-                <CtaLink cta={cta} />
+                <Heading>{heading}</Heading>
+                {body && <Body>{body}</Body>}
+                {cta && <CtaLink cta={cta} />}
             </HeroInnerContainer>
         </StyledSection>
     );
 }
 
 IndexHero.defaultProps = {
-    cta: {
-        link: '',
-        text: '',
-    },
+    body: false,
+    cta: false,
+    heading: false,
 };
 
 IndexHero.propTypes = {
+    body: PropTypes.string,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
+    heading: PropTypes.string,
 };

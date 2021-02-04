@@ -15,9 +15,8 @@ import EventList from '../components/eventList';
 import HomepageAnimation from '../components/homepageAnimation';
 
 const content = {
-    heroLink: {
-        link: '/',
-        text: 'learn more',
+    hero: {
+        heading: `Accelerating a 21st-century race to the top`,
     },
     subHero: {
         heading: `Forging a path toward American prosperity and global competitivess through investment in bipartisan economic, strategic, and technological policy solutions.`,
@@ -42,15 +41,14 @@ const content = {
     },
 };
 
-export default function IndexPage({ data }) {
-    const { heroImage, mobileHero } = data;
+export default function IndexPage() {
     return (
         <Layout isIndexPage>
             <EventList />
             <IndexHero
-                heroImage={heroImage}
-                mobileHero={mobileHero}
-                cta={content.heroLink}
+                body={content.hero.body}
+                cta={content.hero.heroLink}
+                heading={content.hero.heading}
             />
             <IndexSubHero
                 heading={content.subHero.heading}
