@@ -9,7 +9,7 @@ export default function HomepageAnimation() {
             data={homepageAnimation}
             frames={270}
             style={{ height: 500 }}
-            visibilityOptions={[0.25, 0.75]}
+            visibilityOptions={[0.25, 0.65]}
         />
     );
 }

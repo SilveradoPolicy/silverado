@@ -80,12 +80,12 @@ export default function InitiativesSection() {
     return (
         <InitiativesWrapper className="initiative-container">
             <div className="icons">
-                <ScrolledAnimation data={icons} frames={90} style={style} />
+                <ScrolledAnimation data={icons} frames={150} style={style} />
             </div>
             <div className="cultivate">
                 <ScrolledAnimation
                     data={cultivate}
-                    frames={180}
+                    frames={150}
                     style={style}
                 />
             </div>
@@ -100,12 +100,12 @@ export default function InitiativesSection() {
                 body={content.incubate.body}
             />
             <div className="incubate">
-                <ScrolledAnimation data={incubate} frames={180} style={style} />
+                <ScrolledAnimation data={incubate} frames={150} style={style} />
             </div>
             <div className="accelerate">
                 <ScrolledAnimation
                     data={accelerate}
-                    frames={180}
+                    frames={157}
                     style={style}
                 />
             </div>
