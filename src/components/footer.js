@@ -61,6 +61,10 @@ const StyledButton = styled.button`
     ${tw`border border-2 border-white rounded-full self-center md:self-end capitalize px-5 py-1 text-center text-lg hover:bg-brand-6 hover:border-brand-6 transition-colors`}
 `;
 
+const StyledMessageComponent = styled.p`
+    ${tw`text-lg`}
+`;
+
 // todo: confirm mobile layout
 // todo: confirm hover states for internal links
 // todo: wire up form submission
@@ -118,14 +122,14 @@ export default function Footer() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await addToMailchimp(email);
-        alert(result.result);
+        await addToMailchimp(email);
         setEmail(' ');
         setIsSubscribed(true);
     };
 
-    const handleChange = (e) => {
-        setEmail(e.target.value);
+    const handleChange = ({ target }) => {
+        const { value } = target;
+        setEmail(value);
     };
 
     return (
@@ -144,18 +148,28 @@ export default function Footer() {
                 </FooterNav>
                 <StyledForm onSubmit={handleSubmit}>
                     <FormHeading>{content.form.heading}</FormHeading>
-                    <StyledLabel htmlFor="email sr-only">Email</StyledLabel>
-                    <StyledInput
-                        name="email"
-                        placeholder="email"
-                        type="email"
-                        value={email}
-                        onChange={handleChange}
-                        className={isSubscribed ? 'hidden' : 'visible'}
-                    />
-                    <StyledButton type="submit">
-                        {content.form.buttonText}
-                    </StyledButton>
+                    {!isSubscribed && (
+                        <>
+                            <StyledLabel htmlFor="email sr-only">
+                                Email
+                            </StyledLabel>
+                            <StyledInput
+                                name="email"
+                                placeholder="email"
+                                type="email"
+                                value={email}
+                                onChange={handleChange}
+                            />
+                            <StyledButton type="submit">
+                                {content.form.buttonText}
+                            </StyledButton>
+                        </>
+                    )}
+                    {isSubscribed && (
+                        <StyledMessageComponent>
+                            You are now subscribed!
+                        </StyledMessageComponent>
+                    )}
                 </StyledForm>
             </FooterInner>
         </StyledFooter>
