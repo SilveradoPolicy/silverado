@@ -35,7 +35,7 @@ const content = {
         text:
             " Silverado's three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic compeition?  ",
         cta: {
-            link: '/',
+            link: '/initiatives',
             text: 'learn more',
         },
     },

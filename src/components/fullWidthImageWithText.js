@@ -7,15 +7,15 @@ import CurvedTransition from './icons/curvedTransition';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`container my-24 pt-8 relative`}
+    ${tw`container mt-24 mb-8 pt-8 relative`}
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-6 pt-10 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`capitalize font-wt-bold mb-6 mt-20 pt-10 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-6 text-lg mx-auto`}
+    ${tw`max-w-prose text-lg mx-auto`}
 `;
 
 export default function FullWidthImageWithText({

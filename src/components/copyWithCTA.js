@@ -8,7 +8,7 @@ import CtaLink from './ctaLink';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`pb-16 pt-32 relative`}
+    ${tw`pb-16 pt-16 relative`}
     background: ${(props) =>
         props.bottomGradient
             ? `linear-gradient(180deg, rgba(115, 150, 99, 0) 0%, rgba(115, 150, 99, 0.37) 100%);`
@@ -25,7 +25,7 @@ const FlexWrapper = styled.div`
 // todo: or extract styled body components to their own component
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-6 mx-auto text-center text-lg`}
+    ${tw`max-w-prose mb-8 mt-10 mx-auto text-center text-lg`}
 `;
 
 const StyledHeading = styled.h2`

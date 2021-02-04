@@ -12,7 +12,7 @@ import InitiativesText from './initiativesText';
 import ScrolledAnimation from './scrolledAnimation';
 
 const InitiativesWrapper = styled.div`
-    ${tw`grid grid-cols-5 grid-rows-5 justify-center`}
+    ${tw`grid grid-cols-5 grid-rows-4 justify-center`}
 
     #accelerate {
         grid-column-start: 3;
@@ -58,7 +58,7 @@ const content = {
     accelerate: {
         id: `accelerate`,
         heading: `Accelerate`,
-        body: `Building and executing campaigns to guide our initiatives through the necessary chanels of implementation, be they statuatory, regulatory, or at the agency level. `,
+        body: `Building and executing campaigns to guide our initiatives through the necessary channels of implementation, be they statutory, regulatory, or at the agency level.`,
     },
     cultivate: {
         id: `cultivate`,
