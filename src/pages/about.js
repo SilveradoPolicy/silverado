@@ -28,8 +28,49 @@ const content = {
 };
 
 export default function AboutPage({ data }) {
-    const { dimitri, maureen, sarah, jessica, ian } = data;
-    const advisoryBoard = [dimitri, maureen, sarah, jessica, ian];
+    const { dimitri, maureen, sarah, jessica, ian, general, turnbull } = data;
+    const advisoryBoard = [
+        {
+            image: general,
+            fullName: 'Gen. David Petraeus',
+        },
+        {
+            image: turnbull,
+            fullName: 'Malcolm Turnbull',
+        },
+    ];
+    const advisoryBio = [
+        {
+            image: dimitri,
+            name: 'Dmitri Alperovitch',
+            bio:
+                "Dmitri Alperovitch is the Co-Founder and Chairman of Silverado Policy Accelerator, a non-profit focused on advancing American prosperity and global leadership in the 21st century and beyond. He is a Co-Founder and former CTO of CrowdStrike Inc., a leading cybersecurity company.  A renowned cybersecurity visionary and business executive, Alperovitch is a thought-leader on cybersecurity strategy and state tradecraft and has served as special advisor to the Department of Defense. He is a frequent strategic advisor to CEOs and Boards of Directors of public and private companies.  Alperovitch is also an active angel investor and board member of multiple high-growth technology companies. He has been named as one of Fortune Magazine's “40 Under 40” most influential young people in business and Politico Magazine has featured Alperovitch as one of “Politico 50” influential thinkers, doers and visionaries transforming American politics. In 2013, Alperovitch received the prestigious recognition of being selected as MIT Technology Review’s “Young Innovators under 35” (TR35).",
+        },
+        {
+            image: maureen,
+            name: 'Maureen Hinman',
+            bio:
+                'Maureen Hinman, a leading policy expert on environmental industry, most recently served as Director for Environment and Natural Resources at the Office of the United States Trade Representative. At USTR she led a range of multilateral, regional, and bilateral trade policy initiatives focused on the environmental goods and services sector as well as natural resource conservation. Ms. Hinman previously served as the U.S. Department of Commerce’s senior industry trade specialist responsible for international policy development and interagency advocacy for the U.S. environmental technology industry. Prior to entering federal service Hinman consulted on regional integration and trade policy implementation at Nathan Associates, a Washington-based economic policy consultancy.',
+        },
+        {
+            image: sarah,
+            name: 'Sarah Stewart',
+            bio:
+                "Sarah V. Stewart has nearly two decades of experience as an international trade lawyer, policy expert, and negotiator, having served in roles in the U.S. government, private sector, private practice, and a non-governmental organization. Immediately prior to joining Silverado, Ms. Stewart led the public policy efforts at Amazon on U.S. trade policy and export controls matters between 2019 and mid-2020.  From 2013 to 2018, Ms. Stewart worked for the Office of the United States Trade Representative, with her most recent position being the Deputy Assistant United States Trade Representative for Environment and Natural Resources. During her time at USTR, Ms. Stewart was the lead environment chapter negotiator for the US-Mexico-Canada Agreement and the Transatlantic Trade and Investment Partnership (TTIP) negotiations with the European Union. Ms. Stewart also led USTR's efforts on trade and environment issues in the Western Hemisphere. Prior to joining USTR, Ms. Stewart served in different legal and policy roles at The Humane Society of the United States and Humane Society International, including spearheading a first ever international legal group. Ms. Stewart began her career as a trade remedy lawyer at the Law Offices of Stewart and Stewart, where she worked for six years on behalf of U.S. manufacturing companies and workers.",
+        },
+        {
+            image: jessica,
+            name: 'test name 2',
+            bio: 'some bio data here',
+        },
+        {
+            image: ian,
+            name: 'Ian Ward',
+            bio:
+                'Ian Ward is a writer and researcher based in his hometown of Washington, D.C. In addition to his work at Silverado, he is a freelance writer and reporter, and his work has appeared in numerous publications, including POLITICO Magazine, Maine Trails Magazine, and The Portland Press Herald. He graduated magna cum laude with honors from Bowdoin College in 2020 with a B.A. in History. d',
+        },
+    ];
+
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
@@ -38,7 +79,7 @@ export default function AboutPage({ data }) {
                 hasTopGradient
                 hasHeading
             />
-            <AdvisoryBoard team={advisoryBoard} />
+            <AdvisoryBoard team={advisoryBio} />
             <StrategicCouncil honoraryMembers={advisoryBoard} />
             <CopyWithCTA
                 content={content.ctasection}
@@ -90,7 +131,23 @@ export const query = graphql`
             }
             id
         }
-        ian: file(relativePath: { regex: "/dimitri/" }) {
+        ian: file(relativePath: { regex: "/ian/" }) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            id
+        }
+        general: file(relativePath: { regex: "/general/" }) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            id
+        }
+        turnbull: file(relativePath: { regex: "/turnbull/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -109,5 +166,7 @@ AboutPage.propTypes = {
         sarah: PropTypes.object.isRequired,
         jessica: PropTypes.object.isRequired,
         ian: PropTypes.object.isRequired,
+        general: PropTypes.object.isRequired,
+        turnbull: PropTypes.object.isRequired,
     }).isRequired,
 };

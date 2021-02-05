@@ -18,7 +18,10 @@ const StyledName = styled.div`
 
 export default function ImageWithName({ data }) {
     const {
-        childImageSharp: { fluid },
+        fullName,
+        image: {
+            childImageSharp: { fluid },
+        },
     } = data;
 
     return (
@@ -26,7 +29,7 @@ export default function ImageWithName({ data }) {
             <ImgWrapper>
                 <Img fluid={fluid} />
             </ImgWrapper>
-            <StyledName>first last</StyledName>
+            <StyledName>{fullName}</StyledName>
         </FlexWrapper>
     );
 }
