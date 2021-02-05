@@ -18,14 +18,14 @@ const StyledSection = styled.section`
 `;
 
 const FlexWrapper = styled.div`
-    ${tw`container flex flex-col items-center`}
+    ${tw`container flex flex-col items-center mb-8 mt-10`}
 `;
 
 // todo: align naming convention
 // todo: or extract styled body components to their own component
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-8 mt-10 mx-auto text-center text-lg`}
+    ${tw`max-w-prose mx-auto text-center text-lg`}
 `;
 
 const StyledHeading = styled.h2`
