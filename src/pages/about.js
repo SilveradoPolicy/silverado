@@ -28,7 +28,7 @@ const content = {
 };
 
 export default function AboutPage({ data }) {
-    const { dimitri, maureen, sarah, jessica, ian, general, turnbull } = data;
+    const { dimitri, maureen, sarah, ian, general, turnbull } = data;
     const advisoryBoard = [
         {
             image: general,
@@ -57,11 +57,6 @@ export default function AboutPage({ data }) {
             name: 'Sarah Stewart',
             bio:
                 "Sarah V. Stewart has nearly two decades of experience as an international trade lawyer, policy expert, and negotiator, having served in roles in the U.S. government, private sector, private practice, and a non-governmental organization. Immediately prior to joining Silverado, Ms. Stewart led the public policy efforts at Amazon on U.S. trade policy and export controls matters between 2019 and mid-2020.  From 2013 to 2018, Ms. Stewart worked for the Office of the United States Trade Representative, with her most recent position being the Deputy Assistant United States Trade Representative for Environment and Natural Resources. During her time at USTR, Ms. Stewart was the lead environment chapter negotiator for the US-Mexico-Canada Agreement and the Transatlantic Trade and Investment Partnership (TTIP) negotiations with the European Union. Ms. Stewart also led USTR's efforts on trade and environment issues in the Western Hemisphere. Prior to joining USTR, Ms. Stewart served in different legal and policy roles at The Humane Society of the United States and Humane Society International, including spearheading a first ever international legal group. Ms. Stewart began her career as a trade remedy lawyer at the Law Offices of Stewart and Stewart, where she worked for six years on behalf of U.S. manufacturing companies and workers.",
-        },
-        {
-            image: jessica,
-            name: 'test name 2',
-            bio: 'some bio data here',
         },
         {
             image: ian,
@@ -147,7 +142,7 @@ export const query = graphql`
             }
             id
         }
-        turnbull: file(relativePath: { regex: "/turnbull/" }) {
+        turnbull: file(relativePath: { regex: "/cropped/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -164,7 +159,6 @@ AboutPage.propTypes = {
         dimitri: PropTypes.object.isRequired,
         maureen: PropTypes.object.isRequired,
         sarah: PropTypes.object.isRequired,
-        jessica: PropTypes.object.isRequired,
         ian: PropTypes.object.isRequired,
         general: PropTypes.object.isRequired,
         turnbull: PropTypes.object.isRequired,
