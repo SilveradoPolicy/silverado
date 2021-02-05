@@ -19,7 +19,6 @@ const GridWrapper = styled.div`
 `;
 
 export default function HonoraryMembersSection({ speakers, sponsors }) {
-    console.log(sponsors);
     return (
         <Section>
             <StyledHeading>speakers</StyledHeading>
