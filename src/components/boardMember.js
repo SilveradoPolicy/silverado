@@ -27,7 +27,11 @@ const ImgWrapper = styled.div`
 
 export default function BoardMember({ data }) {
     const {
-        childImageSharp: { fluid },
+        name,
+        bio,
+        image: {
+            childImageSharp: { fluid },
+        },
     } = data;
     return (
         <StyledListItem key={data.id}>
@@ -35,17 +39,8 @@ export default function BoardMember({ data }) {
                 <Img fluid={fluid} />
             </ImgWrapper>
             <BioWrapper>
-                <BioHeading>dmitri alperovitch</BioHeading>
-                <BioBody>
-                    Quisque consequat, massa ut convallis sagittis, ipsum lectus
-                    tempus urna, nec consequat massa leo sed metus. Morbi eget
-                    justo justo augue. Etiam a tortor ligula. Duis pharetra
-                    egestas urna eu maximus. Integer venenatis convallis
-                    elementum. ullamcorper consequat nibh, ac sodales nunc
-                    vestibulum eget. Nam ultrices blandit velit at finibus.
-                    Nulla vitae condimentum risus. Sed vitae porta tortor. Nulla
-                    interdum sapien mi.
-                </BioBody>
+                <BioHeading>{name}</BioHeading>
+                <BioBody>{bio}</BioBody>
             </BioWrapper>
         </StyledListItem>
     );

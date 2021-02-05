@@ -9,7 +9,7 @@ const FlexWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-    ${tw`mb-4 mx-auto overflow-hidden rounded-full w-3/4`}
+    ${tw`mb-4 mx-auto h-full overflow-hidden rounded-full w-3/4`}
 `;
 
 const StyledName = styled.div`
@@ -18,7 +18,10 @@ const StyledName = styled.div`
 
 export default function ImageWithName({ data }) {
     const {
-        childImageSharp: { fluid },
+        fullName,
+        image: {
+            childImageSharp: { fluid },
+        },
     } = data;
 
     return (
@@ -26,7 +29,7 @@ export default function ImageWithName({ data }) {
             <ImgWrapper>
                 <Img fluid={fluid} />
             </ImgWrapper>
-            <StyledName>first last</StyledName>
+            <StyledName>{fullName}</StyledName>
         </FlexWrapper>
     );
 }

@@ -15,11 +15,64 @@ const StyledHeading = styled.h2`
 `;
 
 export default function StrategicCouncil({ honoraryMembers }) {
+    const strategicAdvisors = [
+        {
+            advisorFullName: 'Rob Atkinson',
+        },
+        {
+            advisorFullName: 'Tom Bossert',
+        },
+        {
+            advisorFullName: 'Nick Consonery',
+        },
+        {
+            advisorFullName: 'Wendy Cutler',
+        },
+        {
+            advisorFullName: 'Richard Danzig',
+        },
+        {
+            advisorFullName: 'Mark Galeotti',
+        },
+        {
+            advisorFullName: 'Steve Healey',
+        },
+        {
+            advisorFullName: 'Chris Inglis',
+        },
+        {
+            advisorFullName: 'Jamil Jaffer',
+        },
+        {
+            advisorFullName: 'Rick Ledgett',
+        },
+        {
+            advisorFullName: 'Mark Linscott',
+        },
+        {
+            advisorFullName: 'Bill McElnea',
+        },
+        {
+            advisorFullName: 'Evan Medeiros',
+        },
+        {
+            advisorFullName: 'Keith Mularski',
+        },
+        {
+            advisorFullName: 'Robert Nye',
+        },
+        {
+            advisorFullName: 'Matthew Reisman',
+        },
+        {
+            advisorFullName: 'Matt Rojanksy',
+        },
+    ];
     return (
         <StyledSection>
             <StyledHeading>strategic council</StyledHeading>
             <HonoraryMembersSection honoraryMembers={honoraryMembers} />
-            <StrategicAdvisorsSection />
+            <StrategicAdvisorsSection advisors={strategicAdvisors} />
         </StyledSection>
     );
 }

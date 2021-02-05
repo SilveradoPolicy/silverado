@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -11,11 +11,16 @@ const StyledTitle = styled.p`
     ${tw`capitalize font-wt-thin text-brand-1 text-ts-h5`}
 `;
 
-export default function StrategicAdvisor() {
+export default function StrategicAdvisor({ data }) {
+    const { advisorFullName, title } = data;
     return (
         <div>
-            <StyledName>first last name</StyledName>
-            <StyledTitle>title</StyledTitle>
+            <StyledName>{advisorFullName}</StyledName>
+            <StyledTitle>{title}</StyledTitle>
         </div>
     );
 }
+
+StrategicAdvisor.propTypes = {
+    data: PropTypes.object.isRequired,
+};
