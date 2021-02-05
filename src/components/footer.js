@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
+
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 import Logo from './logos/logoType';
 
@@ -52,11 +54,15 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-    ${tw`bg-white border border-white mb-5 p-1 text-lg text-right`}
+    ${tw`bg-white border border-white text-brand-1 mb-5 p-1 text-lg text-right`}
 `;
 
 const StyledButton = styled.button`
     ${tw`border border-2 border-white rounded-full self-center md:self-end capitalize px-5 py-1 text-center text-lg hover:bg-brand-6 hover:border-brand-6 transition-colors`}
+`;
+
+const StyledMessageComponent = styled.p`
+    ${tw`text-lg`}
 `;
 
 // todo: confirm mobile layout
@@ -101,6 +107,10 @@ const content = {
 };
 
 export default function Footer() {
+    const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [responseMessage, setResponseMessage] = useState('');
+
     const links = content.internalLinks.map((item) => {
         return (
             <li key={item.text}>
@@ -110,6 +120,25 @@ export default function Footer() {
             </li>
         );
     });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const result = await addToMailchimp(email);
+        setEmail('');
+        if (result.result === 'error') {
+            setResponseMessage(`${email} is already subscribed`);
+            setIsSubscribed(false);
+        } else {
+            setIsSubscribed(true);
+            setResponseMessage(`${email} is now subscribed`);
+        }
+    };
+
+    const handleChange = ({ target }) => {
+        const { value } = target;
+        setEmail(value);
+    };
+
     return (
         <StyledFooter>
             <FooterInner>
@@ -124,17 +153,31 @@ export default function Footer() {
                     </ContactDiv>
                     <StyledUL>{links}</StyledUL>
                 </FooterNav>
-                <StyledForm>
+                <StyledForm onSubmit={handleSubmit}>
                     <FormHeading>{content.form.heading}</FormHeading>
-                    <StyledLabel htmlFor="email sr-only">Email</StyledLabel>
-                    <StyledInput
-                        name="email"
-                        placeholder="email"
-                        type="email"
-                    />
-                    <StyledButton type="submit">
-                        {content.form.buttonText}
-                    </StyledButton>
+                    {!isSubscribed && (
+                        <>
+                            <StyledLabel htmlFor="email sr-only">
+                                Email
+                            </StyledLabel>
+                            <StyledInput
+                                name="email"
+                                placeholder="email"
+                                type="email"
+                                value={email}
+                                onChange={handleChange}
+                            />
+                            {responseMessage}
+                            <StyledButton type="submit">
+                                {content.form.buttonText}
+                            </StyledButton>
+                        </>
+                    )}
+                    {isSubscribed && (
+                        <StyledMessageComponent>
+                            {responseMessage}
+                        </StyledMessageComponent>
+                    )}
                 </StyledForm>
             </FooterInner>
         </StyledFooter>
