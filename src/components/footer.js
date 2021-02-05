@@ -124,6 +124,7 @@ export default function Footer() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const result = await addToMailchimp(email);
+        setEmail('');
         if (result.result === 'error') {
             setResponseMessage(`${email} is already subscribed`);
             setIsSubscribed(false);
