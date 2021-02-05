@@ -26,16 +26,19 @@ const Body = styled.p`
 `;
 
 export default function IndexHero({ body, cta, heading }) {
+    const heroContent = body || cta || heading;
     return (
         <StyledSection>
             <AnimationWrapper>
                 <HeroAnimation />
             </AnimationWrapper>
-            <HeroInnerContainer>
-                <Heading>{heading}</Heading>
-                {body && <Body>{body}</Body>}
-                {cta && <CtaLink cta={cta} />}
-            </HeroInnerContainer>
+            {heroContent && (
+                <HeroInnerContainer>
+                    <Heading>{heading}</Heading>
+                    {body && <Body>{body}</Body>}
+                    {cta && <CtaLink cta={cta} />}
+                </HeroInnerContainer>
+            )}
         </StyledSection>
     );
 }
