@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import AdvisoryBoard from '../components/advisoryBoard';
-import StrategicCouncil from '../components/strategicCouncil';
+// import StrategicCouncil from '../components/strategicCouncil';
 import CopyWithCTA from '../components/copyWithCTA';
 
 const content = {
@@ -25,11 +25,64 @@ const content = {
         text:
             'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to challenge build support for actionable policy initiatives and ignite a 21c race to the top.',
     },
+
+    advisoryBio: [
+        {
+            name: 'test name 1',
+            bio: 'some stuff here',
+        },
+        {
+            name: 'test name 2',
+            bio: 'some stuff here',
+        },
+        {
+            name: 'test name 3',
+            bio: 'some stuff here',
+        },
+        {
+            name: 'test name 4',
+            bio: 'some stuff here',
+        },
+        {
+            name: 'test name 5',
+            bio: 'some stuff here',
+        },
+    ],
 };
 
 export default function AboutPage({ data }) {
     const { dimitri, maureen, sarah, jessica, ian } = data;
-    const advisoryBoard = [dimitri, maureen, sarah, jessica, ian];
+
+    // const advisoryBoard = [dimitri, maureen, sarah, jessica, ian];
+
+    const advisoryBoard = [
+        {
+            image: dimitri,
+            name: 'test name 1',
+            bio: 'some bio data here',
+        },
+        {
+            image: maureen,
+            name: 'test name 2',
+            bio: 'some bio data here',
+        },
+        {
+            image: sarah,
+            name: 'test name 2',
+            bio: 'some bio data here',
+        },
+        {
+            image: jessica,
+            name: 'test name 2',
+            bio: 'some bio data here',
+        },
+        {
+            image: ian,
+            name: 'test name 2',
+            bio: 'some bio data here',
+        },
+    ];
+
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
@@ -39,7 +92,7 @@ export default function AboutPage({ data }) {
                 hasHeading
             />
             <AdvisoryBoard team={advisoryBoard} />
-            <StrategicCouncil honoraryMembers={advisoryBoard} />
+            {/* <StrategicCouncil honoraryMembers={advisoryBoard} /> */}
             <CopyWithCTA
                 content={content.ctasection}
                 hasBottomGradient
