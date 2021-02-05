@@ -18,71 +18,54 @@ export default function StrategicCouncil({ honoraryMembers }) {
     const strategicAdvisors = [
         {
             advisorFullName: 'Rob Atkinson',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Tom Bossert',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Nick Consonery',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Wendy Cutler',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Richard Danzig',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Mark Galeotti',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Steve Healey',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Chris Inglis',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Jamil Jaffer',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Rick Ledgett',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Mark Linscott',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Bill McElnea',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Evan Medeiros',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Keith Mularski',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Robert Nye',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Matthew Reisman',
-            title: 'Sample Title',
         },
         {
             advisorFullName: 'Matt Rojanksy',
-            title: 'Sample Title',
         },
     ];
     return (
