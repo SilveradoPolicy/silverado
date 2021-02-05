@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import ImageWithName from '../imageWithName';
+import ImageNoName from '../imageNoName';
 
 const Section = styled.section`
     ${tw`container py-8`}
@@ -18,6 +19,7 @@ const GridWrapper = styled.div`
 `;
 
 export default function HonoraryMembersSection({ speakers, sponsors }) {
+    console.log(sponsors);
     return (
         <Section>
             <StyledHeading>speakers</StyledHeading>
@@ -29,7 +31,7 @@ export default function HonoraryMembersSection({ speakers, sponsors }) {
             <StyledHeading>sponsors</StyledHeading>
             <GridWrapper>
                 {sponsors.map((item) => {
-                    return <ImageWithName data={item} key={item.id} />;
+                    return <ImageNoName data={item} key={item.id} />;
                 })}
             </GridWrapper>
         </Section>

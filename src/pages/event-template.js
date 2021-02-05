@@ -41,7 +41,24 @@ const content = {
 export default function EventTemplate({ data }) {
     const { dimitri } = data;
 
-    const speakers = [dimitri, dimitri, dimitri, dimitri];
+    const speakers = [
+        {
+            image: dimitri,
+            fullName: 'First Last',
+        },
+        {
+            image: dimitri,
+            fullName: 'First Last',
+        },
+        {
+            image: dimitri,
+            fullName: 'First Last',
+        },
+        {
+            image: dimitri,
+            fullName: 'First Last',
+        },
+    ];
     const sponsors = [dimitri, dimitri, dimitri, dimitri];
 
     return (
