@@ -8,7 +8,10 @@ import Calendar from './icons/calendar';
 import Close from './icons/close';
 
 const FixedWrapper = styled.div`
-    ${tw`fixed bottom-1/4 md:bottom-1/3 pointer-events-none w-full z-10`}
+    ${tw`fixed pointer-events-none w-full z-10`}
+
+    bottom: 25%;
+    right: 1%;
 `;
 
 const ToggleButton = styled.button`
@@ -56,58 +59,28 @@ const content = [
 ];
 
 export default function EventList() {
-    const [isWindowScrolled, setIsWindowScrolled] = useState(true);
-    const [didUserOpen, setDidUserOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleDidUserOpen = () => {
-        return setDidUserOpen(!didUserOpen);
+        return setIsOpen(!isOpen);
     };
 
     const handleScroll = () => {
-        if (window.innerWidth > 1024) {
-            if (window.scrollY === 0) {
-                setDidUserOpen(false);
-                setIsWindowScrolled(true);
-            }
-            if (window.scrollY > 10) {
-                setIsWindowScrolled(true);
-            } else {
-                setIsWindowScrolled(false);
-            }
-        }
-    };
-
-    const handleInitialRender = () => {
-        if (window.innerWidth > 1024) {
-            setDidUserOpen(false);
-            setIsWindowScrolled(false);
-        }
-    };
-
-    const handleResize = () => {
-        if (window.innerWidth > 1024) {
-            setIsWindowScrolled(false);
-        } else {
-            setIsWindowScrolled(true);
-        }
+        setIsOpen(false);
     };
 
     useEffect(() => {
-        window.addEventListener('load', handleInitialRender);
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('load', handleInitialRender);
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
         };
     });
 
     return (
         <FixedWrapper>
             <AnimatePresence>
-                {(didUserOpen || !isWindowScrolled) && (
+                {isOpen && (
                     <motion.div
                         style={{ overflow: 'hidden' }}
                         initial="closed"
@@ -147,9 +120,9 @@ export default function EventList() {
                 )}
             </AnimatePresence>
             <InnerContainer>
-                {isWindowScrolled && (
+                {true && (
                     <ToggleButton role="button" onClick={handleDidUserOpen}>
-                        {didUserOpen ? (
+                        {isOpen ? (
                             <AnimatePresence>
                                 <motion.div
                                     initial={{

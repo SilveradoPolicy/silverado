@@ -1,15 +1,51 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import Lottie from 'lottie-react';
+
 import homepageAnimation from '../animations/Homepage.json';
 
-import ScrolledAnimation from './scrolledAnimation';
-
 export default function HomepageAnimation() {
+    const containerRef = useRef(null);
+
+    const getScrollPosition = () => {
+        const {
+            current: {
+                animationItem: {
+                    wrapper: { offsetHeight, offsetTop },
+                },
+            },
+        } = containerRef;
+
+        const elementPosition = offsetTop - offsetHeight;
+
+        return elementPosition;
+    };
+
+    const handleScroll = () => {
+        const {
+            current: { play },
+        } = containerRef;
+
+        const windowPosition = window.scrollY;
+
+        const elementScrollPosition = getScrollPosition();
+
+        if (windowPosition >= elementScrollPosition) {
+            play();
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
+
     return (
-        <ScrolledAnimation
-            data={homepageAnimation}
-            frames={270}
-            style={{ height: 500 }}
-            visibilityOptions={[0.25, 0.65]}
+        <Lottie
+            autoplay={false}
+            loop={0}
+            animationData={homepageAnimation}
+            lottieRef={containerRef}
         />
     );
 }
