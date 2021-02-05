@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
         --brand-6: #FCAF1B;
         --white: #ffffff;
         --black: #000000;
+        --gradient-blue: #EDF8F8;
     }
     body {
         font-size: 1rem;
