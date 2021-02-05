@@ -109,7 +109,7 @@ const content = {
 export default function Footer() {
     const [email, setEmail] = useState('');
     const [isSubscribed, setIsSubscribed] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [responseMessage, setResponseMessage] = useState('');
 
     const links = content.internalLinks.map((item) => {
         return (
@@ -124,16 +124,13 @@ export default function Footer() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const result = await addToMailchimp(email);
-        console.log(result);
         setEmail(' ');
         if (result.result === 'error') {
-            setErrorMessage(`${email} is already subscribed`);
+            setResponseMessage(`${email} is already subscribed`);
             setIsSubscribed(false);
-            console.log(`${email} is already subscribed`);
         } else {
-            console.log('this is working');
             setIsSubscribed(true);
-            setErrorMessage(`${email} is subscribed`);
+            setResponseMessage(`${email} is now subscribed`);
         }
     };
 
@@ -170,7 +167,7 @@ export default function Footer() {
                                 value={email}
                                 onChange={handleChange}
                             />
-                            {errorMessage}
+                            {responseMessage}
                             <StyledButton type="submit">
                                 {content.form.buttonText}
                             </StyledButton>
@@ -178,7 +175,7 @@ export default function Footer() {
                     )}
                     {isSubscribed && (
                         <StyledMessageComponent>
-                            {errorMessage}
+                            {responseMessage}
                         </StyledMessageComponent>
                     )}
                 </StyledForm>
