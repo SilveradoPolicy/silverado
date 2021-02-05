@@ -30,6 +30,14 @@ module.exports = {
                 icon: 'src/images/icon.png',
             },
         },
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint:
+                    'https://gmail.us2.list-manage.com/subscribe/post?u=a087c748c5de48bd623e1be32&id=56260e3441',
+                timeout: 3500,
+            },
+        },
         'gatsby-plugin-sharp',
         'gatsby-plugin-sitemap',
         'gatsby-plugin-styled-components',
