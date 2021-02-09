@@ -5,7 +5,19 @@ import tw from 'twin.macro';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Card = styled.div`
-    ${tw`text-brand-1 w-96`}
+    ${tw`ml-72 py-10 text-brand-1 w-96`}
+`;
+
+const Year = styled.p`
+    ${tw`font-wt-thin mb-4 text-5xl`}
+`;
+
+const Heading = styled.p`
+    ${tw`font-wt-bold mb-2 text-ts-h5`}
+`;
+
+const Body = styled.p`
+    ${tw`leading-6`}
 `;
 
 export default function TimeLineCard({ body, heading, year, isOpen }) {
@@ -30,9 +42,9 @@ export default function TimeLineCard({ body, heading, year, isOpen }) {
                     }}
                 >
                     <Card key={year}>
-                        <h2>{year}</h2>
-                        <h2>{heading}</h2>
-                        <p>{body}</p>
+                        <Year>{year}</Year>
+                        <Heading>{heading}</Heading>
+                        <Body>{body}</Body>
                     </Card>
                 </motion.div>
             )}

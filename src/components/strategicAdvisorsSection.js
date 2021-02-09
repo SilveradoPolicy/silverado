@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -13,19 +13,19 @@ const GridWrapper = styled.div`
     ${tw`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10`}
 `;
 
-const testData = Array(20)
-    .fill()
-    .map((x, i) => i);
-
-export default function StrategicAdvisorsSection() {
+export default function StrategicAdvisorsSection({ advisors }) {
     return (
         <>
             <StyledHeading>strategic advisors</StyledHeading>
             <GridWrapper>
-                {testData.map((item) => {
-                    return <StrategicAdvisor key={item} />;
+                {advisors.map((item) => {
+                    return <StrategicAdvisor data={item} key={item} />;
                 })}
             </GridWrapper>
         </>
     );
 }
+
+StrategicAdvisorsSection.propTypes = {
+    advisors: PropTypes.array.isRequired,
+};

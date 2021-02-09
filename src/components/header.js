@@ -19,7 +19,7 @@ const CtaBar = styled.div`
 `;
 
 const StyledNav = styled.nav`
-    ${tw`container px-5 md:px-0 flex justify-between py-3 relative px-4 md:px-0`}
+    ${tw`container flex justify-between py-3 relative`}
 `;
 
 const StyledLogoLink = styled(Link)`
@@ -40,7 +40,7 @@ const nav = [
         link: '/about',
     },
     {
-        text: `what's happening`,
+        text: `events`,
         link: '/events',
     },
 ];

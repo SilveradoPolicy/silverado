@@ -32,8 +32,9 @@ const Carousel = styled.div`
 `;
 
 const CarouselItem = styled.div`
-    ${tw`flex items-center justify-center flex-shrink-0 cursor-pointer text-ts-h4 text-brand-1 font-semibold`}
+    ${tw`flex items-center justify-center flex-shrink-0 cursor-pointer text-ts-h4 text-brand-1 font-semibold transition-opacity`}
 
+    opacity: ${({ isActive }) => (isActive ? '0' : '1')};
     width: 386px;
 `;
 
@@ -43,13 +44,14 @@ const CardContainer = styled.div`
 
 export default function Timeline() {
     const [activeSlide, setActiveSlide] = useState(1);
+    const [currentYear, setCurrentYear] = useState('1995');
 
     const handleSlideChange = (e) => {
         const arrayOfYears = content.map(({ year }) => year);
         const selectedSlide = e.target.dataset.position;
         const arrayPosition = arrayOfYears.indexOf(selectedSlide);
-        console.log(arrayPosition)
         setActiveSlide(arrayPosition);
+        setCurrentYear(e.target.dataset.position);
     };
 
     const variants = {
@@ -64,11 +66,12 @@ export default function Timeline() {
                 <TimelineIcon />
                 <CarouselInner>
                     <Carousel activeSlide={activeSlide}>
-                        {content.map(({ year }) => (
+                        {content.map(({ year, index }) => (
                             <CarouselItem
-                                key={year}
+                                key={index}
                                 data-position={year}
                                 onClick={handleSlideChange}
+                                isActive={year === currentYear}
                             >
                                 {year}
                             </CarouselItem>

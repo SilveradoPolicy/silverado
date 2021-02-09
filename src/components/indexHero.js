@@ -3,55 +3,56 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import BackgroundImage from 'gatsby-background-image';
 import CtaLink from './ctaLink';
+import HeroAnimation from './heroAnimation';
 
-const StyledBgImage = styled(BackgroundImage)`
-    ${tw`h-3/4-screen flex flex-col justify-center text-white`}
+const StyledSection = styled.section`
+    ${tw`flex flex-col justify-center relative`}
 `;
 
+const AnimationWrapper = styled.div`
+    ${tw`w-full`}
+`;
 const HeroInnerContainer = styled.div`
-    ${tw`container px-5 md:px-0`}
+    ${tw`container text-brand-1 absolute left-1/2 transform -translate-x-1/2`}
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6`}
+    ${tw`text-ts-h1 font-wt-bold mb-6 mt-24`}
 `;
 
 const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ cta, heroImage }) {
-    const {
-        childImageSharp: { fluid },
-    } = heroImage;
+export default function IndexHero({ body, cta, heading }) {
+    const heroContent = body || cta || heading;
     return (
-        <StyledBgImage fluid={fluid} Tag="section">
-            <HeroInnerContainer>
-                <Heading>Igniting a 21c Race to the Top</Heading>
-                <Body>
-                    A future defined by enduring American prosperity and global
-                    competitiveness through venture in the acceleration of
-                    bipartisan economic, strategic, and technological policy
-                    solutions.
-                </Body>
-                <CtaLink cta={cta} />
-            </HeroInnerContainer>
-        </StyledBgImage>
+        <StyledSection>
+            <AnimationWrapper>
+                <HeroAnimation />
+            </AnimationWrapper>
+            {heroContent && (
+                <HeroInnerContainer>
+                    <Heading>{heading}</Heading>
+                    {body && <Body>{body}</Body>}
+                    {cta && <CtaLink cta={cta} />}
+                </HeroInnerContainer>
+            )}
+        </StyledSection>
     );
 }
 
 IndexHero.defaultProps = {
-    cta: {
-        link: '',
-        text: '',
-    },
+    body: false,
+    cta: false,
+    heading: false,
 };
 
 IndexHero.propTypes = {
-    heroImage: PropTypes.object.isRequired,
+    body: PropTypes.string,
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
+    heading: PropTypes.string,
 };

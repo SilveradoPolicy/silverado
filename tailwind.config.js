@@ -26,10 +26,14 @@ module.exports = {
             height: {
                 '3/4-screen': '75vh',
             },
+            minHeight: {
+                '3/4-screen': '75vh',
+            },
         },
-        container: {
+        container: (theme) => ({
             center: true,
-        },
+            padding: theme('spacing.5'),
+        }),
         fontFamily: {
             'wt-thin': 'SukhumvitThin',
             'wt-reg': 'SukhumvitReg',

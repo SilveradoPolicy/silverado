@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -7,38 +8,55 @@ import CtaLink from './ctaLink';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
-    ${tw`py-32 relative`}
+    ${tw`pb-16 pt-16 relative`}
     background: ${(props) =>
-        props.bgGradient
+        props.bottomGradient
             ? `linear-gradient(180deg, rgba(115, 150, 99, 0) 0%, rgba(115, 150, 99, 0.37) 100%);`
+            : props.topGradient
+            ? 'linear-gradient(180deg, #EDF8F8 0%, rgba(237, 248, 248, 0) 100%);'
             : ''};
 `;
 
 const FlexWrapper = styled.div`
-    ${tw`container px-5 md:px-0 flex flex-col items-center`}
+    ${tw`container flex flex-col items-center mb-8 mt-10`}
 `;
 
 // todo: align naming convention
 // todo: or extract styled body components to their own component
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose mb-6 mx-auto text-center text-lg`}
+    ${tw`max-w-prose mx-auto text-center text-lg`}
+`;
+
+const StyledHeading = styled.h2`
+    ${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
 `;
 
 export default function CopyWithCTA({
     content,
-    hasBgGradient,
+    hasBottomGradient,
+    hasTopGradient,
     hasTopTransition,
+    hasHeading,
 }) {
-    const { text } = content;
+    const { text, textTwo, heading } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
     const { cta } = content;
 
     return (
-        <StyledSection bgGradient={hasBgGradient}>
+        <StyledSection
+            bottomGradient={hasBottomGradient}
+            topGradient={hasTopGradient}
+        >
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
-                <StyledBody>{text}</StyledBody>
+                {hasHeading && <StyledHeading>{heading}</StyledHeading>}
+                <StyledBody>
+                    {text}
+                    <br />
+                    <br />
+                    {textTwo}
+                </StyledBody>
                 {hasCta && <CtaLink cta={cta} />}
             </FlexWrapper>
         </StyledSection>
@@ -46,14 +64,18 @@ export default function CopyWithCTA({
 }
 
 CopyWithCTA.defaultProps = {
-    hasBgGradient: false,
+    hasBottomGradient: false,
+    hasTopGradient: false,
     hasTopTransition: false,
+    hasHeading: false,
 };
 
 // todo: update proptypes after sanity integration, should cover more that just object
 
 CopyWithCTA.propTypes = {
     content: PropTypes.object.isRequired,
-    hasBgGradient: PropTypes.bool,
+    hasBottomGradient: PropTypes.bool,
+    hasTopGradient: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
+    hasHeading: PropTypes.bool,
 };

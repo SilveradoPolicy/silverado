@@ -10,54 +10,81 @@ import IndexSubHero from '../components/indexSubHero';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
 import Pillars from '../components/pillars';
-import EventList from '../components/eventList';
+
+import HomepageAnimation from '../components/homepageAnimation';
 
 const content = {
-    heroLink: {
-        link: '/',
-        text: 'learn more',
+    hero: {
+        heading: `Accelerating a 21st-century race to the top`,
     },
     subHero: {
-        heading: `The world is at an inflection point and America needs a long-term vision and plan to ensure enduring prosperity and global competitiveness`,
-        body: `The race is on to see who will be first develop and maintain new new and emerging technologies, who will gain the strategic advantage in new types of warfare in both cyber and outer space, who will be able to best protect its national national interests while retaining strong relationships with allies, who will set the blueprint for international standards and norms, who will be able to unlock further economic growth and prosperity through international trade and investment, and who will be positioned to lead a broad to lead a broad coalition within international institutions.`,
+        heading: `Forging a path toward American prosperity and global competitivess through investment in bipartisan economic, strategic, and technological policy solutions.`,
+        body: `The race is on. As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitivess on the world stage.`,
     },
     fullWidthImage: {
-        heading: 'how accelerators work',
-        body: 'Silverado Policy Accelerator launched for this very purpose - to apply a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented.',
+        heading: 'What is the Silverado Policy Accelerator?',
+        body:
+            "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
     },
     copy1: {
-        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        text:
+            "The contest for twenty-first century global leadership is creating new challenges in cyberspace, at the negotiating table, and across complex global supply chains. Silverado works at the intersection of the three policy areas that will critically shape America's place in the world.",
     },
     copy2: {
-        text: 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
+        text:
+            " Silverado's three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic compeition?  ",
         cta: {
-            link: '/',
+            link: '/initiatives',
             text: 'learn more',
         },
     },
-}
+};
 
-export default function IndexPage({ data }) {
-    const { heroImage } = data;
-
+export default function IndexPage() {
     return (
         <Layout isIndexPage>
-            <EventList />
-            <IndexHero heroImage={heroImage} cta={content.heroLink} />
-            <IndexSubHero heading={content.subHero.heading} body={content.subHero.body} /> 
-            <FullWidthImageWithText heading={content.fullWidthImage.heading} body={content.fullWidthImage.body} image={heroImage} hasParalledTransition />
-            <CopyWithCTA content={content.copy1}  hasTopTransition={false} />
+            <IndexHero />
+            <IndexSubHero
+                body={content.subHero.body}
+                heading={content.hero.heading}
+                subHeading={content.subHero.heading}
+            />
+            <FullWidthImageWithText
+                heading={content.fullWidthImage.heading}
+                body={content.fullWidthImage.body}
+                hasTopTransition
+            />
+            <HomepageAnimation />
+            <CopyWithCTA content={content.copy1} hasTopTransition={false} />
             <Pillars hasTopTransition />
-            <CopyWithCTA content={content.copy2} hasBgGradient hasTopTransition />
+            <CopyWithCTA
+                content={content.copy2}
+                hasBottomGradient
+                hasTopTransition
+            />
         </Layout>
     );
 }
 
 export const query = graphql`
     query IndexQuery {
-        heroImage: file(relativePath: {regex: "/heroImage/"}) {
+        heroImage: file(relativePath: { regex: "/Mountain/" }) {
             childImageSharp {
                 fluid(maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        accImage: file(relativePath: { regex: "/homepageAcc/" }) {
+            childImageSharp {
+                fluid(maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        mobileHero: file(relativePath: { regex: "/mobileHero/" }) {
+            childImageSharp {
+                fluid(maxWidth: 768) {
                     ...GatsbyImageSharpFluid
                 }
             }
@@ -68,5 +95,7 @@ export const query = graphql`
 IndexPage.propTypes = {
     data: PropTypes.shape({
         heroImage: PropTypes.object.isRequired,
-    }).isRequired
-}
+        mobileHero: PropTypes.object.isRequired,
+        sources: PropTypes.array.isRequired,
+    }).isRequired,
+};

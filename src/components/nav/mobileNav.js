@@ -38,7 +38,7 @@ const StyledSpan = styled.span`
 `;
 
 const MobileNavMenu = styled.ul`
-    ${tw`absolute right-0 md:hidden min-h-screen w-max flex flex-col items-end transform-gpu transition bg-white pr-4 pt-24 text-brand-1 top-0`}
+    ${tw`absolute right-0 md:hidden min-h-screen w-max flex flex-col items-end transform-gpu transition bg-white pr-4 pt-24 text-brand-1 top-0 text-right`}
 
     transform: ${({ isNavOpen }) =>
         isNavOpen ? `translateX(0)` : `translateX(100%)`}

@@ -17,7 +17,7 @@ const StyledSection = styled.section`
 `;
 
 const Grid = styled.div`
-    ${tw`container px-5 md:px-0 gap-10 grid grid-cols-1 md:grid-cols-3`}
+    ${tw`container gap-10 grid grid-cols-1 md:grid-cols-3`}
 `;
 
 const Card = styled.div`
@@ -29,7 +29,7 @@ const Heading = styled.h3`
 `;
 
 const Body = styled.p`
-    ${tw`text-brand-1 text-lg`}
+    ${tw`text-black text-lg`}
 `;
 
 export default function Pillars({ hasTopGradient, hasTopTransition }) {
@@ -39,26 +39,29 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
             <Grid>
                 <Card>
                     <EcoSecIcon />
-                    <Heading>Testing</Heading>
+                    <Heading>Eco&sup2;Sec</Heading>
                     <Body>
-                        Cras iaculis, lectus a condimentum lacinia, risus ex
-                        varius est, vel fermentum magna enim sed eros.
+                        Foregrounding the nexus of economic and ecological risk
+                        and opportunity to meet the 21st-century climate
+                        imperative
                     </Body>
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
-                    <Heading>Testing a long title here</Heading>
+                    <Heading>Trade and Industrial Security</Heading>
                     <Body>
-                        Cras iaculis, lectus a condimentum lacinia, risus ex
-                        varius est, vel fermentum magna enim sed eros.
+                        Developing a trade and industrual strategy that supports
+                        American workers, secures America&#39;s supply chains,
+                        and advances equitable trade practices
                     </Body>
                 </Card>
                 <Card>
                     <CybersecurityIcon />
-                    <Heading>Testing a really long title here</Heading>
+                    <Heading>Cybersecurity</Heading>
                     <Body>
-                        Cras iaculis, lectus a condimentum lacinia, risus ex
-                        varius est, vel fermentum magna enim sed eros.
+                        Modernizing America&#39;s cyber strategy to enhance
+                        deterrence, defend against cyber attacks, and protect
+                        intellectual property and national security
                     </Body>
                 </Card>
             </Grid>
