@@ -35,9 +35,9 @@ const StyledListItem = styled.li`
     line-height: 38.4px;
 `;
 
-// const StyledListBold = styled(StyledListItem)`
-//     ${tw`font-wt-bold inline`}
-// `;
+const StyledListBold = styled.span`
+    ${tw`font-wt-bold inline`}
+`;
 
 export default function ListComponent({
     body,
@@ -54,7 +54,7 @@ export default function ListComponent({
                     {listItems.map((item) => {
                         return (
                             <StyledListItem>
-                                <strong>{`${item.heading}: `}</strong>
+                                <StyledListBold>{`${item.heading}: `}</StyledListBold>
                                 {item.text}
                             </StyledListItem>
                         );
