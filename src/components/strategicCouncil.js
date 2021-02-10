@@ -17,13 +17,10 @@ const StyledHeading = styled.h2`
 export default function StrategicCouncil({ honoraryMembers }) {
     const strategicAdvisors = [
         {
-            advisorFullName: 'Rob Atkinson',
+            advisorFullName: 'Robert D. Atkinson',
         },
         {
-            advisorFullName: 'Tom Bossert',
-        },
-        {
-            advisorFullName: 'Nick Consonery',
+            advisorFullName: 'Thomas P. Bossert',
         },
         {
             advisorFullName: 'Wendy Cutler',
@@ -35,22 +32,22 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Mark Galeotti',
         },
         {
-            advisorFullName: 'Steve Healey',
+            advisorFullName: 'Steven Glickman',
         },
         {
-            advisorFullName: 'Chris Inglis',
+            advisorFullName: 'Jason Healey',
+        },
+        {
+            advisorFullName: 'John C. (Chris) Inglis',
         },
         {
             advisorFullName: 'Jamil Jaffer',
         },
         {
-            advisorFullName: 'Rick Ledgett',
+            advisorFullName: 'Richard Ledgett',
         },
         {
             advisorFullName: 'Mark Linscott',
-        },
-        {
-            advisorFullName: 'Bill McElnea',
         },
         {
             advisorFullName: 'Evan Medeiros',
@@ -59,13 +56,31 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Keith Mularski',
         },
         {
-            advisorFullName: 'Robert Nye',
+            advisorFullName: 'Joseph Nye',
         },
         {
             advisorFullName: 'Matthew Reisman',
         },
         {
-            advisorFullName: 'Matt Rojanksy',
+            advisorFullName: 'Matthew Rojanksy',
+        },
+        {
+            advisorFullName: 'Nadia Schadlow',
+        },
+        {
+            advisorFullName: 'Neill Sciarrone',
+        },
+        {
+            advisorFullName: 'Matthew Spence',
+        },
+        {
+            advisorFullName: 'Terence P. Stewart',
+        },
+        {
+            advisorFullName: 'Jonathan Ward',
+        },
+        {
+            advisorFullName: 'Michael R. Wessel',
         },
     ];
     return (

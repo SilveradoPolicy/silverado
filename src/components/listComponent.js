@@ -16,7 +16,7 @@ const GridWrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-4 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`font-wt-bold mb-4 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
@@ -35,9 +35,9 @@ const StyledListItem = styled.li`
     line-height: 38.4px;
 `;
 
-const StyledListBold = styled(StyledListItem)`
-    ${tw`font-wt-bold inline`}
-`;
+// const StyledListBold = styled(StyledListItem)`
+//     ${tw`font-wt-bold inline`}
+// `;
 
 export default function ListComponent({
     body,
@@ -54,9 +54,7 @@ export default function ListComponent({
                     {listItems.map((item) => {
                         return (
                             <StyledListItem>
-                                <StyledListBold>
-                                    {`${item.heading}: `}
-                                </StyledListBold>
+                                <strong>{`${item.heading}: `}</strong>
                                 {item.text}
                             </StyledListItem>
                         );
