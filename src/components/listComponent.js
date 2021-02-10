@@ -32,7 +32,7 @@ const StyledList = styled.ul`
 const StyledListItem = styled.li`
     ${tw`font-wt-reg relative text-black text-ts-h6`}
 
-    line-height: 38.4px;
+    line-height: 28px;
 `;
 
 const StyledListBold = styled.span`
