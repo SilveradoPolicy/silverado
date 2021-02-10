@@ -76,12 +76,12 @@ const content = {
     },
     internalLinks: [
         {
-            link: '/',
-            text: 'internal link 1',
+            link: 'https://www.linkedin.com/company/silverado-accelerator',
+            text: 'LinkedIn',
         },
         {
-            link: '/',
-            text: 'internal link 2',
+            link: 'https://twitter.com/SilveradoPolicy',
+            text: 'Twitter',
         },
         {
             link: '/',

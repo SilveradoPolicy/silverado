@@ -1,7 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import Lottie from 'lottie-react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 import homepageAnimation from '../animations/Homepage.json';
+
+const AnimationFlex = styled.section`
+    ${tw`flex`}
+`;
 
 export default function HomepageAnimation() {
     const containerRef = useRef(null);
@@ -41,11 +47,18 @@ export default function HomepageAnimation() {
     });
 
     return (
-        <Lottie
-            autoplay={false}
-            loop={0}
-            animationData={homepageAnimation}
-            lottieRef={containerRef}
-        />
+        <>
+            <Lottie
+                autoplay={false}
+                loop={0}
+                animationData={homepageAnimation}
+                lottieRef={containerRef}
+            />
+            <AnimationFlex>
+                <h1>Cultivate</h1>
+                <h1>Incubate</h1>
+                <h1>Accelerate</h1>
+            </AnimationFlex>
+        </>
     );
 }

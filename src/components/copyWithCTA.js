@@ -39,7 +39,7 @@ export default function CopyWithCTA({
     hasTopTransition,
     hasHeading,
 }) {
-    const { text, textTwo, heading } = content;
+    const { heading, italText, text, textTwo } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
     const { cta } = content;
 
@@ -53,6 +53,7 @@ export default function CopyWithCTA({
                 {hasHeading && <StyledHeading>{heading}</StyledHeading>}
                 <StyledBody>
                     {text}
+                    <i>{italText}</i>
                     <br />
                     <br />
                     {textTwo}

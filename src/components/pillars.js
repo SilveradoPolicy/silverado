@@ -43,7 +43,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                     <Body>
                         Foregrounding the nexus of economic and ecological risk
                         and opportunity to meet the 21st-century climate
-                        imperative
+                        imperative.
                     </Body>
                 </Card>
                 <Card>
@@ -52,7 +52,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                     <Body>
                         Developing a trade and industrual strategy that supports
                         American workers, secures America&#39;s supply chains,
-                        and advances equitable trade practices
+                        and advances equitable trade practices.
                     </Body>
                 </Card>
                 <Card>
@@ -61,7 +61,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                     <Body>
                         Modernizing America&#39;s cyber strategy to enhance
                         deterrence, defend against cyber attacks, and protect
-                        intellectual property and national security
+                        intellectual property and national security.
                     </Body>
                 </Card>
             </Grid>

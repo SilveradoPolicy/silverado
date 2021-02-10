@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import EventList from './eventList';
+// import EventList from './eventList';
 
 const StyledSection = styled.section`
     ${tw`pb-16 pt-10`}
@@ -42,14 +42,27 @@ const StyledBody = styled.p`
     ${tw`lg:row-start-2 max-w-prose text-lg`}
 `;
 
-export default function IndexSubHero({ body, heading, subHeading }) {
+export default function IndexSubHero({
+    body,
+    bodyBold,
+    heading,
+    headingTwo,
+    subHeading,
+}) {
     return (
         <StyledSection>
-            <EventList />
+            {/* <EventList /> */}
             <GridWrapper>
-                <Heading>{heading}</Heading>
+                <Heading>
+                    {heading}
+                    <br />
+                    {headingTwo}
+                </Heading>
                 <SubHeading>{subHeading}</SubHeading>
-                <StyledBody>{body}</StyledBody>
+                <StyledBody>
+                    <strong>{bodyBold}</strong>
+                    {body}
+                </StyledBody>
             </GridWrapper>
         </StyledSection>
     );
@@ -57,6 +70,8 @@ export default function IndexSubHero({ body, heading, subHeading }) {
 
 IndexSubHero.propTypes = {
     body: PropTypes.string.isRequired,
+    bodyBold: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
+    headingTwo: PropTypes.string.isRequired,
     subHeading: PropTypes.string.isRequired,
 };

@@ -11,11 +11,11 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-6 mt-20 pt-10 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`font-wt-bold mb-6 mt-20 pt-10 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
-    ${tw`max-w-prose text-lg mx-auto`}
+    ${tw`max-w-prose text-center text-lg mx-auto`}
 `;
 
 export default function FullWidthImageWithText({
