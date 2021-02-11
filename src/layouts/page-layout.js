@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
 import * as fonts from '../fonts';
+import '../styles/layout.css';
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -52,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-size: 1rem;
-        font-family: 'SukhumvitReg'
+        font-family: 'SukhumvitReg', sans-serif;
     }
 `;
 export default function Layout({ children, isIndexPage }) {

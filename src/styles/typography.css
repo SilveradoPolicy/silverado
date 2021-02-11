@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'SukhumvitThin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sukhumvit'), url('${fonts.SukhumvitThin}') format('truetype');
+}
+
+@font-face {
+    font-family: 'SukhumvitReg';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sukhumvit'), url('${fonts.SukhumvitReg}') format('truetype');
+}
+
+@font-face {
+    font-family: 'SukhumvitBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sukhumvit'), url('${fonts.SukhumvitBold}') format('truetype');
+}

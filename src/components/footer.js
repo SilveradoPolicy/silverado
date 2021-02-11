@@ -83,22 +83,6 @@ const content = {
             link: 'https://twitter.com/SilveradoPolicy',
             text: 'Twitter',
         },
-        {
-            link: '/',
-            text: 'internal link 3',
-        },
-        {
-            link: '/',
-            text: 'internal link 4',
-        },
-        {
-            link: '/',
-            text: 'internal link 5',
-        },
-        {
-            link: '/',
-            text: 'internal link 6',
-        },
     ],
     form: {
         heading: 'newsletter',

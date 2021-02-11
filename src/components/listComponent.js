@@ -30,9 +30,7 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`font-wt-reg relative text-black text-ts-h6`}
-
-    line-height: 28px;
+    ${tw`leading-6 font-wt-reg relative text-black text-ts-h6`}
 `;
 
 const StyledListBold = styled.span`
