@@ -31,7 +31,9 @@
         visibility: visible;
         width: 100%;
     }
-
+    body {
+        font-family: 'SukhumvitReg', sans-serif;
+    }
     @variants hover, focus {
         .link-hover:after {
             visibility: visible;

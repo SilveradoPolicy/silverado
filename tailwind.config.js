@@ -35,9 +35,9 @@ module.exports = {
             padding: theme('spacing.5'),
         }),
         fontFamily: {
-            'wt-thin': 'SukhumvitThin',
-            'wt-reg': 'SukhumvitReg',
-            'wt-bold': 'SukhumvitBold',
+            'wt-thin': ['SukhumvitThin', 'sans-serif'],
+            'wt-reg': ['SukhumvitReg', 'sans-serif'],
+            'wt-bold': ['SukhumvitBold', 'sans-serif'],
         },
     },
     variants: {
