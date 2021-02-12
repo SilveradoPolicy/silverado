@@ -18,7 +18,7 @@ const Body = styled.p`
 `;
 
 const ListHeading = styled.p`
-    ${tw`capitalize font-wt-thin mb-4 text-brand-1 text-ts-h4`}
+    ${tw`capitalize mb-4 text-brand-1 text-ts-h4`}
 `;
 
 const ListItem = styled.li`

@@ -59,8 +59,8 @@ export default function EventTemplate({ data }) {
             fullName: 'First Last',
         },
     ];
-    const sponsors = [dimitri, dimitri, dimitri, dimitri];
 
+    // const sponsors = [data.dimitri, data.dimitri, data.dimitri, dimitri];
     return (
         <Layout>
             <EventHero
@@ -68,7 +68,7 @@ export default function EventTemplate({ data }) {
                 heading={content.hero.heading}
             />
             <EventSubHero data={content.subHero} />
-            <EventSpeakers speakers={speakers} sponsors={sponsors} />
+            <EventSpeakers speakers={speakers} sponsor={dimitri} />
             <CopyWithCTA
                 content={content.ctasection}
                 hasBottomGradient
@@ -80,7 +80,7 @@ export default function EventTemplate({ data }) {
 
 export const query = graphql`
     query EventQuery {
-        dimitri: file(relativePath: { regex: "/dimitri/" }) {
+        dmitri: file(relativePath: { regex: "/dmitriSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
