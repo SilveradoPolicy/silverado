@@ -12,19 +12,19 @@ const Heading = styled.h1`
 `;
 
 const Body = styled.p`
-    ${tw` max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 const BodyTwo = styled.p`
-    ${tw` max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 
 export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
     return (
         <StyledSection>
-            <Heading>{heading}</Heading>
-            <Body>{body}</Body>
+            <Heading className="font-wt-bold">{heading}</Heading>
+            <Body className="font-wt-thin">{body}</Body>
             <br />
-            <BodyTwo>
+            <BodyTwo className="font-wt-thin">
                 {bodyTwo} <strong>{bodyTwoBold}</strong>
             </BodyTwo>
         </StyledSection>

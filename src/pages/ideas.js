@@ -63,7 +63,6 @@ export default function IdeasPage() {
                 body={content.hero.body}
                 bodyTwo={content.hero.bodyTwo}
                 heading={content.hero.heading}
-                className="font-wt-bold"
             />
             <ListComponent
                 hasTopGradient
