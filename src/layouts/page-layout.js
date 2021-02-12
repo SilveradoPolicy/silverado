@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     // Todo: add font info to readme
     // use tailwind class font-wt-thin
     @font-face {
-        font-family: 'SukhumvitThin';
+        font-family: 'SukhumvitThin', sans-serif;
         font-style: normal;
         font-weight: normal;
         src: local('Sukhumvit'), url('${fonts.SukhumvitThin}') format('truetype');
@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
 
     // use tailwind class font-wt-reg
     @font-face {
-        font-family: 'SukhumvitReg';
+        font-family: 'SukhumvitReg', sans-serif;
         font-style: normal;
         font-weight: normal;
         src: local('Sukhumvit'), url('${fonts.SukhumvitReg}') format('truetype');
@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
     // use tailwind class font-wt-bold
     @font-face {
-        font-family: 'SukhumvitBold';
+        font-family: 'SukhumvitBold', sans-serif;
         font-style: normal;
         font-weight: normal;
         src: local('Sukhumvit'), url('${fonts.SukhumvitBold}') format('truetype');
