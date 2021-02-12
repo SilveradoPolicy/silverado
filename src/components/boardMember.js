@@ -22,7 +22,7 @@ const BioBody = styled.p`
 `;
 
 const ImgWrapper = styled.div`
-    ${tw`mb-4 mx-auto h-60 w-60 overflow-hidden rounded-full`}
+    ${tw`overflow-hidden rounded-full w-1/2 md:w-2/5`}
 `;
 
 export default function BoardMember({ data }) {

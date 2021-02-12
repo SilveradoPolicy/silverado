@@ -94,7 +94,7 @@ export const query = graphql`
                 }
             }
         }
-        dmitri: file(relativePath: { regex: "/dmitri/" }) {
+        dmitri: file(relativePath: { regex: "/dmitriSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -102,7 +102,7 @@ export const query = graphql`
             }
             id
         }
-        maureen: file(relativePath: { regex: "./maureen/" }) {
+        maureen: file(relativePath: { regex: "./maureenSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -110,7 +110,7 @@ export const query = graphql`
             }
             id
         }
-        sarah: file(relativePath: { regex: "./sarah/" }) {
+        sarah: file(relativePath: { regex: "./sarahSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -126,7 +126,7 @@ export const query = graphql`
             }
             id
         }
-        ian: file(relativePath: { regex: "/ian/" }) {
+        ian: file(relativePath: { regex: "/ianSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
