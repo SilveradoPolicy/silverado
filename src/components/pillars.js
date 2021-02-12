@@ -48,7 +48,9 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
-                    <Heading>Trade and Industrial Security</Heading>
+                    <Heading className="font-wt-bold">
+                        Trade and Industrial Security
+                    </Heading>
                     <Body>
                         Developing a trade and industrual strategy that supports
                         American workers, secures America&#39;s supply chains,
@@ -57,7 +59,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                 </Card>
                 <Card>
                     <CybersecurityIcon />
-                    <Heading>Cybersecurity</Heading>
+                    <Heading className="font-wt-bold">Cybersecurity</Heading>
                     <Body>
                         Modernizing America&#39;s cyber strategy to enhance
                         deterrence, defend against cyber attacks, and protect
