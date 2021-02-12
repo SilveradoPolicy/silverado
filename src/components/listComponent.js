@@ -20,7 +20,7 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledBody = styled.p`
-    ${tw`mb-10 mx-auto text-center text-ts-h6`}
+    ${tw`mb-10 mx-auto text-center text-ts-h5`}
 
     max-width: 85ch;
 `;
@@ -30,7 +30,7 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`leading-6 relative text-black text-ts-h6`}
+    ${tw`leading-6 relative text-black text-ts-h5`}
 `;
 
 const StyledListBold = styled.span`
