@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import ImageWithName from '../imageWithName';
-import ImageNoName from '../imageNoName';
+// import ImageWithName from '../imageWithName';
+// import ImageNoName from '../imageNoName';
 
 const Section = styled.section`
     ${tw`container py-8`}
@@ -18,26 +18,26 @@ const GridWrapper = styled.div`
     ${tw`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-24`}
 `;
 
-export default function HonoraryMembersSection({ speakers, sponsors }) {
+export default function HonoraryMembersSection() {
     return (
         <Section>
             <StyledHeading>speakers</StyledHeading>
             <GridWrapper>
-                {speakers.map((item) => {
+                {/* {speakers.map((item) => {
                     return <ImageWithName data={item} key={item.id} />;
-                })}
+                })} */}
             </GridWrapper>
             <StyledHeading>sponsors</StyledHeading>
             <GridWrapper>
-                {sponsors.map((item) => {
+                {/* {sponsors.map((item) => {
                     return <ImageNoName data={item} key={item.id} />;
-                })}
+                })} */}
             </GridWrapper>
         </Section>
     );
 }
 
 HonoraryMembersSection.propTypes = {
-    speakers: PropTypes.array.isRequired,
-    sponsors: PropTypes.array.isRequired,
+    // speakers: PropTypes.array.isRequired,
+    // sponsors: PropTypes.array.isRequired,
 };
