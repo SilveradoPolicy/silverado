@@ -41,11 +41,13 @@ export default function HomepageAnimation() {
     });
 
     return (
-        <Lottie
-            autoplay={false}
-            loop={0}
-            animationData={homepageAnimation}
-            lottieRef={containerRef}
-        />
+        <>
+            <Lottie
+                autoplay={false}
+                loop={0}
+                animationData={homepageAnimation}
+                lottieRef={containerRef}
+            />
+        </>
     );
 }

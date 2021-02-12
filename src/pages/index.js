@@ -15,11 +15,13 @@ import HomepageAnimation from '../components/homepageAnimation';
 
 const content = {
     hero: {
-        heading: `Accelerating a 21st-century race to the top`,
+        heading: `Accelerating a 21st-century`,
+        headingTwo: `race to the top`,
     },
     subHero: {
         heading: `Forging a path toward American prosperity and global competitivess through investment in bipartisan economic, strategic, and technological policy solutions.`,
-        body: `The race is on. As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitivess on the world stage.`,
+        bodyBold: `The race is on.`,
+        body: ` As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitivess on the world stage.`,
     },
     fullWidthImage: {
         heading: 'What is the Silverado Policy Accelerator?',
@@ -28,14 +30,16 @@ const content = {
     },
     copy1: {
         text:
-            "The contest for twenty-first century global leadership is creating new challenges in cyberspace, at the negotiating table, and across complex global supply chains. Silverado works at the intersection of the three policy areas that will critically shape America's place in the world.",
+            "Silverado uses its novel accelerator approach to solve policy challenges in three interconnected areas that will critically shape America's role in the 21st century.",
     },
     copy2: {
         text:
-            " Silverado's three focal points converage on a single challenge: how will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic compeition?  ",
+            "Silverado's three focal points converage on a single challenge: ",
+        italText:
+            'how will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic compeition?',
         cta: {
             link: '/initiatives',
-            text: 'learn more',
+            text: 'next steps',
         },
     },
 };
@@ -45,8 +49,10 @@ export default function IndexPage() {
         <Layout isIndexPage>
             <IndexHero />
             <IndexSubHero
+                bodyBold={content.subHero.bodyBold}
                 body={content.subHero.body}
                 heading={content.hero.heading}
+                headingTwo={content.hero.headingTwo}
                 subHeading={content.subHero.heading}
             />
             <FullWidthImageWithText

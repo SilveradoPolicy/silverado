@@ -8,7 +8,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-wt-bold text-ts-h4 text-brand-1`}
+    ${tw`text-ts-h4 text-brand-1`}
 `;
 
 const StyledBody = styled.p`
@@ -18,7 +18,7 @@ const StyledBody = styled.p`
 export default function InitiativesText({ body, heading, id }) {
     return (
         <StyledSection id={id}>
-            <StyledHeading>{heading}</StyledHeading>
+            <StyledHeading className="font-wt-bold">{heading}</StyledHeading>
             <StyledBody>{body}</StyledBody>
         </StyledSection>
     );

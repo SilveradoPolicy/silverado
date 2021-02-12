@@ -29,7 +29,7 @@ const StyledBody = styled.p`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`font-wt-bold mb-4 text-brand-1 text-ts-h2`}
+    ${tw`mb-4 text-brand-1 text-ts-h2`}
 `;
 
 export default function CopyWithCTA({
@@ -39,7 +39,7 @@ export default function CopyWithCTA({
     hasTopTransition,
     hasHeading,
 }) {
-    const { text, textTwo, heading } = content;
+    const { heading, italText, text, textTwo } = content;
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
     const { cta } = content;
 
@@ -50,9 +50,14 @@ export default function CopyWithCTA({
         >
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
-                {hasHeading && <StyledHeading>{heading}</StyledHeading>}
+                {hasHeading && (
+                    <StyledHeading className="font-wt-bold">
+                        {heading}
+                    </StyledHeading>
+                )}
                 <StyledBody>
                     {text}
+                    <i>{italText}</i>
                     <br />
                     <br />
                     {textTwo}

@@ -14,13 +14,15 @@ const StyledList = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-8 text-brand-1 text-ts-h2`}
+    ${tw`capitalize mb-8 text-brand-1 text-ts-h2`}
 `;
 
 export default function AdvisoryBoard({ team }) {
     return (
         <StyledSection>
-            <StyledHeading>Silverado Team</StyledHeading>
+            <StyledHeading className="font-wt-bold">
+                Silverado Team
+            </StyledHeading>
             <StyledList>
                 {team.map((item) => {
                     return <BoardMember data={item} key={item.id} />;

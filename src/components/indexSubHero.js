@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import EventList from './eventList';
+// import EventList from './eventList';
 
 const StyledSection = styled.section`
     ${tw`pb-16 pt-10`}
@@ -19,7 +19,7 @@ const GridWrapper = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6 relative text-brand-1`}
+    ${tw`text-ts-h1 mb-6 relative text-brand-1`}
 
     &:after {
         background: var(--brand-6);
@@ -35,21 +35,34 @@ const Heading = styled.h1`
 `;
 
 const SubHeading = styled.h2`
-    ${tw`font-wt-bold lg:row-start-2 max-w-prose mb-5 lg:mb-0 text-ts-h4 text-brand-1`}
+    ${tw`lg:row-start-2 max-w-prose mb-5 lg:mb-0 text-ts-h4 text-brand-1`}
 `;
 
 const StyledBody = styled.p`
     ${tw`lg:row-start-2 max-w-prose text-lg`}
 `;
 
-export default function IndexSubHero({ body, heading, subHeading }) {
+export default function IndexSubHero({
+    body,
+    bodyBold,
+    heading,
+    headingTwo,
+    subHeading,
+}) {
     return (
         <StyledSection>
-            <EventList />
+            {/* <EventList /> */}
             <GridWrapper>
-                <Heading>{heading}</Heading>
-                <SubHeading>{subHeading}</SubHeading>
-                <StyledBody>{body}</StyledBody>
+                <Heading className="font-wt-bold">
+                    {heading}
+                    <br />
+                    {headingTwo}
+                </Heading>
+                <SubHeading className="font-wt-bold">{subHeading}</SubHeading>
+                <StyledBody>
+                    <strong>{bodyBold}</strong>
+                    {body}
+                </StyledBody>
             </GridWrapper>
         </StyledSection>
     );
@@ -57,6 +70,8 @@ export default function IndexSubHero({ body, heading, subHeading }) {
 
 IndexSubHero.propTypes = {
     body: PropTypes.string.isRequired,
+    bodyBold: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
+    headingTwo: PropTypes.string.isRequired,
     subHeading: PropTypes.string.isRequired,
 };

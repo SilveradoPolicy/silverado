@@ -18,7 +18,7 @@ const HeroInnerContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6 mt-24`}
+    ${tw`text-ts-h1 mb-6 mt-24`}
 `;
 
 const Body = styled.p`
@@ -34,7 +34,7 @@ export default function IndexHero({ body, cta, heading }) {
             </AnimationWrapper>
             {heroContent && (
                 <HeroInnerContainer>
-                    <Heading>{heading}</Heading>
+                    <Heading className="font-wt-bold">{heading}</Heading>
                     {body && <Body>{body}</Body>}
                     {cta && <CtaLink cta={cta} />}
                 </HeroInnerContainer>
