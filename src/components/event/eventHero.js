@@ -8,11 +8,11 @@ const StyledSection = styled.section`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-wt-bold mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
+    ${tw`mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
 `;
 
 const Body = styled.p`
-    ${tw`font-wt-thin text-brand-1 text-center text-ts-h3`}
+    ${tw`text-brand-1 text-center text-ts-h3`}
 `;
 
 export default function AltHero({ body, heading }) {

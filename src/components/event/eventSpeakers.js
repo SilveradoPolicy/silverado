@@ -11,7 +11,7 @@ const Section = styled.section`
 `;
 
 const StyledHeading = styled.h3`
-    ${tw`capitalize font-wt-thin mb-20 text-brand-1 text-ts-h3`}
+    ${tw`capitalize mb-20 text-brand-1 text-ts-h3`}
 `;
 
 const GridWrapper = styled.div`
