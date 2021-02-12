@@ -19,7 +19,7 @@ const GridWrapper = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 font-wt-bold mb-6 relative text-brand-1`}
+    ${tw`text-ts-h1 mb-6 relative text-brand-1`}
 
     &:after {
         background: var(--brand-6);
@@ -35,7 +35,7 @@ const Heading = styled.h1`
 `;
 
 const SubHeading = styled.h2`
-    ${tw`font-wt-bold lg:row-start-2 max-w-prose mb-5 lg:mb-0 text-ts-h4 text-brand-1`}
+    ${tw`lg:row-start-2 max-w-prose mb-5 lg:mb-0 text-ts-h4 text-brand-1`}
 `;
 
 const StyledBody = styled.p`
@@ -53,12 +53,12 @@ export default function IndexSubHero({
         <StyledSection>
             {/* <EventList /> */}
             <GridWrapper>
-                <Heading>
+                <Heading className="font-wt-bold">
                     {heading}
                     <br />
                     {headingTwo}
                 </Heading>
-                <SubHeading>{subHeading}</SubHeading>
+                <SubHeading className="font-wt-bold">{subHeading}</SubHeading>
                 <StyledBody>
                     <strong>{bodyBold}</strong>
                     {body}

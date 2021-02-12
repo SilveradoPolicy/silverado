@@ -25,7 +25,7 @@ const Card = styled.div`
 `;
 
 const Heading = styled.h3`
-    ${tw`font-wt-bold max-w-prose mt-5 text-brand-1 text-ts-h4`}
+    ${tw`max-w-prose mt-5 text-brand-1 text-ts-h4`}
 `;
 
 const Body = styled.p`
@@ -39,7 +39,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
             <Grid>
                 <Card>
                     <EcoSecIcon />
-                    <Heading>Eco&sup2;Sec</Heading>
+                    <Heading className="font-wt-bold">Eco&sup2;Sec</Heading>
                     <Body>
                         Foregrounding the nexus of economic and ecological risk
                         and opportunity to meet the 21st-century climate

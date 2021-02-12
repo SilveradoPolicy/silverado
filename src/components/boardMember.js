@@ -14,7 +14,7 @@ const BioWrapper = styled.div`
 `;
 
 const BioHeading = styled.h3`
-    ${tw`capitalize font-wt-bold mb-4 text-ts-h5`}
+    ${tw`capitalize mb-4 text-ts-h5`}
 `;
 
 const BioBody = styled.p`
@@ -39,7 +39,7 @@ export default function BoardMember({ data }) {
                 <Img fluid={fluid} />
             </ImgWrapper>
             <BioWrapper>
-                <BioHeading>{name}</BioHeading>
+                <BioHeading className="font-wt-bold">{name}</BioHeading>
                 <BioBody>{bio}</BioBody>
             </BioWrapper>
         </StyledListItem>

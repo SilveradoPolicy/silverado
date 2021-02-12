@@ -13,7 +13,7 @@ const ImgWrapper = styled.div`
 `;
 
 const StyledName = styled.div`
-    ${tw`capitalize font-wt-bold text-brand-1 text-ts-h5`}
+    ${tw`capitalize text-brand-1 text-ts-h5`}
 `;
 
 export default function ImageWithName({ data }) {
@@ -29,7 +29,7 @@ export default function ImageWithName({ data }) {
             <ImgWrapper>
                 <Img fluid={fluid} />
             </ImgWrapper>
-            <StyledName>{fullName}</StyledName>
+            <StyledName className="font-wt-bold">{fullName}</StyledName>
         </FlexWrapper>
     );
 }

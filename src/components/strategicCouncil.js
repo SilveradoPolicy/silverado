@@ -11,7 +11,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-8 text-brand-1 text-ts-h2`}
+    ${tw`capitalize mb-8 text-brand-1 text-ts-h2`}
 `;
 
 export default function StrategicCouncil({ honoraryMembers }) {
@@ -85,7 +85,9 @@ export default function StrategicCouncil({ honoraryMembers }) {
     ];
     return (
         <StyledSection>
-            <StyledHeading>strategic council</StyledHeading>
+            <StyledHeading className="font-wt-bold">
+                strategic council
+            </StyledHeading>
             <HonoraryMembersSection honoraryMembers={honoraryMembers} />
             <StrategicAdvisorsSection advisors={strategicAdvisors} />
         </StyledSection>

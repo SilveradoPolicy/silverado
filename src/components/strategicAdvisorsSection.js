@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import StrategicAdvisor from './strategicAdvisor';
 
 const StyledHeading = styled.h3`
-    ${tw`capitalize font-wt-thin mb-20 text-brand-1 text-ts-h3`}
+    ${tw`capitalize mb-20 text-brand-1 text-ts-h3`}
 `;
 
 const GridWrapper = styled.div`
@@ -16,7 +16,9 @@ const GridWrapper = styled.div`
 export default function StrategicAdvisorsSection({ advisors }) {
     return (
         <>
-            <StyledHeading>strategic advisors</StyledHeading>
+            <StyledHeading className="font-wt-thin">
+                strategic advisors
+            </StyledHeading>
             <GridWrapper>
                 {advisors.map((item) => {
                     return <StrategicAdvisor data={item} key={item} />;
