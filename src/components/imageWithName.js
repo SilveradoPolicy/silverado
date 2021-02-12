@@ -9,7 +9,7 @@ const FlexWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-    ${tw`mb-4 mx-auto h-full overflow-hidden rounded-full w-3/4`}
+    ${tw`overflow-hidden rounded-full w-3/4`}
 `;
 
 const StyledName = styled.div`
