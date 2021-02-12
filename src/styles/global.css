@@ -32,7 +32,8 @@
         width: 100%;
     }
     body {
-        font-family: 'SukhumvitReg', sans-serif;
+        font-family: 'SukhumvitReg', Arial, Helvetica, sans-serif;
+        font-weight: normal;
     }
     @variants hover, focus {
         .link-hover:after {
