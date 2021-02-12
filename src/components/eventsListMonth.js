@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
 const Heading = styled.h2`
-    ${tw`capitalize font-wt-thin text-ts-h3 text-brand-1`}
+    ${tw`capitalize text-ts-h3 text-brand-1`}
 `;
 
 const ListItem = styled.li`
@@ -13,7 +13,7 @@ const ListItem = styled.li`
 `;
 
 const Date = styled.p`
-    ${tw`flex-initial font-wt-thin pr-4 md:px-8 pb-8 text-6xl md:text-8xl`}
+    ${tw`flex-initial pr-4 md:px-8 pb-8 text-6xl md:text-8xl`}
 `;
 
 const ContentContainer = styled.div`
@@ -21,11 +21,11 @@ const ContentContainer = styled.div`
 `;
 
 const EventHeading = styled.h3`
-    ${tw`text-ts-h4 font-wt-bold mb-2`}
+    ${tw`text-ts-h4 mb-2`}
 `;
 
 const EventSubHeading = styled.p`
-    ${tw`text-ts-h4 font-wt-bold`}
+    ${tw`text-ts-h4`}
 `;
 
 const EventBody = styled.p`
@@ -33,7 +33,7 @@ const EventBody = styled.p`
 `;
 
 const StyledLink = styled(Link)`
-    ${tw`capitalize font-wt-thin text-lg`}
+    ${tw`capitalize text-lg`}
 `;
 
 export default function EventsListMonth({ data }) {
