@@ -34,15 +34,15 @@ const BodyWrapper = styled.div`
 `;
 
 const Month = styled.p`
-    ${tw`font-wt-bold uppercase text-center`}
+    ${tw`uppercase text-center`}
 `;
 
 const Date = styled.p`
-    ${tw`font-wt-thin text-6xl`}
+    ${tw`text-6xl`}
 `;
 
 const Body = styled.p`
-    ${tw`capitalize font-wt-bold`}
+    ${tw`capitalize`}
 `;
 
 export default function CalendarEvent({ data }) {
@@ -51,12 +51,12 @@ export default function CalendarEvent({ data }) {
         <StyledListItem>
             <StyledLink to={link}>
                 <DateWrapper>
-                    <Month>{month}</Month>
-                    <Date>{date}</Date>
+                    <Month className="font-wt-bold">{month}</Month>
+                    <Date className="font-wt-thin">{date}</Date>
                 </DateWrapper>
                 <BodyWrapper>
-                    <Body>{line1}</Body>
-                    <Body>{line2}</Body>
+                    <Body className="font-wt-bold">{line1}</Body>
+                    <Body className="font-wt-bold">{line2}</Body>
                 </BodyWrapper>
             </StyledLink>
         </StyledListItem>

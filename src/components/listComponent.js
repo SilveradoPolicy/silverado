@@ -16,7 +16,7 @@ const GridWrapper = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize font-wt-bold mb-4 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`mb-4 text-center text-brand-1 text-center text-ts-h2`}
 `;
 
 const StyledBody = styled.p`
@@ -30,13 +30,11 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-    ${tw`font-wt-reg relative text-black text-ts-h6`}
-
-    line-height: 38.4px;
+    ${tw`leading-6 relative text-black text-ts-h6`}
 `;
 
-const StyledListBold = styled(StyledListItem)`
-    ${tw`font-wt-bold inline`}
+const StyledListBold = styled.span`
+    ${tw`inline`}
 `;
 
 export default function ListComponent({
@@ -48,15 +46,15 @@ export default function ListComponent({
     return (
         <StyledSection gradient={hasTopGradient}>
             <GridWrapper>
-                <StyledHeading>{heading}</StyledHeading>
+                <StyledHeading className="font-wt-bold">
+                    {heading}
+                </StyledHeading>
                 <StyledBody>{body}</StyledBody>
                 <StyledList>
                     {listItems.map((item) => {
                         return (
-                            <StyledListItem>
-                                <StyledListBold>
-                                    {`${item.heading}: `}
-                                </StyledListBold>
+                            <StyledListItem className="font-wt-reg">
+                                <StyledListBold className="font-wt-bold">{`${item.heading}: `}</StyledListBold>
                                 {item.text}
                             </StyledListItem>
                         );

@@ -45,7 +45,7 @@ const MobileNavMenu = styled.ul`
 `;
 
 const MobileNavLI = styled.li`
-    ${tw`ml-8 mb-10 capitalize font-wt-bold text-ts-h5 transition-colors duration-700 ease-in-out relative text-current`}
+    ${tw`ml-8 mb-10 capitalize text-ts-h5 transition-colors duration-700 ease-in-out relative text-current`}
 `;
 
 export default function MobileNav({
@@ -77,7 +77,7 @@ export default function MobileNav({
             <MobileNavMenu isNavOpen={isNavOpen}>
                 {navItems.map((item) => {
                     return (
-                        <MobileNavLI key={item.text}>
+                        <MobileNavLI key={item.text} className="font-wt-bold">
                             <Link
                                 activeClassName="link-active"
                                 className="link hover:link-hover"

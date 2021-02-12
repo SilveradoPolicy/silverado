@@ -7,13 +7,14 @@ import ListComponent from '../components/listComponent';
 
 const content = {
     hero: {
-        body: `No one has a monopoly on solutions to complex global challenges. At Silverado, we believe that fundamental disagreement over questions of American policy is not only an inevitable byproduct of our democratic process; it is in fact an absolutely indispensable part of that process. Through a series of roundtable discussions leading up to our inaugural Ideas Competition, we're bringing together policy experts and stakeholders from different disciplines, industries, and political vantage-points to challenge entrenched ideas about American leadership and build consensus around new paths toward American prosperity and global competitiveness in the 21c.`,
+        body: `No one has a monopoly on solutions to complex global challenges. At Silverado, we believe that fundamental disagreement over questions of American policy is not only an inevitable byproduct of our democratic process; it is in fact an absolutely indispensable part of that process.`,
+        bodyTwo: `Through a series of roundtable discussions leading up to our inaugural Ideas Competition, we're bringing together policy experts and stakeholders from different disciplines, industries, and political vantage-points to challenge entrenched ideas about American leadership and build consensus around new paths toward American prosperity and global competitiveness in the 21c.`,
         heading: 'From Ideas to Implementation',
     },
     listContent: {
-        heading: 'What are the characteristics of a Silverado Idea?',
+        heading: 'What Are the Characteristics of a Silverado Idea?',
         body:
-            "Have a creative policy idea that you're dying to share? Don't wait until the Ideas Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we'll share it here.",
+            "Have a creative policy idea that you're dying to share? Don't wait until the Ideas   Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we'll share ideas here.",
         listItems: [
             {
                 heading: 'Diagnostic',
@@ -58,7 +59,11 @@ const content = {
 export default function IdeasPage() {
     return (
         <Layout>
-            <AltHero body={content.hero.body} heading={content.hero.heading} />
+            <AltHero
+                body={content.hero.body}
+                bodyTwo={content.hero.bodyTwo}
+                heading={content.hero.heading}
+            />
             <ListComponent
                 hasTopGradient
                 heading={content.listContent.heading}

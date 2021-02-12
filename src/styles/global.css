@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './typography.css';
+
 @layer utilities {
     .link:after {
         background-color: currentColor;
@@ -31,7 +33,6 @@
         visibility: visible;
         width: 100%;
     }
-
     @variants hover, focus {
         .link-hover:after {
             visibility: visible;
@@ -50,3 +51,19 @@
         }
     }
 } */
+
+body {
+    font-family: 'SukhumvitReg', Arial, Helvetica, sans-serif;
+}
+
+.font-wt-bold {
+    font-family: 'SukhumvitBold', sans-serif;
+}
+
+.font-wt-thin {
+    font-family: 'SukhumvitThin', sans-serif;
+}
+
+.font-wt-reg {
+    font-family: 'SukhumvitReg', sans-serif;
+}

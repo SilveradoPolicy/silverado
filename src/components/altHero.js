@@ -8,23 +8,23 @@ const StyledSection = styled.section`
 `;
 
 const Heading = styled.h1`
-    ${tw`font-wt-bold mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
+    ${tw`mb-8 mt-36 lg:mt-24 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
 `;
 
 const Body = styled.p`
-    ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 const BodyTwo = styled.p`
-    ${tw`font-wt-thin max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 
 export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
     return (
         <StyledSection>
-            <Heading>{heading}</Heading>
-            <Body>{body}</Body>
+            <Heading className="font-wt-bold">{heading}</Heading>
+            <Body className="font-wt-thin">{body}</Body>
             <br />
-            <BodyTwo>
+            <BodyTwo className="font-wt-thin">
                 {bodyTwo} <strong>{bodyTwoBold}</strong>
             </BodyTwo>
         </StyledSection>

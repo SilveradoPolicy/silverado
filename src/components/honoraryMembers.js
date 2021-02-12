@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import ImageWithName from './imageWithName';
 
 const StyledHeading = styled.h3`
-    ${tw`capitalize font-wt-thin mb-20 text-brand-1 text-ts-h3`}
+    ${tw`capitalize mb-20 text-brand-1 text-ts-h3`}
 `;
 
 const GridWrapper = styled.div`
@@ -16,7 +16,9 @@ const GridWrapper = styled.div`
 export default function HonoraryMembersSection({ honoraryMembers }) {
     return (
         <>
-            <StyledHeading>honorary members</StyledHeading>
+            <StyledHeading className="font-wt-thin">
+                honorary members
+            </StyledHeading>
             <GridWrapper>
                 {honoraryMembers.map((item) => {
                     return <ImageWithName data={item} key={item.id} />;

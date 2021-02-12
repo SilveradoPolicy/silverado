@@ -33,11 +33,6 @@ module.exports = {
             center: true,
             padding: theme('spacing.5'),
         }),
-        fontFamily: {
-            'wt-thin': 'SukhumvitThin',
-            'wt-reg': 'SukhumvitReg',
-            'wt-bold': 'SukhumvitBold',
-        },
     },
     variants: {
         extend: {},

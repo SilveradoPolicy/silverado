@@ -9,11 +9,11 @@ const FlexWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-    ${tw`mb-4 mx-auto h-full overflow-hidden rounded-full w-3/4`}
+    ${tw`overflow-hidden rounded-full w-3/4`}
 `;
 
 const StyledName = styled.div`
-    ${tw`capitalize font-wt-bold text-brand-1 text-ts-h5`}
+    ${tw`capitalize text-brand-1 text-ts-h5`}
 `;
 
 export default function ImageWithName({ data }) {
@@ -29,7 +29,7 @@ export default function ImageWithName({ data }) {
             <ImgWrapper>
                 <Img fluid={fluid} />
             </ImgWrapper>
-            <StyledName>{fullName}</StyledName>
+            <StyledName className="font-wt-bold">{fullName}</StyledName>
         </FlexWrapper>
     );
 }

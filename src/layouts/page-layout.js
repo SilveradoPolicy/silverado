@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-size: 1rem;
-        font-family: 'SukhumvitReg'
+        font-family: 'SukhumvitReg', sans-serif;
     }
 `;
 export default function Layout({ children, isIndexPage }) {

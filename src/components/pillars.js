@@ -25,7 +25,7 @@ const Card = styled.div`
 `;
 
 const Heading = styled.h3`
-    ${tw`font-wt-bold max-w-prose mt-5 text-brand-1 text-ts-h4`}
+    ${tw`max-w-prose mt-5 text-brand-1 text-ts-h4`}
 `;
 
 const Body = styled.p`
@@ -39,29 +39,31 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
             <Grid>
                 <Card>
                     <EcoSecIcon />
-                    <Heading>Eco&sup2;Sec</Heading>
+                    <Heading className="font-wt-bold">Eco&sup2;Sec</Heading>
                     <Body>
                         Foregrounding the nexus of economic and ecological risk
                         and opportunity to meet the 21st-century climate
-                        imperative
+                        imperative.
                     </Body>
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
-                    <Heading>Trade and Industrial Security</Heading>
+                    <Heading className="font-wt-bold">
+                        Trade and Industrial Security
+                    </Heading>
                     <Body>
                         Developing a trade and industrual strategy that supports
                         American workers, secures America&#39;s supply chains,
-                        and advances equitable trade practices
+                        and advances equitable trade practices.
                     </Body>
                 </Card>
                 <Card>
                     <CybersecurityIcon />
-                    <Heading>Cybersecurity</Heading>
+                    <Heading className="font-wt-bold">Cybersecurity</Heading>
                     <Body>
                         Modernizing America&#39;s cyber strategy to enhance
                         deterrence, defend against cyber attacks, and protect
-                        intellectual property and national security
+                        intellectual property and national security.
                     </Body>
                 </Card>
             </Grid>
