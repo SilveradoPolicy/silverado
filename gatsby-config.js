@@ -1,8 +1,11 @@
 module.exports = {
     siteMetadata: {
-        title: '',
-        siteUrl: 'https://www.siteurlhere.com',
-        description: ``,
+        title: 'Silverado Policy Accelerator',
+        titleTemplate: '%s',
+        url: 'https://www.silverado.org',
+        description: `Silverado is a think tank dedicated to securing enduring American prosperity and competitiveness by investing in innovative bipartisan policy solutions.`,
+        image: '',
+        twitter: '@SilveradoPolicy',
     },
     plugins: [
         {

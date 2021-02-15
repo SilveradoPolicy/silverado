@@ -4,6 +4,7 @@ import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import Pillars from '../components/pillars';
 import ListComponent from '../components/listComponent';
+import SEO from '../components/SEO';
 
 const content = {
     hero: {
@@ -59,6 +60,10 @@ const content = {
 export default function IdeasPage() {
     return (
         <Layout>
+            <SEO
+                title="Silverado Ideas Competition"
+                description="Silverado is bringing together diverse stakeholders to generate policy solutions for our most pressing issues. Submit your thoughts to our Ideas Competition!"
+            />
             <AltHero
                 body={content.hero.body}
                 bodyTwo={content.hero.bodyTwo}

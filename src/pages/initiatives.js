@@ -9,6 +9,7 @@ import AltHero from '../components/altHero';
 import Pillars from '../components/pillars';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
 import CopyWithCTA from '../components/copyWithCTA';
+import SEO from '../components/SEO';
 
 import InitiativesSection from '../components/initiativesSection';
 
@@ -35,6 +36,10 @@ export default function InitiativesPage({ data }) {
 
     return (
         <Layout>
+            <SEO
+                title="Silverado Initiatives"
+                description="Silverado invests in innovative policy solutions within the realms of cybersecurity, trade & industrial security, and economic & ecological security."
+            />
             <AltHero
                 body={content.hero.body}
                 bodyTwo={content.hero.bodyTwo}
