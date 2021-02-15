@@ -9,6 +9,7 @@ import AltHero from '../components/altHero';
 import AdvisoryBoard from '../components/advisoryBoard';
 import StrategicCouncil from '../components/strategicCouncil';
 import CopyWithCTA from '../components/copyWithCTA';
+import SEO from '../components/SEO';
 
 const content = {
     hero: {
@@ -68,6 +69,10 @@ export default function AboutPage({ data }) {
 
     return (
         <Layout>
+            <SEO
+                title="About Silverado"
+                description=" Silverado Policy Accelerator applies a venture model to policy implementation, setting in motion a paradigm shift in how policy is created and implemented."
+            />
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <CopyWithCTA
                 content={content.subheading}
