@@ -12,7 +12,7 @@ import InitiativesText from './initiativesText';
 import ScrolledAnimation from './scrolledAnimation';
 
 const InitiativesWrapper = styled.div`
-    ${tw`grid grid-cols-5 grid-rows-4 justify-center`}
+    ${tw`grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-4 justify-center`}
 
     #accelerate {
         grid-column-start: 3;
@@ -56,21 +56,27 @@ const InitiativesWrapper = styled.div`
         .accelerate {
             grid-column-start: 1;
         }
+        #accelerate {
+            grid-column-start: 1;
+        }
         .icons {
-            width: 50%;
-            grid-column-start: 3;
+            grid-column-start: 1;
             align-self: flex-end;
         }
         .cultivate {
             grid-column-start: 1;
             justify-items: center;
         }
-        .incubate {
-            grid-column-start: 5;
-            grid-row-start: 3;
-        }
         #cultivate {
+            grid-column-start: 1;
             align-self: center;
+        }
+        .incubate {
+            grid-column-start: 1;
+            // grid-row-start: 3;
+        }
+        #incubate {
+            grid-column-start: 1;
         }
     }
 `;

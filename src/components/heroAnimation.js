@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import lottie from 'lottie-web';
 
-import heroAnimation from '../animations/Hero.json';
+import heroAnimation from '../animations/newHero.json';
 import mobileHero from '../animations/Hero-Mobile.json';
 import heroOne from '../animations/Hero_1X1_lottie.json';
 
