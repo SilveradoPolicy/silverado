@@ -52,6 +52,27 @@ const InitiativesWrapper = styled.div`
         grid-column-start: 4;
         grid-column-end: 5;
     }
+    @media only screen and (max-width: 900px) {
+        .accelerate {
+            grid-column-start: 1;
+        }
+        .icons {
+            width: 50%;
+            grid-column-start: 3;
+            align-self: flex-end;
+        }
+        .cultivate {
+            grid-column-start: 1;
+            justify-items: center;
+        }
+        .incubate {
+            grid-column-start: 5;
+            grid-row-start: 3;
+        }
+        #cultivate {
+            align-self: center;
+        }
+    }
 `;
 
 const content = {
