@@ -12,7 +12,7 @@ import InitiativesText from './initiativesText';
 import ScrolledAnimation from './scrolledAnimation';
 
 const InitiativesWrapper = styled.div`
-    ${tw`grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-4 justify-center`}
+    ${tw`grid grid-cols-1 gap-4 lg:grid-cols-5 lg:grid-rows-4 justify-center`}
 
     #accelerate {
         grid-column-start: 3;
