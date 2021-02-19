@@ -26,11 +26,8 @@ export default function HomepageAnimation() {
 
         const windowPosition = window.scrollY;
         const mobileView = window.outerWidth;
-        console.log(window);
 
         const elementScrollPosition = getScrollPosition();
-        console.log(windowPosition);
-        console.log(elementScrollPosition);
 
         if (windowPosition >= elementScrollPosition) {
             play();
