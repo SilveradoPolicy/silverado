@@ -57,45 +57,6 @@ const InitiativesWrapper = styled.div`
             grid-column-end: 5;
         }
     }
-    // @media only screen and (max-width: 900px) {
-    //     .icons {
-    //         grid-column-start: 1;
-    //     }
-    //     .cultivate {
-    //         grid-column-start: 1;
-    //         justify-items: center;
-    //         grid-row-start: 3;
-    //     }
-    //     #cultivate {
-    //         grid-column-start: 1;
-    //         align-self: flex-start;
-    //         grid-row-start: 2;
-    //     }
-    //     .incubate {
-    //         grid-column-start: 1;
-    //         grid-row-start: 4;
-    //         // height: 50%;
-    //         // align-self: flex-end;
-    //     }
-    //     #incubate {
-    //         grid-column-start: 1;
-    //         grid-row-start: 5;
-    //         // height: 50%;
-    //         // align-self: flex-start;
-    //     }
-    //     .accelerate {
-    //         grid-column-start: 1;
-    //         grid-row-start: 6;
-    //         // height: 50%;
-    //         // align-self: flex-end;
-    //     }
-    //     #accelerate {
-    //         grid-column-start: 1;
-    //         grid-row-start: 7;
-    //         // height: 50%;
-    //         // align-self: flex-start;
-    //     }
-    // }
 `;
 
 const content = {
