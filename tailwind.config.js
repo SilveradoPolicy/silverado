@@ -22,6 +22,9 @@ module.exports = {
                 'ts-caption': ['0.694rem', '0.868rem'],
                 'ts-citation': ['0.579rem', '0.724rem'],
             },
+            gridTemplateRows: {
+                7: 'repeat(7, minmax(0, fr))',
+            },
             height: {
                 '3/4-screen': '75vh',
             },

@@ -18,15 +18,13 @@ const BodyTwo = styled.p`
     ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
 `;
 
-export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
+export default function AltHero({ body, bodyTwo, heading }) {
     return (
         <StyledSection>
             <Heading className="font-wt-bold">{heading}</Heading>
             <Body className="font-wt-thin">{body}</Body>
             <br />
-            <BodyTwo className="font-wt-thin">
-                {bodyTwo} <strong>{bodyTwoBold}</strong>
-            </BodyTwo>
+            <BodyTwo className="font-wt-thin">{bodyTwo}</BodyTwo>
         </StyledSection>
     );
 }
@@ -34,6 +32,5 @@ export default function AltHero({ body, bodyTwoBold, bodyTwo, heading }) {
 AltHero.propTypes = {
     body: PropTypes.string.isRequired,
     bodyTwo: PropTypes.string.isRequired,
-    bodyTwoBold: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
 };

@@ -17,10 +17,25 @@ const StyledHeading = styled.h2`
 export default function StrategicCouncil({ honoraryMembers }) {
     const strategicAdvisors = [
         {
+            advisorFullName: 'Heather Adkins',
+        },
+        {
+            advisorFullName: 'Michael Allen',
+        },
+        {
             advisorFullName: 'Robert D. Atkinson',
         },
         {
+            advisorFullName: 'Jeremy Bash',
+        },
+        {
             advisorFullName: 'Thomas P. Bossert',
+        },
+        {
+            advisorFullName: 'Julie Cerqueira',
+        },
+        {
+            advisorFullName: 'Nicholas Consonery',
         },
         {
             advisorFullName: 'Wendy Cutler',
@@ -50,13 +65,16 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Mark Linscott',
         },
         {
+            advisorFullName: 'Jeannette Manfra',
+        },
+        {
             advisorFullName: 'Evan Medeiros',
         },
         {
-            advisorFullName: 'Keith Mularski',
+            advisorFullName: 'Joseph Nye',
         },
         {
-            advisorFullName: 'Joseph Nye',
+            advisorFullName: 'Scott Paul',
         },
         {
             advisorFullName: 'Matthew Reisman',
@@ -81,6 +99,9 @@ export default function StrategicCouncil({ honoraryMembers }) {
         },
         {
             advisorFullName: 'Michael R. Wessel',
+        },
+        {
+            advisorFullName: 'Amy Zegart',
         },
     ];
     return (

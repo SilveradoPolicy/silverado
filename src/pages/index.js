@@ -19,9 +19,9 @@ const content = {
         headingTwo: `race to the top`,
     },
     subHero: {
-        heading: `Forging a path toward American prosperity and global competitivess through investment in bipartisan economic, strategic, and technological policy solutions.`,
+        heading: `Forging a path toward American prosperity and global competitiveness through investment in bipartisan economic, strategic, and technological policy solutions.`,
         bodyBold: `The race is on.`,
-        body: ` As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitivess on the world stage.`,
+        body: ` As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitiveness on the world stage.`,
     },
     fullWidthImage: {
         heading: 'What is the Silverado Policy Accelerator?',
@@ -30,13 +30,12 @@ const content = {
     },
     copy1: {
         text:
-            "Silverado uses its novel accelerator approach to solve policy challenges in three interconnected areas that will critically shape America's role in the 21st century.",
+            "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model—Cultivating, Incubating, and Accelerating—are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
     },
     copy2: {
-        text:
-            "Silverado's three focal points converage on a single challenge: ",
+        text: "Silverado's three focal points converge on a single challenge:",
         italText:
-            'how will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic compeition?',
+            'How will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic competition?',
         cta: {
             link: '/initiatives',
             text: 'next steps',
