@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
-import Logo from './logos/horizontal';
+import LogoAlt from './logos/fullAlt';
 import MainNav from './nav/mainNav';
 import MobileNav from './nav/mobileNav';
 
@@ -69,7 +69,7 @@ export default function Header({ isIndexPage }) {
             <CtaBar />
             <StyledNav>
                 <StyledLogoLink to="/">
-                    <Logo />
+                    <LogoAlt />
                 </StyledLogoLink>
                 <MobileNav
                     isIndexPage={isIndexPage}
