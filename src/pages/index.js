@@ -44,10 +44,12 @@ const content = {
     },
 };
 
-export default function IndexPage() {
+export default function IndexPage({ data }) {
+    const { heroImage } = data;
+
     return (
         <Layout isIndexPage>
-            <IndexHero />
+            <IndexHero heroImage={heroImage} />
             <IndexSubHero
                 bodyBold={content.subHero.bodyBold}
                 body={content.subHero.body}
