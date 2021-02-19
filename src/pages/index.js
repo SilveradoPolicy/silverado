@@ -33,7 +33,7 @@ const content = {
             "Silverado uses its novel accelerator approach to solve policy challenges in three interconnected areas that will critically shape America's role in the 21st century.",
     },
     copy2: {
-        text: "Silverado's three focal points converge on a single challenge:",
+        text: "Silverado's three focal points converge on a single challenge: ",
         italText:
             'How will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic competition?',
         cta: {
