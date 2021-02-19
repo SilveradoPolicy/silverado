@@ -11,74 +11,91 @@ import InitiativesText from './initiativesText';
 
 import ScrolledAnimation from './scrolledAnimation';
 
+// const CultivateTextContainer = styled.div`
+//     ${tw`justify-self-center lg:col-start-3 lg:col-end-5`}
+// `;
+
+// const CultivateAnim = styled.div`
+//     ${tw`lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3`}
+// `;
 const InitiativesWrapper = styled.div`
-    ${tw`grid grid-cols-1 gap-4 lg:grid-cols-5 lg:grid-rows-4 justify-center`}
+    ${tw`grid grid-cols-1 auto-rows-fr lg:grid-cols-5 lg:grid-rows-4 justify-center`}
 
-    #accelerate {
-        grid-column-start: 3;
-        grid-column-end: 5;
-    }
-
-    .accelerate {
-        grid-column-start: 2;
-        grid-row-start: 4;
-        grid-row-end: 5;
-    }
-
-    #cultivate {
-        grid-column-start: 3;
-        grid-column-end: 5;
-        align-self: flex-start;
-    }
-    .cultivate {
-        grid-column: 2 / span 1;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-
-    .icons {
-        grid-column-start: 1;
-        grid-column-end: 6;
-        align-self: flex-end;
-    }
-
-    #incubate {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-    .incubate {
-        grid-column-start: 4;
-        grid-column-end: 5;
-    }
-    @media only screen and (max-width: 900px) {
-        .accelerate {
-            grid-column-start: 1;
-        }
+    @media screen and (min-width: 900px) {
         #accelerate {
-            grid-column-start: 1;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        .accelerate {
+            grid-column-start: 2;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+        #cultivate {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            align-self: flex-start;
+        }
+        .cultivate {
+            grid-column: 2 / span 1;
+            grid-row-start: 2;
+            grid-row-end: 3;
         }
         .icons {
             grid-column-start: 1;
+            grid-column-end: 6;
             align-self: flex-end;
         }
-        .cultivate {
-            grid-column-start: 1;
-            justify-items: center;
-        }
-        #cultivate {
-            grid-column-start: 1;
-            align-self: center;
+        #incubate {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
         }
         .incubate {
-            grid-column-start: 1;
-            // grid-row-start: 3;
-        }
-        #incubate {
-            grid-column-start: 1;
+            grid-column-start: 4;
+            grid-column-end: 5;
         }
     }
+    // @media only screen and (max-width: 900px) {
+    //     .icons {
+    //         grid-column-start: 1;
+    //     }
+    //     .cultivate {
+    //         grid-column-start: 1;
+    //         justify-items: center;
+    //         grid-row-start: 3;
+    //     }
+    //     #cultivate {
+    //         grid-column-start: 1;
+    //         align-self: flex-start;
+    //         grid-row-start: 2;
+    //     }
+    //     .incubate {
+    //         grid-column-start: 1;
+    //         grid-row-start: 4;
+    //         // height: 50%;
+    //         // align-self: flex-end;
+    //     }
+    //     #incubate {
+    //         grid-column-start: 1;
+    //         grid-row-start: 5;
+    //         // height: 50%;
+    //         // align-self: flex-start;
+    //     }
+    //     .accelerate {
+    //         grid-column-start: 1;
+    //         grid-row-start: 6;
+    //         // height: 50%;
+    //         // align-self: flex-end;
+    //     }
+    //     #accelerate {
+    //         grid-column-start: 1;
+    //         grid-row-start: 7;
+    //         // height: 50%;
+    //         // align-self: flex-start;
+    //     }
+    // }
 `;
 
 const content = {
@@ -109,6 +126,12 @@ export default function InitiativesSection() {
             <div className="icons">
                 <ScrolledAnimation data={icons} frames={150} style={style} />
             </div>
+
+            <InitiativesText
+                id={content.cultivate.id}
+                heading={content.cultivate.heading}
+                body={content.cultivate.body}
+            />
             <div className="cultivate">
                 <ScrolledAnimation
                     data={cultivate}
@@ -117,11 +140,6 @@ export default function InitiativesSection() {
                 />
             </div>
             <InitiativesText
-                id={content.cultivate.id}
-                heading={content.cultivate.heading}
-                body={content.cultivate.body}
-            />
-            <InitiativesText
                 id={content.incubate.id}
                 heading={content.incubate.heading}
                 body={content.incubate.body}
@@ -129,6 +147,13 @@ export default function InitiativesSection() {
             <div className="incubate">
                 <ScrolledAnimation data={incubate} frames={150} style={style} />
             </div>
+
+            <InitiativesText
+                id={content.accelerate.id}
+                heading={content.accelerate.heading}
+                body={content.accelerate.body}
+            />
+
             <div className="accelerate">
                 <ScrolledAnimation
                     data={accelerate}
@@ -136,11 +161,6 @@ export default function InitiativesSection() {
                     style={style}
                 />
             </div>
-            <InitiativesText
-                id={content.accelerate.id}
-                heading={content.accelerate.heading}
-                body={content.accelerate.body}
-            />
         </InitiativesWrapper>
     );
 }

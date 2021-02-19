@@ -14,7 +14,6 @@ export default function HomepageAnimation() {
                 },
             },
         } = containerRef;
-
         const elementPosition = offsetTop - offsetHeight;
 
         return elementPosition;
@@ -26,10 +25,16 @@ export default function HomepageAnimation() {
         } = containerRef;
 
         const windowPosition = window.scrollY;
+        const mobileView = window.outerWidth;
+        console.log(window);
 
         const elementScrollPosition = getScrollPosition();
+        console.log(windowPosition);
+        console.log(elementScrollPosition);
 
         if (windowPosition >= elementScrollPosition) {
+            play();
+        } else if (windowPosition > 1150 && mobileView < 600) {
             play();
         }
     };
