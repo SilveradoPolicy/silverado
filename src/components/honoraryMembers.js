@@ -17,7 +17,7 @@ export default function HonoraryMembersSection({ honoraryMembers }) {
     return (
         <>
             <StyledHeading className="font-wt-thin">
-                honorary members
+                honorary chairs
             </StyledHeading>
             <GridWrapper>
                 {honoraryMembers.map((item) => {

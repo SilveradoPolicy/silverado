@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Lottie from 'lottie-react';
 
-import heroAnimation from '../animations/Hero.json';
+import heroAnimation from '../animations/newHero.json';
 import mobileHero from '../animations/Hero-Mobile.json';
 import heroOne from '../animations/Hero_1X1_lottie.json';
 

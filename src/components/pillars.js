@@ -52,9 +52,9 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                         Trade and Industrial Security
                     </Heading>
                     <Body>
-                        Developing a trade and industrual strategy that supports
-                        American workers, secures America&#39;s supply chains,
-                        and advances equitable trade practices.
+                        Shaping trade policy to support American workers, secure
+                        America&#39;s supply chains, and advance equitable trade
+                        practices.
                     </Body>
                 </Card>
                 <Card>
