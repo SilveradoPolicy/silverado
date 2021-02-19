@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import Img from 'gatsby-image';
 
 import CtaLink from './ctaLink';
 import HeroAnimation from './heroAnimation';
@@ -25,12 +26,18 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ body, cta, heading }) {
+export default function IndexHero({ body, cta, heading, heroImage }) {
+    const [isAnimationLoaded, setIsAnimationLoaded] = useState(false);
     const heroContent = body || cta || heading;
+    const {
+        childImageSharp: { fluid: imageData },
+    } = heroImage;
+
     return (
         <StyledSection>
+            {!isAnimationLoaded && <Img fluid={imageData} />}
             <AnimationWrapper>
-                <HeroAnimation />
+                <HeroAnimation setIsAnimationLoaded={setIsAnimationLoaded} />
             </AnimationWrapper>
             {heroContent && (
                 <HeroInnerContainer>
@@ -55,4 +62,7 @@ IndexHero.propTypes = {
         link: PropTypes.string,
     }),
     heading: PropTypes.string,
+    heroImage: PropTypes.shape({
+        childImageSharp: PropTypes.object.isRequired,
+    }).isRequired,
 };
