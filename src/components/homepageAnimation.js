@@ -1,55 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
+import { useInView } from 'react-intersection-observer';
 
 import homepageAnimation from '../animations/Homepage.json';
 
 export default function HomepageAnimation() {
     const containerRef = useRef(null);
 
-    const getScrollPosition = () => {
-        const {
-            current: {
-                animationItem: {
-                    wrapper: { offsetHeight, offsetTop },
-                },
-            },
-        } = containerRef;
-        const elementPosition = offsetTop - offsetHeight;
-
-        return elementPosition;
-    };
-
-    const handleScroll = () => {
-        const {
-            current: { play },
-        } = containerRef;
-
-        const windowPosition = window.scrollY;
-        const mobileView = window.outerWidth;
-
-        const elementScrollPosition = getScrollPosition();
-
-        if (windowPosition >= elementScrollPosition) {
-            play();
-        } else if (windowPosition > 1150 && mobileView < 600) {
-            play();
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
+    const { ref, inView } = useInView({
+        /* Optional options */
+        threshold: 0,
     });
+    if (inView) {
+        containerRef.current.play();
+    }
 
     return (
-        <>
+        <div ref={ref}>
             <Lottie
                 autoplay={false}
                 loop={0}
                 animationData={homepageAnimation}
                 lottieRef={containerRef}
             />
-        </>
+        </div>
     );
 }
