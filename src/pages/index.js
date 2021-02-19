@@ -26,11 +26,11 @@ const content = {
     fullWidthImage: {
         heading: 'What is the Silverado Policy Accelerator?',
         body:
-            "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
+            "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model—Cultivating, Incubating, and Accelerating—are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
     },
     copy1: {
         text:
-            "Silverado is a new addition to Washington's policy development ecosystem. Unlike a conventional policy institute, we use a novel accelerator model that combines the expertise of a traditional think tank with the dynamism of a venture approach. The three stages of our accelerator model—Cultivating, Incubating, and Accelerating—are designed to transform fresh policy ideas into actionable policy initiatives, nurturing a new strategic and economic vision from the ground up.",
+            "Silverado uses its novel accelerator approach to solve policy challenges in three interconnected areas that will critically shape America's role in the 21st century.",
     },
     copy2: {
         text: "Silverado's three focal points converge on a single challenge:",
