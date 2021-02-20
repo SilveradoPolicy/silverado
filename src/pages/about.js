@@ -19,8 +19,8 @@ const content = {
     subheading: {
         heading: 'Why "Silverado"?',
         text:
-            "Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward prosperity for California's workers and merchants, connecting mineral mines in the northern valley to commercial shipping routes in the south. Like its namesake, Silverado is forging a new path toward American prosperity in the 21st century—and serving up plenty of wine along the way.",
-        textTwo: `Today, the trail winds through the heart of Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains.`,
+            "Silverado's name is a nod to the Silverado Trail, a 29-mile route that passes through the heart of California's Napa Valley. When the trail was constructed in 1852, it created a new path toward prosperity for California's workers and merchants, connecting mineral mines in the northern valley to commercial shipping routes in the south. Today, the trail winds through the heart Napa Valley's wine country, offering a scenic view of world-class vineyards and the valley's magnificent mountains.",
+        textTwo: `Like its namesake, Silverado is forging a new path toward American prosperity in the 21st century—and serving up plenty of wine along the way.`,
     },
     ctasection: {
         text:
@@ -37,7 +37,7 @@ export default function AboutPage({ data }) {
         },
         {
             image: turnbull,
-            fullName: 'Honorable Malcolm Turnbull',
+            fullName: 'The Honorable Malcolm Turnbull',
         },
     ];
     const advisoryBio = [

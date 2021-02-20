@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
+import SEO from '../components/SEO';
 import IndexHero from '../components/indexHero';
 import IndexSubHero from '../components/indexSubHero';
 import FullWidthImageWithText from '../components/fullWidthImageWithText';
@@ -48,6 +49,10 @@ export default function IndexPage({ data }) {
 
     return (
         <Layout isIndexPage>
+            <SEO
+                title="Silverado Policy Accelerator"
+                description="Silverado is a think tank dedicated to securing enduring American prosperity and competitiveness by investing in innovative bipartisan policy solutions."
+            />
             <IndexHero heroImage={heroImage} />
             <IndexSubHero
                 bodyBold={content.subHero.bodyBold}

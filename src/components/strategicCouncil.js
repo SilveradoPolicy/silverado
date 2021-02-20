@@ -35,6 +35,9 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Julie Cerqueira',
         },
         {
+            advisorFullName: 'John Conger',
+        },
+        {
             advisorFullName: 'Nicholas Consonery',
         },
         {
@@ -71,10 +74,10 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Evan Medeiros',
         },
         {
-            advisorFullName: 'Joseph Nye',
+            advisorFullName: 'Joseph S. Nye, Jr.',
         },
         {
-            advisorFullName: 'Scott Paul',
+            advisorFullName: 'Scott N. Paul',
         },
         {
             advisorFullName: 'Matthew Reisman',
