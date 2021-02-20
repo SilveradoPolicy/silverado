@@ -13,9 +13,9 @@ export default function HeroAnimation({ setIsAnimationLoaded }) {
     );
 
     const setAnimationFile = () => {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 767) {
             setActiveAnimationFile(mobileHero);
-        } else if (window.innerWidth >= 769 && window.innerWidth < 1280) {
+        } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
             setActiveAnimationFile(heroOne);
         } else {
             setActiveAnimationFile(heroAnimation);
