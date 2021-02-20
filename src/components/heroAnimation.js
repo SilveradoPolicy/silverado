@@ -23,14 +23,13 @@ export default function HeroAnimation({ setIsAnimationLoaded }) {
     };
 
     useEffect(() => {
-        window.addEventListener('load', setAnimationFile);
+        setAnimationFile();
         window.addEventListener('resize', setAnimationFile);
 
         return () => {
-            window.removeEventListener('load', setAnimationFile);
             window.removeEventListener('resize', setAnimationFile);
         };
-    }, [activeAnimationFile]);
+    }, []);
 
     return (
         <>
