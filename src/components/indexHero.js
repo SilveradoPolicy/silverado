@@ -26,16 +26,31 @@ const Body = styled.p`
     ${tw`text-lg max-w-prose`}
 `;
 
-export default function IndexHero({ body, cta, heading, heroImage }) {
+export default function IndexHero({
+    body,
+    cta,
+    fullHeroImg,
+    heading,
+    mobileHeroImg,
+    oneHeroImg,
+}) {
     const [isAnimationLoaded, setIsAnimationLoaded] = useState(false);
     const heroContent = body || cta || heading;
-    const {
-        childImageSharp: { fluid: imageData },
-    } = heroImage;
+    const sources = [
+        mobileHeroImg.childImageSharp.fluid,
+        {
+            ...oneHeroImg.childImageSharp.fluid,
+            media: `(min-width: 678px) and (max-width: 1024px)`,
+        },
+        {
+            ...fullHeroImg.childImageSharp.fluid,
+            media: `(min-width: 1025px)`,
+        },
+    ];
 
     return (
         <StyledSection>
-            {!isAnimationLoaded && <Img fluid={imageData} />}
+            {!isAnimationLoaded && <Img fluid={sources} />}
             <AnimationWrapper>
                 <HeroAnimation setIsAnimationLoaded={setIsAnimationLoaded} />
             </AnimationWrapper>
@@ -61,8 +76,12 @@ IndexHero.propTypes = {
     cta: PropTypes.shape({
         link: PropTypes.string,
     }),
+    fullHeroImg: PropTypes.shape({
+        childImageSharp: PropTypes.object.isRequired,
+    }).isRequired,
     heading: PropTypes.string,
-    heroImage: PropTypes.shape({
+    mobileHeroImg: PropTypes.object.isRequired,
+    oneHeroImg: PropTypes.shape({
         childImageSharp: PropTypes.object.isRequired,
     }).isRequired,
 };

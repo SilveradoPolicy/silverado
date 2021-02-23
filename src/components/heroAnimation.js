@@ -35,7 +35,6 @@ export default function HeroAnimation({ setIsAnimationLoaded }) {
         <>
             <Lottie
                 animationData={activeAnimationFile}
-                autoplay
                 lottieRef={heroAnimContainer}
                 onDOMLoaded={setIsAnimationLoaded(true)}
             />

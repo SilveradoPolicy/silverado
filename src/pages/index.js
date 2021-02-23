@@ -45,7 +45,8 @@ const content = {
 };
 
 export default function IndexPage({ data }) {
-    const { heroImage } = data;
+    // const { heroImage, newMobileHero } = data;
+    const { fullHeroImg, mobileHeroImg, oneHeroImg } = data;
 
     return (
         <Layout isIndexPage>
@@ -53,7 +54,11 @@ export default function IndexPage({ data }) {
                 title="Silverado Policy Accelerator"
                 description="Silverado is a think tank dedicated to securing enduring American prosperity and competitiveness by investing in innovative bipartisan policy solutions."
             />
-            <IndexHero heroImage={heroImage} />
+            <IndexHero
+                fullHeroImg={fullHeroImg}
+                mobileHeroImg={mobileHeroImg}
+                oneHeroImg={oneHeroImg}
+            />
             <IndexSubHero
                 bodyBold={content.subHero.bodyBold}
                 body={content.subHero.body}
@@ -94,9 +99,23 @@ export const query = graphql`
                 }
             }
         }
-        mobileHero: file(relativePath: { regex: "/mobileHero/" }) {
+        mobileHeroImg: file(relativePath: { regex: "/mobileHeroImg/" }) {
             childImageSharp {
                 fluid(maxWidth: 768) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        fullHeroImg: file(relativePath: { regex: "/fullHeroImg/" }) {
+            childImageSharp {
+                fluid(maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        oneHeroImg: file(relativePath: { regex: "/oneHeroImg/" }) {
+            childImageSharp {
+                fluid(maxWidth: 1024) {
                     ...GatsbyImageSharpFluid
                 }
             }
@@ -106,8 +125,9 @@ export const query = graphql`
 
 IndexPage.propTypes = {
     data: PropTypes.shape({
-        heroImage: PropTypes.object.isRequired,
-        mobileHero: PropTypes.object.isRequired,
+        fullHeroImg: PropTypes.object.isRequired,
+        mobileHeroImg: PropTypes.object.isRequired,
+        oneHeroImg: PropTypes.object.isRequired,
         sources: PropTypes.array.isRequired,
     }).isRequired,
 };
