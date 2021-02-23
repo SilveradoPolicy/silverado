@@ -68,7 +68,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Mark Linscott',
         },
         {
-            advisorFullName: 'Jeannette Manfra',
+            advisorFullName: 'Jeanette Manfra',
         },
         {
             advisorFullName: 'Evan Medeiros',
