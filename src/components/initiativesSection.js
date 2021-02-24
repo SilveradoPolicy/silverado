@@ -87,7 +87,6 @@ export default function InitiativesSection() {
             <div className="icons">
                 <ScrolledAnimation data={icons} frames={150} style={style} />
             </div>
-
             <InitiativesText
                 id={content.cultivate.id}
                 heading={content.cultivate.heading}
@@ -108,13 +107,11 @@ export default function InitiativesSection() {
             <div className="incubate">
                 <ScrolledAnimation data={incubate} frames={150} style={style} />
             </div>
-
             <InitiativesText
                 id={content.accelerate.id}
                 heading={content.accelerate.heading}
                 body={content.accelerate.body}
             />
-
             <div className="accelerate">
                 <ScrolledAnimation
                     data={accelerate}
