@@ -28,6 +28,14 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-google-analytics',
+            options: {
+                trackingId: 'G-V9QQ8RT79P',
+                head: true,
+                respectDNT: true,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 icon: 'src/images/icon.png',
