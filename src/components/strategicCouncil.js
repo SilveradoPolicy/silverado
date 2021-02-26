@@ -35,7 +35,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
         },
         {
             advisorFullName: 'Thomas P. Bossert',
-            title: 'President TrinityCyber, Inc.',
+            title: 'President, TrinityCyber, Inc.',
         },
         {
             advisorFullName: 'Julie Cerqueira',
@@ -44,7 +44,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
         {
             advisorFullName: 'John Conger',
             title:
-                'President Conger Strategies and Solutions, LLC; Director, the Center for Climate and Security',
+                'President, Conger Strategies and Solutions, LLC; Director, the Center for Climate and Security',
         },
         {
             advisorFullName: 'Nicholas Consonery',
@@ -52,12 +52,12 @@ export default function StrategicCouncil({ honoraryMembers }) {
                 'Director of Global Markets Research and Strategy, The Eurasia Group',
         },
         {
-            advisorFullName: 'Wendy Cutler—Vice President',
-            title: 'the Asia Society Policy Institute',
+            advisorFullName: 'Wendy Cutler',
+            title: 'Vice President, the Asia Society Policy Institute',
         },
         {
-            advisorFullName: 'Ivo Daalder—President',
-            title: 'the Chicago Council on Global Affairs',
+            advisorFullName: 'Ivo Daalder',
+            title: 'President, the Chicago Council on Global Affairs',
         },
         {
             advisorFullName: 'Richard Danzig',
@@ -128,8 +128,8 @@ export default function StrategicCouncil({ honoraryMembers }) {
             title: 'Director, the Wilson Center’s Kennan Institute',
         },
         {
-            advisorFullName: 'Nadia Schadlow—Founder',
-            title: 'Scout Strategy Group LLC',
+            advisorFullName: 'Nadia Schadlow',
+            title: 'Founder, Scout Strategy Group LLC',
         },
         {
             advisorFullName: 'Marie O’Neill Sciarrone',
