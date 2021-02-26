@@ -17,94 +17,128 @@ const StyledHeading = styled.h2`
 export default function StrategicCouncil({ honoraryMembers }) {
     const strategicAdvisors = [
         {
-            advisorFullName: 'Heather Adkins',
+            advisorFullName:
+                'Heather Adkins—Senior Director of Information Security at Google',
         },
         {
-            advisorFullName: 'Michael Allen',
+            advisorFullName:
+                'Michael Allen—Managing Director, Beacon Global Strategies',
         },
         {
-            advisorFullName: 'Robert D. Atkinson',
+            advisorFullName:
+                'Robert D. Atkinson—Founder and President, the Information Technology and Innovation Foundation',
         },
         {
-            advisorFullName: 'Jeremy Bash',
+            advisorFullName:
+                'Jeremy Bash—Founder and Managing Director, Beacon Global Strategies',
         },
         {
-            advisorFullName: 'Thomas P. Bossert',
+            advisorFullName: 'Thomas P. Bossert—President, TrinityCyber, Inc.',
         },
         {
-            advisorFullName: 'Julie Cerqueira',
+            advisorFullName:
+                'Julie Cerqueira—Executive Director, the U.S. Climate Alliance',
         },
         {
-            advisorFullName: 'John Conger',
+            advisorFullName:
+                'John Conger—President, Conger Strategies and Solutions, LLC; Director, the Center for Climate and Security',
         },
         {
-            advisorFullName: 'Nicholas Consonery',
+            advisorFullName:
+                'Nicholas Consonery—Director of Global Markets Research and Strategy, The Eurasia Group',
         },
         {
-            advisorFullName: 'Wendy Cutler',
+            advisorFullName:
+                'Wendy Cutler—Vice President, the Asia Society Policy Institute',
         },
         {
-            advisorFullName: 'Richard Danzig',
+            advisorFullName:
+                'Ivo Daalder—President, the Chicago Council on Global Affairs',
         },
         {
-            advisorFullName: 'Mark Galeotti',
+            advisorFullName:
+                'Richard Danzig—Former Secretary of the Navy, Senior Intelligence and Defense Consultant',
         },
         {
-            advisorFullName: 'Steven Glickman',
+            advisorFullName:
+                'Mark Galeotti—Principal Director, Mayak Intelligence',
         },
         {
-            advisorFullName: 'Jason Healey',
+            advisorFullName: 'Steve Glickman—Founder and CEO, Develop LLC',
         },
         {
-            advisorFullName: 'John C. (Chris) Inglis',
+            advisorFullName:
+                'Jason Healey—Senior Research Scholar, Columbia University’s School for International and Public Affairs',
         },
         {
-            advisorFullName: 'Jamil Jaffer',
+            advisorFullName:
+                'John C. (Chris) Inglis— Robert Looker Distinguished Chair for Cyber Operations, U.S. Naval Academy',
         },
         {
-            advisorFullName: 'Richard Ledgett',
+            advisorFullName:
+                'Jamil Jaffer—Founder and Executive Director, the National Security Institute',
         },
         {
-            advisorFullName: 'Mark Linscott',
+            advisorFullName:
+                'Richard H. Ledgett, Jr. (Rick)—Former Deputy Director, National Security Agency',
         },
         {
-            advisorFullName: 'Jeanette Manfra',
+            advisorFullName:
+                'Mark Linscott—Senior Advisor, The Asia Group; Senior Fellow, the Atlantic Council’s South Asia Center',
         },
         {
-            advisorFullName: 'Evan Medeiros',
+            advisorFullName:
+                'Jeanette Manfra—Director for Risk and Compliance, Google Cloud',
         },
         {
-            advisorFullName: 'Joseph S. Nye, Jr.',
+            advisorFullName:
+                'Evan Medeiros—Penner Family Chair in Asian Studies at the Edmund A. Walsh School of Foreign Service, Georgetown University',
         },
         {
-            advisorFullName: 'Scott N. Paul',
+            advisorFullName:
+                'Keith Mularksi—Managing Director, Advisory-Cybersecurity for Ernst & Young LLP',
         },
         {
-            advisorFullName: 'Matthew Reisman',
+            advisorFullName:
+                'Joseph S. Nye, Jr.—University Distinguished Service Professor emeritus and former Dean of the Kennedy School of Government, Harvard University',
         },
         {
-            advisorFullName: 'Matthew Rojanksy',
+            advisorFullName:
+                'Scott N. Paul—President, the Alliance for American Manufacturing',
         },
         {
-            advisorFullName: 'Nadia Schadlow',
+            advisorFullName:
+                'Matthew Reisman—Director, International Trade Policy, Microsoft',
         },
         {
-            advisorFullName: 'Neill Sciarrone',
+            advisorFullName:
+                'Matthew Rojansky—Director, the Wilson Center’s Kennan Institute',
         },
         {
-            advisorFullName: 'Matthew Spence',
+            advisorFullName: 'Nadia Schadlow—Founder, Scout Strategy Group LLC',
         },
         {
-            advisorFullName: 'Terence P. Stewart',
+            advisorFullName:
+                'Marie O’Neill Sciarrone—Chief Executive Officer, Tribal Tech',
         },
         {
-            advisorFullName: 'Jonathan Ward',
+            advisorFullName:
+                'Matthew Spence—Managing Director, Guggenheim Partners',
         },
         {
-            advisorFullName: 'Michael R. Wessel',
+            advisorFullName:
+                'Terence P. Stewart—Former Managing Partner, Law Offices of Stewart and Stewart',
         },
         {
-            advisorFullName: 'Amy Zegart',
+            advisorFullName: 'Dr. Jonathan Ward—Founder, Altas Organization',
+        },
+        {
+            advisorFullName:
+                'Michael R. Wessel—President, The Wessel Group Incorporated',
+        },
+        {
+            advisorFullName:
+                'Amy Zegart—Senior Fellow, Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
         },
     ];
     return (
