@@ -16,12 +16,17 @@ const StyledName = styled.div`
     ${tw`capitalize text-brand-1 text-ts-h5`}
 `;
 
+const StyledTitle = styled.div`
+    ${tw`capitalize text-brand-1 text-ts-h5`}
+`;
+
 export default function ImageWithName({ data }) {
     const {
         fullName,
         image: {
             childImageSharp: { fluid },
         },
+        title,
     } = data;
 
     return (
@@ -30,6 +35,7 @@ export default function ImageWithName({ data }) {
                 <Img fluid={fluid} />
             </ImgWrapper>
             <StyledName className="font-wt-bold">{fullName}</StyledName>
+            <StyledTitle>{title}</StyledTitle>
         </FlexWrapper>
     );
 }
