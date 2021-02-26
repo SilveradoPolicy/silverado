@@ -8,7 +8,7 @@ const StyledName = styled.h5`
 `;
 
 const StyledTitle = styled.p`
-    ${tw`capitalize text-brand-1 text-ts-h5`}
+    ${tw`capitalize text-brand-1`}
 `;
 
 export default function StrategicAdvisor({ data }) {
@@ -16,7 +16,7 @@ export default function StrategicAdvisor({ data }) {
     return (
         <div>
             <StyledName className="font-wt-bold">{advisorFullName}</StyledName>
-            <StyledTitle className="font-wt-thin">{title}</StyledTitle>
+            <StyledTitle className="font-wt-reg">{title}</StyledTitle>
         </div>
     );
 }
