@@ -34,6 +34,7 @@
     "gatsby-plugin-styled-components": "^3.7.0",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-transformer-sharp": "^2.9.0",
+    "html-react-parser": "^1.2.4",
     "lottie-react": "^2.1.0",
     "lottie-web": "^5.7.6",
     "postcss": "^8.2.4",

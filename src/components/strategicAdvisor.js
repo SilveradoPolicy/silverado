@@ -8,7 +8,7 @@ const StyledName = styled.h5`
 `;
 
 const StyledTitle = styled.p`
-    ${tw`capitalize text-brand-1 text-ts-h5`}
+    ${tw`capitalize text-brand-1`}
 `;
 
 const StyledDiv = styled.div`

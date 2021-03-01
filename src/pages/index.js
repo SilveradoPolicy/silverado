@@ -22,7 +22,7 @@ const content = {
     subHero: {
         heading: `Forging a path toward American prosperity and global competitiveness through investment in bipartisan economic, strategic, and technological policy solutions.`,
         bodyBold: `The race is on.`,
-        body: ` As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitiveness on the world stage.`,
+        body: ` As the world competes for the newest technologies, the smartest economies, and the broadest sphere of influence, the nations that assert bold long-term strategies will shape the global order for decades to come. At this pivotal moment of geopolitical competition, America and its allies can't afford to sit on the sidelines. It's time to chart a course toward economic prosperity at home and competitiveness on the world stage.`,
     },
     fullWidthImage: {
         heading: 'What is the Silverado Policy Accelerator?',
@@ -36,7 +36,7 @@ const content = {
     copy2: {
         text: "Silverado's three focal points converge on a single challenge: ",
         italText:
-            'How will the United States maintain global leadership and competitiveness in a new era of economic, technological, and strategic competition?',
+            'How will the United States and its allies maintain global leadership and competitiveness in a new era of economic, technological, and strategic competition?',
         cta: {
             link: '/initiatives',
             text: 'next steps',
