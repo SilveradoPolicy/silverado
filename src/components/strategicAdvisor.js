@@ -23,7 +23,7 @@ const StyledModal = styled.p`
 const customStyles = {
     content: {
         width: '364px',
-        top: '63%',
+        top: '50%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
@@ -32,6 +32,9 @@ const customStyles = {
         borderRadius: '23px',
         transform: 'translate(-50%, -50%)',
         position: 'relative',
+    },
+    overlay: {
+        zIndex: '10',
     },
 };
 
