@@ -58,13 +58,13 @@ export default function StrategicAdvisor({ data }) {
                 onClick={openModal}
                 onKeyDown={openModal}
                 tabIndex={0}
+                style={{ cursor: 'pointer' }}
             >
                 <StyledName className="font-wt-bold">
                     <label>{advisorFullName}</label>
                 </StyledName>
                 <StyledTitle className="font-wt-thin">{title}</StyledTitle>
             </div>
-
             <Modal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
@@ -86,7 +86,15 @@ export default function StrategicAdvisor({ data }) {
                         ac sodales nunc vestibulum eget.
                     </StyledModal>
                     <br />
-                    <button type="button" onClick={closeModal}>
+                    <button
+                        style={{
+                            position: 'absolute',
+                            top: '10px',
+                            right: '10px',
+                        }}
+                        type="button"
+                        onClick={closeModal}
+                    >
                         <MdClose />
                     </button>
                 </StyledDiv>
