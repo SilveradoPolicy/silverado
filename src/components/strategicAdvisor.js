@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Modal from 'react-modal';
+import { MdClose } from 'react-icons/md';
 
 const StyledName = styled.h5`
     ${tw`capitalize text-brand-1 text-ts-h5`}
@@ -46,25 +47,26 @@ export default function StrategicAdvisor({ data }) {
         setIsOpen(true);
     }
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#306184';
-    }
-
     function closeModal() {
         setIsOpen(false);
     }
     return (
         <div>
-            <button type="button" onClick={openModal} onKeyDown={openModal}>
+            <div
+                type="button"
+                role="button"
+                onClick={openModal}
+                onKeyDown={openModal}
+                tabIndex={0}
+            >
                 <StyledName className="font-wt-bold">
                     <label>{advisorFullName}</label>
                 </StyledName>
-            </button>
-            <StyledTitle className="font-wt-thin">{title}</StyledTitle>
+                <StyledTitle className="font-wt-thin">{title}</StyledTitle>
+            </div>
+
             <Modal
                 isOpen={isOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Bio Modal"
@@ -85,7 +87,7 @@ export default function StrategicAdvisor({ data }) {
                     </StyledModal>
                     <br />
                     <button type="button" onClick={closeModal}>
-                        x
+                        <MdClose />
                     </button>
                 </StyledDiv>
             </Modal>
