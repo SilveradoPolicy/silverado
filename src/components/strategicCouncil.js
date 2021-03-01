@@ -153,9 +153,9 @@ export default function StrategicCouncil({ honoraryMembers }) {
             title: 'President, The Wessel Group Incorporated',
         },
         {
-            advisorFullName: 'Amy Zegart—Senior Fellow',
+            advisorFullName: 'Amy Zegart',
             title:
-                'Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
+                'Senior Fellow, Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
         },
     ];
     return (

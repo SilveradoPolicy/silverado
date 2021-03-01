@@ -13,7 +13,7 @@ const StyledTitle = styled.p`
 `;
 
 const StyledDiv = styled.div`
-    ${tw`text-brand-1 p-4 bg-opacity-100 bg-white absolute`}
+    ${tw`text-brand-1 p-4 bg-opacity-100 bg-white`}
 `;
 
 const StyledModal = styled.p`
@@ -23,7 +23,6 @@ const StyledModal = styled.p`
 const customStyles = {
     content: {
         width: '364px',
-        height: '350px',
         top: '60%',
         left: '50%',
         right: 'auto',
@@ -32,6 +31,7 @@ const customStyles = {
         boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25)',
         borderRadius: '23px',
         transform: 'translate(-50%, -50%)',
+        position: 'relative',
     },
 };
 
