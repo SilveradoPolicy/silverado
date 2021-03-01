@@ -33,11 +33,13 @@ export default function AboutPage({ data }) {
     const advisoryBoard = [
         {
             image: general,
-            fullName: 'Gen. David Petraeus (Army, Ret.)',
+            fullName: 'General David Petraeus (US Army, Ret.)',
+            title: 'Partner, KKR and Chairman KKR Global Institute',
         },
         {
             image: turnbull,
-            fullName: 'The Honorable Malcolm Turnbull',
+            fullName: 'The Hon. Malcolm Turnbull',
+            title: 'Australia’s 29th Prime Minister',
         },
     ];
     const advisoryBio = [

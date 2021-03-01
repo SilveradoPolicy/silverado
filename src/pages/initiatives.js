@@ -26,7 +26,7 @@ const content = {
     },
     copy: {
         text:
-            'Realizing a comprehensive American strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21st-century race to the top.',
+            'Realizing a comprehensive strategy in the twenty-first century will require creativity and collaboration. Silverado works with a bipartisan group of policymakers, stakeholders, and experts to build support for actionable policy initiatives and ignite a 21st-century race to the top.',
     },
 };
 

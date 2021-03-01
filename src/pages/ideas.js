@@ -14,8 +14,7 @@ const content = {
     },
     listContent: {
         heading: 'What Are the Characteristics of a Silverado Idea?',
-        body:
-            "Have a creative policy idea that you're dying to share? Don't wait until the Ideas   Competition! Send us a link to your paper, article, report, or study at info@silverado.org, or Tweet us @SilveradoPolicy, and we'll share ideas here.",
+        body: `Have a creative policy idea that you're dying to share? Don't wait until the Ideas Competition! Send us a link to your paper, article, report, or study at <a href="mailto:info@silverado.org">info@silverado.org</a>, or Tweet us <a href="https://twitter.com/silveradopolicy" target="_blank" rel="noreferrer">@SilveradoPolicy</a>, and we'll share ideas here.`,
         listItems: [
             {
                 heading: 'Diagnostic',

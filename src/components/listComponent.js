@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import parse from 'html-react-parser';
 
 const StyledSection = styled.section`
     ${tw`relative pt-16`}
@@ -49,7 +50,7 @@ export default function ListComponent({
                 <StyledHeading className="font-wt-bold">
                     {heading}
                 </StyledHeading>
-                <StyledBody>{body}</StyledBody>
+                <StyledBody>{parse(body)}</StyledBody>
                 <StyledList>
                     {listItems.map((item) => {
                         return (
