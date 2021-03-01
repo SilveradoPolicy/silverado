@@ -5,6 +5,10 @@ import tw from 'twin.macro';
 import Modal from 'react-modal';
 import { MdClose } from 'react-icons/md';
 
+const ButtonDiv = styled.div`
+    ${tw`cursor-pointer`}
+`;
+
 const StyledName = styled.h5`
     ${tw`capitalize text-brand-1 text-ts-h5`}
 `;
@@ -52,19 +56,18 @@ export default function StrategicAdvisor({ data }) {
     }
     return (
         <div>
-            <div
+            <ButtonDiv
                 type="button"
                 role="button"
                 onClick={openModal}
                 onKeyDown={openModal}
                 tabIndex={0}
-                style={{ cursor: 'pointer' }}
             >
                 <StyledName className="font-wt-bold">
-                    <label>{advisorFullName}</label>
+                    {advisorFullName}
                 </StyledName>
                 <StyledTitle className="font-wt-thin">{title}</StyledTitle>
-            </div>
+            </ButtonDiv>
             <Modal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
