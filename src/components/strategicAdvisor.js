@@ -23,7 +23,7 @@ const StyledModal = styled.p`
 const customStyles = {
     content: {
         width: '364px',
-        top: '60%',
+        top: '63%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
@@ -65,6 +65,7 @@ export default function StrategicAdvisor({ data }) {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Bio Modal"
+                className="z-10"
             >
                 <StyledDiv>
                     <h1 className="font-wt-bold" style={{ fontSize: '23px' }}>
