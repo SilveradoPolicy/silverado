@@ -64,7 +64,7 @@ export default function StrategicAdvisor({ data }) {
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Bio Modal"
             >
                 <StyledDiv>
                     <h1 className="font-wt-bold" style={{ fontSize: '23px' }}>
