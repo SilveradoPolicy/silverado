@@ -39,7 +39,7 @@ const ModalName = styled.h2`
 
 const customStyles = {
     content: {
-        width: '364px',
+        maxWidth: '80%',
         top: '50%',
         left: '50%',
         right: 'auto',
@@ -57,7 +57,7 @@ const customStyles = {
 
 export default function StrategicAdvisor({ data }) {
     const [isOpen, setIsOpen] = useState(false);
-    const { advisorFullName, title } = data;
+    const { advisorFullName, bio, title } = data;
 
     function toggleModal() {
         Modal.setAppElement('#___gatsby');
@@ -97,15 +97,7 @@ export default function StrategicAdvisor({ data }) {
                         <ModalTitle className="font-wt-thin">
                             {title}
                         </ModalTitle>
-                        <StyledModal>
-                            Quisque consequat, massa ut convallis sagittis,
-                            ipsum lectus tempus urna, nec consequat massa leo
-                            sed metus. Morbi eget justo augue. Etiam a tortor
-                            ligula. Duis pharetra egestas urna eu maximus.
-                            Integer venenatis convallis elementum. Donec
-                            ullamcorper consequat nibh, ac sodales nunc
-                            vestibulum eget.
-                        </StyledModal>
+                        <StyledModal>{bio}</StyledModal>
                         <StyledButton role="button" onClick={toggleModal}>
                             <MdClose />
                         </StyledButton>
