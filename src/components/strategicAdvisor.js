@@ -98,7 +98,7 @@ export default function StrategicAdvisor({ data }) {
                             top: '10px',
                             right: '10px',
                         }}
-                        type="button"
+                        role="button"
                         onClick={closeModal}
                     >
                         <MdClose />
