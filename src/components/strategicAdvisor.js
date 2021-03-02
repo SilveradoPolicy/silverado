@@ -52,16 +52,6 @@ export default function StrategicAdvisor({ data }) {
     const [isOpen, setIsOpen] = useState(false);
     const { advisorFullName, title } = data;
 
-    // function openModal() {
-    //     console.log('open');
-    //     setIsOpen(true);
-    // }
-
-    // function closeModal() {
-    //     console.log('close');
-    //     setIsOpen(false);
-    // }
-
     function toggleModal() {
         setIsOpen(!isOpen);
     }
