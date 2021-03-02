@@ -48,63 +48,75 @@ const customStyles = {
 };
 
 export default function StrategicAdvisor({ data }) {
+    Modal.setAppElement('#___gatsby');
     const [isOpen, setIsOpen] = useState(false);
     const { advisorFullName, title } = data;
 
-    function openModal() {
-        setIsOpen(true);
+    // function openModal() {
+    //     console.log('open');
+    //     setIsOpen(true);
+    // }
+
+    // function closeModal() {
+    //     console.log('close');
+    //     setIsOpen(false);
+    // }
+
+    function toggleModal() {
+        setIsOpen(!isOpen);
     }
 
-    function closeModal() {
-        setIsOpen(false);
-    }
     return (
         <div>
             <ButtonDiv
                 type="button"
                 role="button"
-                onClick={openModal}
-                onKeyDown={openModal}
+                onClick={toggleModal}
+                onKeyDown={toggleModal}
                 tabIndex={0}
             >
                 <StyledName className="font-wt-bold">
                     {advisorFullName}
                 </StyledName>
                 <StyledTitle className="font-wt-thin">{title}</StyledTitle>
+                <Modal
+                    isOpen={isOpen}
+                    onRequestClose={toggleModal}
+                    style={customStyles}
+                    contentLabel="Bio Modal"
+                >
+                    <StyledDiv>
+                        <h1
+                            className="font-wt-bold"
+                            style={{ fontSize: '23px' }}
+                        >
+                            {advisorFullName}
+                        </h1>
+                        <h2 className="font-wt-thin">{title}</h2>
+                        <br />
+                        <StyledModal>
+                            Quisque consequat, massa ut convallis sagittis,
+                            ipsum lectus tempus urna, nec consequat massa leo
+                            sed metus. Morbi eget justo augue. Etiam a tortor
+                            ligula. Duis pharetra egestas urna eu maximus.
+                            Integer venenatis convallis elementum. Donec
+                            ullamcorper consequat nibh, ac sodales nunc
+                            vestibulum eget.
+                        </StyledModal>
+                        <StyledButton
+                            style={{
+                                position: 'absolute',
+                                top: '10px',
+                                right: '10px',
+                            }}
+                            role="button"
+                            onClick={toggleModal}
+                        >
+                            <MdClose />
+                        </StyledButton>
+                    </StyledDiv>
+                </Modal>
             </ButtonDiv>
-            <Modal
-                isOpen={isOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Bio Modal"
-            >
-                <StyledDiv>
-                    <h1 className="font-wt-bold" style={{ fontSize: '23px' }}>
-                        {advisorFullName}
-                    </h1>
-                    <h2 className="font-wt-thin">{title}</h2>
-                    <br />
-                    <StyledModal>
-                        Quisque consequat, massa ut convallis sagittis, ipsum
-                        lectus tempus urna, nec consequat massa leo sed metus.
-                        Morbi eget justo augue. Etiam a tortor ligula. Duis
-                        pharetra egestas urna eu maximus. Integer venenatis
-                        convallis elementum. Donec ullamcorper consequat nibh,
-                        ac sodales nunc vestibulum eget.
-                    </StyledModal>
-                    <StyledButton
-                        style={{
-                            position: 'absolute',
-                            top: '10px',
-                            right: '10px',
-                        }}
-                        role="button"
-                        onClick={closeModal}
-                    >
-                        <MdClose />
-                    </StyledButton>
-                </StyledDiv>
-            </Modal>
         </div>
     );
 }
