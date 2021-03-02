@@ -33,6 +33,10 @@ const ModalTitle = styled.h2`
     ${tw`mb-4`}
 `;
 
+const ModalName = styled.h2`
+    ${tw`text-2xl`}
+`;
+
 const customStyles = {
     content: {
         width: '364px',
@@ -87,12 +91,9 @@ export default function StrategicAdvisor({ data }) {
                     contentLabel="Bio Modal"
                 >
                     <StyledDiv>
-                        <h1
-                            className="font-wt-bold"
-                            style={{ fontSize: '23px' }}
-                        >
+                        <ModalName className="font-wt-bold">
                             {advisorFullName}
-                        </h1>
+                        </ModalName>
                         <ModalTitle className="font-wt-thin">
                             {title}
                         </ModalTitle>
@@ -105,15 +106,7 @@ export default function StrategicAdvisor({ data }) {
                             ullamcorper consequat nibh, ac sodales nunc
                             vestibulum eget.
                         </StyledModal>
-                        <StyledButton
-                            style={{
-                                position: 'absolute',
-                                top: '10px',
-                                right: '10px',
-                            }}
-                            role="button"
-                            onClick={toggleModal}
-                        >
+                        <StyledButton role="button" onClick={toggleModal}>
                             <MdClose />
                         </StyledButton>
                     </StyledDiv>
