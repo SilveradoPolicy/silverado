@@ -25,6 +25,10 @@ const StyledModal = styled.p`
     ${tw`text-black`}
 `;
 
+const StyledButton = styled.button`
+    ${tw`top-2.5 right-2.5 absolute`}
+`;
+
 const customStyles = {
     content: {
         width: '364px',
@@ -88,8 +92,7 @@ export default function StrategicAdvisor({ data }) {
                         convallis elementum. Donec ullamcorper consequat nibh,
                         ac sodales nunc vestibulum eget.
                     </StyledModal>
-                    <br />
-                    <button
+                    <StyledButton
                         style={{
                             position: 'absolute',
                             top: '10px',
@@ -99,7 +102,7 @@ export default function StrategicAdvisor({ data }) {
                         onClick={closeModal}
                     >
                         <MdClose />
-                    </button>
+                    </StyledButton>
                 </StyledDiv>
             </Modal>
         </div>
