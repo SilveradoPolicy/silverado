@@ -29,6 +29,10 @@ const StyledButton = styled.button`
     ${tw`top-2.5 right-2.5 absolute`}
 `;
 
+const ModalTitle = styled.h2`
+    ${tw`mb-4`}
+`;
+
 const customStyles = {
     content: {
         width: '364px',
@@ -48,21 +52,28 @@ const customStyles = {
 };
 
 export default function StrategicAdvisor({ data }) {
-    Modal.setAppElement('#___gatsby');
     const [isOpen, setIsOpen] = useState(false);
     const { advisorFullName, title } = data;
 
     function toggleModal() {
+        Modal.setAppElement('#___gatsby');
         setIsOpen(!isOpen);
+    }
+
+    function handleKeydown(e) {
+        const enterKeyWasPressed = e.keycode === 13;
+
+        if (enterKeyWasPressed) {
+            toggleModal();
+        }
     }
 
     return (
         <div>
             <ButtonDiv
-                type="button"
                 role="button"
                 onClick={toggleModal}
-                onKeyDown={toggleModal}
+                onKeyDown={handleKeydown}
                 tabIndex={0}
             >
                 <StyledName className="font-wt-bold">
@@ -82,8 +93,9 @@ export default function StrategicAdvisor({ data }) {
                         >
                             {advisorFullName}
                         </h1>
-                        <h2 className="font-wt-thin">{title}</h2>
-                        <br />
+                        <ModalTitle className="font-wt-thin">
+                            {title}
+                        </ModalTitle>
                         <StyledModal>
                             Quisque consequat, massa ut convallis sagittis,
                             ipsum lectus tempus urna, nec consequat massa leo
