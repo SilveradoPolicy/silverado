@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledName = styled.h5`
-    ${tw`capitalize text-brand-1 text-ts-h5`}
+    ${tw`text-brand-1 text-ts-h5`}
 `;
 
 const StyledTitle = styled.p`
-    ${tw`capitalize text-brand-1`}
+    ${tw`text-brand-1`}
 `;
 
 export default function StrategicAdvisor({ data }) {
