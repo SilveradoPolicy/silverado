@@ -77,7 +77,7 @@ export default function ImageWithName({ data }) {
     }
 
     function handleKeydown(e) {
-        const enterKeyWasPressed = e.keycode === 13;
+        const enterKeyWasPressed = e.keyCode === 13;
 
         if (enterKeyWasPressed) {
             toggleModal();
