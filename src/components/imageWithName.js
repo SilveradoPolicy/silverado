@@ -15,11 +15,11 @@ const ImgWrapper = styled.div`
 `;
 
 const StyledName = styled.div`
-    ${tw`capitalize text-brand-1 text-ts-h5`}
+    ${tw`capitalize font-wt-bold text-brand-1 text-ts-h5`}
 `;
 
 const StyledTitle = styled.div`
-    ${tw`capitalize text-brand-1`}
+    ${tw`capitalize font-wt-reg text-brand-1`}
 `;
 
 const StyledDiv = styled.div`
@@ -35,11 +35,11 @@ const StyledButton = styled.button`
 `;
 
 const ModalTitle = styled.h2`
-    ${tw`mb-4`}
+    ${tw`font-wt-thin mb-4`}
 `;
 
 const ModalName = styled.h2`
-    ${tw`text-2xl`}
+    ${tw`font-wt-bold text-2xl`}
 `;
 
 const customStyles = {
@@ -94,8 +94,8 @@ export default function ImageWithName({ data }) {
             <ImgWrapper>
                 <Img fluid={fluid} />
             </ImgWrapper>
-            <StyledName className="font-wt-bold">{fullName}</StyledName>
-            <StyledTitle className="font-wt-reg">{title}</StyledTitle>
+            <StyledName>{fullName}</StyledName>
+            <StyledTitle>{title}</StyledTitle>
             <Modal
                 isOpen={isOpen}
                 onRequestClose={toggleModal}
@@ -103,8 +103,8 @@ export default function ImageWithName({ data }) {
                 contentLabel="Bio Modal"
             >
                 <StyledDiv>
-                    <ModalName className="font-wt-bold">{fullName}</ModalName>
-                    <ModalTitle className="font-wt-thin">{title}</ModalTitle>
+                    <ModalName>{fullName}</ModalName>
+                    <ModalTitle>{title}</ModalTitle>
                     <StyledModal>{bio}</StyledModal>
                     <StyledButton role="button" onClick={toggleModal}>
                         <MdClose />
