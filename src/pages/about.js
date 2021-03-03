@@ -42,7 +42,7 @@ export default function AboutPage({ data }) {
             image: turnbull,
             fullName: 'The Hon. Malcolm Turnbull',
             title: 'Australia’s 29th Prime Minister',
-            bio: 'Coming soon...',
+            bio: '',
         },
     ];
     const advisoryBio = [

@@ -57,7 +57,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'John Conger',
             title:
                 'President, Conger Strategies and Solutions, LLC; Director, the Center for Climate and Security',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'Nicholas Consonery',
@@ -101,7 +101,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Jason Healey',
             title:
                 'Senior Research Scholar, Columbia University’s School for International and Public Affairs',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'John C. (Chris) Inglis',
@@ -127,7 +127,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Mark Linscott',
             title:
                 'Senior Advisor, The Asia Group; Senior Fellow, the Atlantic Council’s South Asia Center',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'Jeanette Manfra',
@@ -144,13 +144,13 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Keith Mularksi',
             title:
                 'Managing Director, Advisory-Cybersecurity for Ernst & Young LLP',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'Joseph S. Nye, Jr.',
             title:
                 'University Distinguished Service Professor emeritus and former Dean of the Kennedy School of Government, Harvard University',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'Scott N. Paul',
@@ -185,7 +185,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
         {
             advisorFullName: 'Matthew Spence',
             title: 'Managing Director, Guggenheim Partners',
-            bio: 'Coming soon...',
+            bio: '',
         },
         {
             advisorFullName: 'Terence P. Stewart',
@@ -210,7 +210,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Amy Zegart',
             title:
                 'Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
-            bio: 'Coming soon...',
+            bio: '',
         },
     ];
     return (
