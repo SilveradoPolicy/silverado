@@ -72,8 +72,12 @@ export default function ImageWithName({ data }) {
     } = data;
 
     function toggleModal() {
-        Modal.setAppElement('#___gatsby');
-        setIsOpen(!isOpen);
+        const { innerWidth } = window;
+
+        if (innerWidth >= 768) {
+            Modal.setAppElement('#___gatsby');
+            setIsOpen(!isOpen);
+        }
     }
 
     function handleKeydown(e) {
