@@ -10,11 +10,11 @@ const ButtonDiv = styled.div`
 `;
 
 const StyledName = styled.h5`
-    ${tw`capitalize font-wt-bold text-brand-1 text-ts-h5`}
+    ${tw`capitalize text-brand-1 text-ts-h5`}
 `;
 
 const StyledTitle = styled.p`
-    ${tw`capitalize font-wt-thin text-brand-1`}
+    ${tw`capitalize text-brand-1`}
 `;
 
 const StyledDiv = styled.div`
@@ -30,11 +30,11 @@ const StyledButton = styled.button`
 `;
 
 const ModalTitle = styled.h2`
-    ${tw`font-wt-thin mb-4`}
+    ${tw`mb-4`}
 `;
 
 const ModalName = styled.h2`
-    ${tw`font-wt-bold dtext-2xl`}
+    ${tw`text-2xl`}
 `;
 
 const customStyles = {
@@ -80,8 +80,10 @@ export default function StrategicAdvisor({ data }) {
                 onKeyDown={handleKeydown}
                 tabIndex={0}
             >
-                <StyledName>{advisorFullName}</StyledName>
-                <StyledTitle>{title}</StyledTitle>
+                <StyledName className="font-wt-bold">
+                    {advisorFullName}
+                </StyledName>
+                <StyledTitle className="font-wt-thin">{title}</StyledTitle>
                 <Modal
                     isOpen={isOpen}
                     onRequestClose={toggleModal}
@@ -89,8 +91,12 @@ export default function StrategicAdvisor({ data }) {
                     contentLabel="Bio Modal"
                 >
                     <StyledDiv>
-                        <ModalName>{advisorFullName}</ModalName>
-                        <ModalTitle>{title}</ModalTitle>
+                        <ModalName className="font-wt-bold">
+                            {advisorFullName}
+                        </ModalName>
+                        <ModalTitle className="font-wt-thin">
+                            {title}
+                        </ModalTitle>
                         <StyledModal>{bio}</StyledModal>
                         <StyledButton role="button" onClick={toggleModal}>
                             <MdClose />
