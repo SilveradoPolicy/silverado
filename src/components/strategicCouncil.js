@@ -207,7 +207,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
                 'Michael Wessel is President of The Wessel Group Incorporated, a public affairs consulting firm offering expertise in government, politics, and international affairs. He served on the staff of former House Democratic Leader Richard Gephardt for more than two decades in a number of roles, including General Counsel, and chief policy advisor, strategist, and negotiator. Mr. Wessel is an original member of the U.S.-China Economic and Security Review Commission, where he has served as a Commissioner since 2001, monitoring and investigating the national security and economic implications of the bilateral trade and economic relationship between the United States and the People ’s Republic of China. Mr. Wessel is the cleared staff chair of the USTR’s and Department of Labor’s Labor Advisory Committee for Trade Policy and Negotiations. He is also a member of the Council on Foreign Relations. Mr. Wessel holds a Bachelor of Arts and a Juris Doctorate from The George Washington University. He is a member of the Bars of the District of Columbia and of Pennsylvania and is a member of the Council on Foreign Relations.',
         },
         {
-            advisorFullName: 'Amy Zegart—Senior Fellow',
+            advisorFullName: 'Amy Zegart',
             title:
                 'Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
             bio: 'Coming soon...',

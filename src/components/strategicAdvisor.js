@@ -34,7 +34,7 @@ const ModalTitle = styled.h2`
 `;
 
 const ModalName = styled.h2`
-    ${tw`font-wt-bol dtext-2xl`}
+    ${tw`font-wt-bold dtext-2xl`}
 `;
 
 const customStyles = {
