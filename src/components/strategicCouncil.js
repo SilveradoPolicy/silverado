@@ -57,7 +57,8 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'John Conger',
             title:
                 'President, Conger Strategies and Solutions, LLC; Director, the Center for Climate and Security',
-            bio: '',
+            bio:
+                'John Conger is an independent consultant and President of Conger Strategies and Solutions, LLC.  He is also the Director of the Center for Climate and Security, as well as a member of its Advisory Board, and a member of the Board of Advisors of the Association of Defense Communities. Mr. Conger previously served as the Principal Deputy Under Secretary of Defense (Comptroller), from December 2015 to January 2017, providing oversight on budgetary and financial matters, including the development and execution of the Department’s annual budget and overseeing the Department’s efforts to achieve audit readiness. From 2009-2015, Mr. Conger oversaw energy, installations and environmental policy throughout DoD, performing the duties of the Assistant Secretary of Defense for Energy, Installations and Environment, as Acting Deputy Under Secretary of Defense for Installations &amp; Environment, and as Assistant Deputy Under Secretary of Defense for Installations &amp; Environment. Mr. Conger oversaw a vast portfolio that included management of DoD’s roughly $1 trillion global installations enterprise, energy and environmental policy, and climate change. Prior to his appointment in DoD, Mr. Conger served on the staff of Representatives Chet Edwards, Sam Gejdenson and Jane Harman, as well as Professional Staff for the House International Relations Committee. He holds a B.S. and an M.S. in Aeronautics and Astronautics from the Massachusetts Institute of Technology and an M.A. in Science, Technology and Public Policy from the George Washington University.',
         },
         {
             advisorFullName: 'Nicholas Consonery',
@@ -101,7 +102,8 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Jason Healey',
             title:
                 'Senior Research Scholar, Columbia University’s School for International and Public Affairs',
-            bio: '',
+            bio:
+                'Jason Healey is a Senior Research Scholar at Columbia University’s School for International and Public Affairs specializing in cyber conflict and risk. Prior to this, he was the founding director of the Cyber Statecraft Initiative of the Atlantic Council where he remains a Senior Fellow.  He is the editor of the first history of conflict in cyberspace, A Fierce Domain: Cyber Conflict, 1986 to 2012. A frequent speaker on these issues, he is rated as a “top-rated” speaker for the RSA Conference and won the inaugural “Best of Briefing Award” at Black Hat.  Mr. Healey helped the world’s first cyber command in 1998, the Joint Task Force for Computer Network Defense, where he was one of the early pioneers of cyber threat intelligence. During his time in the White House, he was a director for cyber policy, coordinating efforts to secure US cyberspace and critical infrastructure.  Mr. Healey created Goldman Sachs’ first cyber incident response team and later oversaw the bank’s crisis management and business continuity in Asia. He served as the vice chair of the Financial Services Information Sharing and Analysis Center (FS-ISAC).  He is on the review board of the DEF CON and Black Hat hacker conferences and served on the Defense Science Board task force on cyber deterrence. He started his career as a US Air Force intelligence officer with jobs at the Pentagon and National Security Agency and is a founding board member and past president of the Cyber Conflict Studies Association.',
         },
         {
             advisorFullName: 'John C. (Chris) Inglis',
@@ -127,7 +129,8 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Mark Linscott',
             title:
                 'Senior Advisor, The Asia Group; Senior Fellow, the Atlantic Council’s South Asia Center',
-            bio: '',
+            bio:
+                'Mark Linscott is a Senior Advisor with The Asia Group and a Senior Fellow with the Atlantic Council’s South Asia Center. Previously, Mark was the Assistant U.S. Trade Representative (USTR) for South and Central Asian Affairs from December 2016 to December 2018, the Assistant USTR for the World Trade Organization (WTO) and Multilateral Affairs from 2012 to 2016, and the Assistant USTR for Environment and Natural Resources from October 2003 to March 2012. In his role as Assistant USTR for the WTO, Mr. Linscott and his team were responsible for negotiation and implementation of WTO accessions and the Trade Facilitation Agreement and regionally managed negotiations in the Trans-Pacific Partnership (TPP) and Trans-Atlantic Trade and Investment Partnership (TTIP) on customs matters, government procurement, subsidies and trade remedies, and technical barriers to trade. From 1996 to 2002, Mr. Linscott represented the United States at the U.S. Mission to the WTO in Geneva. Prior to serving in Geneva, he worked in the USTR Office of WTO and Multilateral Affairs, where he concluded the Uruguay Round Government Procurement Agreement as the lead U.S. negotiator and was responsible for preparations for the entry-into-force of the WTO. Mr. Linscott also served in various roles at the U.S. Department of Commerce. He holds a BA in economics from the University of Virginia and a JD from Georgetown University Law Center.',
         },
         {
             advisorFullName: 'Jeanette Manfra',
@@ -150,7 +153,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
             advisorFullName: 'Joseph S. Nye, Jr.',
             title:
                 'University Distinguished Service Professor emeritus and former Dean of the Kennedy School of Government, Harvard University',
-            bio: '',
+            bio: `Joseph S. Nye, Jr., is University Distinguished Service Professor emeritus, and former Dean of the Kennedy School of Government at Harvard University. He received his bachelor's degree summa cum laude from Princeton University, studied at Oxford University on a Rhodes Scholarship, and earned a Ph.D. in political science from Harvard where he joined the faculty in 1964. In 2011, Foreign Policy listed him among the 100 leading global thinkers.  From 1977-79, Nye was a deputy Undersecretary of State and chaired the National Security Council Group on Nonproliferation of Nuclear Weapons. In 1993-94 he chaired the National Intelligence Council which prepares intelligence estimates for the president, and in 1994-95 served as Assistant Secretary of Defense for International Security Affairs. He won Distinguished Service medals from all three agencies. Nye has published fifteen academic books, a novel, and more than 200 articles in professional and policy journals. He is a fellow of the American Academy of Arts and Sciences, the British Academy, the American Academy of Diplomacy, and an honorary fellow of Exeter College, Oxford. He is the recipient of Princeton University’s Woodrow Wilson Award, the Charles Merriam Award from the American Political Science Association, France’s Palmes Academiques, Japan’s Order of the Rising Sun, and ten honorary degrees.`,
         },
         {
             advisorFullName: 'Scott N. Paul',
@@ -185,7 +188,8 @@ export default function StrategicCouncil({ honoraryMembers }) {
         {
             advisorFullName: 'Matthew Spence',
             title: 'Managing Director, Guggenheim Partners',
-            bio: '',
+            bio:
+                'Dr. Matthew Spence is a Managing Director at Guggenheim Partners, where he focuses on cybersecurity, the intersection of national security and technology, emerging technologies, and sustainability-related investments. He was previously a partner at the venture capital firm, Andreessen Horowtiz.  Dr. Spence spent seven years in senior national security positions in the U.S. government including as Deputy Assistant Secretary of Defense for Middle East Policy, where he was the principal advisor to three Secretaries of Defense for U.S. policy towards the Middle East. Prior to that, he worked at the White House on the National Security Council as Special Assistant to the President and Senior Director for International Economic Affairs and as Senior Advisor to two National Security Advisors. He also served on the Obama-Biden Presidential Transition Team. Dr. Spence is the co-founder and serves on the board of the Truman National Security Project, and on the board of the Los Angeles Music Center.  He is a Lifetime Member of the Council on Foreign Relations, a Senior Fellow at the Yale Center on Global Legal Challenges, Senior Fellow at NYU Law School Reiss Center on Law and Security, and was the William J. Perry Fellow at Stanford University. He has taught classes at Yale and Stanford on national security policymaking. He is also a Professor of the Practice at Arizona State University’s Thunderbird School of Global Management and Sandra Day O’Connor Law School and a University Advisor to ASU President Michael Crow.  Dr. Spence served as a law clerk for Judge Richard Posner of the 7th Circuit Court of Appeals. A Marshall Scholar and Truman Scholar, Dr. Spence received his doctorate in International Relations from Oxford University; J.D. from Yale Law School; and B.A. and M.A. in International Policy Studies from Stanford University.',
         },
         {
             advisorFullName: 'Terence P. Stewart',
