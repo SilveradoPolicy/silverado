@@ -35,11 +35,14 @@ export default function AboutPage({ data }) {
             image: general,
             fullName: 'General David Petraeus (US Army, Ret.)',
             title: 'Partner, KKR and Chairman KKR Global Institute',
+            bio:
+                'General David H. Petraeus (US Army, Ret.) is a Partner with the global investment firm KKR and Chairman of the KKR Global Institute, which he established in May 2013.  He is also a member of the boards of directors of Optiv and FirstStream, a venture investor in more than 15 startups, and engaged in a variety of academic endeavors.  Prior to joining KKR, General Petraeus served over 37 years in the U.S. military, culminating his career with six consecutive commands, five of which were in combat. Following retirement from the military and after Senate confirmation by a vote of 94-0, he served as Director of the CIA during a period of significant achievements in the global war on terror, the establishment of important Agency digital initiatives, and significant investments in the Agency’s most important asset, its human capital. General Petraeus graduated with distinction from the U.S. Military Academy, and he is the only person in Army history to be the top graduate of both the demanding U.S. Army Ranger School and the U.S. Army’s Command and General Staff College.  He also earned a Ph.D. from Princeton University’s School of Public and International Affairs. He is currently a Visiting Fellow at Yale University’s Jackson Institute, Co-Chairman of the Global Advisory Council of the Woodrow Wilson Center for International Scholars, Senior Vice President of the Royal United Services Institute, and a Member of the Trilateral Commission, as well as a member of the boards of the Atlantic Council, the Institute for the Study of War, and over a dozen veterans service organizations.  General Petraeus has earned numerous honors, awards, and decorations, including four Defense Distinguished Service Medals, the Bronze Star Medal for Valor, two NATO Meritorious Service Medals, the Combat Action Badge, the Ranger Tab, and Master Parachutist and Air Assault Badges.  He has also been decorated by 13 foreign countries, and he is believed to be the only person who, while in uniform, threw out the first pitch of a World Series game and did the coin toss at a Super Bowl.',
         },
         {
             image: turnbull,
             fullName: 'The Hon. Malcolm Turnbull',
             title: 'Australia’s 29th Prime Minister',
+            bio: 'Coming soon...',
         },
     ];
     const advisoryBio = [
