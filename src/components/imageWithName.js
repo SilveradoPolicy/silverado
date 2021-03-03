@@ -44,7 +44,7 @@ const ModalName = styled.h2`
 
 const customStyles = {
     content: {
-        width: '364px',
+        maxWidth: '80%',
         top: '50%',
         left: '50%',
         right: 'auto',
