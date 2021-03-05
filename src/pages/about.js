@@ -42,7 +42,8 @@ export default function AboutPage({ data }) {
             image: turnbull,
             fullName: 'The Hon. Malcolm Turnbull',
             title: 'Australia’s 29th Prime Minister',
-            bio: '',
+            bio:
+                'Australia’s 29th Prime Minister (2015-2018) had international careers in law, business and the  media before entering politics at the age of 50.  As Prime Minister, he reformed Australia’s personal income tax, education and childcare  systems, oversaw the legalisation of same sex marriage and announced the construction of  Snowy Hydro 2.0 the biggest pumped hydro scheme in the southern hemisphere. Mr Turnbull embarked on the largest peacetime investment in Australian defence capabilities and set out Australia’s first national cybersecurity strategy. Globally, Mr. Turnbull played a leading role in reviving the Trans Pacific Partnership (TPP-11 or  CPTPP) after the United States withdrew. He also struck deals with U.S. Presidents Obama and Trump to accept refugees who tried to arrive in Australia illegally by boat. As a young lawyer, Mr. Turnbull successfully defended former MI5 agent Peter Wright against  the British Government in the 1986 “Spycatcher” trial before entering business where he ran his  own investment banking firm for a decade before joining Goldman Sachs as a partner in 1997.  Both before and after his political career, Mr. Turnbull has been a successful venture capitalist.  He co-founded OzEmail Limited, the first Australian tech company to be listed on the NASDAQ. Since leaving politics, Mr. Turnbull has resumed his business career. He is a senior adviser to  KKT and an investor in, and adviser to, many Australian technology businesses. He is a director of the International Hydropower Association. Mr. Turnbull speaks and writes on a range of issues including cyber security, geopolitics and renewable energy.',
         },
     ];
     const advisoryBio = [

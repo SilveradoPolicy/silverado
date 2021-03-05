@@ -115,13 +115,13 @@ export default function StrategicCouncil({ honoraryMembers }) {
         {
             advisorFullName: 'Jamil Jaffer',
             title:
-                'Founder and Executive Director, the National Security Institute',
+                'Founder and Executive Director, the National Security Institute; Vice President, IronNet Cybersecurity',
             bio:
                 'Jamil Jaffer currently serves as Founder and Executive Director of the National Security Institute and as an Assistant Professor of Law and Director of the National Security Law & Policy Program at the Antonin Scalia Law School at George Mason University, where he teaches classes on counterterrorism, intelligence, surveillance, cybersecurity, and other national security matters.  Jaffer also currently serves as Vice President for Strategy, Partnerships & Corporate Development at IronNet Cybersecurity, a startup technology firm founded by former NSA Director Gen. (ret.) Keith B. Alexander. Jaffer serves in a number of advisory positions and on advisory boards, including as an advisor to Beacon Global Strategies, and as a member of the Center for a New American Security’s Task Force on Artificial Intelligence and National Security and the CNAS Digital Freedom Forum. Jaffer served as a law clerk to Justice Neil M. Gorsuch of the United States Supreme Court, and in various congressional positions including on the leadership team of the Senate Foreign Relations Committee as Chief Counsel and Senior Advisor under Chairman Bob Corker (R-TN). Prior to that, Jaffer served in the White House under President Bush as an Associate Counsel to the President, and in various roles at the Department of Justice focused on national security, counterterrorism, and intelligence matters.  Jaffer holds degrees with honors from UCLA, the University of Chicago Law School, and the United States Naval War College.',
         },
         {
             advisorFullName: 'Richard H. Ledgett, Jr. (Rick)',
-            title: 'Former Deputy Director, National Security Agency',
+            title: 'CEO, The Ledgett Group',
             bio:
                 'Mr. Ledgett has four decades of intelligence and cyber experience, including 29 years with the National Security Agency (NSA), where he served as Deputy Director from January 2014 until his retirement in April 2017. He was the Agency’s chief operating officer, responsible for providing foreign intelligence and protecting the nation’s most important national security-related networks and information.  Mr. Ledgett led NSA’s Media Leaks Task Force, responsible for the totality of the Agency’s efforts following the unauthorized disclosure of classified information in June 2013.  He previously helmed the NSA’s 24/7 Threat Operations Center (NTOC), responsible for identifying and countering cyber threats to our national security systems. He was the Intelligence Community’s first National Intelligence Manager for Cyber, serving as principal advisor to the Director of National Intelligence on all cyber matters. He was also the DNI’s Director for Collection, overseeing all of the U.S. Intelligence Community’s collection programs.  Mr. Ledgett’s previous jobs at NSA included leading global collection and cryptanalytic operations, global language and analytic operations, and all NSA activities in the Pacific area. He was an instructor and course developer at the National Cryptologic School and an adjunct instructor at the National Intelligence University.  Mr. Ledgett spent nearly 11 years in the U.S. Army as a cryptologist. Mr. Ledgett is a Senior Advisor for Hakluyt Cyber, a Senior Visiting Fellow at The MITRE Corporation, a Director on the Board of M&T Bank, a Trustee of the Institute for Defense Analyses, a Distinguished Visiting Professor of Cyber Studies at the US Naval Academy, a member of the National Academy of Sciences Intelligence Community Studies Board, a member of the National Infrastructure Advisory Council, and serves on several corporate and startup advisory boards.',
         },
@@ -213,7 +213,7 @@ export default function StrategicCouncil({ honoraryMembers }) {
         {
             advisorFullName: 'Amy Zegart',
             title:
-                'Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
+                'Senior Fellow, Freeman Spogli Institute for International Studies at Stanford University; Davies Family Senior Fellow at the Hoover Institution',
             bio: '',
         },
     ];
