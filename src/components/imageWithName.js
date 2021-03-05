@@ -15,11 +15,11 @@ const ImgWrapper = styled.div`
 `;
 
 const StyledName = styled.div`
-    ${tw`capitalize text-brand-1 text-ts-h5`}
+    ${tw`text-brand-1 text-ts-h5`}
 `;
 
 const StyledTitle = styled.div`
-    ${tw`capitalize text-brand-1`}
+    ${tw`text-brand-1`}
 `;
 
 const StyledDiv = styled.div`
