@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import Img from 'gatsby-image';
 
 const StyledFeaturedEvent = styled.div`
     ${tw`w-2/4`}
