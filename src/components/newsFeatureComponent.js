@@ -5,41 +5,42 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
+const StyledFeaturedEvent = styled.div`
+    ${tw`w-2/4`}
+`;
 const StyledImg = styled(Img)`
-    ${tw`w-1/3`}
+    ${tw`w-full	my-4`}
 `;
 
-const Header = styled.h4`
-    ${tw`text-ts-h4 text-black`}
+const Heading = styled.h4`
+    ${tw`text-ts-h4 text-black leading-8 max-w-sm`}
 `;
 
-const SubHeader = styled.h5`
-    ${tw`text-sm text-brand-3`}
+const SubHeading = styled.h5`
+    ${tw`text-sm text-brand-3 pt-1`}
 `;
 const Body = styled.p`
-    ${tw`text-ts-body`}
+    ${tw`text-ts-body my-4`}
 `;
 
-export default function NewsFeature({ image, header, body, subheader }) {
+export default function NewsFeature({ image, heading, body, subheading }) {
     const {
         childImageSharp: { fluid },
     } = image;
 
-    console.log(image);
-
     return (
-        <div>
+        <StyledFeaturedEvent>
             <StyledImg fluid={fluid} />
-            <Header>{header}</Header>
-            <SubHeader>{subheader}</SubHeader>
+            <Heading className="font-wt-bold">{heading}</Heading>
+            <SubHeading>{subheading}</SubHeading>
             <Body>{body}</Body>
-        </div>
+        </StyledFeaturedEvent>
     );
 }
 
 NewsFeature.propTypes = {
-    image: PropTypes.object.isRequired,
-    header: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
-    subheader: PropTypes.string.isRequired,
+    heading: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    subheading: PropTypes.string.isRequired,
 };
