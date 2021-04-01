@@ -9,7 +9,7 @@ const StyledFeaturedEvent = styled.div`
     ${tw`w-2/4`}
 `;
 const StyledImg = styled(Img)`
-    ${tw`w-full	my-4`}
+    ${tw`w-full my-4`}
 `;
 
 const Heading = styled.h4`
