@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img, { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 // import { graphql } from 'gatsby';
 
 import styled from 'styled-components';
@@ -30,11 +31,12 @@ export default function BlogCard({ data }) {
     const {
         title,
         subtitle,
-        description,
         image: {
             childImageSharp: { fluid },
         },
+        description,
     } = data;
+
     return (
         <CardContainer>
             <Img fluid={fluid} />
