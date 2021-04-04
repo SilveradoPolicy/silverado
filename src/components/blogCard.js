@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
-// import { graphql } from 'gatsby';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
