@@ -23,10 +23,15 @@ const Body = styled.p`
     ${tw`text-ts-body my-4`}
 `;
 
-export default function NewsFeature({ image, heading, body, subheading }) {
+export default function NewsFeature({ data }) {
     const {
-        childImageSharp: { fluid },
-    } = image;
+        heading,
+        body,
+        subheading,
+        image: {
+            childImageSharp: { fluid },
+        },
+    } = data;
 
     return (
         <StyledFeaturedEvent>
@@ -39,8 +44,5 @@ export default function NewsFeature({ image, heading, body, subheading }) {
 }
 
 NewsFeature.propTypes = {
-    body: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired,
-    image: PropTypes.object.isRequired,
-    subheading: PropTypes.string.isRequired,
+    data: PropTypes.object.isRequired,
 };

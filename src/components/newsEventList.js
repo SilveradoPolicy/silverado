@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import SingleEvent from './singleEvent';
+import EventPreview from './eventPreview';
 
 const StyledEventsList = styled.div`
     ${tw`md:w-1/2 md:pl-4`}
@@ -23,7 +23,7 @@ export default function NewsEventList({ events }) {
         <StyledEventsList>
             <Heading>Events</Heading>
             {events.map((event) => {
-                return <SingleEvent data={event} key={event.id} />;
+                return <EventPreview data={event} key={event.id} />;
             })}
             <StyledLink to="#">View All Events</StyledLink>
         </StyledEventsList>
