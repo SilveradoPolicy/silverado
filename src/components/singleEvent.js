@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const StyledPreviewEvent = styled.div`
+const StyledSingleEvent = styled.div`
     &:before {
         background: var(--brand-6);
         border-radius: 16px;
@@ -12,6 +12,11 @@ const StyledPreviewEvent = styled.div`
         height: 1px;
         position: absolute;
         width: 45%;
+    }
+    @media only screen and (max-width: 768px) {
+        &:before {
+            width: 95%;
+        }
     }
 `;
 const Heading = styled.h5`
@@ -23,18 +28,18 @@ const SubHeading = styled.h5`
 const Body = styled.p`
     ${tw`text-ts-body text-black my-4`}
 `;
-export default function PreviewEvent({ data }) {
+export default function SingleEvent({ data }) {
     const { body, heading, subheading } = data;
 
     return (
-        <StyledPreviewEvent>
+        <StyledSingleEvent>
             <Heading className="font-wt-bold">{heading}</Heading>
             <SubHeading>{subheading}</SubHeading>
             <Body>{body}</Body>
-        </StyledPreviewEvent>
+        </StyledSingleEvent>
     );
 }
 
-PreviewEvent.propTypes = {
+SingleEvent.propTypes = {
     data: PropTypes.object.isRequired,
 };

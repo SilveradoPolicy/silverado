@@ -17,7 +17,7 @@ const StyledHeader = styled.h2`
 `;
 
 const EventsWrapper = styled.div`
-    ${tw`flex`}
+    ${tw`md:flex`}
 `;
 
 export default function NewsIndex({ data }) {
