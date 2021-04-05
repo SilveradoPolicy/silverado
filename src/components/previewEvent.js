@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const StyledSingleEvent = styled.div`
-    ${tw``}
+const StyledPreviewEvent = styled.div`
     &:before {
         background: var(--brand-6);
         border-radius: 16px;
@@ -24,18 +23,18 @@ const SubHeading = styled.h5`
 const Body = styled.p`
     ${tw`text-ts-body text-black my-4`}
 `;
-export default function SingleEvent({ data }) {
+export default function PreviewEvent({ data }) {
     const { body, heading, subheading } = data;
 
     return (
-        <StyledSingleEvent>
+        <StyledPreviewEvent>
             <Heading className="font-wt-bold">{heading}</Heading>
             <SubHeading>{subheading}</SubHeading>
             <Body>{body}</Body>
-        </StyledSingleEvent>
+        </StyledPreviewEvent>
     );
 }
 
-SingleEvent.propTypes = {
+PreviewEvent.propTypes = {
     data: PropTypes.object.isRequired,
 };
