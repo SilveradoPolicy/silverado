@@ -11,12 +11,7 @@ const StyledEventPreview = styled.div`
         content: '';
         height: 1px;
         position: absolute;
-        width: 45%;
-    }
-    @media only screen and (max-width: 768px) {
-        &:before {
-            width: 95%;
-        }
+        width: 100%;
     }
 `;
 const Heading = styled.h5`
