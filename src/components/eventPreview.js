@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledEventPreview = styled.div`
+    ${tw`relative`}
     &:before {
         background: var(--brand-6);
         border-radius: 16px;
@@ -12,6 +13,8 @@ const StyledEventPreview = styled.div`
         height: 1px;
         position: absolute;
         width: 100%;
+        top: 0;
+        left: 0;
     }
 `;
 const Heading = styled.h5`

@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import EventPreview from './eventPreview';
 
 const StyledEventsList = styled.div`
-    ${tw`md:w-1/2 md:pl-4 relative`}
+    ${tw`md:w-1/2 md:pl-4`}
 `;
 
 const Heading = styled.h3`
