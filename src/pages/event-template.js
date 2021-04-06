@@ -80,7 +80,7 @@ export default function EventTemplate({ data }) {
 
 export const query = graphql`
     query EventQuery {
-        dmitri: file(relativePath: { regex: "/dmitriSq/" }) {
+        dimitri: file(relativePath: { regex: "/dmitriSq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
