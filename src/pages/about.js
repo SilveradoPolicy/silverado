@@ -105,7 +105,7 @@ export const query = graphql`
                 }
             }
         }
-        dmitri: file(relativePath: { regex: "/dmitriSq/" }) {
+        dmitri: file(relativePath: { regex: "/dmitriSquare/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
