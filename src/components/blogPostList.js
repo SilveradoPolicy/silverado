@@ -8,24 +8,38 @@ import tw from 'twin.macro';
 import BlogCard from './blogCard';
 
 const BlogPostsWrapper = styled.section`
-    ${tw`container`}
+    ${tw`container mt-20`}
 `;
 
 const PostWrapper = styled.div`
-    ${tw`flex gap-4 relative my-20`}
+    ${tw`flex gap-4 relative`}
 `;
 
+const LinkWrapper = styled.div`
+    ${tw`space-x-8`}
+`;
 const StyledLink = styled(Link)`
     ${tw`text-ts-h5`}
 `;
 
 export default function BlogPostList({ blogposts }) {
-    const pillars = ['hello', 'howareyou', 'weewoo'];
+    const pillars = [
+        'All',
+        'Eco²Sec',
+        'International Trade & Security',
+        'Cybersecurity',
+    ];
     return (
         <BlogPostsWrapper>
-            {pillars.map((pillar) => {
-                return <StyledLink to="/#">{pillar}</StyledLink>;
-            })}
+            <LinkWrapper>
+                {pillars.map((pillar) => {
+                    return (
+                        <StyledLink to="/#" className="font-wt-bold">
+                            {pillar}
+                        </StyledLink>
+                    );
+                })}
+            </LinkWrapper>
             <PostWrapper>
                 {blogposts.map((post) => {
                     return <BlogCard data={post} />;
