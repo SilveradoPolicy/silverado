@@ -39,6 +39,10 @@ const nav = [
         text: 'about',
         link: '/about',
     },
+    {
+        text: 'news and events',
+        link: '/news',
+    },
 ];
 export default function Header({ isIndexPage }) {
     const [isScrolled, setIsScrolled] = useState(false);
