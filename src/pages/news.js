@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import NewsIndexHero from '../components/newsIndexHero';
-
 import Layout from '../layouts/page-layout';
+import NewsIndexHero from '../components/newsIndexHero';
+import BlogPostList from '../components/blogPostList';
 
 export default function NewsIndex({ data }) {
     const { newsImage } = data;
@@ -19,9 +19,27 @@ export default function NewsIndex({ data }) {
         },
     };
 
+    const blogposts = [
+        {
+            image: newsImage,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
+            description:
+                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+        },
+        {
+            image: newsImage,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
+            description:
+                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+        },
+    ];
+
     return (
         <Layout>
             <NewsIndexHero newsEventInfo={content.newsEvent} />
+            <BlogPostList blogposts={blogposts} />
         </Layout>
     );
 }
