@@ -62,10 +62,11 @@ export default function EventsIndex() {
             },
         ],
     };
+
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <EventsListIndex events={content.events} />
+            <EventsListIndex events={content.events} />{' '}
             <CopyWithCTA
                 content={content.ctasection}
                 hasBottomGradient
