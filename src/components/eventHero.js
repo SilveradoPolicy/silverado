@@ -8,19 +8,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import EventCard from './eventCard';
+
 const HeroWrapper = styled.section`
     ${tw`relative`}
 `;
 
 const ImageWrapper = styled.div`
-    ${tw``}
-`;
-const StyledImage = styled(Img)`
-    ${tw`w-screen`}
+    ${tw`w-full`}
 `;
 
 const HeroContainer = styled.div`
-    ${tw`absolute`}
+    ${tw`container text-white absolute left-1/2 transform -translate-x-1/2 top-0`}
 `;
 
 const Heading = styled.h1`
@@ -35,11 +34,12 @@ export default function EventHero({ image }) {
     return (
         <HeroWrapper>
             <ImageWrapper>
-                <StyledImage fluid={fluid} />
+                <Img fluid={fluid} />
             </ImageWrapper>
             <HeroContainer>
-                <Heading>Events</Heading>
+                <Heading className="font-wt-bold">Events</Heading>
             </HeroContainer>
+            <EventCard />
         </HeroWrapper>
     );
 }
