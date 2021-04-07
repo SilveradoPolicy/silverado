@@ -1,12 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
+// import { graphql } from 'gatsby';
+// import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import EventsListIndex from '../components/eventsListIndex';
 import CopyWithCTA from '../components/copyWithCTA';
-import EventHero from '../components/eventHero';
 
 const content = {
     hero: {
@@ -63,8 +62,7 @@ const content = {
     ],
 };
 
-export default function EventsIndex({ data }) {
-    const { eventImage } = data;
+export default function EventsIndex() {
     return (
         <Layout>
             <AltHero body={content.hero.body} heading={content.hero.heading} />
@@ -74,25 +72,6 @@ export default function EventsIndex({ data }) {
                 hasBottomGradient
                 hasTopTransition
             />
-            <EventHero image={eventImage} />
         </Layout>
     );
 }
-
-export const query = graphql`
-    query EventsIndexQuery {
-        eventImage: file(relativePath: { regex: "/eventimage/" }) {
-            childImageSharp {
-                fluid(maxWidth: 2000) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`;
-
-EventsIndex.propTypes = {
-    data: PropTypes.shape({
-        eventImage: PropTypes.object.isRequired,
-    }).isRequired,
-};
