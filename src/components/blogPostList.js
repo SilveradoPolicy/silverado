@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
@@ -20,22 +20,42 @@ const LinkWrapper = styled.div`
 `;
 const StyledLink = styled(Link)`
     ${tw`text-ts-h5`}
+    text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
 `;
 
 export default function BlogPostList({ blogposts }) {
+    const [activeLink, setActiveLink] = useState(null);
     const pillars = [
-        'All',
-        'Eco²Sec',
-        'International Trade & Security',
-        'Cybersecurity',
+        {
+            title: 'All',
+            id: '01',
+        },
+        {
+            title: 'Eco²Sec',
+            id: '02',
+        },
+        {
+            title: 'International Trade & Security',
+            id: '03',
+        },
+        {
+            title: 'Cybersecurity',
+            id: '04',
+        },
     ];
     return (
         <BlogPostsWrapper>
             <LinkWrapper>
                 {pillars.map((pillar) => {
                     return (
-                        <StyledLink to="/#" className="font-wt-bold">
-                            {pillar}
+                        <StyledLink
+                            key={pillar.id}
+                            to="/news"
+                            className="font-wt-bold"
+                            onClick={() => setActiveLink(pillar.id)}
+                            isActive={activeLink === pillar.id}
+                        >
+                            {pillar.title}
                         </StyledLink>
                     );
                 })}
