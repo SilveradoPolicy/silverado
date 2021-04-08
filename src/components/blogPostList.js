@@ -50,7 +50,7 @@ export default function BlogPostList({ blogposts }) {
                     return (
                         <StyledLink
                             key={pillar.id}
-                            to="/news"
+                            to="#"
                             className="font-wt-bold"
                             onClick={() => setActiveLink(pillar.id)}
                             isActive={activeLink === pillar.id}
