@@ -1,9 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
-// import { Link } from 'gatsby';
-
-// import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -22,7 +18,7 @@ const StyledDate = styled.p`
     ${tw`text-ts-body`}
 `;
 
-const Body = styled.p`
+const DescriptionBody = styled.p`
     ${tw`text-ts-body`}
 `;
 
@@ -37,29 +33,25 @@ const StyledButton = styled.button`
     ${tw`rounded-2xl bg-brand-1 text-white w-24 h-8 my-4`}
 `;
 
-export default function EventCard() {
+export default function EventCard({ data }) {
+    const { title, subtitle, date, time, place, description } = data;
     return (
         <CardWrapper>
             <InfoWrapper>
-                <StyledTitle className="font-wt-bold">
-                    Big Featured Event Title Second Line
-                </StyledTitle>
-                <SubHeader>subheader</SubHeader>
-                <StyledDate>date</StyledDate>
-                <StyledDate>date</StyledDate>
-                <StyledDate>date</StyledDate>
+                <StyledTitle className="font-wt-bold">{title} </StyledTitle>
+                <SubHeader>{subtitle}</SubHeader>
+                <StyledDate>{date}</StyledDate>
+                <StyledDate>{time}</StyledDate>
+                <StyledDate>{place}</StyledDate>
             </InfoWrapper>
             <DescriptionWrapper>
-                <Body>
-                    Interdum et malesuada fames ac ante ipsum primis in
-                    faucibus. Morbi malesuada lectus quis scelerisque gravida.
-                    Vestibulum feugiat consectetur porta. Donec eleifend enim ac
-                    enim varius tincidunt. Morbi pharetra urna dignissim,
-                    lobortis diam sit amet, faucibus lectus. Vivamus vulputate
-                    massa risus, ac tempor nisi sagittis eget.
-                </Body>
+                <DescriptionBody>{description}</DescriptionBody>
                 <StyledButton type="button">Register</StyledButton>
             </DescriptionWrapper>
         </CardWrapper>
     );
 }
+
+EventCard.propTypes = {
+    data: PropTypes.object.isRequired,
+};
