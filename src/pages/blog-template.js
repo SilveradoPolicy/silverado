@@ -1,24 +1,17 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import styled from 'styled-components';
-import tw from 'twin.macro';
-
 import Layout from '../layouts/page-layout';
-import BlogContent from '../components/blogContent';
+import BlogHero from '../components/blogHero';
 
-const StyledImg = styled(Img)`
-    ${tw`mx-8`}
-`;
+import BlogContent from '../components/blogContent';
 
 export default function BlogTemplate({ data }) {
     const { silverado } = data;
     return (
         <Layout>
-            <Link to="/news">Back to News</Link>
-            <StyledImg fluid={silverado.childImageSharp.fluid} />
+            <BlogHero image={silverado} />
             <BlogContent />
         </Layout>
     );
