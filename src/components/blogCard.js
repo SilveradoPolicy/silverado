@@ -7,7 +7,17 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardContainer = styled.div`
-    ${tw`w-72 h-96 shadow-xl bg-white relative`}
+    ${tw`w-72 h-96 shadow-xl bg-white relative my-10`}
+    &:before {
+        background: var(--brand-1);
+        content: '';
+        height: 20px;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
 `;
 const BlogWrapper = styled.div`
     ${tw`px-6 py-4`}
