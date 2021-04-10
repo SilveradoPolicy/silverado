@@ -51,10 +51,11 @@ export default function BlogCard({ data }) {
             childImageSharp: { fluid },
         },
     } = data;
+    console.log(fluid);
 
     return (
         <CardContainer>
-            {fluid && <Img fluid={fluid} />}
+            {<Img fluid={fluid} /> ? <Img fluid={fluid} /> : ''}
             <CardWrapper>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
                 <CardSubTitle>{subtitle}</CardSubTitle>
