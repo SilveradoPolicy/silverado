@@ -41,8 +41,8 @@ const StyledLink = styled(Link)`
 `;
 export default function BlogCard({ data }) {
     const {
-        date,
         description,
+        eventdate,
         place,
         time,
         title,
@@ -51,23 +51,20 @@ export default function BlogCard({ data }) {
             childImageSharp: { fluid },
         },
     } = data;
-    console.log(fluid);
 
     return (
         <CardContainer>
-            {<Img fluid={fluid} /> ? <Img fluid={fluid} /> : ''}
+            <Img fluid={fluid} />
             <CardWrapper>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
                 <CardSubTitle>{subtitle}</CardSubTitle>
                 {description && <BlogDetails>{description}</BlogDetails>}
-                {date && (
-                    <EventDetails>
-                        {date}
-                        <br />
-                        {time}
-                        <br />
-                        {place}
-                    </EventDetails>
+                {eventdate && (
+                    <div>
+                        <EventDetails>{eventdate}</EventDetails>
+                        <EventDetails>{time}</EventDetails>
+                        <EventDetails>{place}</EventDetails>
+                    </div>
                 )}
                 <StyledLink to="#">Read More</StyledLink>
             </CardWrapper>
