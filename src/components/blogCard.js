@@ -50,12 +50,13 @@ export default function BlogCard({ data }) {
         image: {
             childImageSharp: { fluid },
         },
+        id,
     } = data;
 
     return (
         <CardContainer>
             <Img fluid={fluid} />
-            <CardWrapper>
+            <CardWrapper id={id}>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
                 <CardSubTitle>{subtitle}</CardSubTitle>
                 {description && <BlogDetails>{description}</BlogDetails>}
