@@ -6,6 +6,7 @@ import Layout from '../layouts/page-layout';
 import BlogHero from '../components/blogHero';
 
 import BlogContent from '../components/blogContent';
+import BlogCard from '../components/blogCard';
 
 export default function BlogTemplate({ data }) {
     const { silverado } = data;
@@ -13,6 +14,7 @@ export default function BlogTemplate({ data }) {
         <Layout>
             <BlogHero image={silverado} />
             <BlogContent />
+            <BlogCard />
         </Layout>
     );
 }

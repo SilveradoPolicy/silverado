@@ -24,8 +24,16 @@ export default function NewsIndex({ data }) {
             image: newsImage,
             title: 'This is an event',
             subtitle: 'Cras iaculis',
+            time: '12:30pm',
+            place: 'Walt Disney World',
+            date: 'May 23, 2021',
+        },
+        {
+            image: newsImage,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
             description:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
         },
         {
             image: newsImage,
