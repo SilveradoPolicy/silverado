@@ -26,7 +26,7 @@ export default function NewsIndex({ data }) {
             subtitle: 'Cras iaculis',
             time: '12:30pm',
             place: 'Walt Disney World',
-            date: 'May 23, 2021',
+            eventdate: 'May 23, 2021',
         },
         {
             image: newsImage,

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardContainer = styled.div`
-    ${tw`w-72 h-96 shadow-xl bg-white relative my-8`}
+    ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative my-8`}
     &:before {
         background: var(--brand-1);
         content: '';
@@ -22,6 +22,7 @@ const CardContainer = styled.div`
 const CardWrapper = styled.div`
     ${tw`px-6 py-4`}
 `;
+
 const CardTitle = styled.h5`
     ${tw`text-brand-1 text-ts-h5`}
 `;
@@ -30,7 +31,7 @@ const CardSubTitle = styled.p`
 `;
 
 const BlogDetails = styled.p`
-    ${tw`text-black text-base`}
+    ${tw`text-black text-base `}
 `;
 
 const EventDetails = styled.p`
@@ -61,11 +62,11 @@ export default function BlogCard({ data }) {
                 <CardSubTitle>{subtitle}</CardSubTitle>
                 {description && <BlogDetails>{description}</BlogDetails>}
                 {eventdate && (
-                    <div>
+                    <>
                         <EventDetails>{eventdate}</EventDetails>
                         <EventDetails>{time}</EventDetails>
                         <EventDetails>{place}</EventDetails>
-                    </div>
+                    </>
                 )}
                 <StyledLink to="#">Read More</StyledLink>
             </CardWrapper>
