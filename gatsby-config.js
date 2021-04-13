@@ -7,7 +7,24 @@ module.exports = {
         image: '',
         twitter: '@SilveradoPolicy',
     },
+    pathPrefix: '/blog',
     plugins: [
+        {
+            resolve: `gatsby-plugin-breadcrumb`,
+            options: {
+                // defaultCrumb: optional To create a default crumb
+                // see Click Tracking default crumb example below
+                defaultCrumb: {
+                    location: {
+                        pathname: '/',
+                    },
+                    crumbLabel: 'HomeCustom',
+                    crumbSeparator: ' / ',
+                },
+                // usePathPrefix: optional, if you are using pathPrefix above
+                usePathPrefix: '/blog',
+            },
+        },
         {
             resolve: 'gatsby-background-image',
             options: {
