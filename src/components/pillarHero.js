@@ -4,24 +4,28 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import PillarComponent from './pillarComponent';
+
+const HeroWrapper = styled.section`
+    ${tw`relative `}
+`;
+
 const StyledHeroImage = styled(Img)`
     ${tw`w-screen`}
 `;
 
-export default function PillarHero({ data }) {
-    const {
-        image: {
-            childImageSharp: { fluid },
-        },
-    } = data;
-
+export default function PillarHero({ data, hero }) {
     return (
-        <>
-            <StyledHeroImage fluid={fluid} />
-        </>
+        <HeroWrapper>
+            <StyledHeroImage fluid={hero.childImageSharp.fluid} />
+            <PillarComponent data={data} />
+        </HeroWrapper>
     );
 }
 
 PillarHero.propTypes = {
     data: PropTypes.object.isRequired,
+    hero: PropTypes.shape({
+        childImageSharp: PropTypes.object.isRequired,
+    }).isRequired,
 };
