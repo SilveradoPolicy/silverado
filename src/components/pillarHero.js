@@ -11,7 +11,7 @@ const HeroWrapper = styled.section`
 `;
 
 const StyledHeroImage = styled(Img)`
-    ${tw`w-screen`}
+    ${tw`w-screen min-h-3/4-screen lg:h-5/6`}
 `;
 
 export default function PillarHero({ data, hero }) {
