@@ -5,16 +5,16 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledSection = styled.section`
-    ${tw`min-h-3/4-screen flex flex-col justify-center pb-8 text-white`}
+    ${tw`bg-white transform -translate-y-20 md:-translate-y-1/4 flex flex-col justify-center mx-10`}
 `;
 const Heading = styled.h1`
     ${tw`mb-8 mt-4 lg:mt-4 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
 `;
 const Body = styled.p`
-    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4 mb-2`}
 `;
 const IconWrapper = styled.div`
-    ${tw`place-self-center w-24`}
+    ${tw`place-self-center w-24 mt-10`}
 `;
 
 export default function PillarComponent({ data }) {
