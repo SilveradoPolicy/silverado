@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 
 import EventCard from './eventCard';
 
-const HeroWrapper = styled.section`
+const HeroWrapper = styled.div`
     ${tw`relative`}
 `;
 

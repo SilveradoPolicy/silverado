@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Section = styled.section`
-    ${tw`pb-12 pt-6`}
+    ${tw`pb-12 pt-9`}
 
     background: linear-gradient(180deg, #EDF8F8 0%, rgba(237, 248, 248, 0) 100%)
 `;
