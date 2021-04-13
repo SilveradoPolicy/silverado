@@ -12,7 +12,7 @@ const BlogPostsWrapper = styled.section`
 `;
 
 const PostWrapper = styled.div`
-    ${tw`flex gap-4 relative`}
+    ${tw`flex flex-wrap gap-4 relative`}
 `;
 
 const LinkWrapper = styled.div`

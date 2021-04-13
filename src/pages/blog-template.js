@@ -3,69 +3,64 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
-import NewsIndexHero from '../components/newsIndexHero';
-import BlogPostList from '../components/blogPostList';
+import BlogHero from '../components/blogHero';
 
-export default function NewsIndex({ data }) {
-    const { newsImage } = data;
+import BlogContent from '../components/blogContent';
+import PillarCardList from '../components/pillarCardList';
 
-    const content = {
-        newsEvent: {
-            image: newsImage,
-            heading: 'Big Feature News Title Second Line',
-            subheading: 'Vitaw egetas',
-            body:
-                ' Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula',
-        },
-    };
-
-    const blogposts = [
+export default function BlogTemplate({ data }) {
+    const { silverado } = data;
+    const posts = [
         {
-            image: newsImage,
+            image: silverado,
             title: 'This is an event',
             subtitle: 'Cras iaculis',
             time: '12:30pm',
             place: 'Walt Disney World',
             eventdate: 'May 23, 2021',
+            id: '01',
         },
         {
-            image: newsImage,
+            id: '02',
+            image: silverado,
             title: 'This is an event',
             subtitle: 'Cras iaculis',
             description:
                 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
         },
         {
-            image: newsImage,
+            id: '03',
+            image: silverado,
             title: 'This is an event',
             subtitle: 'Cras iaculis',
             description:
                 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
         },
     ];
-
     return (
         <Layout>
-            <NewsIndexHero newsEventInfo={content.newsEvent} />
-            <BlogPostList blogposts={blogposts} />
+            <BlogHero image={silverado} />
+            <BlogContent />
+            <PillarCardList list={posts} />
         </Layout>
     );
 }
 
 export const query = graphql`
-    query NewsIndexQuery {
-        newsImage: file(relativePath: { regex: "/eventimage/" }) {
+    query BlogTemplateQuery {
+        silverado: file(relativePath: { regex: "/Silverado1/" }) {
             childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid {
                     ...GatsbyImageSharpFluid
                 }
             }
+            id
         }
     }
 `;
 
-NewsIndex.propTypes = {
+BlogTemplate.propTypes = {
     data: PropTypes.shape({
-        newsImage: PropTypes.object.isRequired,
+        silverado: PropTypes.object.isRequired,
     }).isRequired,
 };
