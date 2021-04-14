@@ -5,10 +5,11 @@ import Layout from '../layouts/page-layout';
 
 import PillarHero from '../components/pillarHero';
 import PillarDescription from '../components/pillarDescription';
+import PillarCardList from '../components/pillarCardList';
 import CopyWithCTA from '../components/copyWithCTA';
 
 export default function PillarPage({ data }) {
-    const { jared, ecosec } = data;
+    const { jared, ecosec, silverado } = data;
     const content = {
         pillarhero: {
             heading: 'Pillar',
@@ -30,11 +31,38 @@ export default function PillarPage({ data }) {
             },
         },
     };
+    const posts = [
+        {
+            image: silverado,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
+            time: '12:30pm',
+            place: 'Walt Disney World',
+            eventdate: 'May 23, 2021',
+            id: '01',
+        },
+        {
+            id: '02',
+            image: silverado,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
+            description:
+                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+        },
+        {
+            id: '03',
+            image: silverado,
+            title: 'This is an event',
+            subtitle: 'Cras iaculis',
+            description:
+                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+        },
+    ];
     return (
         <Layout>
             <PillarHero data={content.pillarhero} hero={jared} />
             <PillarDescription data={content.pillardescription} />
-            {/* to do: add pillarCardList component here when merged */}
+            <PillarCardList list={posts} />
             <CopyWithCTA
                 content={content.copy}
                 hasBottomGradient
@@ -60,11 +88,19 @@ export const query = graphql`
                 }
             }
         }
+        silverado: file(relativePath: { regex: "/Silverado1/" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
     }
 `;
 PillarPage.propTypes = {
     data: PropTypes.shape({
         jared: PropTypes.object.isRequired,
         ecosec: PropTypes.object.isRequired,
+        silverado: PropTypes.object.isRequired,
     }).isRequired,
 };
