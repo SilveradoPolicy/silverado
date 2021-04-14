@@ -1,15 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
+// import { graphql } from 'gatsby';
+// import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
 import EventsListIndex from '../components/eventsListIndex';
 import CopyWithCTA from '../components/copyWithCTA';
-import EventHero from '../components/eventHero';
 
-export default function EventsIndex({ data }) {
-    const { eventImage } = data;
+export default function EventsIndex() {
     const content = {
         hero: {
             body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit.`,
@@ -67,7 +65,6 @@ export default function EventsIndex({ data }) {
 
     return (
         <Layout>
-            <EventHero image={eventImage} />
             <AltHero body={content.hero.body} heading={content.hero.heading} />
             <EventsListIndex events={content.events} />{' '}
             <CopyWithCTA
@@ -78,21 +75,3 @@ export default function EventsIndex({ data }) {
         </Layout>
     );
 }
-
-export const query = graphql`
-    query EventsIndexQuery {
-        eventImage: file(relativePath: { regex: "/eventimage/" }) {
-            childImageSharp {
-                fluid(maxWidth: 2000) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`;
-
-EventsIndex.propTypes = {
-    data: PropTypes.shape({
-        eventImage: PropTypes.object.isRequired,
-    }).isRequired,
-};
