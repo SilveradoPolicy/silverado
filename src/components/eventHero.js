@@ -12,11 +12,14 @@ const HeroWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-    ${tw`w-screen min-h-3/4-screen`}
+    ${tw`w-screen min-h-1/2-screen`}
+    .gatsby-image-wrapper {
+        height: 75%;
+    }
 `;
 
 const HeroContainer = styled.div`
-    ${tw`container min-h-3/4-screen w-screen text-white absolute transform -translate-x-1/2 top-0`}
+    ${tw`container min-h-3/4-screen w-screen text-white absolute transform top-0`}
 `;
 
 const Heading = styled.h1`

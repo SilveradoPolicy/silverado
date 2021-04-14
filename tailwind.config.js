@@ -30,6 +30,7 @@ module.exports = {
             },
             minHeight: {
                 '3/4-screen': '75vh',
+                '1/2-screen': '50vh',
             },
         },
         container: (theme) => ({
