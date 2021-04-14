@@ -1,5 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Breadcrumb() {
-    return <div>Bread Lyfe</div>;
+import { Link } from 'gatsby';
+
+export default function Breadcrumb({ data }) {
+    const { location } = data;
+    return (
+        <Link key={location} to="/">
+            Bread
+        </Link>
+    );
 }
+
+Breadcrumb.propTypes = {
+    data: PropTypes.object.isRequired,
+};
