@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 import BlogCard from './blogCard';
 
 const BlogPostsWrapper = styled.section`
-    ${tw`container mt-20`}
+    ${tw`container mt-4 md:mt-20`}
 `;
 
 const PostWrapper = styled.div`
