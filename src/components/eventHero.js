@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-    ${tw`w-screen min-h-1/2-screen`}
+    ${tw`min-h-1/2-screen`}
     .gatsby-image-wrapper {
         height: 75%;
     }
