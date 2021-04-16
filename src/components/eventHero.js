@@ -11,15 +11,12 @@ const HeroWrapper = styled.div`
     ${tw`relative`}
 `;
 
-const ImageWrapper = styled.div`
+const StyledImage = styled(Img)`
     ${tw`min-h-1/2-screen`}
-    .gatsby-image-wrapper {
-        height: 75%;
-    }
 `;
 
 const HeroContainer = styled.div`
-    ${tw`container min-h-3/4-screen w-screen text-white absolute transform top-0`}
+    ${tw`container min-h-3/4-screen text-white absolute transform top-0`}
 `;
 
 const Heading = styled.h1`
@@ -33,9 +30,7 @@ export default function EventHero({ image, data }) {
 
     return (
         <HeroWrapper>
-            <ImageWrapper>
-                <Img fluid={fluid} />
-            </ImageWrapper>
+            <StyledImage fluid={fluid} />
             <HeroContainer>
                 <Heading className="font-wt-bold">Events</Heading>
             </HeroContainer>

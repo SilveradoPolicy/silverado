@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardWrapper = styled.div`
-    ${tw`flex justify-center flex-col md:flex-row bg-white mx-4 px-4 md:mx-10 transform -translate-y-48 md:-translate-y-2/4`}
+    ${tw`flex justify-center flex-col md:flex-row bg-white mx-4 px-4 md:mx-10 transform -translate-y-28 md:-translate-y-2/4`}
 `;
 
 const StyledTitle = styled.h1`
-    ${tw`text-ts-h1 mt-4 mb-2`}
+    ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2`}
 `;
 
 const SubHeader = styled.h4`
