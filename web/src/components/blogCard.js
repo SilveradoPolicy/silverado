@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardContainer = styled.div`
-    ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative my-8`}
+    ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
     &:before {
         background: var(--brand-1);
         content: '';

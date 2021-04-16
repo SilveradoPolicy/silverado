@@ -8,22 +8,26 @@ import tw from 'twin.macro';
 import BlogCard from './blogCard';
 
 const BlogPostsWrapper = styled.section`
-    ${tw`container mt-20`}
+    ${tw`container mt-4 md:mt-8`}
 `;
 
 const PostWrapper = styled.div`
-    ${tw`flex flex-wrap gap-4 relative`}
+    ${tw`flex flex-wrap gap-1 md:gap-4 relative`}
+`;
+
+const MonthWrapper = styled.h4`
+    ${tw`text-ts-h4 text-brand-1`}
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`space-x-8`}
+    ${tw`space-x-8 mb-4 md:mb-8`}
 `;
 const StyledLink = styled(Link)`
     ${tw`text-ts-h5`}
     text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
 `;
 
-export default function BlogPostList({ blogposts }) {
+export default function BlogPostList({ blogposts, month }) {
     const [activeLink, setActiveLink] = useState(null);
     const pillars = [
         {
@@ -60,6 +64,9 @@ export default function BlogPostList({ blogposts }) {
                     );
                 })}
             </LinkWrapper>
+            {month && (
+                <MonthWrapper className="font-wt-thin">{month}</MonthWrapper>
+            )}
             <PostWrapper>
                 {blogposts.map((post) => {
                     return <BlogCard data={post} />;
@@ -71,4 +78,5 @@ export default function BlogPostList({ blogposts }) {
 
 BlogPostList.propTypes = {
     blogposts: PropTypes.array.isRequired,
+    month: PropTypes.object.isRequired,
 };

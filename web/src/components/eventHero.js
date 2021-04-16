@@ -11,36 +11,35 @@ const HeroWrapper = styled.div`
     ${tw`relative`}
 `;
 
-const ImageWrapper = styled.div`
-    ${tw`w-full`}
+const StyledImage = styled(Img)`
+    ${tw`min-h-1/2-screen`}
 `;
 
 const HeroContainer = styled.div`
-    ${tw`container text-white absolute left-1/2 transform -translate-x-1/2 top-0`}
+    ${tw`container min-h-3/4-screen text-white absolute transform top-0`}
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 mb-6 mt-24`}
+    ${tw`text-ts-h1 md:pl-6 mb-6 mt-32`}
 `;
 
-export default function EventHero({ image }) {
+export default function EventHero({ image, data }) {
     const {
         childImageSharp: { fluid },
     } = image;
 
     return (
         <HeroWrapper>
-            <ImageWrapper>
-                <Img fluid={fluid} />
-            </ImageWrapper>
+            <StyledImage fluid={fluid} />
             <HeroContainer>
                 <Heading className="font-wt-bold">Events</Heading>
             </HeroContainer>
-            <EventCard />
+            <EventCard data={data} />
         </HeroWrapper>
     );
 }
 
 EventHero.propTypes = {
+    data: PropTypes.object.isRequired,
     image: PropTypes.object.isRequired,
 };
