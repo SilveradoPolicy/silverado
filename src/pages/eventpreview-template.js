@@ -26,6 +26,7 @@ export default function EventPreviewTemplate({ data }) {
             description:
                 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi malesuada lectus quis scelerisque gravida. Vestibulum feugiat consectetur porta. Donec eleifend enim ac enim varius tincidunt. Morbi pharetra urna dignissim, lobortis diam sit amet, faucibus lectus. Vivamus vulputate massa risus, ac tempor nisi sagittis eget.',
         },
+        month: 'March',
     };
 
     const blogposts = [
@@ -56,7 +57,7 @@ export default function EventPreviewTemplate({ data }) {
         <Layout>
             <EventHero data={content.card} image={eventImage} />
             <EventHeading>Events</EventHeading>
-            <BlogPostList blogposts={blogposts} />
+            <BlogPostList blogposts={blogposts} month={content.month} />
         </Layout>
     );
 }
