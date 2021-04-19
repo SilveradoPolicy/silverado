@@ -20,7 +20,7 @@ const MonthWrapper = styled.h4`
 `;
 
 const LinkWrapper = styled.div`
-    ${tw`space-x-8 mb-4 md:mb-8`}
+    ${tw`flex flex-col md:flex-row md:space-x-8 mb-4 md:mb-8`}
 `;
 const StyledLink = styled(Link)`
     ${tw`text-ts-h5`}
