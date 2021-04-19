@@ -10,7 +10,7 @@ import EventHero from '../components/eventHero';
 import BlogPostList from '../components/blogPostList';
 
 const EventHeading = styled.h3`
-    ${tw`container text-brand-1 text-ts-h3`}
+    ${tw`container text-brand-1 text-ts-h3 pl-20`}
 `;
 
 export default function EventPreviewTemplate({ data }) {
