@@ -38,7 +38,7 @@ export default function BlogTemplate({ data }) {
         },
     ];
     return (
-        <Layout>
+        <Layout hasBackgroundColor>
             <BlogHero image={silverado} />
             <BlogContent />
             <PillarCardList list={posts} />
