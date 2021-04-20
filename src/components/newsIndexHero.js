@@ -11,11 +11,11 @@ const Section = styled.section`
     ${tw`container pt-32`}
 `;
 const StyledHeader = styled.h2`
-    ${tw`text-brand-1 text-ts-h2`}
+    ${tw`text-brand-1 text-ts-h2 pt-4`}
 `;
 
 const EventsWrapper = styled.div`
-    ${tw`md:flex`}
+    ${tw`md:flex gap-4`}
 `;
 export default function NewsIndexHero({ newsEventInfo }) {
     const eventsInfo = [
