@@ -54,7 +54,7 @@ export default function EventPreviewTemplate({ data }) {
         },
     ];
     return (
-        <Layout>
+        <Layout hasBackgroundColor>
             <EventHero data={content.card} image={eventImage} />
             <EventHeading>Events</EventHeading>
             <BlogPostList blogposts={blogposts} month={content.month} />

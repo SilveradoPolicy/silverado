@@ -59,7 +59,7 @@ export default function PillarPage({ data }) {
         },
     ];
     return (
-        <Layout>
+        <Layout hasBackgroundColor>
             <PillarHero data={content.pillarhero} hero={jared} />
             <PillarDescription data={content.pillardescription} />
             <PillarCardList list={posts} />
@@ -97,6 +97,7 @@ export const query = graphql`
         }
     }
 `;
+
 PillarPage.propTypes = {
     data: PropTypes.shape({
         jared: PropTypes.object.isRequired,

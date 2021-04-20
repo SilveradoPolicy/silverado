@@ -56,11 +56,14 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'SukhumvitReg', sans-serif;
     }
 `;
-export default function Layout({ children, isIndexPage }) {
+export default function Layout({ children, isIndexPage, hasBackgroundColor }) {
     return (
         <>
             <GlobalStyles />
-            <Header isIndexPage={isIndexPage} />
+            <Header
+                isIndexPage={isIndexPage}
+                hasBackgroundColor={hasBackgroundColor}
+            />
             <main>{children}</main>
             <Footer />
         </>
@@ -69,9 +72,11 @@ export default function Layout({ children, isIndexPage }) {
 
 Layout.defaultProps = {
     isIndexPage: false,
+    hasBackgroundColor: false,
 };
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
     isIndexPage: PropTypes.bool,
+    hasBackgroundColor: PropTypes.bool,
 };
