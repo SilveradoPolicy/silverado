@@ -11,7 +11,7 @@ const PillarWrapper = styled.div`
 `;
 
 const Title = styled.h4`
-    ${tw`text-brand-1 text-ts-h4`}
+    ${tw`text-brand-1 text-ts-h4 mb-4`}
 `;
 
 const PillarCardWrapper = styled.div`
