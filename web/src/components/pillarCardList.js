@@ -11,11 +11,11 @@ const PillarWrapper = styled.section`
 `;
 
 const Title = styled.h4`
-    ${tw`text-brand-1 text-ts-h4`}
+    ${tw`text-brand-1 text-ts-h4 mb-4`}
 `;
 
 const PillarCardWrapper = styled.div`
-    ${tw`flex flex-wrap justify-center gap-4`}
+    ${tw` flex flex-wrap gap-4`}
 `;
 
 export default function PillarCardList({ list }) {
