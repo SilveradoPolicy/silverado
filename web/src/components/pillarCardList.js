@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 
 import BlogCard from './blogCard';
 
-const PillarWrapper = styled.div`
+const PillarWrapper = styled.section`
     ${tw`container mb-24`}
 `;
 

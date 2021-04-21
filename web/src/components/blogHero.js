@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const HeroWrapper = styled.div`
+const HeroWrapper = styled.section`
     ${tw`mx-8 pt-36`}
 `;
 const StyledImg = styled(Img)`
