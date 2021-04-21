@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.section`
     ${tw`px-4 md:px-8 lg:px-48 mb-14`}
 `;
 const BlogTitle = styled.h2`
