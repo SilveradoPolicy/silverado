@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import BlogCard from './blogCard';
 
 const PillarWrapper = styled.div`
-    ${tw`mx-8 mb-24`}
+    ${tw`container mb-24`}
 `;
 
 const Title = styled.h4`
@@ -15,7 +15,7 @@ const Title = styled.h4`
 `;
 
 const PillarCardWrapper = styled.div`
-    ${tw`flex flex-wrap justify-center gap-4`}
+    ${tw` flex flex-wrap gap-4`}
 `;
 
 export default function PillarCardList({ list }) {
