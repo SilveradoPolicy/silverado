@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import PillarComponent from './pillarComponent';
 
 const HeroWrapper = styled.section`
-    ${tw`relative `}
+    ${tw`relative`}
 `;
 
 const StyledHeroImage = styled(Img)`
