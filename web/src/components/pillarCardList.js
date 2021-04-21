@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import BlogCard from './blogCard';
 
 const PillarWrapper = styled.section`
-    ${tw`mx-8 mb-24`}
+    ${tw`container mb-24`}
 `;
 
 const Title = styled.h4`
