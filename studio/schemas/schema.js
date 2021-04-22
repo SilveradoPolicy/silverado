@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // import document schemas here (bonus points for alphabetical order)
 import indexPage from './documents/indexPage';
+import pillar from './documents/pillar';
 
 // import object schemas here (bonus points for alphabetical order)
 import mainImage from './objects/mainImage';
@@ -23,6 +24,7 @@ export default createSchema({
 
         // document types here (bonus points for alphabetical order)
         indexPage,
+        pillar,
 
         // object types here (bonus points for alphabetical order)
         mainImage,
