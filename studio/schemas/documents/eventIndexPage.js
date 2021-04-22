@@ -20,34 +20,44 @@ export default {
             },
         },
         {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'image',
+        },
+        {
             name: 'mainTitle',
             title: 'Main Title',
             type: 'string',
+            description: 'What is the title of the event?',
         },
         {
             name: 'subtitle',
             title: 'Subtitle',
             type: 'string',
+            description: 'What is the subtitle of the event',
         },
         {
-            name: 'date',
-            title: 'Date',
-            type: 'string',
-        },
-        {
-            name: 'time',
-            title: 'Time',
-            type: 'string',
+            title: 'Date and Time',
+            name: 'DateAndTime',
+            type: 'datetime',
+            options: {
+                dateFormat: 'YYYY-MM-DD',
+                timeFormat: 'HH:mm',
+                timeStep: 15,
+                calendarTodayLabel: 'Today',
+            },
         },
         {
             name: 'place',
             title: 'Place',
             type: 'string',
+            description: 'Where will the event be held?',
         },
         {
             name: 'description',
             title: 'Description',
             type: 'string',
+            description: 'What should attendees know about this event?',
         },
     ],
 };
