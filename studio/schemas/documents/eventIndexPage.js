@@ -8,12 +8,17 @@ export default {
             title: 'Page Title',
             type: 'string',
         },
-        {
-            name: 'featuredEvent',
-            title: 'Featured Event',
-            type: 'array',
-            of: [{ type: 'reference', to: { type: 'event' } }],
-            validation: (Rule) => Rule.max(1),
-        },
+        // {
+        //     name: 'featuredEvent',
+        //     title: 'Featured Event',
+        //     type: 'array',
+        //     of: [{ type: 'reference', to: { type: 'event' } }],
+        //     validation: (Rule) => Rule.max(1),
+        // },
     ],
+    preview: {
+        select: {
+            title: 'pageTitle',
+        },
+    },
 };

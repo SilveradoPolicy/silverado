@@ -6,7 +6,9 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // import document schemas here (bonus points for alphabetical order)
+import eventIndexPage from './documents/eventIndexPage';
 import indexPage from './documents/indexPage';
+import newsIndexPage from './documents/newsIndexPage';
 import pillar from './documents/pillar';
 
 // import object schemas here (bonus points for alphabetical order)
@@ -23,7 +25,9 @@ export default createSchema({
         /* Your types here! */
 
         // document types here (bonus points for alphabetical order)
+        eventIndexPage,
         indexPage,
+        newsIndexPage,
         pillar,
 
         // object types here (bonus points for alphabetical order)

@@ -18,10 +18,29 @@ export default () => {
                         .schemaType('indexPage')
                         .documentId('indexPage'),
                 ),
+            S.listItem()
+                .title('News')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('newsIndexPage')
+                        .documentId('newsIndexPage'),
+                ),
+            S.listItem()
+                .title('Events')
+                .icon(VscFile)
+                .child(
+                    S.document()
+                        .schemaType('eventIndexPage')
+                        .documentId('eventIndexPage'),
+                ),
             // filter singletons out of display
             // prevents S.list() items from appearing twice
             ...S.documentTypeListItems().filter(
-                (listItem) => !['indexPage'].includes(listItem.getId()),
+                (listItem) =>
+                    !['indexPage', 'newsIndexPage', 'eventIndexPage'].includes(
+                        listItem.getId(),
+                    ),
             ),
         ]);
 };

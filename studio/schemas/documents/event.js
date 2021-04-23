@@ -1,27 +1,16 @@
 export default {
-    name: 'eventIndexPage',
-    title: 'Events Index Page',
+    name: 'event',
+    title: 'Event',
     type: 'document',
     fields: [
-        {
-            name: 'slug',
-            type: 'slug',
-            title: 'Slug',
-            description:
-                'Some frontends will require a slug to be set to be able to show the post',
-            options: {
-                source: 'featuredEvent',
-                maxLength: 96,
-            },
-        },
         {
             name: 'heroImage',
             title: 'Hero Image',
             type: 'image',
         },
         {
-            name: 'mainTitle',
-            title: 'Main Title',
+            name: 'eventTitle',
+            title: 'Event Title',
             type: 'string',
             description: 'What is the title of the event?',
         },

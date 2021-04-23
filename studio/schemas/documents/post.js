@@ -36,7 +36,7 @@ export default {
         },
         {
             name: 'postBody',
-            title: 'Post Body',
+            title: 'PostBody',
             type: 'postBodyPortableText',
         },
     ],
