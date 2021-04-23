@@ -9,13 +9,13 @@ export default {
             title: 'Page Title',
             type: 'string',
         },
-        // {
-        //     name: 'featuredNewsItem',
-        //     title: 'Featured News Item',
-        //     type: 'array',
-        //     of: [{ type: 'reference', to: { type: 'newsItem' } }],
-        //     validation: (Rule) => Rule.max(1),
-        // },
+        {
+            name: 'featuredNewsItem',
+            title: 'Featured News Item',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'post' } }],
+            validation: (Rule) => Rule.max(1),
+        },
         {
             name: 'eventSectionTitle',
             title: 'Event Section Title',

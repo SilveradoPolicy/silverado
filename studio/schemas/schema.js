@@ -6,14 +6,17 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // import document schemas here (bonus points for alphabetical order)
+import event from './documents/event';
 import eventIndexPage from './documents/eventIndexPage';
 import indexPage from './documents/indexPage';
 import newsIndexPage from './documents/newsIndexPage';
 import pillar from './documents/pillar';
+import post from './documents/post';
 
 // import object schemas here (bonus points for alphabetical order)
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
+import postBodyPortableText from './objects/postBodyPortableText';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,13 +28,15 @@ export default createSchema({
         /* Your types here! */
 
         // document types here (bonus points for alphabetical order)
+        event,
         eventIndexPage,
         indexPage,
         newsIndexPage,
         pillar,
-
+        post,
         // object types here (bonus points for alphabetical order)
         mainImage,
+        postBodyPortableText,
         seo,
     ]),
 });
