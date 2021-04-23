@@ -13,7 +13,7 @@ export default {
             type: 'slug',
             title: 'Slug',
             description:
-                'Some frontends will require a slug to be set to be able to show the post',
+                'Some frontends will require a slug to be set to be able to show the page',
             options: {
                 source: 'pillarName',
                 maxLength: 96,
