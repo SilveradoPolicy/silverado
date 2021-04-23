@@ -15,9 +15,9 @@ import pillar from './documents/pillar';
 import post from './documents/post';
 
 // import object schemas here (bonus points for alphabetical order)
+import bodyPortableText from './objects/bodyPortableText';
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
-import bodyPortableText from './objects/bodyPortableText';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
