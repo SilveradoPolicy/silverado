@@ -35,9 +35,9 @@ export default {
             },
         },
         {
-            name: 'postBody',
-            title: 'PostBody',
-            type: 'postBodyPortableText',
+            name: 'body',
+            title: 'Body',
+            type: 'bodyPortableText',
         },
     ],
 };

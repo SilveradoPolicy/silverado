@@ -16,7 +16,7 @@ import post from './documents/post';
 // import object schemas here (bonus points for alphabetical order)
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
-import postBodyPortableText from './objects/postBodyPortableText';
+import bodyPortableText from './objects/bodyPortableText';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,7 +36,7 @@ export default createSchema({
         post,
         // object types here (bonus points for alphabetical order)
         mainImage,
-        postBodyPortableText,
+        bodyPortableText,
         seo,
     ]),
 });
