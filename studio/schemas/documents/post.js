@@ -36,14 +36,8 @@ export default {
         },
         {
             name: 'postBody',
-            type: 'array',
-            of: [
-                {
-                    title: 'Block',
-                    type: 'block',
-                    styles: [{ title: 'Normal', value: 'normal' }],
-                },
-            ],
+            title: 'Post Body',
+            type: 'postBodyPortableText',
         },
     ],
 };
