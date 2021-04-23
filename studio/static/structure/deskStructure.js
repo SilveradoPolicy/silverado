@@ -19,7 +19,7 @@ export default () => {
                         .documentId('indexPage'),
                 ),
             S.listItem()
-                .title('News')
+                .title('News Page')
                 .icon(VscFile)
                 .child(
                     S.document()
@@ -27,7 +27,7 @@ export default () => {
                         .documentId('newsIndexPage'),
                 ),
             S.listItem()
-                .title('Events')
+                .title('Events Page')
                 .icon(VscFile)
                 .child(
                     S.document()
@@ -38,7 +38,7 @@ export default () => {
             // prevents S.list() items from appearing twice
             ...S.documentTypeListItems().filter(
                 (listItem) =>
-                    !['indexPage', 'newsIndexPage', 'eventIndexPage'].includes(
+                    !['eventIndexPage', 'indexPage', 'newsIndexPage'].includes(
                         listItem.getId(),
                     ),
             ),

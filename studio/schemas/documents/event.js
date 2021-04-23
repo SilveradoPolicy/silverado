@@ -1,13 +1,8 @@
 export default {
     name: 'event',
-    title: 'Event',
+    title: 'Events',
     type: 'document',
     fields: [
-        {
-            name: 'heroImage',
-            title: 'Hero Image',
-            type: 'image',
-        },
         {
             name: 'eventTitle',
             title: 'Event Title',
@@ -21,8 +16,13 @@ export default {
             description: 'What is the subtitle of the event',
         },
         {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'image',
+        },
+        {
+            name: 'dateAndTime',
             title: 'Date and Time',
-            name: 'DateAndTime',
             type: 'datetime',
             options: {
                 dateFormat: 'YYYY-MM-DD',
@@ -44,4 +44,42 @@ export default {
             description: 'What should attendees know about this event?',
         },
     ],
+    orderings: [
+        {
+            name: 'eventDateAsc',
+            title: 'Event date new–>old',
+            by: [
+                {
+                    field: 'dateAndTime',
+                    direction: 'desc',
+                },
+                {
+                    field: 'eventTitle',
+                    direction: 'asc',
+                },
+            ],
+        },
+        {
+            name: 'eventDateDesc',
+            title: 'Event date old->new',
+            by: [
+                {
+                    field: 'dateAndTime',
+                    direction: 'asc',
+                },
+                {
+                    field: 'eventTitle',
+                    direction: 'asc',
+                },
+            ],
+        },
+    ],
+    preview: {
+        select: {
+            title: 'eventTitle',
+            publishedAt: 'dateAndTime',
+            slug: 'slug',
+            media: 'mainImage',
+        },
+    },
 };

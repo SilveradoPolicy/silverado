@@ -21,7 +21,9 @@ export default {
         {
             name: 'authorsName',
             title: "Author's Name",
-            type: 'string',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'author' } }],
+            validation: (Rule) => Rule.max(1),
         },
         {
             name: 'slug',

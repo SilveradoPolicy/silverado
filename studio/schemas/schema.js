@@ -6,6 +6,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // import document schemas here (bonus points for alphabetical order)
+import author from './documents/author';
 import event from './documents/event';
 import eventIndexPage from './documents/eventIndexPage';
 import indexPage from './documents/indexPage';
@@ -28,6 +29,7 @@ export default createSchema({
         /* Your types here! */
 
         // document types here (bonus points for alphabetical order)
+        author,
         event,
         eventIndexPage,
         indexPage,
@@ -35,8 +37,8 @@ export default createSchema({
         pillar,
         post,
         // object types here (bonus points for alphabetical order)
-        mainImage,
         bodyPortableText,
+        mainImage,
         seo,
     ]),
 });
