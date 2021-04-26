@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'image',
+        },
+        {
             name: 'featuredEvent',
             title: 'Featured Event',
             type: 'array',
