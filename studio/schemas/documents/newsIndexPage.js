@@ -26,6 +26,11 @@ export default {
             title: 'Event Section Title',
             type: 'string',
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     preview: {
         select: {
