@@ -11,7 +11,7 @@ export default {
         {
             name: 'heroImage',
             title: 'Hero Image',
-            type: 'image',
+            type: 'mainImage',
         },
         {
             name: 'featuredEvent',
