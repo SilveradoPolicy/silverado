@@ -4,14 +4,14 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'heroImage',
-            title: 'Hero Image',
-            type: 'mainImage',
-        },
-        {
             name: 'postTitle',
             title: 'News/Blog Post Title',
             type: 'string',
+        },
+        {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'mainImage',
         },
         {
             name: 'publishDate',
@@ -42,4 +42,42 @@ export default {
             type: 'bodyPortableText',
         },
     ],
+    orderings: [
+        {
+            name: 'publishDateAsc',
+            title: 'Publish date new–>old',
+            by: [
+                {
+                    field: 'publishDate',
+                    direction: 'desc',
+                },
+                {
+                    field: 'postTitle',
+                    direction: 'asc',
+                },
+            ],
+        },
+        {
+            name: 'publishDateDesc',
+            title: 'Publish date old->new',
+            by: [
+                {
+                    field: 'publishDate',
+                    direction: 'asc',
+                },
+                {
+                    field: 'postTitle',
+                    direction: 'asc',
+                },
+            ],
+        },
+    ],
+    preview: {
+        select: {
+            title: 'postTitle',
+            publishedAt: 'publishDate',
+            slug: 'slug',
+            media: 'heroImage',
+        },
+    },
 };
