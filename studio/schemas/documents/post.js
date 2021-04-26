@@ -41,6 +41,11 @@ export default {
             title: 'Body',
             type: 'bodyPortableText',
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     orderings: [
         {

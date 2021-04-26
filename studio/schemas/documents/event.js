@@ -43,6 +43,11 @@ export default {
             type: 'string',
             description: 'What should attendees know about this event?',
         },
+        {
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo',
+        },
     ],
     orderings: [
         {
