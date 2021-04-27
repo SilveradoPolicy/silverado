@@ -20,7 +20,7 @@ const HeroContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 md:pl-28 mb-6 mt-32`}
+    ${tw`text-ts-h1 md:pl-28 mb-6 mt-40`}
 `;
 
 export default function EventHero({ image, data }) {
