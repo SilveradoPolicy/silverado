@@ -14,7 +14,7 @@ const SubheaderWrapper = styled.div`
     ${tw`flex text-brand-3 text-ts-body mb-6`}
 `;
 const Body = styled.p`
-    ${tw`text-ts-body mb-8`}
+    ${tw`text-lg max-w-5xl mb-8`}
 `;
 const PillarHeader = styled.h6`
     ${tw`text-brand-1 pt-8 mb-2`}

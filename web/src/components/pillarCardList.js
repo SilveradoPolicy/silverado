@@ -21,9 +21,7 @@ const PillarCardWrapper = styled.div`
 export default function PillarCardList({ list }) {
     return (
         <PillarWrapper>
-            <Title className="font-wt-bold">
-                Recent Pillar News and Events
-            </Title>
+            <Title className="font-wt-bold">Related News and Events</Title>
             <PillarCardWrapper>
                 {list.map((post) => {
                     return <BlogCard data={post} />;
