@@ -17,7 +17,6 @@ const Title = styled.h4`
 const PillarCardWrapper = styled.div`
     ${tw` flex flex-wrap gap-4`}
 `;
-
 export default function PillarCardList({ list }) {
     return (
         <PillarWrapper>

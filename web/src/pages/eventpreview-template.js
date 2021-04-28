@@ -37,6 +37,7 @@ export default function EventPreviewTemplate({ data }) {
             time: '12:30pm',
             place: 'Walt Disney World',
             eventdate: 'May 23, 2021',
+            pillar: 'var(--brand-3)',
         },
         {
             image: eventImage,
@@ -44,6 +45,7 @@ export default function EventPreviewTemplate({ data }) {
             subtitle: 'Cras iaculis',
             description:
                 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+            pillar: 'var(--brand-2)',
         },
         {
             image: eventImage,
@@ -51,6 +53,7 @@ export default function EventPreviewTemplate({ data }) {
             subtitle: 'Cras iaculis',
             description:
                 'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
+            pillar: 'var(--brand-1)',
         },
     ];
     return (

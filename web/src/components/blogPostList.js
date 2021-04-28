@@ -33,18 +33,27 @@ export default function BlogPostList({ blogposts, month }) {
         {
             title: 'All',
             id: '01',
+            color: 'var(--black)',
+        },
+        {
+            title: 'Silverado',
+            id: '02',
+            color: 'var(--brand-1)',
         },
         {
             title: 'Eco²Sec',
-            id: '02',
+            id: '03',
+            color: 'var(--brand-2)',
         },
         {
             title: 'International Trade & Security',
-            id: '03',
+            id: '04',
+            color: 'var(--brand-5)',
         },
         {
             title: 'Cybersecurity',
-            id: '04',
+            id: '05',
+            color: 'var(--brand-6)',
         },
     ];
     return (
@@ -55,6 +64,7 @@ export default function BlogPostList({ blogposts, month }) {
                         <StyledLink
                             key={pillar.id}
                             to="#"
+                            style={{ color: `${pillar.color}` }}
                             className="font-wt-bold"
                             onClick={() => setActiveLink(pillar.id)}
                             isActive={activeLink === pillar.id}
