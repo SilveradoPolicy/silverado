@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'pillarIcon',
+            title: 'Pillar Icon',
+            type: 'mainImage',
+        },
+        {
             name: 'slug',
             type: 'slug',
             title: 'Slug',
@@ -18,6 +23,12 @@ export default {
                 source: 'pillarName',
                 maxLength: 96,
             },
+        },
+        {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'mainImage',
+            description: 'Hero image on the pillar page.',
         },
         {
             name: 'shortDescription',
@@ -47,4 +58,10 @@ export default {
             type: 'seo',
         },
     ],
+    preview: {
+        select: {
+            media: 'pillarIcon',
+            title: 'pillarName',
+        },
+    },
 };
