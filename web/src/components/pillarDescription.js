@@ -11,7 +11,7 @@ const Section = styled.section`
 `;
 
 const DescriptionWrapper = styled.div`
-    ${tw`container w-9/12`}
+    ${tw`container w-8/12`}
 `;
 
 const PillarTitle = styled.h3`
@@ -19,7 +19,7 @@ const PillarTitle = styled.h3`
 `;
 
 const PillarDescriptionText = styled.p`
-    ${tw`text-ts-body`}
+    ${tw`text-lg`}
 `;
 
 export default function PillarDescription({ data }) {
