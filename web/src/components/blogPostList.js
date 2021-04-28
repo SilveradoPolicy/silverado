@@ -28,6 +28,7 @@ const StyledLink = styled(Link)`
 `;
 
 export default function BlogPostList({ blogposts, month }) {
+    console.log(blogposts);
     const [activeLink, setActiveLink] = useState(null);
     const pillars = [
         {

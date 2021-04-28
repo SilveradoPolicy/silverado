@@ -9,7 +9,7 @@ import tw from 'twin.macro';
 const CardContainer = styled.div`
     ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
     &:before {
-        background: var(--brand-1);
+        background: ${(prop) => (prop ? `${prop.pillar}` : '')};
         content: '';
         height: 20px;
         position: absolute;
@@ -19,6 +19,7 @@ const CardContainer = styled.div`
         z-index: 2;
     }
 `;
+
 const CardWrapper = styled.div`
     ${tw`px-6 py-4`}
 `;
@@ -41,6 +42,7 @@ const StyledLink = styled(Link)`
     ${tw`underline text-brand-3 absolute bottom-0 left-0 px-6 py-4`}
 `;
 export default function BlogCard({ data }) {
+    console.log(data);
     const {
         description,
         eventdate,
@@ -52,10 +54,11 @@ export default function BlogCard({ data }) {
             childImageSharp: { fluid },
         },
         id,
+        pillar,
     } = data;
 
     return (
-        <CardContainer>
+        <CardContainer pillar={pillar}>
             <Img fluid={fluid} />
             <CardWrapper id={id}>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
