@@ -14,10 +14,13 @@ const StyledHeroImage = styled(Img)`
     ${tw`w-screen min-h-3/4-screen`}
 `;
 
-export default function PillarHero({ data, hero }) {
+export default function PillarHero({ data, heroImage }) {
+    const {
+        asset: { fluid: imageData },
+    } = heroImage;
     return (
         <HeroWrapper>
-            <StyledHeroImage fluid={hero.childImageSharp.fluid} />
+            <StyledHeroImage fluid={imageData} />
             <PillarComponent data={data} />
         </HeroWrapper>
     );
@@ -25,7 +28,5 @@ export default function PillarHero({ data, hero }) {
 
 PillarHero.propTypes = {
     data: PropTypes.object.isRequired,
-    hero: PropTypes.shape({
-        childImageSharp: PropTypes.object.isRequired,
-    }).isRequired,
+    heroImage: PropTypes.object.isRequired,
 };

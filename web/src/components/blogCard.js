@@ -49,16 +49,16 @@ export default function BlogCard({ data }) {
         time,
         title,
         subtitle,
-        image: {
-            childImageSharp: { fluid },
-        },
+        image,
         id,
         pillar,
     } = data;
 
+    const imageData = image?.childImageSharp.fluid;
+
     return (
         <CardContainer pillar={pillar}>
-            <Img fluid={fluid} />
+            {imageData && <Img fluid={imageData} />}
             <CardWrapper id={id}>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
                 <CardSubTitle>{subtitle}</CardSubTitle>
