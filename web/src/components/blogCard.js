@@ -42,7 +42,6 @@ const StyledLink = styled(Link)`
     ${tw`underline text-brand-3 absolute bottom-0 left-0 px-6 py-4`}
 `;
 export default function BlogCard({ data }) {
-    console.log(data);
     const {
         description,
         eventdate,
