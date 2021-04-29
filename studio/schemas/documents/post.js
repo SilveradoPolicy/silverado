@@ -4,7 +4,7 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'postTitle',
+            name: 'title',
             title: 'News/Blog Post Title',
             type: 'string',
         },
@@ -32,9 +32,16 @@ export default {
             description:
                 'Some frontends will require a slug to be set to be able to show the page',
             options: {
-                source: 'postTitle',
+                source: 'title',
                 maxLength: 96,
             },
+        },
+        {
+            name: 'description',
+            title: 'Brief Description',
+            type: 'text',
+            description:
+                'Brief description of this post. This text will appear on News/Blog previews.',
         },
         {
             name: 'body',
@@ -65,7 +72,7 @@ export default {
                     direction: 'desc',
                 },
                 {
-                    field: 'postTitle',
+                    field: 'title',
                     direction: 'asc',
                 },
             ],
@@ -79,7 +86,7 @@ export default {
                     direction: 'asc',
                 },
                 {
-                    field: 'postTitle',
+                    field: 'title',
                     direction: 'asc',
                 },
             ],
@@ -87,7 +94,7 @@ export default {
     ],
     preview: {
         select: {
-            title: 'postTitle',
+            title: 'title',
             publishedAt: 'publishDate',
             slug: 'slug',
             media: 'heroImage',

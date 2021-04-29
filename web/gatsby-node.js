@@ -16,6 +16,9 @@ async function createPillarPages(graphql, actions) {
                         slug {
                             current
                         }
+                        categories {
+                            categoryId: id
+                        }
                     }
                 }
             }
@@ -31,11 +34,12 @@ async function createPillarPages(graphql, actions) {
     pillarEdges.forEach((edge) => {
         const { id, slug = {} } = edge.node;
         const path = `${slug.current}`;
+        const { categoryId } = edge.node.categories[0];
 
         createPage({
             path,
             component: require.resolve('./src/templates/pillar-template.js'),
-            context: { id },
+            context: { id, categoryId },
         });
     });
 }
@@ -52,6 +56,9 @@ async function createNewsBlogPages(graphql, actions) {
                         slug {
                             current
                         }
+                        categories {
+                            categoryId: id
+                        }
                     }
                 }
             }
@@ -67,11 +74,12 @@ async function createNewsBlogPages(graphql, actions) {
     postEdges.forEach((edge) => {
         const { id, slug = {} } = edge.node;
         const path = `/news/${slug.current}`;
+        const { categoryId } = edge.node.categories[0];
 
         createPage({
             path,
             component: require.resolve('./src/templates/blog-template.js'),
-            context: { id },
+            context: { id, categoryId },
         });
     });
 }
