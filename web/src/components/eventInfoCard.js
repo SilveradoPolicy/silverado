@@ -40,14 +40,14 @@ const StyledHeader = styled.h4`
 `;
 
 const AgendaWrapper = styled.div`
-    ${tw`grid grid-cols-3 grid-flow-row gap-3`}
+    ${tw`grid grid-cols-3 grid-flow-row`}
 `;
 
 const Time = styled.p`
     ${tw`text-brand-1 place-content-end items-end`}
 `;
 
-const Item = styled.p`
+const AgendaItem = styled.p`
     ${tw`col-span-2`}
 `;
 
@@ -74,7 +74,11 @@ export default function EventInfoCard({ data }) {
                 <StyledHeader className="font-wt-bold">Agenda</StyledHeader>
                 <AgendaWrapper>
                     <Time className="font-wt-bold">{time}</Time>
-                    <Item>{item}</Item>
+                    <AgendaItem>{item}</AgendaItem>
+                    <Time className="font-wt-bold">{time}</Time>
+                    <AgendaItem>{item}</AgendaItem>
+                    <Time className="font-wt-bold">{time}</Time>
+                    <AgendaItem>{item}</AgendaItem>
                 </AgendaWrapper>
             </InfoWrapper>
             <DescriptionWrapper>
