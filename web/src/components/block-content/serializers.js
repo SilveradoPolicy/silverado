@@ -1,5 +1,9 @@
+import FullWidthImage from './fullWidthImage';
+
 const serializers = {
-    types: {},
+    types: {
+        mainImage: FullWidthImage,
+    },
 };
 
 export default serializers;

@@ -7,12 +7,13 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const HeroWrapper = styled.section`
-    ${tw`mx-8 pt-36`}
+    ${tw`container pt-36`}
 `;
 const StyledImg = styled(Img)`
     ${tw`mt-4`}
+
     &:before {
-        background: var(--brand-4);
+        background: ${({ color }) => color};
         content: '';
         height: 20px;
         position: absolute;
@@ -25,14 +26,14 @@ const StyledImg = styled(Img)`
 const StyledLink = styled(Link)`
     ${tw`pb-10 text-brand-1`}
 `;
-export default function BlogHero({ image }) {
+export default function BlogHero({ color, image }) {
     const {
-        childImageSharp: { fluid },
+        asset: { fluid: imageData },
     } = image;
     return (
         <HeroWrapper>
             <StyledLink to="/news"> {'<'} Back to News</StyledLink>
-            <StyledImg fluid={fluid} />
+            <StyledImg color={color} fluid={imageData} />
         </HeroWrapper>
     );
 }
@@ -51,5 +52,6 @@ export const query = graphql`
 `;
 
 BlogHero.propTypes = {
+    color: PropTypes.string.isRequired,
     image: PropTypes.object.isRequired,
 };
