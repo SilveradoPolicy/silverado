@@ -40,6 +40,43 @@ async function createPillarPages(graphql, actions) {
     });
 }
 
+// create news/blog pages
+async function createNewsBlogPages(graphql, actions) {
+    const { createPage } = actions;
+    const result = await graphql(`
+        {
+            allSanityPost(filter: { slug: { current: { ne: "null" } } }) {
+                edges {
+                    node {
+                        id
+                        slug {
+                            current
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    if (result.errors) {
+        throw result.errors;
+    }
+
+    const postEdges = (result.data.allSanityPost || {}).edges || [];
+
+    postEdges.forEach((edge) => {
+        const { id, slug = {} } = edge.node;
+        const path = `/news/${slug.current}`;
+
+        createPage({
+            path,
+            component: require.resolve('./src/templates/blog-template.js'),
+            context: { id },
+        });
+    });
+}
+
 exports.createPages = async ({ graphql, actions }) => {
     await createPillarPages(graphql, actions);
+    await createNewsBlogPages(graphql, actions);
 };
