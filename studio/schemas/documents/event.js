@@ -4,7 +4,7 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'eventTitle',
+            name: 'title',
             title: 'Event Title',
             type: 'string',
             description: 'What is the title of the event?',
@@ -59,7 +59,7 @@ export default {
                     direction: 'desc',
                 },
                 {
-                    field: 'eventTitle',
+                    field: 'title',
                     direction: 'asc',
                 },
             ],
@@ -73,7 +73,7 @@ export default {
                     direction: 'asc',
                 },
                 {
-                    field: 'eventTitle',
+                    field: 'title',
                     direction: 'asc',
                 },
             ],
@@ -81,7 +81,7 @@ export default {
     ],
     preview: {
         select: {
-            title: 'eventTitle',
+            title: 'title',
             publishedAt: 'dateAndTime',
             slug: 'slug',
             media: 'mainImage',

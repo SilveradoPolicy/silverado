@@ -23,7 +23,7 @@ export const query = graphql`
                 }
             }
             id
-            postTitle
+            title
             _rawBody(resolveReferences: { maxDepth: 10 })
         }
     }
@@ -31,12 +31,12 @@ export const query = graphql`
 
 export default function BlogTemplate({ data }) {
     const {
-        post: { categories, heroImage, postTitle, _rawBody },
+        post: { categories, heroImage, title, _rawBody },
     } = data;
 
     const { color } = categories[0];
 
-    const postData = { categories, postTitle, _rawBody };
+    const postData = { categories, title, _rawBody };
 
     const posts = [
         {
