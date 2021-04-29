@@ -54,7 +54,7 @@ export default function BlogCard({ data }) {
         pillar,
     } = data;
 
-    const imageData = image?.childImageSharp.fluid;
+    const imageData = image?.asset.fluid;
 
     return (
         <CardContainer pillar={pillar}>
