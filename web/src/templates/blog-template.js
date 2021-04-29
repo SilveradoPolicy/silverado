@@ -8,7 +8,7 @@ import BlogContent from '../components/blogContent';
 import PillarCardList from '../components/pillarCardList';
 
 export const query = graphql`
-    query newsBlogTemplateQuery($id: String!) {
+    query newsBlogTemplateQuery($categoryId: String!, $id: String!) {
         post: sanityPost(id: { eq: $id }) {
             categories {
                 color
@@ -26,55 +26,53 @@ export const query = graphql`
             title
             _rawBody(resolveReferences: { maxDepth: 10 })
         }
+        posts: allSanityPost(
+            filter: { categories: { elemMatch: { id: { eq: $categoryId } } } }
+        ) {
+            edges {
+                node {
+                    categories {
+                        id
+                        color
+                    }
+                    description
+                    slug {
+                        current
+                    }
+                    title
+                    heroImage {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
 export default function BlogTemplate({ data }) {
     const {
         post: { categories, heroImage, title, _rawBody },
+        posts: { edges },
     } = data;
 
     const { color } = categories[0];
-
     const postData = { categories, title, _rawBody };
 
-    const posts = [
-        {
-            image: heroImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            time: '12:30pm',
-            place: 'Walt Disney World',
-            eventdate: 'May 23, 2021',
-            id: '01',
-        },
-        {
-            id: '02',
-            image: heroImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            description:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
-        },
-        {
-            id: '03',
-            image: heroImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            description:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
-        },
-    ];
     return (
         <Layout hasBackgroundColor>
             <BlogHero color={color} image={heroImage} />
             <BlogContent data={postData} />
-            <PillarCardList list={posts} />
+            <PillarCardList list={edges} />
         </Layout>
     );
 }
 BlogTemplate.propTypes = {
     data: PropTypes.shape({
         post: PropTypes.object.isRequired,
+        posts: PropTypes.object.isRequired,
     }).isRequired,
 };

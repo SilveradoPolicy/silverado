@@ -56,6 +56,9 @@ async function createNewsBlogPages(graphql, actions) {
                         slug {
                             current
                         }
+                        categories {
+                            categoryId: id
+                        }
                     }
                 }
             }
@@ -71,11 +74,12 @@ async function createNewsBlogPages(graphql, actions) {
     postEdges.forEach((edge) => {
         const { id, slug = {} } = edge.node;
         const path = `/news/${slug.current}`;
+        const { categoryId } = edge.node.categories[0];
 
         createPage({
             path,
             component: require.resolve('./src/templates/blog-template.js'),
-            context: { id },
+            context: { id, categoryId },
         });
     });
 }
