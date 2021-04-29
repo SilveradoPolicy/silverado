@@ -9,7 +9,7 @@ import tw from 'twin.macro';
 const CardContainer = styled.div`
     ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
     &:before {
-        background: ${(prop) => (prop ? `${prop.pillar}` : '')};
+        background: ${({ color }) => color};
         content: '';
         height: 20px;
         position: absolute;
@@ -43,25 +43,27 @@ const StyledLink = styled(Link)`
 `;
 export default function BlogCard({ data }) {
     const {
+        categories,
         description,
         eventdate,
+        heroImage,
+        id,
         place,
+        slug,
+        subtitle,
         time,
         title,
-        subtitle,
-        image,
-        id,
-        pillar,
-    } = data;
+    } = data.node;
 
-    const imageData = image?.asset?.fluid;
+    const imageData = heroImage?.asset?.fluid;
+    const primaryPillarColor = categories[0].color;
 
     return (
-        <CardContainer pillar={pillar}>
+        <CardContainer color={primaryPillarColor}>
             {imageData && <Img fluid={imageData} />}
             <CardWrapper id={id}>
                 <CardTitle className="font-wt-bold">{title}</CardTitle>
-                <CardSubTitle>{subtitle}</CardSubTitle>
+                {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
                 {description && <BlogDetails>{description}</BlogDetails>}
                 {eventdate && (
                     <>
@@ -70,7 +72,7 @@ export default function BlogCard({ data }) {
                         <EventDetails>{place}</EventDetails>
                     </>
                 )}
-                <StyledLink to="#">Read More</StyledLink>
+                <StyledLink to={`/news/${slug.current}`}>Read More</StyledLink>
             </CardWrapper>
         </CardContainer>
     );
