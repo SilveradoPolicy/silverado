@@ -53,6 +53,14 @@ export default {
             ],
         },
         {
+            name: 'categories',
+            title: 'Associated Category',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'category' } }],
+            description: "News/Blogs and Event's associated with this pillar",
+            validation: (Rule) => Rule.max(1),
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'seo',
