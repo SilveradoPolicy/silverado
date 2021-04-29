@@ -42,6 +42,14 @@ export default {
             type: 'bodyPortableText',
         },
         {
+            name: 'categories',
+            title: 'Category Tags',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'category' } }],
+            description:
+                'List of categories this News/Blog item belong to. The first category in the list will be used for sorting/filtering purposes',
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'seo',
