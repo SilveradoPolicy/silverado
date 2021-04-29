@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // import document schemas here (bonus points for alphabetical order)
 import author from './documents/author';
+import category from './documents/category';
 import event from './documents/event';
 import eventIndexPage from './documents/eventIndexPage';
 import indexPage from './documents/indexPage';
@@ -30,6 +31,7 @@ export default createSchema({
 
         // document types here (bonus points for alphabetical order)
         author,
+        category,
         event,
         eventIndexPage,
         indexPage,
