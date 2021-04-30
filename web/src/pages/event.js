@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import EventInfoHero from '../components/eventInfoHero';
 import Layout from '../layouts/page-layout';
 import SpeakerCardList from '../components/speakerCardList';
+import Registration from '../components/registration';
+import SponsorList from '../components/sponsorList';
 
 export default function EventPage({ data }) {
-    const { eventImage, speaker } = data;
+    const { eventImage, speaker, icon } = data;
 
     const content = {
         card: {
@@ -27,12 +29,40 @@ export default function EventPage({ data }) {
         {
             image: speaker,
             name: 'Katie Breuil',
-            title: 'Queen of the world',
+            title: 'Web Developer',
         },
         {
             image: speaker,
             name: 'Katie Breuil',
-            title: 'Queen of the world',
+            title: 'Web Developer',
+        },
+        {
+            image: speaker,
+            name: 'Katie Breuil',
+            title: 'Web Developer',
+        },
+        {
+            image: speaker,
+            name: 'Katie Breuil',
+            title: 'Web Developer',
+        },
+    ];
+
+    const sponsors = [
+        {
+            image: icon,
+        },
+        {
+            image: icon,
+        },
+        {
+            image: icon,
+        },
+        {
+            image: icon,
+        },
+        {
+            image: icon,
         },
     ];
 
@@ -40,6 +70,8 @@ export default function EventPage({ data }) {
         <Layout hasBackgroundColor>
             <EventInfoHero data={content.card} image={eventImage} />
             <SpeakerCardList speakers={speakers} />
+            <Registration />
+            {sponsors && <SponsorList sponsors={sponsors} />}
         </Layout>
     );
 }
@@ -60,6 +92,13 @@ export const query = graphql`
                 }
             }
         }
+        icon: file(relativePath: { regex: "/icon/" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
     }
 `;
 
@@ -67,5 +106,6 @@ EventPage.propTypes = {
     data: PropTypes.shape({
         eventImage: PropTypes.object.isRequired,
         speaker: PropTypes.object.isRequired,
+        icon: PropTypes.object.isRequired,
     }).isRequired,
 };
