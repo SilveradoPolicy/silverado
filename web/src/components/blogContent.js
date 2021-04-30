@@ -42,10 +42,10 @@ const PillarWrapper = styled.div`
     }
 `;
 export default function BlogContent({ data }) {
-    const { categories, postTitle, _rawBody } = data;
+    const { categories, title, _rawBody } = data;
     return (
         <ContentWrapper>
-            <BlogTitle className="font-wt-bold">{postTitle}</BlogTitle>
+            <BlogTitle className="font-wt-bold">{title}</BlogTitle>
             <SubheaderWrapper>Month 20, 2021 | Authors Name</SubheaderWrapper>
             <BodyWrapper>
                 <BlockText blocks={_rawBody} />
