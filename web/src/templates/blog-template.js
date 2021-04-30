@@ -36,10 +36,6 @@ export const query = graphql`
                         color
                     }
                     description
-                    slug {
-                        current
-                    }
-                    title
                     heroImage {
                         asset {
                             fluid(maxWidth: 500) {
@@ -47,6 +43,10 @@ export const query = graphql`
                             }
                         }
                     }
+                    slug {
+                        current
+                    }
+                    title
                 }
             }
         }
