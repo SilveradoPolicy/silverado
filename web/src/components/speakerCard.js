@@ -22,13 +22,9 @@ export default function SpeakerCard({ data }) {
         ${tw`p-2 text-brand-1 text-ts-body`}
     `;
 
-    const SpeakerName = styled.h1`
-        ${tw``}
-    `;
+    const SpeakerName = styled.h1``;
 
-    const SpeakerTitle = styled.h1`
-        ${tw``}
-    `;
+    const SpeakerTitle = styled.h1``;
 
     return (
         <SpeakerContainer>

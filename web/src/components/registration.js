@@ -15,7 +15,7 @@ const Description = styled.div`
     ${tw`max-w-prose mx-auto mb-4 text-ts-body`}
 `;
 
-const StyledButton = styled.button`
+const StyledLink = styled.a`
     ${tw`bg-brand-3 w-52 h-11 rounded-full text-white`}
 `;
 
@@ -28,7 +28,13 @@ export default function Registration() {
                 elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae
                 tellus sagittis tincidunt in in sem.
             </Description>
-            <StyledButton className="font-wt-thin">Register</StyledButton>
+            <StyledLink
+                className="font-wt-thin"
+                target="_blank"
+                rel="noreferrer"
+            >
+                Register
+            </StyledLink>
         </RegiWrapper>
     );
 }
