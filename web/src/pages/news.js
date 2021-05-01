@@ -32,6 +32,7 @@ export const query = graphql`
                             id
                         }
                     }
+                    id
                     title
                     slug {
                         current
@@ -53,7 +54,7 @@ export const query = graphql`
 export default function NewsIndex({ data }) {
     const {
         newsImage,
-        allSanityCategory: { edges: categoryArray },
+        allSanityCategory: { edges: filters },
         allSanityPost: { edges: postsArray },
     } = data;
 
@@ -70,7 +71,7 @@ export default function NewsIndex({ data }) {
     return (
         <Layout>
             <NewsIndexHero newsEventInfo={content.newsEvent} />
-            <BlogPostList blogposts={postsArray} categories={categoryArray} />
+            <BlogPostList blogposts={postsArray} filters={filters} />
         </Layout>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import { AnimatePresence } from 'framer-motion';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -41,7 +42,7 @@ const EventDetails = styled.p`
 const StyledLink = styled(Link)`
     ${tw`underline text-brand-3 absolute bottom-0 left-0 px-6 py-4`}
 `;
-export default function BlogCard({ data }) {
+export default function BlogCard({ data, isShown }) {
     const {
         categories,
         description,
@@ -59,25 +60,34 @@ export default function BlogCard({ data }) {
     const primaryPillarColor = categories[0].color;
 
     return (
-        <CardContainer color={primaryPillarColor}>
-            {imageData && <Img fluid={imageData} />}
-            <CardWrapper id={id}>
-                <CardTitle className="font-wt-bold">{title}</CardTitle>
-                {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
-                {description && <BlogDetails>{description}</BlogDetails>}
-                {eventdate && (
-                    <>
-                        <EventDetails>{eventdate}</EventDetails>
-                        <EventDetails>{time}</EventDetails>
-                        <EventDetails>{place}</EventDetails>
-                    </>
-                )}
-                <StyledLink to={`/news/${slug.current}`}>Read More</StyledLink>
-            </CardWrapper>
-        </CardContainer>
+        <AnimatePresence>
+            {isShown && (
+                <CardContainer color={primaryPillarColor}>
+                    {imageData && <Img fluid={imageData} />}
+                    <CardWrapper id={id}>
+                        <CardTitle className="font-wt-bold">{title}</CardTitle>
+                        {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
+                        {description && (
+                            <BlogDetails>{description}</BlogDetails>
+                        )}
+                        {eventdate && (
+                            <>
+                                <EventDetails>{eventdate}</EventDetails>
+                                <EventDetails>{time}</EventDetails>
+                                <EventDetails>{place}</EventDetails>
+                            </>
+                        )}
+                        <StyledLink to={`/news/${slug.current}`}>
+                            Read More
+                        </StyledLink>
+                    </CardWrapper>
+                </CardContainer>
+            )}
+        </AnimatePresence>
     );
 }
 
 BlogCard.propTypes = {
     data: PropTypes.object.isRequired,
+    isShown: PropTypes.bool.isRequired,
 };
