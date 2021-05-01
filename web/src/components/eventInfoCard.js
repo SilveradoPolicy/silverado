@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardWrapper = styled.div`
-    ${tw`flex justify-center flex-col md:flex-row bg-white mx-4 px-4 md:mx-10 transform -translate-y-28 md:-translate-y-2/4`}
+    ${tw`flex justify-center flex-col md:flex-row bg-white mx-4 px-4 md:mx-10 transform -translate-y-28 md:-translate-y-1/4 lg:-translate-y-2/4`}
 `;
 
 const StyledTitle = styled.h1`
