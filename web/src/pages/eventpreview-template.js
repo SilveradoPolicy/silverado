@@ -43,6 +43,15 @@ export const query = graphql`
                 }
             }
         }
+        allSanityCategory {
+            edges {
+                node {
+                    color
+                    id
+                    name
+                }
+            }
+        }
     }
 `;
 
@@ -52,6 +61,7 @@ const EventHeading = styled.h3`
 
 export default function EventPreviewTemplate({ data }) {
     const {
+        allSanityCategory: { edges: categoriesArray },
         eventImage,
         posts: { edges },
     } = data;
@@ -73,13 +83,18 @@ export default function EventPreviewTemplate({ data }) {
         <Layout hasBackgroundColor>
             <EventHero data={content.card} image={eventImage} />
             <EventHeading>Events</EventHeading>
-            <BlogPostList blogposts={edges} month={content.month} />
+            <BlogPostList
+                blogposts={edges}
+                categories={categoriesArray}
+                month={content.month}
+            />
         </Layout>
     );
 }
 
 EventPreviewTemplate.propTypes = {
     data: PropTypes.shape({
+        allSanityCategory: PropTypes.object.isRequired,
         eventImage: PropTypes.object.isRequired,
         posts: PropTypes.object.isRequired,
     }).isRequired,

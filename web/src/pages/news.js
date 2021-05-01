@@ -39,11 +39,21 @@ export const query = graphql`
                 }
             }
         }
+        allSanityCategory {
+            edges {
+                node {
+                    color
+                    id
+                    name
+                }
+            }
+        }
     }
 `;
 export default function NewsIndex({ data }) {
     const {
         newsImage,
+        allSanityCategory: { edges: categoryArray },
         allSanityPost: { edges: postsArray },
     } = data;
 
@@ -60,13 +70,14 @@ export default function NewsIndex({ data }) {
     return (
         <Layout>
             <NewsIndexHero newsEventInfo={content.newsEvent} />
-            <BlogPostList blogposts={postsArray} />
+            <BlogPostList blogposts={postsArray} categories={categoryArray} />
         </Layout>
     );
 }
 
 NewsIndex.propTypes = {
     data: PropTypes.shape({
+        allSanityCategory: PropTypes.object.isRequired,
         allSanityPost: PropTypes.array.isRequired,
         newsImage: PropTypes.object.isRequired,
     }).isRequired,
