@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 import EventInfoCard from './eventInfoCard';
 
 const HeroWrapper = styled.div`
-    ${tw`container relative`}
+    ${tw`relative`}
 `;
 
 const StyledImage = styled(Img)`

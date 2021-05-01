@@ -15,7 +15,7 @@ export default function SpeakerCard({ data }) {
     } = data;
 
     const SpeakerContainer = styled.div`
-        ${tw`w-72 h-96 shadow-xl`}
+        ${tw`w-72 shadow-xl`}
     `;
 
     const SpeakerWrapper = styled.div`
