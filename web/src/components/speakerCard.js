@@ -19,12 +19,16 @@ export default function SpeakerCard({ data }) {
     `;
 
     const SpeakerWrapper = styled.div`
-        ${tw`p-2 text-brand-1 text-ts-body`}
+        ${tw`p-2 text-brand-1`}
     `;
 
-    const SpeakerName = styled.h1``;
+    const SpeakerName = styled.p`
+        ${tw`text-ts-body`}
+    `;
 
-    const SpeakerTitle = styled.h1``;
+    const SpeakerTitle = styled.p`
+        ${tw`text-ts-body`}
+    `;
 
     return (
         <SpeakerContainer>

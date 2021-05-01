@@ -11,7 +11,7 @@ const SpeakersWrapper = styled.div`
 `;
 
 const SpeakerCardWrapper = styled.div`
-    ${tw`flex gap-4 mb-4`}
+    ${tw`flex gap-4 mb-4 flex-wrap justify-center`}
 `;
 
 const Header = styled.h4`

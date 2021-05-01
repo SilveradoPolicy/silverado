@@ -14,7 +14,7 @@ const StyledHeading = styled.h4`
 `;
 
 const SponsorWrapper = styled.div`
-    ${tw`flex justify-center gap-28 mb-24`}
+    ${tw`flex justify-center gap-16 md:gap-28 mb-24 flex-wrap`}
 `;
 
 export default function SponsorList({ sponsors }) {

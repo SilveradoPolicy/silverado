@@ -16,7 +16,7 @@ const Description = styled.div`
 `;
 
 const StyledLink = styled.a`
-    ${tw`bg-brand-3 text-ts-h4 inline-block py-4 px-20 rounded-full text-white`}
+    ${tw`bg-brand-3 text-ts-h4 inline-block py-3.5 px-20 rounded-full text-white`}
 `;
 
 export default function Registration() {
