@@ -61,7 +61,7 @@ const EventHeading = styled.h3`
 
 export default function EventPreviewTemplate({ data }) {
     const {
-        allSanityCategory: { edges: categoriesArray },
+        allSanityCategory: { edges: filtersArray },
         eventImage,
         posts: { edges },
     } = data;
@@ -85,7 +85,7 @@ export default function EventPreviewTemplate({ data }) {
             <EventHeading>Events</EventHeading>
             <BlogPostList
                 blogposts={edges}
-                categories={categoriesArray}
+                filters={filtersArray}
                 month={content.month}
             />
         </Layout>

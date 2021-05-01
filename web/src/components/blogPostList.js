@@ -40,7 +40,7 @@ const StyledButton = styled.button`
     }
 `;
 
-export default function BlogPostList({ blogposts, categories, month }) {
+export default function BlogPostList({ blogposts, filters, month }) {
     const [activeFilter, setActiveFilter] = useState('#000');
 
     // create all filter object
@@ -53,12 +53,12 @@ export default function BlogPostList({ blogposts, categories, month }) {
     };
 
     // add all filter object to categories array
-    const categoriesArray = [all, ...categories];
+    const filtersArray = [all, ...filters];
 
     return (
         <BlogPostsWrapper>
             <LinkWrapper>
-                {categoriesArray.map((item) => {
+                {filtersArray.map((item) => {
                     const { node } = item;
 
                     return (
@@ -69,7 +69,10 @@ export default function BlogPostList({ blogposts, categories, month }) {
                                 activeFilter === node.id ? 'isActive' : ''
                             }`}
                             onClick={() => setActiveFilter(node.id)}
-                            isActive={activeFilter === node.id}
+                            isActive={
+                                activeFilter === node.id ||
+                                activeFilter === all.node.id
+                            }
                             type="button"
                         >
                             {node.name}
@@ -82,7 +85,15 @@ export default function BlogPostList({ blogposts, categories, month }) {
             )}
             <PostWrapper>
                 {blogposts.map((post) => {
-                    return <BlogCard data={post} />;
+                    const {
+                        node: { categories, id },
+                    } = post;
+
+                    const isShown =
+                        categories[0].id === activeFilter ||
+                        activeFilter === all.node.id;
+
+                    return <BlogCard data={post} isShown={isShown} key={id} />;
                 })}
             </PostWrapper>
         </BlogPostsWrapper>
@@ -91,6 +102,6 @@ export default function BlogPostList({ blogposts, categories, month }) {
 
 BlogPostList.propTypes = {
     blogposts: PropTypes.array.isRequired,
-    categories: PropTypes.array.isRequired,
+    filters: PropTypes.array.isRequired,
     month: PropTypes.object.isRequired,
 };
