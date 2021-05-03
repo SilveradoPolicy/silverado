@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -22,55 +21,62 @@ const MonthWrapper = styled.h4`
 const LinkWrapper = styled.div`
     ${tw`flex flex-col md:flex-row md:space-x-8 mb-4 md:mb-8`}
 `;
-const StyledLink = styled(Link)`
-    ${tw`text-ts-h5`}
-    text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'none')};
+const StyledButton = styled.button`
+    ${tw`text-ts-h5 relative`}
+
+    color: ${({ color }) => color};
+
+    &.isActive {
+        &:after {
+            background-color: currentColor;
+            bottom: 0;
+            content: '';
+            height: 3px;
+            left: 0;
+            position: absolute;
+            transform: translateY(100%);
+            width: 100%;
+        }
+    }
 `;
 
-export default function BlogPostList({ blogposts, month }) {
-    const [activeLink, setActiveLink] = useState(null);
-    const pillars = [
-        {
-            title: 'All',
-            id: '01',
-            color: 'var(--black)',
+export default function BlogPostList({ blogposts, filters, month }) {
+    const [activeFilter, setActiveFilter] = useState('#000');
+
+    // create all filter object
+    const all = {
+        node: {
+            color: '#000',
+            id: '#000',
+            name: 'All',
         },
-        {
-            title: 'Silverado',
-            id: '02',
-            color: 'var(--brand-1)',
-        },
-        {
-            title: 'Eco²Sec',
-            id: '03',
-            color: 'var(--brand-2)',
-        },
-        {
-            title: 'International Trade & Security',
-            id: '04',
-            color: 'var(--brand-5)',
-        },
-        {
-            title: 'Cybersecurity',
-            id: '05',
-            color: 'var(--brand-6)',
-        },
-    ];
+    };
+
+    // add all filter object to categories array
+    const filtersArray = [all, ...filters];
+
     return (
         <BlogPostsWrapper>
             <LinkWrapper>
-                {pillars.map((pillar) => {
+                {filtersArray.map((item) => {
+                    const { node } = item;
+
                     return (
-                        <StyledLink
-                            key={pillar.id}
-                            to="#"
-                            style={{ color: `${pillar.color}` }}
-                            className="font-wt-bold"
-                            onClick={() => setActiveLink(pillar.id)}
-                            isActive={activeLink === pillar.id}
+                        <StyledButton
+                            key={node.id}
+                            color={node.color}
+                            className={`font-wt-bold ${
+                                activeFilter === node.id ? 'isActive' : ''
+                            }`}
+                            onClick={() => setActiveFilter(node.id)}
+                            isActive={
+                                activeFilter === node.id ||
+                                activeFilter === all.node.id
+                            }
+                            type="button"
                         >
-                            {pillar.title}
-                        </StyledLink>
+                            {node.name}
+                        </StyledButton>
                     );
                 })}
             </LinkWrapper>
@@ -79,7 +85,15 @@ export default function BlogPostList({ blogposts, month }) {
             )}
             <PostWrapper>
                 {blogposts.map((post) => {
-                    return <BlogCard data={post} />;
+                    const {
+                        node: { categories, id },
+                    } = post;
+
+                    const isShown =
+                        categories[0].id === activeFilter ||
+                        activeFilter === all.node.id;
+
+                    return <BlogCard data={post} isShown={isShown} key={id} />;
                 })}
             </PostWrapper>
         </BlogPostsWrapper>
@@ -88,5 +102,6 @@ export default function BlogPostList({ blogposts, month }) {
 
 BlogPostList.propTypes = {
     blogposts: PropTypes.array.isRequired,
+    filters: PropTypes.array.isRequired,
     month: PropTypes.object.isRequired,
 };

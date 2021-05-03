@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'pillarIcon',
+            title: 'Pillar Icon',
+            type: 'mainImage',
+        },
+        {
             name: 'slug',
             type: 'slug',
             title: 'Slug',
@@ -18,6 +23,12 @@ export default {
                 source: 'pillarName',
                 maxLength: 96,
             },
+        },
+        {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'mainImage',
+            description: 'Hero image on the pillar page.',
         },
         {
             name: 'shortDescription',
@@ -42,9 +53,23 @@ export default {
             ],
         },
         {
+            name: 'categories',
+            title: 'Associated Category',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'category' } }],
+            description: "News/Blogs and Event's associated with this pillar",
+            validation: (Rule) => Rule.max(1),
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'seo',
         },
     ],
+    preview: {
+        select: {
+            media: 'pillarIcon',
+            title: 'pillarName',
+        },
+    },
 };

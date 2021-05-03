@@ -19,19 +19,20 @@ const IconWrapper = styled.div`
 
 export default function PillarComponent({ data }) {
     const {
-        body,
-        heading,
-        image: {
-            childImageSharp: { fluid },
+        pillarName,
+        pillarIcon: {
+            asset: { fluid: iconImageData },
         },
+        shortDescription,
     } = data;
+
     return (
         <StyledSection>
             <IconWrapper>
-                <Img fluid={fluid} />
+                <Img fluid={iconImageData} />
             </IconWrapper>
-            <Heading className="font-wt-bold">{heading}</Heading>
-            <Body className="font-wt-thin">{body}</Body>
+            <Heading className="font-wt-bold">{pillarName}</Heading>
+            <Body className="font-wt-thin">{shortDescription}</Body>
         </StyledSection>
     );
 }

@@ -9,12 +9,62 @@ import Layout from '../layouts/page-layout';
 import EventHero from '../components/eventHero';
 import BlogPostList from '../components/blogPostList';
 
+// Todo: Need to update allPosts query to allEvents once events are in sanity
+
+export const query = graphql`
+    query EventPreviewTemplateQuery {
+        eventImage: file(relativePath: { regex: "/eventimage/" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+
+        posts: allSanityPost {
+            edges {
+                node {
+                    categories {
+                        id
+                        color
+                    }
+                    description
+                    slug {
+                        current
+                    }
+                    title
+                    heroImage {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allSanityCategory {
+            edges {
+                node {
+                    color
+                    id
+                    name
+                }
+            }
+        }
+    }
+`;
+
 const EventHeading = styled.h3`
     ${tw`container text-brand-1 text-ts-h3`}
 `;
 
 export default function EventPreviewTemplate({ data }) {
-    const { eventImage } = data;
+    const {
+        allSanityCategory: { edges: filtersArray },
+        eventImage,
+        posts: { edges },
+    } = data;
 
     const content = {
         card: {
@@ -29,56 +79,23 @@ export default function EventPreviewTemplate({ data }) {
         month: 'March',
     };
 
-    const blogposts = [
-        {
-            image: eventImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            time: '12:30pm',
-            place: 'Walt Disney World',
-            eventdate: 'May 23, 2021',
-            pillar: 'var(--brand-3)',
-        },
-        {
-            image: eventImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            description:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
-            pillar: 'var(--brand-2)',
-        },
-        {
-            image: eventImage,
-            title: 'This is an event',
-            subtitle: 'Cras iaculis',
-            description:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros.',
-            pillar: 'var(--brand-1)',
-        },
-    ];
     return (
         <Layout hasBackgroundColor>
             <EventHero data={content.card} image={eventImage} />
             <EventHeading>Events</EventHeading>
-            <BlogPostList blogposts={blogposts} month={content.month} />
+            <BlogPostList
+                blogposts={edges}
+                filters={filtersArray}
+                month={content.month}
+            />
         </Layout>
     );
 }
 
-export const query = graphql`
-    query EventPreviewTemplateQuery {
-        eventImage: file(relativePath: { regex: "/eventimage/" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`;
-
 EventPreviewTemplate.propTypes = {
     data: PropTypes.shape({
+        allSanityCategory: PropTypes.object.isRequired,
         eventImage: PropTypes.object.isRequired,
+        posts: PropTypes.object.isRequired,
     }).isRequired,
 };
