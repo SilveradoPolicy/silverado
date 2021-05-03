@@ -32,23 +32,27 @@ const DescriptionWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-    ${tw`rounded-2xl bg-brand-1 text-white w-24 h-8 my-4`}
+    ${tw`rounded-2xl bg-brand-1 text-white w-24 h-8 my-8`}
 `;
 
 const StyledHeader = styled.h4`
-    ${tw`text-brand-1 text-ts-h4 mb-4`}
+    ${tw`text-brand-1 text-ts-h4 mb-2`}
 `;
 
 const AgendaWrapper = styled.div`
-    ${tw`grid grid-cols-3 grid-flow-row`}
+    ${tw`flex flex-col`}
 `;
 
 const Time = styled.p`
-    ${tw`text-brand-1 place-content-end items-end`}
+    ${tw`text-brand-1 `}
 `;
 
 const AgendaItem = styled.p`
-    ${tw`col-span-2`}
+    ${tw``}
+`;
+
+const ItemWrapper = styled.div`
+    ${tw`flex gap-2`}
 `;
 
 export default function EventInfoCard({ data }) {
@@ -73,12 +77,14 @@ export default function EventInfoCard({ data }) {
                 <StyledButton type="button">Register</StyledButton>
                 <StyledHeader className="font-wt-bold">Agenda</StyledHeader>
                 <AgendaWrapper>
-                    <Time className="font-wt-bold">{time}</Time>
-                    <AgendaItem>{item}</AgendaItem>
-                    <Time className="font-wt-bold">{time}</Time>
-                    <AgendaItem>{item}</AgendaItem>
-                    <Time className="font-wt-bold">{time}</Time>
-                    <AgendaItem>{item}</AgendaItem>
+                    <ItemWrapper>
+                        <Time className="font-wt-bold">{time}</Time>
+                        <AgendaItem>{item}</AgendaItem>
+                    </ItemWrapper>
+                    <ItemWrapper>
+                        <Time className="font-wt-bold">{time}</Time>
+                        <AgendaItem>{item}</AgendaItem>
+                    </ItemWrapper>
                 </AgendaWrapper>
             </InfoWrapper>
             <DescriptionWrapper>
