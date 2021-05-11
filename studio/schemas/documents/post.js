@@ -7,6 +7,7 @@ export default {
             name: 'title',
             title: 'News/Blog Post Title',
             type: 'string',
+            validation: (Rule) => Rule.required().max(84),
         },
         {
             name: 'heroImage',
@@ -14,16 +15,19 @@ export default {
             type: 'mainImage',
         },
         {
+            name: 'subtitle',
+            title: 'Subtitle',
+            type: 'string',
+        },
+        {
             name: 'publishDate',
             title: 'Publish Date',
             type: 'date',
         },
         {
-            name: 'authorsName',
-            title: "Author's Name",
-            type: 'array',
-            of: [{ type: 'reference', to: { type: 'author' } }],
-            validation: (Rule) => Rule.max(1),
+            name: 'author',
+            title: 'Author',
+            type: 'string',
         },
         {
             name: 'slug',
@@ -42,6 +46,7 @@ export default {
             type: 'text',
             description:
                 'Brief description of this post. This text will appear on News/Blog previews.',
+            validation: (Rule) => Rule.required().min(10).max(160),
         },
         {
             name: 'body',

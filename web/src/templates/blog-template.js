@@ -10,6 +10,7 @@ import PillarCardList from '../components/pillarCardList';
 export const query = graphql`
     query newsBlogTemplateQuery($categoryId: String!, $id: String!) {
         post: sanityPost(id: { eq: $id }) {
+            author
             categories {
                 color
                 id
@@ -23,6 +24,8 @@ export const query = graphql`
                 }
             }
             id
+            publishDate
+            subtitle
             title
             _rawBody(resolveReferences: { maxDepth: 10 })
         }
@@ -55,12 +58,27 @@ export const query = graphql`
 
 export default function BlogTemplate({ data }) {
     const {
-        post: { categories, heroImage, title, _rawBody },
+        post: {
+            author,
+            categories,
+            heroImage,
+            publishDate,
+            subtitle,
+            title,
+            _rawBody,
+        },
         posts: { edges },
     } = data;
 
     const { color } = categories[0];
-    const postData = { categories, title, _rawBody };
+    const postData = {
+        author,
+        categories,
+        publishDate,
+        subtitle,
+        title,
+        _rawBody,
+    };
 
     return (
         <Layout hasBackgroundColor>
