@@ -8,13 +8,13 @@ module.exports = {
                 DEFAULT: {
                     css: {
                         h1: {
-                            color: '#306184',
+                            color: 'brand-1',
                         },
                         h2: {
-                            color: '#306184',
+                            color: 'brand-1',
                         },
                         h3: {
-                            color: '#306184',
+                            color: 'brand-1',
                         },
                         h4: {
                             color: 'brand-1',
