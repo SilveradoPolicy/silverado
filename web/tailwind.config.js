@@ -19,6 +19,12 @@ module.exports = {
                         h4: {
                             color: 'brand-1',
                         },
+                        h5: {
+                            color: 'brand-1',
+                        },
+                        h6: {
+                            color: 'brand-1',
+                        },
                     },
                 },
             },
