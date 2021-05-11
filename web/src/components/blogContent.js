@@ -47,7 +47,7 @@ export default function BlogContent({ data }) {
         <ContentWrapper>
             <BlogTitle className="font-wt-bold">{title}</BlogTitle>
             <SubheaderWrapper>Month 20, 2021 | Authors Name</SubheaderWrapper>
-            <BodyWrapper className="prose">
+            <BodyWrapper>
                 <BlockText blocks={_rawBody} />
             </BodyWrapper>
             <PillarWrapper className="font-wt-bold">
