@@ -4,6 +4,24 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        h1: {
+                            color: '#306184',
+                        },
+                        h2: {
+                            color: '#306184',
+                        },
+                        h3: {
+                            color: '#306184',
+                        },
+                        h4: {
+                            color: 'brand-1',
+                        },
+                    },
+                },
+            },
             colors: {
                 'brand-1': '#306184',
                 'brand-2': '#739663',
