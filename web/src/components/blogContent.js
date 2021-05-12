@@ -13,6 +13,10 @@ const BlogTitle = styled.h2`
     ${tw`text-ts-h2 text-brand-1 mt-14`}
 `;
 
+const BlogSubTitle = styled.h3`
+    ${tw`text-ts-h3 text-brand-1`}
+`;
+
 const SubheaderWrapper = styled.div`
     ${tw`flex text-brand-3 text-ts-body mb-6`}
 `;
@@ -42,11 +46,14 @@ const PillarWrapper = styled.div`
     }
 `;
 export default function BlogContent({ data }) {
-    const { categories, title, _rawBody } = data;
+    const { author, categories, publishDate, subtitle, title, _rawBody } = data;
     return (
         <ContentWrapper>
             <BlogTitle className="font-wt-bold">{title}</BlogTitle>
-            <SubheaderWrapper>Month 20, 2021 | Authors Name</SubheaderWrapper>
+            <BlogSubTitle>{subtitle}</BlogSubTitle>
+            <SubheaderWrapper>
+                {publishDate} | {author}
+            </SubheaderWrapper>
             <BodyWrapper>
                 <BlockText blocks={_rawBody} />
             </BodyWrapper>

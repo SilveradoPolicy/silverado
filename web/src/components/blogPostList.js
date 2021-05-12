@@ -11,7 +11,7 @@ const BlogPostsWrapper = styled.section`
 `;
 
 const PostWrapper = styled.div`
-    ${tw`flex flex-wrap gap-1 md:gap-4 relative`}
+    ${tw`flex flex-wrap gap-1 md:gap-4 lg:gap-2 relative`}
 `;
 
 const MonthWrapper = styled.h4`

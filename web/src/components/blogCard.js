@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const CardContainer = styled.div`
-    ${tw`w-72 h-96 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
+    ${tw`w-72 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
     &:before {
         background: ${({ color }) => color};
         content: '';
@@ -18,6 +18,13 @@ const CardContainer = styled.div`
         top: 0;
         left: 0;
         z-index: 2;
+    }
+    .card {
+        height: 28rem;
+    }
+    .gatsby-image-wrapper {
+        margin-top: 20px;
+        height: 150px;
     }
 `;
 
@@ -62,7 +69,7 @@ export default function BlogCard({ data, isShown }) {
     return (
         <AnimatePresence>
             {isShown && (
-                <CardContainer color={primaryPillarColor}>
+                <CardContainer color={primaryPillarColor} className="card">
                     {imageData && <Img fluid={imageData} />}
                     <CardWrapper id={id}>
                         <CardTitle className="font-wt-bold">{title}</CardTitle>
