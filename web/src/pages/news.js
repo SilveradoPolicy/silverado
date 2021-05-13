@@ -18,6 +18,7 @@ export const query = graphql`
         allSanityPost(sort: { order: DESC, fields: publishDate }) {
             edges {
                 node {
+                    author
                     categories {
                         color
                         id
@@ -33,6 +34,7 @@ export const query = graphql`
                         }
                     }
                     id
+                    publishDate
                     title
                     slug {
                         current

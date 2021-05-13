@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -52,7 +53,7 @@ export default function BlogContent({ data }) {
             <BlogTitle className="font-wt-bold">{title}</BlogTitle>
             <BlogSubTitle>{subtitle}</BlogSubTitle>
             <SubheaderWrapper>
-                {publishDate} | {author}
+                {format(new Date(publishDate), 'MM/dd/yyyy')} | {author}
             </SubheaderWrapper>
             <BodyWrapper>
                 <BlockText blocks={_rawBody} />

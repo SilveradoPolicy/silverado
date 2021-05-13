@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { AnimatePresence } from 'framer-motion';
+import { format } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -35,10 +36,14 @@ const CardWrapper = styled.div`
 const CardTitle = styled.h5`
     ${tw`text-brand-1 text-ts-h5`}
 `;
-const CardSubTitle = styled.p`
+
+const CardDate = styled.p`
     ${tw`text-brand-3 text-base pb-2`}
 `;
 
+const CardAuthor = styled.p`
+    ${tw`text-brand-3 text-base`}
+`;
 const BlogDetails = styled.p`
     ${tw`text-black text-base pb-8`}
 `;
@@ -74,10 +79,12 @@ export default function BlogCard({ data, isShown }) {
                     {imageData && <Img fluid={imageData} />}
                     <CardWrapper id={id}>
                         <CardTitle className="font-wt-bold">{title}</CardTitle>
+                        {author && <CardAuthor>{author}</CardAuthor>}
                         {publishDate && (
-                            <CardSubTitle>{publishDate}</CardSubTitle>
+                            <CardDate>
+                                {format(new Date(publishDate), 'MM/dd/yyyy')}
+                            </CardDate>
                         )}
-                        {author && <CardSubTitle>{author}</CardSubTitle>}
                         {description && (
                             <BlogDetails>{description}</BlogDetails>
                         )}
