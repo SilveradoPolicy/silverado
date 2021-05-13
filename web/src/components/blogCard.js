@@ -40,7 +40,7 @@ const CardSubTitle = styled.p`
 `;
 
 const BlogDetails = styled.p`
-    ${tw`text-black text-base `}
+    ${tw`text-black text-base pb-8`}
 `;
 
 const EventDetails = styled.p`
@@ -51,14 +51,15 @@ const StyledLink = styled(Link)`
 `;
 export default function BlogCard({ data, isShown }) {
     const {
+        author,
         categories,
         description,
         eventdate,
         heroImage,
         id,
         place,
+        publishDate,
         slug,
-        subtitle,
         time,
         title,
     } = data.node;
@@ -73,7 +74,10 @@ export default function BlogCard({ data, isShown }) {
                     {imageData && <Img fluid={imageData} />}
                     <CardWrapper id={id}>
                         <CardTitle className="font-wt-bold">{title}</CardTitle>
-                        {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
+                        {publishDate && (
+                            <CardSubTitle>{publishDate}</CardSubTitle>
+                        )}
+                        {author && <CardSubTitle>{author}</CardSubTitle>}
                         {description && (
                             <BlogDetails>{description}</BlogDetails>
                         )}
