@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledFeaturedEvent = styled.div`
-    ${tw`md:w-2/4`}
+    ${tw`md:w-full`}
 `;
 const StyledImg = styled(Img)`
     ${tw`w-full my-4`}
