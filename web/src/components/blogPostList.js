@@ -22,7 +22,7 @@ const LinkWrapper = styled.div`
     ${tw`flex flex-col items-start md:flex-row md:space-x-8 mb-4 md:mb-8`}
 `;
 const StyledButton = styled.button`
-    ${tw`text-ts-h5 mb-2 relative`}
+    ${tw`text-ts-h5 mb-2 md:mb-0 relative`}
 
     color: ${({ color }) => color};
 
