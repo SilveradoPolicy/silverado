@@ -53,7 +53,7 @@ export default function BlogContent({ data }) {
             <BlogTitle className="font-wt-bold">{title}</BlogTitle>
             <BlogSubTitle>{subtitle}</BlogSubTitle>
             <SubheaderWrapper>
-                {format(new Date(publishDate), 'MM/dd/yyyy')} | {author}
+                {format(Date.parse(publishDate), 'MM/dd/yyyy')} | {author}
             </SubheaderWrapper>
             <BodyWrapper>
                 <BlockText blocks={_rawBody} />
