@@ -82,7 +82,7 @@ export default function BlogCard({ data, isShown }) {
                         {author && <CardAuthor>{author}</CardAuthor>}
                         {publishDate && (
                             <CardDate>
-                                {format(new Date(publishDate), 'MM/dd/yyyy')}
+                                {format(Date.parse(publishDate), 'MM/dd/yyyy')}
                             </CardDate>
                         )}
                         {description && (
