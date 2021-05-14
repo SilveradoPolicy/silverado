@@ -22,6 +22,9 @@ module.exports = {
                         h6: {
                             color: '#306184',
                         },
+                        strong: {
+                            fontWeight: '800',
+                        },
                     },
                 },
             },
