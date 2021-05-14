@@ -15,7 +15,7 @@ const BlogTitle = styled.h2`
 `;
 
 const BlogSubTitle = styled.h3`
-    ${tw`text-ts-h3 text-brand-1`}
+    ${tw`text-ts-h4 text-brand-1`}
 `;
 
 const SubheaderWrapper = styled.div`
