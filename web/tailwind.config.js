@@ -11,19 +11,19 @@ module.exports = {
                             color: 'brand-1',
                         },
                         h2: {
-                            color: 'brand-1',
+                            color: '#306184',
                         },
                         h3: {
-                            color: 'brand-1',
+                            color: '#306184',
                         },
                         h4: {
-                            color: 'brand-1',
+                            color: '#306184',
                         },
                         h5: {
-                            color: 'brand-1',
+                            color: '#306184',
                         },
                         h6: {
-                            color: 'brand-1',
+                            color: '#306184',
                         },
                     },
                 },
