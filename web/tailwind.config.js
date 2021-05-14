@@ -7,23 +7,25 @@ module.exports = {
             typography: {
                 DEFAULT: {
                     css: {
-                        h1: {
-                            color: 'brand-1',
-                        },
                         h2: {
-                            color: 'brand-1',
+                            color: '#306184',
+                            fontSize: '2.074rem',
                         },
                         h3: {
-                            color: 'brand-1',
+                            color: '#306184',
+                            fontSize: '1.728rem',
                         },
                         h4: {
-                            color: 'brand-1',
+                            color: '#306184',
+                            fontSize: '1.44rem',
                         },
                         h5: {
-                            color: 'brand-1',
+                            color: '#306184',
+                            fontSize: '1.2rem',
                         },
                         h6: {
-                            color: 'brand-1',
+                            color: '#306184',
+                            fontSize: '1rem',
                         },
                     },
                 },
