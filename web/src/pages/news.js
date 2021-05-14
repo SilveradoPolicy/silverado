@@ -15,6 +15,24 @@ export const query = graphql`
                 }
             }
         }
+        sanityNewsIndexPage {
+            featuredNewsItem {
+                description
+                author
+                heroImage {
+                    asset {
+                        fluid(maxWidth: 1500) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+                title
+                publishDate
+                slug {
+                    current
+                }
+            }
+        }
         allSanityPost(sort: { order: DESC, fields: publishDate }) {
             edges {
                 node {
@@ -55,24 +73,25 @@ export const query = graphql`
 `;
 export default function NewsIndex({ data }) {
     const {
-        newsImage,
         allSanityCategory: { edges: filters },
         allSanityPost: { edges: postsArray },
+        sanityNewsIndexPage: { featuredNewsItem },
     } = data;
 
-    const content = {
-        newsEvent: {
-            image: newsImage,
-            heading: 'Big Feature News Title Second Line',
-            subheading: 'Vitaw egetas',
-            body:
-                ' Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula',
-        },
-    };
+    // const content = {
+    //     newsEvent: {
+    //         image: newsImage,
+    //         title: 'Big Feature News Title Second Line',
+    //         author: 'Vitaw egetas',
+    //         publishDate: '12/1/12',
+    //         description:
+    //             ' Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula',
+    //     },
+    // };
 
     return (
         <Layout>
-            <NewsIndexHero newsEventInfo={content.newsEvent} />
+            <NewsIndexHero newsEventInfo={featuredNewsItem} />
             <BlogPostList blogposts={postsArray} filters={filters} />
         </Layout>
     );
@@ -81,7 +100,7 @@ export default function NewsIndex({ data }) {
 NewsIndex.propTypes = {
     data: PropTypes.shape({
         allSanityCategory: PropTypes.object.isRequired,
+        sanityNewsIndexPage: PropTypes.object.isRequired,
         allSanityPost: PropTypes.array.isRequired,
-        newsImage: PropTypes.object.isRequired,
     }).isRequired,
 };
