@@ -7,9 +7,6 @@ module.exports = {
             typography: {
                 DEFAULT: {
                     css: {
-                        h1: {
-                            color: 'brand-1',
-                        },
                         h2: {
                             color: '#306184',
                         },
