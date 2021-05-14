@@ -10,7 +10,7 @@ const HeroWrapper = styled.section`
     ${tw`container pt-36`}
 `;
 const StyledImg = styled(Img)`
-    ${tw`mt-4`}
+    ${tw`mt-4 h-96`}
 
     &:before {
         background: ${({ color }) => color};
