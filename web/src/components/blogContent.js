@@ -55,7 +55,7 @@ export default function BlogContent({ data }) {
             <SubheaderWrapper>
                 {format(Date.parse(publishDate), 'MM/dd/yyyy')} | {author}
             </SubheaderWrapper>
-            <BodyWrapper>
+            <BodyWrapper className="prose">
                 <BlockText blocks={_rawBody} />
             </BodyWrapper>
             <PillarWrapper className="font-wt-bold">
