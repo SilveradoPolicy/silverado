@@ -8,6 +8,28 @@ import BlogContent from '../components/blogContent';
 import PillarCardList from '../components/pillarCardList';
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query newsBlogTemplateQuery($categoryId: String!, $id: String!) {
         post: sanityPost(id: { eq: $id }) {
             author
@@ -17,11 +39,7 @@ export const query = graphql`
                 name
             }
             heroImage {
-                asset {
-                    fluid(maxWidth: 2000) {
-                        ...GatsbySanityImageFluid
-                    }
-                }
+                ...SanityImage
             }
             id
             publishDate
@@ -40,11 +58,7 @@ export const query = graphql`
                     }
                     description
                     heroImage {
-                        asset {
-                            fluid(maxWidth: 500) {
-                                ...GatsbySanityImageFluid
-                            }
-                        }
+                        ...SanityImage
                     }
                     slug {
                         current

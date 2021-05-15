@@ -23,7 +23,7 @@ export default function PillarCardList({ list }) {
             <Title className="font-wt-bold">Related News and Events</Title>
             <PillarCardWrapper>
                 {list.map((post) => {
-                    return <BlogCard data={post} />;
+                    return <BlogCard data={post} isShown />;
                 })}
             </PillarCardWrapper>
         </PillarWrapper>
