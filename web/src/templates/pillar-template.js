@@ -9,6 +9,28 @@ import CopyWithCTA from '../components/copyWithCTA';
 import PillarCardList from '../components/pillarCardList';
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query PillarPageTemplateQuery($id: String!, $categoryId: String!) {
         pillar: sanityPillar(id: { eq: $id }) {
             categories {
@@ -17,11 +39,7 @@ export const query = graphql`
             }
             id
             heroImage {
-                asset {
-                    fluid(maxWidth: 2000) {
-                        ...GatsbySanityImageFluid
-                    }
-                }
+                ...SanityImage
             }
             longDescriptionTitle
             pillarIcon {
@@ -51,11 +69,7 @@ export const query = graphql`
                     }
                     title
                     heroImage {
-                        asset {
-                            fluid(maxWidth: 500) {
-                                ...GatsbySanityImageFluid
-                            }
-                        }
+                        ...SanityImage
                     }
                 }
             }

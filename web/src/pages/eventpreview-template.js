@@ -12,6 +12,28 @@ import BlogPostList from '../components/blogPostList';
 // Todo: Need to update allPosts query to allEvents once events are in sanity
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query EventPreviewTemplateQuery {
         eventImage: file(relativePath: { regex: "/eventimage/" }) {
             childImageSharp {
@@ -34,11 +56,7 @@ export const query = graphql`
                     }
                     title
                     heroImage {
-                        asset {
-                            fluid(maxWidth: 500) {
-                                ...GatsbySanityImageFluid
-                            }
-                        }
+                        ...SanityImage
                     }
                 }
             }

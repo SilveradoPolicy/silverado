@@ -7,6 +7,28 @@ import NewsIndexHero from '../components/newsIndexHero';
 import BlogPostList from '../components/blogPostList';
 
 export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
     query NewsIndexQuery {
         newsImage: file(relativePath: { regex: "/eventimage/" }) {
             childImageSharp {
@@ -26,12 +48,7 @@ export const query = graphql`
                     }
                     description
                     heroImage {
-                        asset {
-                            fluid(maxWidth: 500) {
-                                ...GatsbySanityImageFluid
-                            }
-                            id
-                        }
+                        ...SanityImage
                     }
                     id
                     publishDate
