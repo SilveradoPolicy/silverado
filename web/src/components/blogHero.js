@@ -1,39 +1,37 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import { imageUrlFor, buildImageObj } from '../helpers/sanityImageHelper';
+
 const HeroWrapper = styled.section`
     ${tw`container pt-36`}
 `;
-const StyledImg = styled(Img)`
-    ${tw`mt-4 h-96`}
+const StyledImg = styled.img`
+    ${tw`mt-4 w-full`}
 
-    &:before {
-        background: ${({ color }) => color};
-        content: '';
-        height: 20px;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 2;
-    }
+    border-top: ${({ color }) => `20px solid ${color}`};
 `;
 const StyledLink = styled(Link)`
     ${tw`pb-10 text-brand-1`}
 `;
 export default function BlogHero({ color, image }) {
-    const {
-        asset: { fluid: imageData },
-    } = image;
     return (
         <HeroWrapper>
             <StyledLink to="/news"> {'<'} Back to News</StyledLink>
-            <StyledImg color={color} fluid={imageData} />
+            <StyledImg
+                src={imageUrlFor(buildImageObj(image))
+                    .width(1400)
+                    .height(Math.floor((9 / 16) * 1400))
+                    .fit('fill')
+                    .auto('format')
+                    .url()}
+                alt=""
+                color={color}
+            />
         </HeroWrapper>
     );
 }

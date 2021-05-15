@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import { imageUrlFor, buildImageObj } from '../helpers/sanityImageHelper';
 
 const CardContainer = styled.div`
     ${tw`w-72 overflow-auto shadow-xl bg-white relative mb-4 md:mb-8`}
@@ -69,14 +70,24 @@ export default function BlogCard({ data, isShown }) {
         title,
     } = data.node;
 
-    const imageData = heroImage?.asset?.fluid;
     const primaryPillarColor = categories[0].color;
 
     return (
         <AnimatePresence>
             {isShown && (
                 <CardContainer color={primaryPillarColor} className="card">
-                    {imageData && <Img fluid={imageData} />}
+                    {heroImage && (
+                        <img
+                            className="mt-4"
+                            src={imageUrlFor(buildImageObj(heroImage))
+                                .width(288)
+                                .height(Math.floor((9 / 16) * 288))
+                                .fit('fill')
+                                .auto('format')
+                                .url()}
+                            alt=""
+                        />
+                    )}
                     <CardWrapper id={id}>
                         <CardTitle className="font-wt-bold">{title}</CardTitle>
                         {author && <CardAuthor>{author}</CardAuthor>}

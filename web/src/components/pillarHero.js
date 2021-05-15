@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { imageUrlFor, buildImageObj } from '../helpers/sanityImageHelper';
 
 import PillarComponent from './pillarComponent';
 
@@ -10,17 +10,19 @@ const HeroWrapper = styled.section`
     ${tw`relative`}
 `;
 
-const StyledHeroImage = styled(Img)`
-    ${tw`w-screen min-h-3/4-screen`}
-`;
-
 export default function PillarHero({ data, heroImage }) {
-    const {
-        asset: { fluid: imageData },
-    } = heroImage;
     return (
         <HeroWrapper>
-            <StyledHeroImage fluid={imageData} />
+            <img
+                className="w-screen"
+                src={imageUrlFor(buildImageObj(heroImage))
+                    .width(1400)
+                    .height(Math.floor((9 / 16) * 1400))
+                    .fit('fill')
+                    .auto('format')
+                    .url()}
+                alt=""
+            />
             <PillarComponent data={data} />
         </HeroWrapper>
     );
