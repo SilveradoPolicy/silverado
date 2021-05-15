@@ -16,7 +16,7 @@ const Heading = styled.h4`
     ${tw`text-ts-h4 text-black leading-8 max-w-sm`}
 `;
 
-const SubHeading = styled.h5`
+const EventInfo = styled.h5`
     ${tw`text-sm text-brand-3 pt-1`}
 `;
 const Body = styled.p`
@@ -24,21 +24,16 @@ const Body = styled.p`
 `;
 
 export default function NewsFeature({ data }) {
-    const {
-        heading,
-        body,
-        subheading,
-        image: {
-            childImageSharp: { fluid },
-        },
-    } = data;
+    const content = data[0];
 
     return (
         <StyledFeaturedEvent>
-            <StyledImg fluid={fluid} />
-            <Heading className="font-wt-bold">{heading}</Heading>
-            <SubHeading>{subheading}</SubHeading>
-            <Body>{body}</Body>
+            <StyledImg fluid={content.heroImage.asset.fluid} />
+            <Heading className="font-wt-bold">{content.title}</Heading>
+            <EventInfo>
+                {content.author} | {content.publishDate}
+            </EventInfo>
+            <Body>{content.description}</Body>
         </StyledFeaturedEvent>
     );
 }
