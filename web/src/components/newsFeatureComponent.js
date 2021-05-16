@@ -13,7 +13,7 @@ const StyledImg = styled(Img)`
 `;
 
 const Heading = styled.h4`
-    ${tw`text-ts-h4 text-black leading-8 max-w-sm`}
+    ${tw`text-ts-h4 text-black leading-8 max-w-sm font-bold`}
 `;
 
 const EventInfo = styled.h5`
@@ -29,7 +29,7 @@ export default function NewsFeature({ data }) {
     return (
         <StyledFeaturedEvent>
             <StyledImg fluid={content.heroImage.asset.fluid} />
-            <Heading className="font-wt-bold">{content.title}</Heading>
+            <Heading>{content.title}</Heading>
             <EventInfo>
                 {content.author} | {content.publishDate}
             </EventInfo>

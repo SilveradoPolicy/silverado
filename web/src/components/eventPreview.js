@@ -18,7 +18,7 @@ const StyledEventPreview = styled.div`
     }
 `;
 const Heading = styled.h5`
-    ${tw`text-ts-h4 text-brand-1 pt-4`}
+    ${tw`text-ts-h4 text-brand-1 pt-4 font-bold`}
 `;
 const SubHeading = styled.h5`
     ${tw`text-sm text-brand-3 pt-1`}
@@ -31,7 +31,7 @@ export default function EventPreview({ data }) {
 
     return (
         <StyledEventPreview>
-            <Heading className="font-wt-bold">{heading}</Heading>
+            <Heading>{heading}</Heading>
             <SubHeading>{subheading}</SubHeading>
             <Body>{body}</Body>
         </StyledEventPreview>

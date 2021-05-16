@@ -20,7 +20,7 @@ const HeroContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 md:pl-28 mb-6 mt-40`}
+    ${tw`text-ts-h1 md:pl-28 mb-6 mt-40 font-bold`}
 `;
 
 export default function EventHero({ image, data }) {
@@ -32,7 +32,7 @@ export default function EventHero({ image, data }) {
         <HeroWrapper>
             <StyledImage fluid={fluid} />
             <HeroContainer>
-                <Heading className="font-wt-bold">Events</Heading>
+                <Heading>Events</Heading>
             </HeroContainer>
             <EventCard data={data} />
         </HeroWrapper>

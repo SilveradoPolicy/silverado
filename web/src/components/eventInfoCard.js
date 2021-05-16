@@ -9,7 +9,7 @@ const CardWrapper = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-    ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2`}
+    ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2 font-bold`}
 `;
 
 const SubHeader = styled.h4`
@@ -36,7 +36,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledHeader = styled.h4`
-    ${tw`text-brand-1 text-ts-h4 mb-2`}
+    ${tw`text-brand-1 text-ts-h4 mb-2 font-bold`}
 `;
 
 const AgendaWrapper = styled.div`
@@ -44,7 +44,7 @@ const AgendaWrapper = styled.div`
 `;
 
 const Time = styled.p`
-    ${tw`text-brand-1 `}
+    ${tw`text-brand-1 font-bold`}
 `;
 
 const AgendaItem = styled.p`
@@ -69,28 +69,26 @@ export default function EventInfoCard({ data }) {
     return (
         <CardWrapper>
             <InfoWrapper>
-                <StyledTitle className="font-wt-bold">{title} </StyledTitle>
+                <StyledTitle>{title} </StyledTitle>
                 <SubHeader>{subtitle}</SubHeader>
                 <StyledDate>{date}</StyledDate>
                 <StyledDate>{eventtime}</StyledDate>
                 <StyledDate>{place}</StyledDate>
                 <StyledButton type="button">Register</StyledButton>
-                <StyledHeader className="font-wt-bold">Agenda</StyledHeader>
+                <StyledHeader>Agenda</StyledHeader>
                 <AgendaWrapper>
                     <ItemWrapper>
-                        <Time className="font-wt-bold">{time}</Time>
+                        <Time>{time}</Time>
                         <AgendaItem>{item}</AgendaItem>
                     </ItemWrapper>
                     <ItemWrapper>
-                        <Time className="font-wt-bold">{time}</Time>
+                        <Time>{time}</Time>
                         <AgendaItem>{item}</AgendaItem>
                     </ItemWrapper>
                 </AgendaWrapper>
             </InfoWrapper>
             <DescriptionWrapper>
-                <StyledHeader className="font-wt-bold">
-                    About the Event
-                </StyledHeader>
+                <StyledHeader>About the Event</StyledHeader>
                 <DescriptionBody>{description}</DescriptionBody>
             </DescriptionWrapper>
         </CardWrapper>

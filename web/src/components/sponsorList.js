@@ -10,7 +10,7 @@ const SponsorContainer = styled.div`
 `;
 
 const StyledHeading = styled.h4`
-    ${tw`mb-16 text-brand-1 text-ts-h4`}
+    ${tw`mb-16 text-brand-1 text-ts-h4 font-bold`}
 `;
 
 const SponsorWrapper = styled.div`
@@ -20,7 +20,7 @@ const SponsorWrapper = styled.div`
 export default function SponsorList({ sponsors }) {
     return (
         <SponsorContainer>
-            <StyledHeading className="font-wt-bold">Sponsors</StyledHeading>
+            <StyledHeading>Sponsors</StyledHeading>
             <SponsorWrapper>
                 {sponsors.map((sponsor) => {
                     return <ImageNoName data={sponsor} key={sponsor.id} />;

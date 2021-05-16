@@ -8,10 +8,10 @@ const StyledSection = styled.section`
     ${tw`container w-11/12 bg-white transform -translate-y-20 md:-translate-y-1/2 flex flex-col justify-center`}
 `;
 const Heading = styled.h1`
-    ${tw`mb-8 mt-4 lg:mt-4 text-brand-1 text-center text-ts-h2 md:text-ts-h1`}
+    ${tw`mb-8 mt-4 lg:mt-4 text-brand-1 text-center text-ts-h2 md:text-ts-h1 font-bold`}
 `;
 const Body = styled.p`
-    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4 mb-2`}
+    ${tw`max-w-prose mx-auto text-black text-center text-ts-h4 mb-2 font-light`}
 `;
 const IconWrapper = styled.div`
     ${tw`place-self-center w-24 mt-10`}
@@ -31,8 +31,8 @@ export default function PillarComponent({ data }) {
             <IconWrapper>
                 <Img fluid={iconImageData} />
             </IconWrapper>
-            <Heading className="font-wt-bold">{pillarName}</Heading>
-            <Body className="font-wt-thin">{shortDescription}</Body>
+            <Heading>{pillarName}</Heading>
+            <Body>{shortDescription}</Body>
         </StyledSection>
     );
 }

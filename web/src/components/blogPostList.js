@@ -15,7 +15,7 @@ const PostWrapper = styled.div`
 `;
 
 const MonthWrapper = styled.h4`
-    ${tw`text-ts-h4 text-brand-1`}
+    ${tw`text-ts-h4 text-brand-1 font-light`}
 `;
 
 const LinkWrapper = styled.div`
@@ -65,7 +65,7 @@ export default function BlogPostList({ blogposts, filters, month }) {
                         <StyledButton
                             key={node.id}
                             color={node.color}
-                            className={`font-wt-bold ${
+                            className={`font-bold ${
                                 activeFilter === node.id ? 'isActive' : ''
                             }`}
                             onClick={() => setActiveFilter(node.id)}
@@ -80,9 +80,7 @@ export default function BlogPostList({ blogposts, filters, month }) {
                     );
                 })}
             </LinkWrapper>
-            {month && (
-                <MonthWrapper className="font-wt-thin">{month}</MonthWrapper>
-            )}
+            {month && <MonthWrapper>{month}</MonthWrapper>}
             <PostWrapper>
                 {blogposts.map((post) => {
                     const {

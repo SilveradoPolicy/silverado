@@ -11,7 +11,7 @@ const Section = styled.section`
     ${tw`container pt-32`}
 `;
 const StyledHeader = styled.h2`
-    ${tw`text-brand-1 text-ts-h2 pt-4`}
+    ${tw`text-brand-1 text-ts-h2 pt-4 font-bold`}
 `;
 
 const EventsWrapper = styled.div`
@@ -46,7 +46,7 @@ export default function NewsIndexHero({ newsEventInfo }) {
     // ];
     return (
         <Section>
-            <StyledHeader className="font-wt-bold">News</StyledHeader>
+            <StyledHeader>News</StyledHeader>
             <EventsWrapper>
                 <NewsFeatureComponent data={newsEventInfo} />
                 {/* <NewsEventList events={eventsInfo} /> */}

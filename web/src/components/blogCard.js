@@ -35,7 +35,7 @@ const CardWrapper = styled.div`
 `;
 
 const CardTitle = styled.h5`
-    ${tw`text-brand-1 text-ts-h5`}
+    ${tw`text-brand-1 text-ts-h5 font-bold`}
 `;
 
 const CardDate = styled.p`
@@ -89,7 +89,7 @@ export default function BlogCard({ data, isShown }) {
                         />
                     )}
                     <CardWrapper id={id}>
-                        <CardTitle className="font-wt-bold">{title}</CardTitle>
+                        <CardTitle>{title}</CardTitle>
                         {author && <CardAuthor>{author}</CardAuthor>}
                         {publishDate && (
                             <CardDate>

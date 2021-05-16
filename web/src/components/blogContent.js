@@ -11,7 +11,7 @@ const ContentWrapper = styled.section`
     ${tw`container mb-14 xl:w-1/2`}
 `;
 const BlogTitle = styled.h2`
-    ${tw`text-ts-h2 text-brand-1 mt-14`}
+    ${tw`text-ts-h2 text-brand-1 mt-14 font-bold`}
 `;
 
 const BlogSubTitle = styled.h3`
@@ -26,7 +26,7 @@ const BodyWrapper = styled.div`
     ${tw`prose prose-lg max-w-full mb-8`}
 `;
 const PillarHeader = styled.h6`
-    ${tw`text-brand-1 pt-8 mb-2`}
+    ${tw`text-brand-1 pt-8 mb-2 font-bold`}
 `;
 
 const Pillar = styled.p`
@@ -50,7 +50,7 @@ export default function BlogContent({ data }) {
     const { author, categories, publishDate, subtitle, title, _rawBody } = data;
     return (
         <ContentWrapper>
-            <BlogTitle className="font-wt-bold">{title}</BlogTitle>
+            <BlogTitle>{title}</BlogTitle>
             <BlogSubTitle>{subtitle}</BlogSubTitle>
             <SubheaderWrapper>
                 {format(Date.parse(publishDate), 'MM/dd/yyyy')} | {author}
@@ -58,7 +58,7 @@ export default function BlogContent({ data }) {
             <BodyWrapper className="prose">
                 <BlockText blocks={_rawBody} />
             </BodyWrapper>
-            <PillarWrapper className="font-wt-bold">
+            <PillarWrapper>
                 <PillarHeader>Pillar</PillarHeader>
                 {categories.map((category) => {
                     return (

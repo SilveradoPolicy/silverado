@@ -15,13 +15,13 @@ const SpeakerCardWrapper = styled.div`
 `;
 
 const Header = styled.h4`
-    ${tw`text-brand-1 text-ts-h4 mb-4`}
+    ${tw`text-brand-1 text-ts-h4 mb-4 font-bold`}
 `;
 
 export default function SpeakerCardList({ speakers }) {
     return (
         <SpeakersWrapper>
-            <Header className="font-wt-bold">Speakers</Header>
+            <Header>Speakers</Header>
             <SpeakerCardWrapper>
                 {speakers.map((speaker) => {
                     return <SpeakerCard data={speaker} />;

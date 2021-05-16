@@ -11,7 +11,7 @@ const StyledUL = styled.ul`
 
 // link hover state utility classes applied as className on gatsby Link component
 const StyledLI = styled.li`
-    ${tw`ml-8 capitalize text-lg transition-colors duration-700 ease-in-out relative`}
+    ${tw`ml-8 capitalize text-lg transition-colors duration-700 ease-in-out relative font-bold`}
 
     color: ${({ isIndexPage, isScrolled }) =>
         !isIndexPage
@@ -30,7 +30,6 @@ export default function MainNav({ isIndexPage, isScrolled, navItems }) {
                         isIndexPage={isIndexPage}
                         isScrolled={isScrolled}
                         key={item.text}
-                        className="font-wt-bold"
                     >
                         <Link
                             activeClassName="link-active"

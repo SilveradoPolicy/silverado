@@ -9,30 +9,26 @@ const RegiWrapper = styled.div`
 `;
 
 const Header = styled.h4`
-    ${tw`text-brand-1 text-ts-h4`}
+    ${tw`text-brand-1 text-ts-h4 font-bold`}
 `;
 const Description = styled.div`
     ${tw`max-w-prose mx-auto mb-4 text-ts-body`}
 `;
 
 const StyledLink = styled.a`
-    ${tw`bg-brand-3 text-ts-h4 inline-block py-3.5 px-20 rounded-full text-white`}
+    ${tw`bg-brand-3 text-ts-h4 inline-block py-3.5 px-20 rounded-full text-white font-light`}
 `;
 
 export default function Registration() {
     return (
         <RegiWrapper>
-            <Header className="font-wt-bold">Interested in Attending?</Header>
+            <Header>Interested in Attending?</Header>
             <Description>
                 Vestibulum at augue eget turpis pharetra mollis vel sagittis
                 elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae
                 tellus sagittis tincidunt in in sem.
             </Description>
-            <StyledLink
-                className="font-wt-thin"
-                target="_blank"
-                rel="noreferrer"
-            >
+            <StyledLink target="_blank" rel="noreferrer">
                 Register
             </StyledLink>
         </RegiWrapper>

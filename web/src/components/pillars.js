@@ -25,7 +25,7 @@ const Card = styled.div`
 `;
 
 const Heading = styled.h3`
-    ${tw`max-w-prose mt-5 text-brand-1 text-ts-h4`}
+    ${tw`max-w-prose mt-5 text-brand-1 text-ts-h4 font-bold`}
 `;
 
 const Body = styled.p`
@@ -39,7 +39,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
             <Grid>
                 <Card>
                     <EcoSecIcon />
-                    <Heading className="font-wt-bold">Eco&sup2;Sec</Heading>
+                    <Heading>Eco&sup2;Sec</Heading>
                     <Body>
                         Foregrounding the nexus of economic and ecological risk
                         and opportunity to meet the 21st-century climate
@@ -48,9 +48,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                 </Card>
                 <Card>
                     <InternationalTradeAndSecurityIcon />
-                    <Heading className="font-wt-bold">
-                        Trade and Industrial Security
-                    </Heading>
+                    <Heading>Trade and Industrial Security</Heading>
                     <Body>
                         Shaping trade policy to support American workers, secure
                         America&#39;s supply chains, and advance equitable trade
@@ -59,7 +57,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition }) {
                 </Card>
                 <Card>
                     <CybersecurityIcon />
-                    <Heading className="font-wt-bold">Cybersecurity</Heading>
+                    <Heading>Cybersecurity</Heading>
                     <Body>
                         Modernizing America&#39;s cyber strategy to enhance
                         deterrence, defend against cyber attacks, and protect
