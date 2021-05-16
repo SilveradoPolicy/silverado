@@ -31,13 +31,19 @@ const Body = styled.p`
     ${tw`text-black text-lg`}
 `;
 
-export default function Pillars({ hasTopGradient, hasTopTransition, pillars }) {
-    const { edges } = pillars;
+export default function Pillars({
+    hasTopGradient,
+    hasTopTransition,
+    pillarData,
+}) {
+    console.log(`*****PILLARS*****`);
+    console.log(pillarData);
     return (
         <StyledSection gradient={hasTopGradient}>
             {hasTopTransition && <ParallelTransition />}
             <Grid>
-                {edges.map((pillar) => {
+                {pillarData.edges.map((pillar) => {
+                    console.log(pillar);
                     const { node } = pillar;
                     return (
                         <Card to={`/${node.slug.current}`} key={node.id}>
@@ -63,5 +69,5 @@ Pillars.defaultProps = {
 Pillars.propTypes = {
     hasTopGradient: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
-    pillars: PropTypes.object.isRequired,
+    pillarData: PropTypes.object.isRequired,
 };

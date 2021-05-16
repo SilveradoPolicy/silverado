@@ -102,7 +102,7 @@ export default function IdeasPage({ data }) {
                 body={content.listContent.body}
                 listItems={content.listContent.listItems}
             />
-            <Pillars pillars={pillars} />
+            <Pillars pillarData={pillars} />
         </Layout>
     );
 }
