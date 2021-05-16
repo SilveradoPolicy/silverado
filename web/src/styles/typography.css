@@ -1,14 +1,17 @@
 @font-face {
-    font-family: 'SukhumvitThin';
+    font-family: 'Sukhumvit';
+    font-weight: 300;
     src: url('../fonts/SukhumvitSet-Thin.ttf');
 }
 
 @font-face {
-    font-family: 'SukhumvitReg';
+    font-family: 'Sukhumvit';
+    font-weight: 400;
     src: url('../fonts/SukhumvitSet-Text.ttf');
 }
 
 @font-face {
-    font-family: 'SukhumvitBold';
+    font-family: 'Sukhumvit';
+    font-weight: 700;
     src: url('../fonts/SukhumvitSet-Bold.ttf');
 }
