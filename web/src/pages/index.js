@@ -44,7 +44,7 @@ const content = {
 
 export default function IndexPage({ data }) {
     // const { heroImage, newMobileHero } = data;
-    const { fullHeroImg, mobileHeroImg, oneHeroImg } = data;
+    const { fullHeroImg, mobileHeroImg, oneHeroImg, pillars } = data;
 
     return (
         <Layout isIndexPage>
@@ -71,7 +71,7 @@ export default function IndexPage({ data }) {
             />
             <HomepageAnimation />
             <CopyWithCTA content={content.copy1} hasTopTransition={false} />
-            <Pillars hasTopTransition />
+            <Pillars hasTopTransition pillars={pillars} />
             <CopyWithCTA
                 content={content.copy2}
                 hasBottomGradient
@@ -118,6 +118,26 @@ export const query = graphql`
                 }
             }
         }
+
+        pillars: allSanityPillar {
+            edges {
+                node {
+                    id
+                    pillarIcon {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                    pillarName
+                    shortDescription
+                    slug {
+                        current
+                    }
+                }
+            }
+        }
     }
 `;
 
@@ -126,6 +146,7 @@ IndexPage.propTypes = {
         fullHeroImg: PropTypes.object.isRequired,
         mobileHeroImg: PropTypes.object.isRequired,
         oneHeroImg: PropTypes.object.isRequired,
+        pillars: PropTypes.object.isRequired,
         sources: PropTypes.array.isRequired,
     }).isRequired,
 };

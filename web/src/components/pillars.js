@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import EcoSecIcon from './icons/ecoSec';
-import InternationalTradeAndSecurityIcon from './icons/internationalTradeAndSecurity';
-import CybersecurityIcon from './icons/cybersecurity';
 import ParallelTransition from './icons/parallelTransition';
 
 const StyledSection = styled.section`
@@ -20,7 +19,7 @@ const Grid = styled.div`
     ${tw`container gap-10 grid grid-cols-1 md:grid-cols-3`}
 `;
 
-const Card = styled.div`
+const Card = styled(Link)`
     ${tw`flex flex-col items-center text-center`}
 `;
 
@@ -32,38 +31,25 @@ const Body = styled.p`
     ${tw`text-black text-lg`}
 `;
 
-export default function Pillars({ hasTopGradient, hasTopTransition }) {
+export default function Pillars({ hasTopGradient, hasTopTransition, pillars }) {
+    const { edges } = pillars;
     return (
         <StyledSection gradient={hasTopGradient}>
             {hasTopTransition && <ParallelTransition />}
             <Grid>
-                <Card>
-                    <EcoSecIcon />
-                    <Heading>Eco&sup2;Sec</Heading>
-                    <Body>
-                        Foregrounding the nexus of economic and ecological risk
-                        and opportunity to meet the 21st-century climate
-                        imperative.
-                    </Body>
-                </Card>
-                <Card>
-                    <InternationalTradeAndSecurityIcon />
-                    <Heading>Trade and Industrial Security</Heading>
-                    <Body>
-                        Shaping trade policy to support American workers, secure
-                        America&#39;s supply chains, and advance equitable trade
-                        practices.
-                    </Body>
-                </Card>
-                <Card>
-                    <CybersecurityIcon />
-                    <Heading>Cybersecurity</Heading>
-                    <Body>
-                        Modernizing America&#39;s cyber strategy to enhance
-                        deterrence, defend against cyber attacks, and protect
-                        intellectual property and national security.
-                    </Body>
-                </Card>
+                {edges.map((pillar) => {
+                    const { node } = pillar;
+                    return (
+                        <Card to={`/${node.slug.current}`} key={node.id}>
+                            <Img
+                                className="w-32"
+                                fluid={node.pillarIcon.asset.fluid}
+                            />
+                            <Heading>Eco&sup2;Sec</Heading>
+                            <Body>{node.shortDescription}</Body>
+                        </Card>
+                    );
+                })}
             </Grid>
         </StyledSection>
     );
@@ -77,4 +63,5 @@ Pillars.defaultProps = {
 Pillars.propTypes = {
     hasTopGradient: PropTypes.bool,
     hasTopTransition: PropTypes.bool,
+    pillars: PropTypes.object.isRequired,
 };
