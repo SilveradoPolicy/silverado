@@ -11,7 +11,7 @@ const PillarWrapper = styled.section`
 `;
 
 const Title = styled.h4`
-    ${tw`text-brand-1 text-ts-h4 mb-4`}
+    ${tw`text-brand-1 text-ts-h4 mb-4 font-bold`}
 `;
 
 const PillarCardWrapper = styled.div`
@@ -20,7 +20,7 @@ const PillarCardWrapper = styled.div`
 export default function PillarCardList({ list }) {
     return (
         <PillarWrapper>
-            <Title className="font-wt-bold">Related News and Events</Title>
+            <Title>Related News and Events</Title>
             <PillarCardWrapper>
                 {list.map((post) => {
                     return <BlogCard data={post} isShown />;

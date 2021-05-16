@@ -9,7 +9,7 @@ const CardWrapper = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-    ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2`}
+    ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2 font-bold`}
 `;
 
 const SubHeader = styled.h4`
@@ -40,7 +40,7 @@ export default function EventCard({ data }) {
     return (
         <CardWrapper>
             <InfoWrapper>
-                <StyledTitle className="font-wt-bold">{title} </StyledTitle>
+                <StyledTitle>{title} </StyledTitle>
                 <SubHeader>{subtitle}</SubHeader>
                 <StyledDate>{date}</StyledDate>
                 <StyledDate>{time}</StyledDate>

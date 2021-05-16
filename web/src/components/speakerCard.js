@@ -23,7 +23,7 @@ export default function SpeakerCard({ data }) {
     `;
 
     const SpeakerName = styled.p`
-        ${tw`text-ts-body`}
+        ${tw`text-ts-body font-bold`}
     `;
 
     const SpeakerTitle = styled.p`
@@ -34,7 +34,7 @@ export default function SpeakerCard({ data }) {
         <SpeakerContainer>
             <Img fluid={fluid} />
             <SpeakerWrapper>
-                <SpeakerName className="font-wt-bold">{name}</SpeakerName>
+                <SpeakerName>{name}</SpeakerName>
                 <SpeakerTitle>{title}</SpeakerTitle>
             </SpeakerWrapper>
         </SpeakerContainer>
