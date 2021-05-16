@@ -29,7 +29,7 @@ const content = {
 };
 
 export default function InitiativesPage({ data }) {
-    const { fullWidthImage } = data;
+    const { fullWidthImage, pillars } = data;
 
     return (
         <Layout>
@@ -42,7 +42,7 @@ export default function InitiativesPage({ data }) {
                 bodyTwo={content.hero.bodyTwo}
                 heading={content.hero.heading}
             />
-            <Pillars hasTopGradient />
+            <Pillars hasTopGradient pillars={pillars} />
             <FullWidthImageWithText
                 heading={content.fullWidthImage.heading}
                 body={content.fullWidthImage.body}
@@ -64,11 +64,32 @@ export const query = graphql`
                 }
             }
         }
+
+        pillars: allSanityPillar {
+            edges {
+                node {
+                    id
+                    pillarIcon {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                    pillarName
+                    shortDescription
+                    slug {
+                        current
+                    }
+                }
+            }
+        }
     }
 `;
 
 InitiativesPage.propTypes = {
     data: PropTypes.shape({
         fullWidthImage: PropTypes.object.isRequired,
+        pillars: PropTypes.object.isRequired,
     }).isRequired,
 };
