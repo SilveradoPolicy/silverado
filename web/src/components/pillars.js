@@ -45,7 +45,7 @@ export default function Pillars({ hasTopGradient, hasTopTransition, pillars }) {
                                 className="w-32"
                                 fluid={node.pillarIcon.asset.fluid}
                             />
-                            <Heading>Eco&sup2;Sec</Heading>
+                            <Heading>{node.pillarName}</Heading>
                             <Body>{node.shortDescription}</Body>
                         </Card>
                     );
