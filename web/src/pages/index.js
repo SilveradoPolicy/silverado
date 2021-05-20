@@ -1,5 +1,3 @@
-// todo: remove this once sanity is integrated
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
