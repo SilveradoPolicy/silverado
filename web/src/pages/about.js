@@ -188,7 +188,7 @@ export const query = graphql`
             }
             id
         }
-        haley: file(relativePath: { regex: "/haley/" }) {
+        haley: file(relativePath: { regex: "/haley-sq/" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
