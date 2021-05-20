@@ -27,7 +27,16 @@ const content = {
 };
 
 export default function AboutPage({ data }) {
-    const { dmitri, maureen, sarah, ian, general, turnbull } = data;
+    const {
+        dmitri,
+        maureen,
+        sarah,
+        ian,
+        general,
+        turnbull,
+        megan,
+        haley,
+    } = data;
     const advisoryBoard = [
         {
             image: general,
@@ -68,6 +77,18 @@ export default function AboutPage({ data }) {
             name: 'Ian Ward',
             bio:
                 'Ian Ward is a Communications and Research Specialist at Silverado Policy Accelerator. Mr. Ward is a writer and researcher based in his hometown of Washington, D.C. In addition to his work at Silverado, he is a freelance writer and reporter, and his work has appeared in numerous publications, including POLITICO Magazine, Maine Trails Magazine, and The Portland Press Herald. He graduated magna cum laude with honors from Bowdoin College in 2020 with a B.A. in History.',
+        },
+        {
+            image: haley,
+            name: 'Haley Dorval',
+            bio:
+                'Haley Dorval is a Policy Analyst at Silverado Policy Accelerator. Most recently, Ms. Dorval served as Senior Director for Policy under Ambassador Robert Lighthizer at the Office of the United States Trade Representative. In this capacity, she managed the development of U.S. trade policy initiatives and negotiations, with a particular focus on the United States-Mexico-Canada Agreement, the U.S.-China Phase One Agreement, and the U.S.-Japan Trade Agreement. Prior to her service in the executive branch, Ms. Dorval worked on Capitol Hill for Congressman Austin Scott (GA-08), a senior member on the House Armed Services and Agriculture Committees. Ms. Dorval earned a B.A. in International Affairs from Northeastern University and an M.A. in Defense and Strategic Studies from the United States Naval War College.',
+        },
+        {
+            image: megan,
+            name: 'Meagan Reid',
+            bio:
+                'Meagan Reid is a Junior Economist and Policy Analyst at Silverado Policy Accelerator. While Ms. Reid has focused her academic studies on Civil-Military Relations and Econometric Impact Evaluation, her professional experience includes criminal data analysis, the development of human rights monitoring mechanisms in the extractive industry, and studying disaster preparedness programming for the American Red Cross. Prior to joining Silverado, Ms. Reid earned a Master of Arts in Law and Diplomacy from the Fletcher School at Tufts University with concentrations in Development Economics and International Security.',
         },
     ];
 
@@ -159,6 +180,22 @@ export const query = graphql`
             }
             id
         }
+        megan: file(relativePath: { regex: "/megan/" }) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            id
+        }
+        haley: file(relativePath: { regex: "/haley/" }) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            id
+        }
     }
 `;
 
@@ -171,5 +208,7 @@ AboutPage.propTypes = {
         ian: PropTypes.object.isRequired,
         general: PropTypes.object.isRequired,
         turnbull: PropTypes.object.isRequired,
+        megan: PropTypes.object.isRequired,
+        haley: PropTypes.object.isRequired,
     }).isRequired,
 };
