@@ -14,10 +14,30 @@ export default function PillarHero({ data, heroImage }) {
     return (
         <HeroWrapper>
             <img
-                className="w-screen"
+                className="w-screen md:hidden"
+                src={imageUrlFor(buildImageObj(heroImage))
+                    .width(600)
+                    .height(600)
+                    .fit('crop')
+                    .auto('format')
+                    .url()}
+                alt=""
+            />
+            <img
+                className="hidden md:w-screen md:block xl:hidden"
+                src={imageUrlFor(buildImageObj(heroImage))
+                    .width(1200)
+                    .height((9 / 16) * 1200)
+                    .fit('crop')
+                    .auto('format')
+                    .url()}
+                alt=""
+            />
+            <img
+                className="hidden xl:block xl:w-screen "
                 src={imageUrlFor(buildImageObj(heroImage))
                     .width(1400)
-                    .height(Math.floor((9 / 16) * 1400))
+                    .height(Math.floor(0.4 * 1400))
                     .fit('fill')
                     .auto('format')
                     .url()}
