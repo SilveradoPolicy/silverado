@@ -52,6 +52,11 @@ export const query = graphql`
             pillarName
             _rawLongDescription(resolveReferences: { maxDepth: 10 })
             shortDescription
+            cta {
+                buttonText
+                internalLink
+                text
+            }
         }
 
         posts: allSanityPost(
@@ -80,6 +85,7 @@ export const query = graphql`
 export default function PillarPage({ data }) {
     const {
         pillar: {
+            cta,
             heroImage,
             longDescriptionTitle,
             pillarName,
@@ -92,27 +98,13 @@ export default function PillarPage({ data }) {
 
     const heroData = { pillarName, pillarIcon, shortDescription };
     const description = { longDescriptionTitle, _rawLongDescription };
-    const content = {
-        copy: {
-            text:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-            cta: {
-                link: '/',
-                text: 'Learn More',
-            },
-        },
-    };
 
     return (
         <Layout hasBackgroundColor>
             <PillarHero data={heroData} heroImage={heroImage} />
             <PillarDescription data={description} />
             <PillarCardList list={edges} />
-            <CopyWithCTA
-                content={content.copy}
-                hasBottomGradient
-                hasTopTransition
-            />
+            <CopyWithCTA content={cta} hasBottomGradient hasTopTransition />
         </Layout>
     );
 }

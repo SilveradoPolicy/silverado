@@ -61,6 +61,11 @@ export default {
             validation: (Rule) => Rule.max(1),
         },
         {
+            name: 'cta',
+            title: 'CTA',
+            type: 'cta',
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'seo',

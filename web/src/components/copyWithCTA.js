@@ -39,9 +39,19 @@ export default function CopyWithCTA({
     hasTopTransition,
     hasHeading,
 }) {
-    const { heading, italText, text, textTwo } = content;
+    // all of this needs to be cleaned up once when adding cta's to pages in sanity
+    const {
+        buttonText,
+        heading,
+        internalLink,
+        italText,
+        text,
+        textTwo,
+    } = content;
+    // remove this check, just use sanity query
     const hasCta = Object.prototype.hasOwnProperty.call(content, 'cta');
-    const { cta } = content;
+    // this is bad, align naming conventions so we're not renaming keys
+    const cta = hasCta ? content.cta : { link: internalLink, text: buttonText };
 
     return (
         <StyledSection
@@ -51,14 +61,16 @@ export default function CopyWithCTA({
             {hasTopTransition && <ParallelTransition />}
             <FlexWrapper>
                 {hasHeading && <StyledHeading>{heading}</StyledHeading>}
-                <StyledBody>
-                    {text}
-                    <i>{italText}</i>
-                    <br />
-                    <br />
-                    {textTwo}
-                </StyledBody>
-                {hasCta && <CtaLink cta={cta} />}
+                {text && (
+                    <StyledBody>
+                        {text}
+                        <i>{italText}</i>
+                        <br />
+                        <br />
+                        {textTwo}
+                    </StyledBody>
+                )}
+                {(hasCta || internalLink) && <CtaLink cta={cta} />}
             </FlexWrapper>
         </StyledSection>
     );
