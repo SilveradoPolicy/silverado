@@ -17,6 +17,7 @@ import post from './documents/post';
 
 // import object schemas here (bonus points for alphabetical order)
 import bodyPortableText from './objects/bodyPortableText';
+import cta from './objects/cta';
 import mainImage from './objects/mainImage';
 import seo from './objects/seo';
 
@@ -40,6 +41,7 @@ export default createSchema({
         post,
         // object types here (bonus points for alphabetical order)
         bodyPortableText,
+        cta,
         mainImage,
         seo,
     ]),
