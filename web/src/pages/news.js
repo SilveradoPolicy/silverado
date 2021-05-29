@@ -39,6 +39,7 @@ export const query = graphql`
         }
         sanityNewsIndexPage {
             featuredNewsItem {
+                id
                 description
                 author
                 heroImage {
@@ -106,10 +107,14 @@ export default function NewsIndex({ data }) {
     //     },
     // };
 
+    const { id } = featuredNewsItem[0];
+
+    const filteredPosts = postsArray.filter((item) => item.node.id !== id);
+
     return (
         <Layout>
             <NewsIndexHero newsEventInfo={featuredNewsItem} />
-            <BlogPostList blogposts={postsArray} filters={filters} />
+            <BlogPostList blogposts={filteredPosts} filters={filters} />
         </Layout>
     );
 }

@@ -40,7 +40,7 @@ const nav = [
         link: '/about',
     },
     {
-        text: 'news and events',
+        text: 'news',
         link: '/news',
     },
 ];
