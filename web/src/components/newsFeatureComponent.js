@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -8,6 +9,7 @@ import tw from 'twin.macro';
 const StyledFeaturedEvent = styled.div`
     ${tw`md:w-full`}
 `;
+
 const StyledImg = styled(Img)`
     ${tw`w-full my-4`}
 `;
@@ -19,8 +21,13 @@ const Heading = styled.h4`
 const EventInfo = styled.h5`
     ${tw`text-sm text-brand-3 pt-1`}
 `;
+
 const Body = styled.p`
     ${tw`text-ts-body my-4`}
+`;
+
+const StyledLink = styled(Link)`
+    ${tw`underline text-brand-3 pr-6 py-4`}
 `;
 
 export default function NewsFeature({ data }) {
@@ -34,6 +41,9 @@ export default function NewsFeature({ data }) {
                 {content.author} | {content.publishDate}
             </EventInfo>
             <Body>{content.description}</Body>
+            <StyledLink to={`/news/${content.slug.current}`}>
+                Read More
+            </StyledLink>
         </StyledFeaturedEvent>
     );
 }
