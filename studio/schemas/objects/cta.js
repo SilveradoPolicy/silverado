@@ -12,13 +12,12 @@ export default {
             name: 'buttonText',
             title: 'Button Text',
             type: 'string',
-            validation: (Rule) => Rule.required().max(10),
+            validation: (Rule) => Rule.max(10),
         },
         {
             name: 'internalLink',
             title: 'Internal Link',
             type: 'string',
-            validation: (Rule) => Rule.required(),
             description:
                 'This is the path name for the internal link. The path name is everything after silverado.org/',
         },
