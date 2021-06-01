@@ -53,17 +53,6 @@
 } */
 
 body {
-    font-family: 'SukhumvitReg', Arial, Helvetica, sans-serif;
-}
-
-.font-wt-bold {
-    font-family: 'SukhumvitBold', sans-serif;
-}
-
-.font-wt-thin {
-    font-family: 'SukhumvitThin', sans-serif;
-}
-
-.font-wt-reg {
-    font-family: 'SukhumvitReg', sans-serif;
+    font-family: 'Sukhumvit', Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }

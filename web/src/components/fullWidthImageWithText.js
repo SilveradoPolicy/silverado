@@ -11,7 +11,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`mb-6 mt-20 pt-10 text-center text-brand-1 text-center text-ts-h2`}
+    ${tw`mb-6 mt-20 pt-10 text-center text-brand-1 text-center text-ts-h2 font-bold`}
 `;
 
 const StyledBody = styled.p`
@@ -28,7 +28,7 @@ export default function FullWidthImageWithText({
         <StyledSection>
             {hasTopTransition && <ParallelTransition />}
             {hasCurvedTransition && <CurvedTransition />}
-            <StyledHeading className="font-wt-bold">{heading}</StyledHeading>
+            <StyledHeading>{heading}</StyledHeading>
             <StyledBody>{body}</StyledBody>
         </StyledSection>
     );

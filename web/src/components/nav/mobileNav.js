@@ -38,7 +38,7 @@ const StyledSpan = styled.span`
 `;
 
 const MobileNavMenu = styled.ul`
-    ${tw`absolute right-0 md:hidden min-h-screen w-max flex flex-col items-end transform-gpu transition bg-white pr-4 pt-24 text-brand-1 top-0 text-right`}
+    ${tw`absolute right-0 md:hidden min-h-screen w-max flex flex-col items-end transform-gpu transition bg-white pr-4 pt-24 text-brand-1 top-0 text-right font-bold`}
 
     transform: ${({ isNavOpen }) =>
         isNavOpen ? `translateX(0)` : `translateX(100%)`}
@@ -77,7 +77,7 @@ export default function MobileNav({
             <MobileNavMenu isNavOpen={isNavOpen}>
                 {navItems.map((item) => {
                     return (
-                        <MobileNavLI key={item.text} className="font-wt-bold">
+                        <MobileNavLI key={item.text}>
                             <Link
                                 activeClassName="link-active"
                                 className="link hover:link-hover"

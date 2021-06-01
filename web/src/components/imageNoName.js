@@ -9,12 +9,14 @@ const FlexWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-    ${tw`mb-4 mx-auto h-full overflow-hidden rounded-full w-3/4`}
+    ${tw`mb-4 mx-auto h-28 w-28 overflow-hidden rounded-full`}
 `;
 
 export default function ImageWithName({ data }) {
     const {
-        childImageSharp: { fluid },
+        image: {
+            childImageSharp: { fluid },
+        },
     } = data;
 
     return (

@@ -11,8 +11,8 @@ import MobileNav from './nav/mobileNav';
 const StyledHeader = styled.header`
     ${tw`fixed transition w-full z-10`}
 
-    background-color: ${({ isScrolled }) =>
-        isScrolled ? `#ffffff` : `#ffffff00`};
+    background-color: ${({ isScrolled, hasBackgroundColor }) =>
+        isScrolled || hasBackgroundColor ? `#ffffff` : `#ffffff00`};
 `;
 const CtaBar = styled.div`
     ${tw`h-10 bg-brand-1`}
@@ -39,8 +39,12 @@ const nav = [
         text: 'about',
         link: '/about',
     },
+    {
+        text: 'news',
+        link: '/news',
+    },
 ];
-export default function Header({ isIndexPage }) {
+export default function Header({ isIndexPage, hasBackgroundColor }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -65,7 +69,10 @@ export default function Header({ isIndexPage }) {
     });
 
     return (
-        <StyledHeader isScrolled={isScrolled}>
+        <StyledHeader
+            isScrolled={isScrolled}
+            hasBackgroundColor={hasBackgroundColor}
+        >
             <CtaBar />
             <StyledNav>
                 <StyledLogoLink to="/">
@@ -90,8 +97,10 @@ export default function Header({ isIndexPage }) {
 
 Header.defaultProps = {
     isIndexPage: false,
+    hasBackgroundColor: false,
 };
 
 Header.propTypes = {
     isIndexPage: PropTypes.bool,
+    hasBackgroundColor: PropTypes.bool,
 };

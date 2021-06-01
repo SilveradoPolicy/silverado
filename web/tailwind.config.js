@@ -1,8 +1,35 @@
+/* eslint-disable global-require */
 module.exports = {
     purge: ['./src/**/*.js', './src/**/*.jsx'],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        h2: {
+                            color: '#306184',
+                            fontSize: '2.074rem',
+                        },
+                        h3: {
+                            color: '#306184',
+                            fontSize: '1.728rem',
+                        },
+                        h4: {
+                            color: '#306184',
+                            fontSize: '1.44rem',
+                        },
+                        h5: {
+                            color: '#306184',
+                            fontSize: '1.2rem',
+                        },
+                        h6: {
+                            color: '#306184',
+                            fontSize: '1rem',
+                        },
+                    },
+                },
+            },
             colors: {
                 'brand-1': '#306184',
                 'brand-2': '#739663',
@@ -30,6 +57,11 @@ module.exports = {
             },
             minHeight: {
                 '3/4-screen': '75vh',
+                '1/2-screen': '50vh',
+                '1/4-screen': '25vh',
+            },
+            lineHeight: {
+                12: '3rem',
             },
         },
         container: (theme) => ({
@@ -40,5 +72,5 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/typography')],
 };

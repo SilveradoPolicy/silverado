@@ -12,12 +12,16 @@ const StyledLink = styled(Link)`
 `;
 
 export default function CtaLink({ cta }) {
-    return <StyledLink to={cta.link}>{cta.text}</StyledLink>;
+    return (
+        <StyledLink to={cta.link}>
+            {cta.text ? cta.text : 'Learn More'}
+        </StyledLink>
+    );
 }
 
 CtaLink.propTypes = {
     cta: PropTypes.shape({
         link: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
+        text: PropTypes.string,
     }).isRequired,
 };

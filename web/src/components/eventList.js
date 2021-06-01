@@ -27,7 +27,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-    ${tw`capitalize text-ts-h4`}
+    ${tw`capitalize text-ts-h4 font-bold`}
 `;
 
 const StyledList = styled.ul`
@@ -103,7 +103,7 @@ export default function EventList() {
                                 }}
                             >
                                 <StyledDiv>
-                                    <StyledHeading className="font-wt-bold">
+                                    <StyledHeading>
                                         upcoming events
                                     </StyledHeading>
                                     <StyledList>

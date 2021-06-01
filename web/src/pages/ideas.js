@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../layouts/page-layout';
 import AltHero from '../components/altHero';
@@ -56,7 +58,33 @@ const content = {
     },
 };
 
-export default function IdeasPage() {
+export const query = graphql`
+    query IdeasPageQuery {
+        pillars: allSanityPillar {
+            edges {
+                node {
+                    id
+                    pillarIcon {
+                        asset {
+                            fluid(maxWidth: 500) {
+                                ...GatsbySanityImageFluid
+                            }
+                        }
+                    }
+                    pillarName
+                    shortDescription
+                    slug {
+                        current
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export default function IdeasPage({ data }) {
+    const { pillars } = data;
+
     return (
         <Layout>
             <SEO
@@ -74,7 +102,11 @@ export default function IdeasPage() {
                 body={content.listContent.body}
                 listItems={content.listContent.listItems}
             />
-            <Pillars />
+            <Pillars pillars={pillars} />
         </Layout>
     );
 }
+
+IdeasPage.propTypes = {
+    data: PropTypes.object.isRequired,
+};
