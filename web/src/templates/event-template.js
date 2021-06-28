@@ -4,16 +4,22 @@ import PropTypes from 'prop-types';
 import EventInfoHero from '../components/eventInfoHero';
 import Layout from '../layouts/page-layout';
 import SpeakerCardList from '../components/speakerCardList';
+import SEO from '../components/SEO';
 import Registration from '../components/registration';
 // import SponsorList from '../components/sponsorList';
 
 export default function EventPage({ data }) {
     const { event } = data;
-    const { speakers } = event;
+    const { description, seo, speakers, title } = event;
     const { ctaBody, registrationUrl } = event;
 
     return (
         <Layout hasBackgroundColor>
+            <SEO
+                description={seo.pageDescription || description}
+                image={seo.ogImage.asset.url}
+                title={seo.pageTitle || title}
+            />
             <EventInfoHero data={event} />
             <SpeakerCardList speakers={speakers} />
             <Registration ctaBody={ctaBody} url={registrationUrl} />
@@ -56,7 +62,7 @@ export const query = graphql`
             place
             registrationUrl
             seo {
-                ogDescription
+                pageDescription
                 ogImage {
                     asset {
                         url

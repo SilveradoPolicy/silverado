@@ -7,6 +7,7 @@ import PillarHero from '../components/pillarHero';
 import PillarDescription from '../components/pillarDescription';
 import CopyWithCTA from '../components/copyWithCTA';
 import PillarCardList from '../components/pillarCardList';
+import SEO from '../components/SEO';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -37,6 +38,11 @@ export const query = graphql`
                 id
                 name
             }
+            cta {
+                buttonText
+                internalLink
+                text
+            }
             id
             heroImage {
                 ...SanityImage
@@ -50,13 +56,17 @@ export const query = graphql`
                 }
             }
             pillarName
-            _rawLongDescription(resolveReferences: { maxDepth: 10 })
-            shortDescription
-            cta {
-                buttonText
-                internalLink
-                text
+            seo {
+                pageDescription
+                pageTitle
+                ogImage {
+                    asset {
+                        url
+                    }
+                }
             }
+            shortDescription
+            _rawLongDescription(resolveReferences: { maxDepth: 10 })
         }
 
         posts: allSanityPost(
@@ -70,6 +80,7 @@ export const query = graphql`
                         color
                     }
                     description
+
                     slug {
                         current
                     }
@@ -91,6 +102,7 @@ export default function PillarPage({ data }) {
             longDescriptionTitle,
             pillarName,
             pillarIcon,
+            seo,
             shortDescription,
             _rawLongDescription,
         },
@@ -102,6 +114,11 @@ export default function PillarPage({ data }) {
 
     return (
         <Layout hasBackgroundColor>
+            <SEO
+                description={seo.pageDescription || shortDescription}
+                image={seo.ogImage.asset.url}
+                title={seo.pageTitle || pillarName}
+            />
             <PillarHero data={heroData} heroImage={heroImage} />
             <PillarDescription data={description} />
             <PillarCardList list={edges} />
