@@ -60,6 +60,7 @@ export const query = graphql`
         }
 
         posts: allSanityPost(
+            sort: { order: DESC, fields: publishDate }
             filter: { categories: { elemMatch: { id: { eq: $categoryId } } } }
         ) {
             edges {
