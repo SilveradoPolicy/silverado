@@ -24,7 +24,7 @@ export default function SpeakerCardList({ speakers }) {
             <Header>Speakers</Header>
             <SpeakerCardWrapper>
                 {speakers.map((speaker) => {
-                    return <SpeakerCard data={speaker} />;
+                    return <SpeakerCard data={speaker} key={speaker.id} />;
                 })}
             </SpeakerCardWrapper>
         </SpeakersWrapper>

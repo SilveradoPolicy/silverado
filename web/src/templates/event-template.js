@@ -17,7 +17,7 @@ export default function EventPage({ data }) {
         <Layout hasBackgroundColor>
             <SEO
                 description={seo.pageDescription || description}
-                image={seo.ogImage.asset.url}
+                image={seo.ogImage?.asset?.url || null}
                 title={seo.pageTitle || title}
             />
             <EventInfoHero data={event} />
@@ -88,8 +88,5 @@ export const query = graphql`
 EventPage.propTypes = {
     data: PropTypes.shape({
         event: PropTypes.object.isRequired,
-        eventImage: PropTypes.object.isRequired,
-        speaker: PropTypes.object.isRequired,
-        icon: PropTypes.object.isRequired,
     }).isRequired,
 };

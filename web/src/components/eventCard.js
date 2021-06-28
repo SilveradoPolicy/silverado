@@ -12,10 +12,6 @@ const StyledTitle = styled.h2`
     ${tw`text-ts-h2 md:text-ts-h1 leading-10 md:leading-12 mt-4 md:mt-0 mb-2 font-bold`}
 `;
 
-// const SubHeader = styled.h4`
-//     ${tw`text-brand-3 text-base mb-4`}
-// `;
-
 const StyledDate = styled.p`
     ${tw`text-ts-body`}
 `;
@@ -70,5 +66,5 @@ export default function EventCard({ data }) {
 }
 
 EventCard.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired,
 };

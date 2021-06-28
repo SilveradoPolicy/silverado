@@ -62,7 +62,7 @@ export default function BlogContent({ data }) {
                 <PillarHeader>Pillar</PillarHeader>
                 {categories.map((category) => {
                     return (
-                        <Pillar bgColor={category.color}>
+                        <Pillar bgColor={category.color} key={category.id}>
                             {category.name}
                         </Pillar>
                     );

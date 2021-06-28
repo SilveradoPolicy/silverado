@@ -67,6 +67,7 @@ export const query = graphql`
                         color
                     }
                     description
+                    id
                     heroImage {
                         ...SanityImage
                     }
@@ -86,6 +87,7 @@ export default function BlogTemplate({ data }) {
             author,
             categories,
             description,
+            id,
             heroImage,
             publishDate,
             seo,
@@ -106,16 +108,18 @@ export default function BlogTemplate({ data }) {
         _rawBody,
     };
 
+    const filteredPosts = edges.filter((post) => post.node.id !== id);
+
     return (
         <Layout hasBackgroundColor>
             <SEO
-                description={seo.pageDescription || description}
-                image={seo.ogImage.asset.url}
-                title={seo.pageTitle || title}
+                description={seo?.pageDescription || description}
+                image={seo?.ogImage.asset.url}
+                title={seo?.pageTitle || title}
             />
             <BlogHero color={color} image={heroImage} />
             <BlogContent data={postData} />
-            <PillarCardList list={edges} />
+            {filteredPosts > 0 && <PillarCardList list={filteredPosts} />}
         </Layout>
     );
 }

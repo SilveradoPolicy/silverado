@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import NewsIndexHero from '../components/newsIndexHero';
 import BlogPostList from '../components/blogPostList';
+import SEO from '../components/SEO';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -54,6 +55,15 @@ export const query = graphql`
                 slug {
                     current
                 }
+            }
+            seo {
+                ogImage {
+                    asset {
+                        url
+                    }
+                }
+                pageDescription
+                pageTitle
             }
         }
         allSanityPost(sort: { order: DESC, fields: publishDate }) {
@@ -108,15 +118,21 @@ export default function NewsIndex({ data }) {
         allSanityCategory: { edges: filters },
         allSanityEvent: { edges: events },
         allSanityPost: { edges: postsArray },
-        sanityNewsIndexPage: { featuredNewsItem },
+        sanityNewsIndexPage: { featuredNewsItem, seo },
     } = data;
 
+    console.log(seo);
     const { id } = featuredNewsItem[0];
 
     const filteredPosts = postsArray.filter((item) => item.node.id !== id);
 
     return (
         <Layout>
+            <SEO
+                description={seo.pageDescription}
+                image={seo.ogImage.asset.url}
+                title={seo.pageTitle}
+            />
             <NewsIndexHero
                 featuredNewsItem={featuredNewsItem}
                 events={events}
@@ -131,6 +147,6 @@ NewsIndex.propTypes = {
         allSanityCategory: PropTypes.object.isRequired,
         allSanityEvent: PropTypes.object.isRequired,
         sanityNewsIndexPage: PropTypes.object.isRequired,
-        allSanityPost: PropTypes.array.isRequired,
+        allSanityPost: PropTypes.object.isRequired,
     }).isRequired,
 };
