@@ -37,6 +37,7 @@ export const query = graphql`
             featuredEvent {
                 dateAndTime
                 description
+                id
                 place
                 registrationUrl
                 subtitle
@@ -68,6 +69,7 @@ export const query = graphql`
                     heroImage {
                         ...SanityImage
                     }
+                    id
                     place
                     slug {
                         current
@@ -100,11 +102,17 @@ export default function EventPreviewTemplate({ data }) {
         sanityEventIndexPage,
     } = data;
 
+    const { id: featuredEventId } = sanityEventIndexPage.featuredEvent[0];
+
+    const filteredEvents = edges.filter((event) => {
+        return event.node.id !== featuredEventId;
+    });
+
     return (
         <Layout hasBackgroundColor>
             <EventHero data={sanityEventIndexPage} image={eventImage} />
             <EventHeading>Events</EventHeading>
-            <BlogPostList blogposts={edges} filters={filtersArray} />
+            <BlogPostList blogposts={filteredEvents} filters={filtersArray} />
         </Layout>
     );
 }
