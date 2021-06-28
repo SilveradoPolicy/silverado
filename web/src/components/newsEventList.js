@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 import EventPreview from './eventPreview';
 
 const StyledEventsList = styled.div`
-    ${tw`md:w-1/2 md:pl-4`}
+    ${tw`w-full`}
 `;
 
 const Heading = styled.h3`
@@ -23,9 +23,9 @@ export default function NewsEventList({ events }) {
         <StyledEventsList>
             <Heading>Events</Heading>
             {events.map((event) => {
-                return <EventPreview data={event} key={event.id} />;
+                return <EventPreview data={event} key={event.node.id} />;
             })}
-            <StyledLink to="#">View All Events</StyledLink>
+            <StyledLink to="/events">View All Events</StyledLink>
         </StyledEventsList>
     );
 }

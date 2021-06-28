@@ -16,9 +16,18 @@ export default {
             description: 'What is the subtitle of the event',
         },
         {
+            name: 'slug',
+            type: 'slug',
+            title: 'Slug',
+            options: {
+                source: 'title',
+                maxLength: 96,
+            },
+        },
+        {
             name: 'heroImage',
             title: 'Hero Image',
-            type: 'image',
+            type: 'mainImage',
         },
         {
             name: 'dateAndTime',
@@ -38,10 +47,37 @@ export default {
             description: 'Where will the event be held?',
         },
         {
+            name: 'registrationUrl',
+            title: 'Registration URL',
+            type: 'url',
+            desctription: 'Registration URL for this event',
+        },
+        {
             name: 'description',
             title: 'Description',
             type: 'string',
             description: 'What should attendees know about this event?',
+        },
+        {
+            name: 'speakers',
+            title: 'Speakers',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'speaker' } }],
+        },
+        {
+            name: 'categories',
+            title: 'Associated Category',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'category' } }],
+            description: 'Event associated with this pillar',
+            validation: (Rule) => Rule.max(1),
+        },
+        {
+            name: 'ctaBody',
+            title: 'Register CTA body',
+            type: 'text',
+            description:
+                'Text that will appear with the Register call to action at the bottom of the page',
         },
         {
             name: 'seo',

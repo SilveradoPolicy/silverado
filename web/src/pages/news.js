@@ -78,6 +78,20 @@ export const query = graphql`
                 }
             }
         }
+
+        allSanityEvent(sort: { order: ASC, fields: dateAndTime }) {
+            edges {
+                node {
+                    description
+                    id
+                    slug {
+                        current
+                    }
+                    subtitle
+                    title
+                }
+            }
+        }
         allSanityCategory {
             edges {
                 node {
@@ -92,20 +106,10 @@ export const query = graphql`
 export default function NewsIndex({ data }) {
     const {
         allSanityCategory: { edges: filters },
+        allSanityEvent: { edges: events },
         allSanityPost: { edges: postsArray },
         sanityNewsIndexPage: { featuredNewsItem },
     } = data;
-
-    // const content = {
-    //     newsEvent: {
-    //         image: newsImage,
-    //         title: 'Big Feature News Title Second Line',
-    //         author: 'Vitaw egetas',
-    //         publishDate: '12/1/12',
-    //         description:
-    //             ' Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula',
-    //     },
-    // };
 
     const { id } = featuredNewsItem[0];
 
@@ -113,7 +117,10 @@ export default function NewsIndex({ data }) {
 
     return (
         <Layout>
-            <NewsIndexHero newsEventInfo={featuredNewsItem} />
+            <NewsIndexHero
+                featuredNewsItem={featuredNewsItem}
+                events={events}
+            />
             <BlogPostList blogposts={filteredPosts} filters={filters} />
         </Layout>
     );
@@ -122,6 +129,7 @@ export default function NewsIndex({ data }) {
 NewsIndex.propTypes = {
     data: PropTypes.shape({
         allSanityCategory: PropTypes.object.isRequired,
+        allSanityEvent: PropTypes.object.isRequired,
         sanityNewsIndexPage: PropTypes.object.isRequired,
         allSanityPost: PropTypes.array.isRequired,
     }).isRequired,

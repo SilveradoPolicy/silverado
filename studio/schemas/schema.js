@@ -14,6 +14,7 @@ import indexPage from './documents/indexPage';
 import newsIndexPage from './documents/newsIndexPage';
 import pillar from './documents/pillar';
 import post from './documents/post';
+import speaker from './documents/speaker';
 
 // import object schemas here (bonus points for alphabetical order)
 import bodyPortableText from './objects/bodyPortableText';
@@ -39,6 +40,7 @@ export default createSchema({
         newsIndexPage,
         pillar,
         post,
+        speaker,
         // object types here (bonus points for alphabetical order)
         bodyPortableText,
         cta,
