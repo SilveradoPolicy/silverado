@@ -7,11 +7,11 @@ import styled from 'styled-components';
 import SpeakerCard from './speakerCard';
 
 const SpeakersWrapper = styled.div`
-    ${tw`container`}
+    ${tw`container lg:-mt-32`}
 `;
 
 const SpeakerCardWrapper = styled.div`
-    ${tw`flex gap-4 mb-4 flex-wrap justify-center`}
+    ${tw`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-4`}
 `;
 
 const Header = styled.h4`

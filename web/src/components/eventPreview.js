@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const StyledEventPreview = styled.div`
-    ${tw`relative`}
+const StyledEventPreview = styled(Link)`
+    ${tw`block relative`}
     &:before {
         background: var(--brand-6);
         border-radius: 16px;
@@ -27,13 +28,15 @@ const Body = styled.p`
     ${tw`text-ts-body text-black my-4`}
 `;
 export default function EventPreview({ data }) {
-    const { body, heading, subheading } = data;
+    const {
+        node: { description, slug, subtitle, title },
+    } = data;
 
     return (
-        <StyledEventPreview>
-            <Heading>{heading}</Heading>
-            <SubHeading>{subheading}</SubHeading>
-            <Body>{body}</Body>
+        <StyledEventPreview to={`/events/${slug.current}`}>
+            <Heading>{title}</Heading>
+            <SubHeading>{subtitle}</SubHeading>
+            <Body>{description}</Body>
         </StyledEventPreview>
     );
 }

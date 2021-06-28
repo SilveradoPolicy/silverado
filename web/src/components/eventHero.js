@@ -1,9 +1,9 @@
 import React from 'react';
-import Img from 'gatsby-image';
-
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import { imageUrlFor, buildImageObj } from '../helpers/sanityImageHelper';
 
 import EventCard from './eventCard';
 
@@ -11,35 +11,51 @@ const HeroWrapper = styled.div`
     ${tw`relative`}
 `;
 
-const StyledImage = styled(Img)`
-    ${tw`min-h-1/2-screen`}
+const StyledImage = styled.img`
+    ${tw`w-full`}
 `;
 
 const HeroContainer = styled.div`
-    ${tw`container min-h-3/4-screen text-white absolute transform top-0`}
+    ${tw`container text-white absolute mt-40 left-1/2 -translate-x-1/2 transform top-0`}
 `;
 
 const Heading = styled.h1`
-    ${tw`text-ts-h1 md:pl-28 mb-6 mt-40 font-bold`}
+    ${tw`text-ts-h1 mb-6 font-bold`}
 `;
 
-export default function EventHero({ image, data }) {
-    const {
-        childImageSharp: { fluid },
-    } = image;
+export default function EventHero({ data }) {
+    const { featuredEvent, heroImage } = data;
 
     return (
         <HeroWrapper>
-            <StyledImage fluid={fluid} />
+            <StyledImage
+                className="hidden lg:block"
+                src={imageUrlFor(buildImageObj(heroImage))
+                    .width(1400)
+                    .height(Math.floor((1 / 2.5) * 1400))
+                    .fit('fill')
+                    .auto('format')
+                    .url()}
+                alt=""
+            />
+            <StyledImage
+                className="lg:hidden"
+                src={imageUrlFor(buildImageObj(heroImage))
+                    .width(1400)
+                    .height(Math.floor((5 / 4) * 1400))
+                    .fit('fill')
+                    .auto('format')
+                    .url()}
+                alt=""
+            />
             <HeroContainer>
                 <Heading>Events</Heading>
             </HeroContainer>
-            <EventCard data={data} />
+            <EventCard data={featuredEvent} />
         </HeroWrapper>
     );
 }
 
 EventHero.propTypes = {
     data: PropTypes.object.isRequired,
-    image: PropTypes.object.isRequired,
 };

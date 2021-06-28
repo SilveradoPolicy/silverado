@@ -84,7 +84,48 @@ async function createNewsBlogPages(graphql, actions) {
     });
 }
 
+// create news/blog pages
+async function createEventPages(graphql, actions) {
+    const { createPage } = actions;
+    const result = await graphql(`
+        {
+            allSanityEvent(filter: { slug: { current: { ne: "null" } } }) {
+                edges {
+                    node {
+                        id
+                        slug {
+                            current
+                        }
+                        categories {
+                            categoryId: id
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    if (result.errors) {
+        throw result.errors;
+    }
+
+    const eventEdges = (result.data.allSanityEvent || {}).edges || [];
+
+    eventEdges.forEach((edge) => {
+        const { id, slug = {} } = edge.node;
+        const path = `/events/${slug.current}`;
+        const { categoryId } = edge.node.categories[0];
+
+        createPage({
+            path,
+            component: require.resolve('./src/templates/event-template.js'),
+            context: { id, categoryId },
+        });
+    });
+}
+
 exports.createPages = async ({ graphql, actions }) => {
     await createPillarPages(graphql, actions);
     await createNewsBlogPages(graphql, actions);
+    await createEventPages(graphql, actions);
 };
