@@ -12,11 +12,6 @@ export default {
             name: 'pageDescription',
             title: 'Page Description',
             type: 'text',
-        },
-        {
-            name: 'ogDescription',
-            title: 'Open Graph Description',
-            type: 'text',
             description: 'Should not be longer than 297 characters',
         },
         {

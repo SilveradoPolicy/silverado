@@ -32,7 +32,11 @@ export default function Registration({ ctaBody, url }) {
     );
 }
 
+Registration.defaultProps = {
+    ctaBody: null,
+};
+
 Registration.propTypes = {
-    ctaBody: PropTypes.string.isRequired,
+    ctaBody: PropTypes.string,
     url: PropTypes.string.isRequired,
 };

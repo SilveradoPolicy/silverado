@@ -23,7 +23,7 @@ export default function PillarCardList({ list }) {
             <Title>Related News and Events</Title>
             <PillarCardWrapper>
                 {list.map((post) => {
-                    return <BlogCard data={post} isShown />;
+                    return <BlogCard data={post} key={post.node.id} isShown />;
                 })}
             </PillarCardWrapper>
         </PillarWrapper>

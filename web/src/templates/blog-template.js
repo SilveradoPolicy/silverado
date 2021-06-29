@@ -6,6 +6,7 @@ import Layout from '../layouts/page-layout';
 import BlogHero from '../components/blogHero';
 import BlogContent from '../components/blogContent';
 import PillarCardList from '../components/pillarCardList';
+import SEO from '../components/SEO';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -43,6 +44,15 @@ export const query = graphql`
             }
             id
             publishDate
+            seo {
+                ogImage {
+                    asset {
+                        url
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
             subtitle
             title
             _rawBody(resolveReferences: { maxDepth: 10 })
@@ -57,6 +67,7 @@ export const query = graphql`
                         color
                     }
                     description
+                    id
                     heroImage {
                         ...SanityImage
                     }
@@ -75,8 +86,11 @@ export default function BlogTemplate({ data }) {
         post: {
             author,
             categories,
+            description,
+            id,
             heroImage,
             publishDate,
+            seo,
             subtitle,
             title,
             _rawBody,
@@ -94,11 +108,18 @@ export default function BlogTemplate({ data }) {
         _rawBody,
     };
 
+    const filteredPosts = edges.filter((post) => post.node.id !== id);
+
     return (
         <Layout hasBackgroundColor>
+            <SEO
+                description={seo?.pageDescription || description}
+                image={seo?.ogImage.asset.url}
+                title={seo?.pageTitle || title}
+            />
             <BlogHero color={color} image={heroImage} />
             <BlogContent data={postData} />
-            <PillarCardList list={edges} />
+            {filteredPosts > 0 && <PillarCardList list={filteredPosts} />}
         </Layout>
     );
 }

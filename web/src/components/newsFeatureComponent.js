@@ -49,5 +49,5 @@ export default function NewsFeature({ data }) {
 }
 
 NewsFeature.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired,
 };
