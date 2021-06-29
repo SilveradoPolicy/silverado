@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import { format, parseISO } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -32,13 +33,15 @@ const StyledLink = styled(Link)`
 
 export default function NewsFeature({ data }) {
     const content = data[0];
+    const date = parseISO(content.publishDate);
+    const formattedDate = format(date, 'MM/dd/yyyy');
 
     return (
         <StyledFeaturedEvent>
             <StyledImg fluid={content.heroImage.asset.fluid} />
             <Heading>{content.title}</Heading>
             <EventInfo>
-                {content.author} | {content.publishDate}
+                {content.author} | {formattedDate}
             </EventInfo>
             <Body>{content.description}</Body>
             <StyledLink to={`/news/${content.slug.current}`}>
