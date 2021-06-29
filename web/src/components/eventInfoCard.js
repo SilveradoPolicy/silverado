@@ -70,6 +70,9 @@ export default function EventInfoCard({ data }) {
         title,
     } = data;
 
+    const currentDate = new Date();
+    const isEventInPast = Date.parse(currentDate) > Date.parse(dateAndTime);
+
     return (
         <CardWrapper>
             <InfoWrapper>
@@ -80,13 +83,15 @@ export default function EventInfoCard({ data }) {
                 </StyledDate>
                 <StyledDate>{format(Date.parse(dateAndTime), 'p')}</StyledDate>
                 <StyledDate>{place}</StyledDate>
-                <StyledLink
-                    href={registrationUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    Register
-                </StyledLink>
+                {!isEventInPast && (
+                    <StyledLink
+                        href={registrationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Register
+                    </StyledLink>
+                )}
                 {/* <StyledHeader>Agenda</StyledHeader>
                 <AgendaWrapper>
                     <ItemWrapper>

@@ -40,6 +40,10 @@ export default function EventCard({ data }) {
         subtitle,
         title,
     } = data[0];
+
+    const currentDate = new Date();
+    const isEventInPast = Date.parse(currentDate) > Date.parse(dateAndTime);
+
     return (
         <CardWrapper>
             <InfoWrapper>
@@ -53,13 +57,15 @@ export default function EventCard({ data }) {
             </InfoWrapper>
             <DescriptionWrapper>
                 <DescriptionBody>{description}</DescriptionBody>
-                <StyledButton
-                    href={registrationUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    Register
-                </StyledButton>
+                {!isEventInPast && (
+                    <StyledButton
+                        href={registrationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Register
+                    </StyledButton>
+                )}
             </DescriptionWrapper>
         </CardWrapper>
     );
