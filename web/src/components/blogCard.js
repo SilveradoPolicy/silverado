@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { AnimatePresence } from 'framer-motion';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -74,6 +74,9 @@ export default function BlogCard({ data, isShown }) {
     } = data.node;
 
     const primaryPillarColor = categories[0].color;
+    const formattedDate = publishDate
+        ? format(parseISO(publishDate), 'MM/dd/yyyy')
+        : null;
 
     return (
         <AnimatePresence>
@@ -94,11 +97,7 @@ export default function BlogCard({ data, isShown }) {
                     <CardWrapper id={id}>
                         <CardTitle>{title}</CardTitle>
                         {author && <CardAuthor>{author}</CardAuthor>}
-                        {publishDate && (
-                            <CardDate>
-                                {format(Date.parse(publishDate), 'MM/dd/yyyy')}
-                            </CardDate>
-                        )}
+                        {publishDate && <CardDate>{formattedDate}</CardDate>}
                         {description && !dateAndTime && (
                             <BlogDetails>{description}</BlogDetails>
                         )}

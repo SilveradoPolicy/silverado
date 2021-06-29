@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -48,12 +48,14 @@ const PillarWrapper = styled.div`
 `;
 export default function BlogContent({ data }) {
     const { author, categories, publishDate, subtitle, title, _rawBody } = data;
+    const date = parseISO(publishDate);
+    const formattedDate = format(date, 'MM/dd/yyyy');
     return (
         <ContentWrapper>
             <BlogTitle>{title}</BlogTitle>
             <BlogSubTitle>{subtitle}</BlogSubTitle>
             <SubheaderWrapper>
-                {format(Date.parse(publishDate), 'MM/dd/yyyy')} | {author}
+                {formattedDate} | {author}
             </SubheaderWrapper>
             <BodyWrapper className="prose">
                 <BlockText blocks={_rawBody} />

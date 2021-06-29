@@ -121,7 +121,6 @@ export default function NewsIndex({ data }) {
         sanityNewsIndexPage: { featuredNewsItem, seo },
     } = data;
 
-    console.log(seo);
     const { id } = featuredNewsItem[0];
 
     const filteredPosts = postsArray.filter((item) => item.node.id !== id);
