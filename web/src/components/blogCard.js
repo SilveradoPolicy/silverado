@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { AnimatePresence } from 'framer-motion';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -49,8 +49,12 @@ const BlogDetails = styled.p`
     ${tw`text-black text-base pb-8`}
 `;
 
-const EventDetails = styled.p`
-    ${tw`text-black text-base`}
+const EventDetails = styled.div`
+    ${tw`mb-8 mt-4`}
+`;
+
+const DateTimeInfo = styled.p`
+    ${tw`mb-2 text-black text-base`}
 `;
 const StyledLink = styled(Link)`
     ${tw`underline text-brand-3 absolute bottom-0 left-0 px-6 py-4`}
@@ -59,18 +63,20 @@ export default function BlogCard({ data, isShown }) {
     const {
         author,
         categories,
+        dateAndTime,
         description,
-        eventdate,
         heroImage,
         id,
         place,
         publishDate,
         slug,
-        time,
         title,
     } = data.node;
 
     const primaryPillarColor = categories[0].color;
+    const formattedDate = publishDate
+        ? format(parseISO(publishDate), 'MM/dd/yyyy')
+        : null;
 
     return (
         <AnimatePresence>
@@ -91,24 +97,34 @@ export default function BlogCard({ data, isShown }) {
                     <CardWrapper id={id}>
                         <CardTitle>{title}</CardTitle>
                         {author && <CardAuthor>{author}</CardAuthor>}
-                        {publishDate && (
-                            <CardDate>
-                                {format(Date.parse(publishDate), 'MM/dd/yyyy')}
-                            </CardDate>
-                        )}
-                        {description && (
+                        {publishDate && <CardDate>{formattedDate}</CardDate>}
+                        {description && !dateAndTime && (
                             <BlogDetails>{description}</BlogDetails>
                         )}
-                        {eventdate && (
-                            <>
-                                <EventDetails>{eventdate}</EventDetails>
-                                <EventDetails>{time}</EventDetails>
-                                <EventDetails>{place}</EventDetails>
-                            </>
+                        {dateAndTime && (
+                            <EventDetails>
+                                <DateTimeInfo>
+                                    {format(
+                                        Date.parse(dateAndTime),
+                                        'MM/dd/yyyy',
+                                    )}
+                                </DateTimeInfo>
+                                <DateTimeInfo>
+                                    {format(Date.parse(dateAndTime), 'p')}
+                                </DateTimeInfo>
+                                <DateTimeInfo>{place}</DateTimeInfo>
+                            </EventDetails>
                         )}
-                        <StyledLink to={`/news/${slug.current}`}>
-                            Read More
-                        </StyledLink>
+                        {dateAndTime && (
+                            <StyledLink to={`/events/${slug.current}`}>
+                                Read More
+                            </StyledLink>
+                        )}
+                        {!dateAndTime && (
+                            <StyledLink to={`/news/${slug.current}`}>
+                                Read More
+                            </StyledLink>
+                        )}
                     </CardWrapper>
                 </CardContainer>
             )}

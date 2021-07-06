@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import tw from 'twin.macro';
 import styled from 'styled-components';
@@ -19,22 +19,24 @@ const StyledLink = styled.a`
     ${tw`bg-brand-3 text-ts-h4 inline-block py-3.5 px-20 rounded-full text-white font-light`}
 `;
 
-export default function Registration() {
+export default function Registration({ ctaBody, url }) {
     return (
         <RegiWrapper>
             <Header>Interested in Attending?</Header>
-            <Description>
-                Vestibulum at augue eget turpis pharetra mollis vel sagittis
-                elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae
-                tellus sagittis tincidunt in in sem.
-            </Description>
-            <StyledLink target="_blank" rel="noreferrer">
+            {ctaBody && <Description>{ctaBody}</Description>}
+
+            <StyledLink href={url} target="_blank" rel="noreferrer">
                 Register
             </StyledLink>
         </RegiWrapper>
     );
 }
 
-// Registration.propTypes = {
-//     data: PropTypes.object.isRequired,
-// };
+Registration.defaultProps = {
+    ctaBody: null,
+};
+
+Registration.propTypes = {
+    ctaBody: PropTypes.string,
+    url: PropTypes.string.isRequired,
+};

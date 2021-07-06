@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Layout from '../layouts/page-layout';
 import NewsIndexHero from '../components/newsIndexHero';
 import BlogPostList from '../components/blogPostList';
+import SEO from '../components/SEO';
 
 export const query = graphql`
     fragment SanityImage on SanityMainImage {
@@ -55,6 +56,15 @@ export const query = graphql`
                     current
                 }
             }
+            seo {
+                ogImage {
+                    asset {
+                        url
+                    }
+                }
+                pageDescription
+                pageTitle
+            }
         }
         allSanityPost(sort: { order: DESC, fields: publishDate }) {
             edges {
@@ -78,6 +88,20 @@ export const query = graphql`
                 }
             }
         }
+
+        allSanityEvent(sort: { order: ASC, fields: dateAndTime }) {
+            edges {
+                node {
+                    description
+                    id
+                    slug {
+                        current
+                    }
+                    subtitle
+                    title
+                }
+            }
+        }
         allSanityCategory {
             edges {
                 node {
@@ -92,20 +116,10 @@ export const query = graphql`
 export default function NewsIndex({ data }) {
     const {
         allSanityCategory: { edges: filters },
+        allSanityEvent: { edges: events },
         allSanityPost: { edges: postsArray },
-        sanityNewsIndexPage: { featuredNewsItem },
+        sanityNewsIndexPage: { featuredNewsItem, seo },
     } = data;
-
-    // const content = {
-    //     newsEvent: {
-    //         image: newsImage,
-    //         title: 'Big Feature News Title Second Line',
-    //         author: 'Vitaw egetas',
-    //         publishDate: '12/1/12',
-    //         description:
-    //             ' Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula',
-    //     },
-    // };
 
     const { id } = featuredNewsItem[0];
 
@@ -113,7 +127,15 @@ export default function NewsIndex({ data }) {
 
     return (
         <Layout>
-            <NewsIndexHero newsEventInfo={featuredNewsItem} />
+            <SEO
+                description={seo.pageDescription}
+                image={seo.ogImage.asset.url}
+                title={seo.pageTitle}
+            />
+            <NewsIndexHero
+                featuredNewsItem={featuredNewsItem}
+                events={events}
+            />
             <BlogPostList blogposts={filteredPosts} filters={filters} />
         </Layout>
     );
@@ -122,7 +144,8 @@ export default function NewsIndex({ data }) {
 NewsIndex.propTypes = {
     data: PropTypes.shape({
         allSanityCategory: PropTypes.object.isRequired,
+        allSanityEvent: PropTypes.object.isRequired,
         sanityNewsIndexPage: PropTypes.object.isRequired,
-        allSanityPost: PropTypes.array.isRequired,
+        allSanityPost: PropTypes.object.isRequired,
     }).isRequired,
 };

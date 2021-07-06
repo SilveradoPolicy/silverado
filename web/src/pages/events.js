@@ -1,77 +1,127 @@
 import React from 'react';
-// import { graphql } from 'gatsby';
-// import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 import Layout from '../layouts/page-layout';
-import AltHero from '../components/altHero';
-import EventsListIndex from '../components/eventsListIndex';
-import CopyWithCTA from '../components/copyWithCTA';
+import EventHero from '../components/eventHero';
+import BlogPostList from '../components/blogPostList';
 
-export default function EventsIndex() {
-    const content = {
-        hero: {
-            body: `Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit.`,
-            heading: 'Events',
-        },
-        ctasection: {
-            text:
-                'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-        },
-        events: [
-            {
-                month: 'february',
-                events: [
-                    {
-                        date: '24',
-                        eventName: 'Event Name',
-                        eventHeading: 'Event Heading',
-                        body:
-                            'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-                        link: 'event-template',
-                    },
-                    {
-                        date: '31',
-                        eventName: 'Event Name',
-                        eventHeading: 'Event Heading',
-                        body:
-                            'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-                        link: 'event-template',
-                    },
-                ],
-            },
-            {
-                month: 'march',
-                events: [
-                    {
-                        date: '24',
-                        eventName: 'Event Name',
-                        eventHeading: 'Event Heading',
-                        body:
-                            'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-                        link: 'event-template',
-                    },
-                    {
-                        date: '31',
-                        eventName: 'Event Name',
-                        eventHeading: 'Event Heading',
-                        body:
-                            'Cras iaculis, lectus a condimentum lacinia, risus ex varius est, vel fermentum magna enim sed eros. Vestibulum at augue eget turpis pharetra mollis vel sagittis elit. Ut eleifend sodales vehicula. Nam malesuada massa vitae tellus sagittis tincidunt in in sem.',
-                        link: 'event-template',
-                    },
-                ],
-            },
-        ],
-    };
+export const query = graphql`
+    fragment SanityImage on SanityMainImage {
+        crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+        }
+        hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+        }
+        asset {
+            _id
+        }
+    }
+
+    query EventPreviewTemplateQuery {
+        sanityEventIndexPage {
+            featuredEvent {
+                dateAndTime
+                description
+                id
+                place
+                registrationUrl
+                subtitle
+                title
+            }
+            heroImage {
+                ...SanityImage
+            }
+        }
+
+        eventImage: file(relativePath: { regex: "/eventimage/" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+
+        events: allSanityEvent {
+            edges {
+                node {
+                    categories {
+                        id
+                        color
+                    }
+                    ctaBody
+                    dateAndTime
+                    description
+                    heroImage {
+                        ...SanityImage
+                    }
+                    id
+                    place
+                    slug {
+                        current
+                    }
+                    title
+                }
+            }
+        }
+        allSanityCategory {
+            edges {
+                node {
+                    color
+                    id
+                    name
+                }
+            }
+        }
+    }
+`;
+
+const EventHeading = styled.h3`
+    ${tw`container text-brand-1 text-ts-h3`}
+`;
+
+export default function EventPreviewTemplate({ data }) {
+    const {
+        allSanityCategory: { edges: filtersArray },
+        eventImage,
+        events: { edges },
+        sanityEventIndexPage,
+    } = data;
+
+    const { id: featuredEventId } = sanityEventIndexPage.featuredEvent[0];
+
+    const filteredEvents = edges.filter((event) => {
+        return event.node.id !== featuredEventId;
+    });
 
     return (
-        <Layout>
-            <AltHero body={content.hero.body} heading={content.hero.heading} />
-            <EventsListIndex events={content.events} />{' '}
-            <CopyWithCTA
-                content={content.ctasection}
-                hasBottomGradient
-                hasTopTransition
-            />
+        <Layout hasBackgroundColor>
+            <EventHero data={sanityEventIndexPage} image={eventImage} />
+            <EventHeading>Events</EventHeading>
+            <BlogPostList blogposts={filteredEvents} filters={filtersArray} />
         </Layout>
     );
 }
+
+EventPreviewTemplate.propTypes = {
+    data: PropTypes.shape({
+        allSanityCategory: PropTypes.object.isRequired,
+        eventImage: PropTypes.object.isRequired,
+        events: PropTypes.object.isRequired,
+        sanityEventIndexPage: PropTypes.object.isRequired,
+    }).isRequired,
+};

@@ -98,8 +98,12 @@ export default function BlogPostList({ blogposts, filters, month }) {
     );
 }
 
+BlogPostList.defaultProps = {
+    month: null,
+};
+
 BlogPostList.propTypes = {
     blogposts: PropTypes.array.isRequired,
     filters: PropTypes.array.isRequired,
-    month: PropTypes.object.isRequired,
+    month: PropTypes.string,
 };

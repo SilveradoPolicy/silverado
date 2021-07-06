@@ -34,7 +34,7 @@ const SEO = ({ title, description, image, article }) => {
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: `${siteUrl}${image || defaultImage}`,
+        image: image || defaultImage,
         url: `${siteUrl}${pathname}`,
     };
     return (
@@ -56,7 +56,9 @@ const SEO = ({ title, description, image, article }) => {
             {seo.description && (
                 <meta name="twitter:description" content={seo.description} />
             )}
-            {seo.image && <meta name="twitter:image" content={seo.image} />}
+            {seo.image && (
+                <meta name="twitter:image" content={`${seo.image}?w=800`} />
+            )}
         </Helmet>
     );
 };
