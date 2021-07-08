@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import styled from 'styled-components';
 
 const RegiWrapper = styled.div`
-    ${tw`text-center my-24`}
+    ${tw`text-center mb-24`}
 `;
 
 const Header = styled.h4`
