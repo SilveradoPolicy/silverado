@@ -21,7 +21,7 @@ export default function EventPage({ data }) {
                 title={seo.pageTitle || title}
             />
             <EventInfoHero data={event} />
-            <SpeakerCardList speakers={speakers} />
+            {speakers.length > 0 && <SpeakerCardList speakers={speakers} />}
             <Registration ctaBody={ctaBody} url={registrationUrl} />
             {/* {sponsors && <SponsorList sponsors={sponsors} />} */}
         </Layout>
