@@ -103,9 +103,13 @@ export default function EventPreviewTemplate({ data }) {
     } = data;
 
     const { id: featuredEventId } = sanityEventIndexPage.featuredEvent[0];
+    const currentDate = new Date();
 
     const filteredEvents = edges.filter((event) => {
-        return event.node.id !== featuredEventId;
+        return (
+            event.node.id !== featuredEventId &&
+            event.node.dateAndTime > currentDate.toISOString()
+        );
     });
 
     return (

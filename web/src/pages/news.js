@@ -92,6 +92,7 @@ export const query = graphql`
         allSanityEvent(sort: { order: ASC, fields: dateAndTime }) {
             edges {
                 node {
+                    dateAndTime
                     description
                     id
                     slug {

@@ -19,10 +19,15 @@ const StyledLink = styled(Link)`
 `;
 
 export default function NewsEventList({ events }) {
+    const currentDate = new Date();
+    const filteredEvents = events.filter(
+        (event) => event.node.dateAndTime > currentDate.toISOString(),
+    );
+
     return (
         <StyledEventsList>
             <Heading>Events</Heading>
-            {events.map((event) => {
+            {filteredEvents.map((event) => {
                 return <EventPreview data={event} key={event.node.id} />;
             })}
             <StyledLink to="/events">View All Events</StyledLink>
